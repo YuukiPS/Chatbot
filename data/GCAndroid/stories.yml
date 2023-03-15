@@ -1,0 +1,26 @@
+version: "3.1"
+
+stories:
+
+- story: What is GCAndroid and Install
+  steps:
+  - intent: about_gcandroid
+  - action: utter_what_is_gcandroid
+  - intent: how_to_install_gcandroid
+  - action: utter_how_to_install_gcandroid
+
+- story: Hey, what is GCAndroid
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: about_gcandroid
+  - action: utter_what_is_gcandroid
+  - intent: how_to_install_gcandroid
+  - action: utter_how_to_install_gcandroid
+
+- story: How to install GCAndroid
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: how_to_install_gcandroid
+  - action: utter_how_to_install_gcandroid

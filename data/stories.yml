@@ -1,0 +1,67 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: user say name
+  steps:
+  - intent: provide_name
+  - action: utter_provide_name
+
+- story: tell date
+  steps:
+  - intent: current_date
+  - action: action_current_date
+
+- story: how bot made
+  steps:
+  - intent: how_bot_made
+  - action: action_how_bot_made
+
+- story: interactive_story_1
+  steps:
+  - intent: bot_fine
+  - action: utter_bot_fine
+
+- story: Fallback scenario
+  steps:
+  - intent: nlu_fallback
+  - action: utter_default
+
+- story: Talking about mod game
+  steps:
+  - intent: mod_game
+  - action: action_mod_game
+  - intent: mod_game_why
+  - action: utter_mod_game_why_reason
+
+- story: Tell my name
+  steps:
+  - intent: tell_my_name
+  - action: action_tell_my_name

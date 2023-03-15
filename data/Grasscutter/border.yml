@@ -1,0 +1,20 @@
+version: "3.1"
+
+nlu:
+  - intent: grasscutter_border_what_is_border
+    examples: |
+      - What is the border
+      - What is border?
+      - Explain what is border
+      - Explain Border
+      - What is border
+
+  - intent: grasscutter_border_remove_border
+    examples: |
+      - How to remove border
+      - How can i remove border
+      - What command to remove border
+      - How to remove border
+      - Command to remove border
+      - Send command to remove border
+      - What is command remove border

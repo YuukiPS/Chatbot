@@ -1,0 +1,9 @@
+version: "3.1"
+
+stories:
+- story: Answer question to user who need fiddler script
+  steps:
+  - intent: fiddler
+  - action: action_fiddler
+  - intent: fiddler_another_domain
+  - action: action_fiddler

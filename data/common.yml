@@ -1,0 +1,82 @@
+version: "3.1"
+
+nlu:
+- intent: what_is_gravity
+  examples: |
+    - What is gravity?
+    - How does gravity work?
+    - What are the effects of gravity on objects?
+    - How does gravity affect the behavior of celestial bodies?
+    - What is the gravitational constant?
+
+- intent: what_is_the_meaning_of_love
+  examples: |
+    - What is the definition of love?
+    - How do you know if you're in love?
+    - What are the different types of love?
+    - How does love impact our emotions and behavior?
+    - Can love be scientifically explained?
+
+- intent: what_is_the_internet
+  examples: |
+    - What is the internet?
+    - How does the internet work?
+    - What are the different types of internet connections?
+    - What are some popular internet protocols?
+    - What is the future of the internet?
+
+- intent: what_is_artificial_intelligence
+  examples: |
+    - What is artificial intelligence (AI)?
+    - How does AI differ from human intelligence?
+    - What are the different types of AI?
+    - What are the potential applications of AI?
+    - What are the ethical concerns surrounding AI development?
+
+- intent: who_discovered_america
+  examples: |
+    - Who discovered America?
+    - What is the history of the Native American peoples?
+    - How did the discovery of America impact world history?
+    - What are the different theories about the discovery of America?
+    - What is the role of Columbus in the discovery of America?
+
+- intent: what_is_democracy
+  examples: |
+    - What is democracy?
+    - How does democracy differ from other forms of government?
+    - What are the essential features of a democratic society?
+    - What are some of the challenges facing democracies today?
+    - What is the history of democracy and its development?
+
+- intent: what_is_psychology
+  examples: |
+    - What is psychology?
+    - What are the different branches of psychology?
+    - How do psychologists study human behavior and cognition?
+    - What are some of the key theories in psychology?
+    - What are some of the practical applications of psychology?
+
+- intent: what_is_terrorism
+  examples: |
+    - What is terrorism?
+    - How do terrorist organizations operate?
+    - What motivates terrorists to carry out attacks?
+    - What are the different types of terrorism?
+    - How can we prevent and combat terrorism?
+
+- intent: what_is_gender
+  examples: |
+    - What is gender?
+    - How does gender differ from sex?
+    - What are the different gender identities?
+    - What are the social and cultural influences on gender?
+    - What are the political and legal implications of gender?
+
+- intent: what_is_the_universe
+  examples: |
+    - What is the universe?
+    - How big is the universe?
+    - What is the history of the universe?
+    - What are the different components of the universe?
+    - What are the unanswered questions about the universe?

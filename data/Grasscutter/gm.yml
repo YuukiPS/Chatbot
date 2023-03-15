@@ -1,0 +1,50 @@
+version: "3.1"
+nlu:
+- intent: grasscutter_gm_what_is_id_item
+  examples: |
+    - What is id of [mora](item_name)
+    - What is id [mora](item_name)
+    - What is id [mora](item_name) in gm handbook
+    - What is id of [mora](item_name) in gm handbook
+    - Can you send me a id of [mora](item_name)
+    - Can you send me a id [mora](item_name)
+    - Can you send me id of [mora](item_name)
+    - Can you send me id [mora](item_name)
+    - id of [mora](item_name)
+    - id of [mora](item_name) in gm handbook
+    - id [mora](item_name)
+    - id [mora](item_name) in gm handbook
+    - find id of [mora](item_name)
+    - find id [mora](item_name)
+    - find the id of [mora](item_name)
+    - find the id [mora](item_name)
+    - what is id for mora?
+- intent: grasscutter_gm_what_is_id_item2
+  examples: |
+    - How about id of [mora](item_name)
+    - How about [mora](item_name)
+    - How about [mora](item_name) id
+    - [mora](item_name)
+    - [mora](item_name) id
+    - [mora](item_name) id in gm handbook
+- intent: grasscutter_gm_wrong_id_item
+  examples: |
+    - Wrong ID
+    - Wrong ID of [mora](item_name)
+    - You give wrong ID of [mora](item_name)
+    - Why you give wrong ID of [mora](item_name)
+    - wrong id
+
+- intent: grasscutter_gm_command
+  examples: |
+    - How can i get that id
+    - Can you send me a command for it?
+    - Can you send me a command?
+    - Can you send me a command for id of [mora](item_name)
+    - Send me a command for id of [mora](item_name)
+    - Send me command please
+    - How can i get that id of [mora](item_name)
+    - Is there any command for id of [mora](item_name)
+    - How can i get that 
+    - How can i get that id
+    - How can i get that id of [mora](item_name)

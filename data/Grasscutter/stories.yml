@@ -1,0 +1,59 @@
+version: "3.1"
+
+stories:
+  - story: Answer question for find id GM Handbook
+    steps:
+    - intent: grasscutter_gm_what_is_id_item
+    - action: action_find_id_gm_handbook
+    - intent: grasscutter_gm_what_is_id_item2
+    - action: action_find_id_gm_handbook
+    - intent: grasscutter_gm_wrong_id_item
+    - action: utter_wrong_id_item
+  - story: Answer question for find id GM Handbook wrong id
+    steps:
+    - intent: grasscutter_gm_what_is_id_item
+    - action: action_find_id_gm_handbook
+    - intent: grasscutter_gm_wrong_id_item
+    - action: utter_wrong_id_item
+  - story: What is the command
+    steps:
+    - intent: grasscutter_gm_what_is_id_item
+    - action: action_find_id_gm_handbook
+    - intent: grasscutter_gm_command
+    - action: action_find_command_gm_handbook
+  - story: What is border and how to remove it
+    steps:
+    - intent: grasscutter_border_what_is_border
+    - action: utter_grasscutter_border_what_is_border
+    - intent: grasscutter_border_remove_border
+    - action: utter_grasscutter_border_remove_border
+  - story: How can i remove border and what is border
+    steps:
+    - intent: grasscutter_border_remove_border
+    - action: utter_grasscutter_border_remove_border
+    - intent: grasscutter_border_what_is_border
+    - action: utter_grasscutter_border_what_is_border
+responses:
+  utter_wrong_id_item:
+  - text: "Sorry for that, I will fix it soon."
+  - text: "I am sorry giving you wrong ID. I will fix it soon."
+  utter_grasscutter_border_what_is_border:
+  - text: "Bounds borders in a game are the areas that players or objects are not supposed to go beyond."
+  - text: "The border is the area that players or objects are not supposed to go beyond."
+  - text: "Border is the area that players or objects are not supposed to go beyond."
+  - text: "Borders in a game define the limits of the playable area or the area where players or objects can interact. They are essential for maintaining the gameplay experience and preventing players from accessing unintended areas or exploiting the game."
+  - text: "Borders can be represented visually, such as walls, barriers, or edges of the game world, or they can be invisible, using invisible barriers or triggers that prevent the player from going beyond a certain point."
+  - text: "The implementation of borders in a game can vary depending on the game's design and mechanics. For example, in a 2D side-scrolling game, the borders may be the left and right edges of the screen, while in a 3D open-world game, the borders might be mountain ranges, oceans, or invisible walls that enclose the playable area."
+  - text: "Game developers often use various techniques to ensure players stay within the borders, such as implementing collision detection, creating natural barriers in the environment, or using visual cues to guide the player."
+  - text: "Borders are important for maintaining the game's balance and keeping players focused on the intended gameplay experience. Properly designed borders prevent players from venturing into unfinished or untested areas of the game, which could lead to crashes, glitches, or other unintended consequences."
+  utter_grasscutter_border_remove_border:
+  - text: "To remove bounds borders in your game, you can use the command `/prop osall 1`. This command will remove all bounds borders and allow players and objects to travel outside of the game's intended boundaries."
+  - text: "If you want to remove bounds borders in the game, you can use the command `/prop osall 1`. Executing this command will disable all boundaries, enabling players and objects to traverse outside the intended limits."
+  - text: "To get rid of bounds borders in your game, input the command `/prop osall 1`. By doing so, you will remove all the borders, granting players and objects the freedom to venture beyond the prescribed boundaries."
+  - text: "Remove bounds borders in your game by utilizing the command `/prop osall 1`. This command effectively eliminates all borders, permitting players and objects to navigate outside the designated game boundaries."
+  - text: "Eradicate bounds borders in your game by entering the command `/prop osall 1`. This command will effectively remove all bounds borders, giving players and objects the ability to roam beyond the intended game limits."
+  - text: "To eliminate bounds borders in your game, input the command `/prop osall 1`. This command will delete all bounds borders, thereby allowing players and objects to move beyond the game's designated limits."
+  - text: "To disable bounds borders in your game, use the command `/prop osall 1`. This command will remove all bounds borders, letting players and objects wander outside the game's intended confines."
+  - text: "Erase bounds borders in your game by executing the command `/prop osall 1`. This command will remove all boundaries, allowing players and objects to travel beyond the game's predetermined limits."
+  - text: "To clear bounds borders in your game, type the command `/prop osall 1`. This command will remove all bounds borders, enabling players and objects to move outside the game's established boundaries."
+  - text: "Delete bounds borders in your game by entering the command `/prop osall 1`. This command will effectively remove all borders, giving players and objects the freedom to explore beyond the intended game limits."
