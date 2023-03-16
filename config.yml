@@ -33,10 +33,15 @@ pipeline:
   - name: "SpacyTokenizer"
   - name: "SpacyFeaturizer"
   - name: "RegexFeaturizer"
+  - name: "RegexEntityExtractor"
+    patterns:
+      - name: "VERSION"
+        pattern: "\\d+(\\.\\d+)+"
   - name: "DIETClassifier"
     priority: 2
     entity_recognition: False
     constrain_similarities: true
+    ignore_entitites: ["user_name", "now_date", "item_name", "name_game", "VERSION"]
   - name: "EntitySynonymMapper"
     constrain_similarities: true
     entity_recognition: false
@@ -50,7 +55,7 @@ pipeline:
     min_ngram: 1
     max_ngram: 4
   - name: FallbackClassifier # add this component and set its threshold parameter to 0.5 or any value you want 
-    threshold: 0.5
+    threshold: 0.7
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/

@@ -25,6 +25,12 @@ intents:
 - grasscutter_border_what_is_border
 - grasscutter_border_remove_border
 - tell_my_name
+- grasscutter_android_tutorial
+- grasscutter_android_account_password_error
+- bot_name
+- what_can_bot_do
+- grasscutter_command_item
+- grasscutter_command_quest
 entities:
 - user_name
 - now_date
@@ -34,6 +40,7 @@ entities:
 - GPE
 - LANGUAGE
 - PERSON
+- VERSION
 slots:
   user_name:
     type: any
@@ -55,6 +62,11 @@ slots:
     mappings:
     - type: from_text
       entity: name_game
+  VERSION:
+    type: text
+    mappings:
+    - type: from_text
+      entity: VERSION
 responses:
   utter_default:
   - text: Sorry, I didn't get that. Could you please rephrase?
@@ -74,8 +86,6 @@ responses:
   - text: I am a bot, powered by Rasa.
   utter_provide_name:
   - text: Hi {user_name}, how can I help you?
-  utter_date:
-  - text: Today is {now_date}
   utter_bot_fine:
   - text: I am fine, thank you.
   - text: I'm doing well, thanks for asking.
@@ -104,6 +114,16 @@ responses:
   - text: Sure, you can check this link "https://docs.elaxan.com/project/GCAndroid/install"
   - text: You can check this link "https://docs.elaxan.com/project/GCAndroid/install" to install GCAndroid
   - text: Certainly, you can check this link "https://docs.elaxan.com/project/GCAndroid/install" to install GCAndroid
+  utter_bot_name:
+  - text: You can call me Takina!
+  - text: My name is Takina
+  - text: Takina, this is my name!
+  utter_what_can_bot_do:
+  - text: I can provide you with questions related to Private Servers; however, my knowledge base may be insufficient to address certain inquiries.
+  - text: While I can generate questions about Private Servers, please note that my dataset has limitations, and I may not be able to answer some questions accurately.
+  - text: I'm able to supply questions concerning Private Servers, but be aware that my dataset has its constraints, and I might not have the information to answer some questions.
+  - text: I can present questions on the topic of Private Servers, but it's important to mention that my dataset is not comprehensive, and I may struggle with responding to certain questions.
+  - text: I have the capability to offer questions about Private Servers, but due to the limitations of my dataset, I may not have the necessary information to provide answers for some questions.
 response_selector:
   default:
   - text: I'm sorry, I don't understand. Could you please rephrase?
@@ -121,3 +141,5 @@ actions:
 - action_fiddler
 - action_find_command_gm_handbook
 - action_tell_my_name
+- action_grasscutter_android_tutorial
+- action_grasscutter_android_account_password_error

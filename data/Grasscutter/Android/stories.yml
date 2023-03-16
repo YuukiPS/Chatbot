@@ -1,0 +1,20 @@
+version: "3.1"
+
+stories:
+  - story: Account and Password error Android
+    steps:
+    - intent: grasscutter_android_account_password_error
+    - action: action_grasscutter_android_account_password_error
+
+  - story: Tutorial for 3.5 Android
+    steps:
+    - intent: grasscutter_android_tutorial
+    - action: action_grasscutter_android_tutorial
+
+rules:
+  - rule: Tutorial for 3.5 Android
+    steps:
+    - intent: grasscutter_android_tutorial
+    - slot_was_set:
+      - VERSION: 3.5
+    - action: action_grasscutter_android_tutorial

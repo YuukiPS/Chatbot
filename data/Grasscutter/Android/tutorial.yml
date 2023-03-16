@@ -1,0 +1,12 @@
+version: "3.1"
+
+nlu:
+- intent: grasscutter_android_tutorial
+  examples: |
+    - Can you recommend a video tutorial for the [3.5](VERSION) mobile tutorial?
+    - Is there a video tutorial available for the [3.5](VERSION) mobile version?
+    - Do you know of a video guide that can help me with the [3.5](VERSION) mobile tutorial?
+    - Can you provide a step-by-step video for the [3.5](VERSION) mobile tutorial?
+    - Are there any video resources available for learning the [3.5](VERSION) mobile tutorial?
+    - How can I find a video tutorial for the [3.5](VERSION) mobile tutorial?
+    - I'm having trouble with the [3.5](VERSION) mobile tutorial. Can you recommend a video tutorial?

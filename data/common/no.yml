@@ -1,0 +1,14 @@
+version: "3.1"
+
+nlu:
+  - intent: common_no_wrong_command
+    examples: |
+      - Wrong command
+      - You give wrong command
+      - The command doesn't work
+      - Not working for the command
+
+responses:
+  utter_common_no_wrong_command:
+  - text: "Sorry i give you wrong command, looks like I don't know that command yet."
+  - text: "Sorry i give you wrong command, I will learn it soon."

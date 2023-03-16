@@ -1,0 +1,12 @@
+version: "3.1"
+
+stories:
+  - story: What is command for Items
+    steps:
+    - intent: grasscutter_command_item
+    - action: utter_grasscutter_command_item
+
+  - story: What is command for Quest
+    steps:
+    - intent: grasscutter_command_quest
+    - action: utter_grasscutter_command_quest

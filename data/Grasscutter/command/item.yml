@@ -1,0 +1,27 @@
+version: "3.1"
+
+nlu:
+  - intent: grasscutter_command_item
+    examples: |
+      - What is command for items
+      - What comand for items
+      - Can you send me a command for items
+      - Is there a command for Items?
+      - command for Items
+      - what the command for Items
+      - What's the command to access items?
+      - Tell me the command for items, please.
+      - How do I use the command for items?
+      - Could you provide the item command?
+      - What is the command for interacting with items?
+      - Please share the command related to items.
+      - I need the command to manage items.
+      - Which command is used for items?
+
+responses:
+  utter_grasscutter_command_item:
+  - text: "You can use a command to access items. The command is `/give`\nHere is the full command `/give <items id> x<amount> lv<level> r<refinement>`."
+  - text: "To interact with items, use the `/give` command. The complete command looks like this: `/give <items id> x<amount> lv<level> r<refinement>`."
+  - text: "For item management, the command you need is `/give`. The entire command is as follows: `/give <items id> x<amount> lv<level> r<refinement>`."
+  - text: "The command for accessing items is `/give`. Here's the full format: `/give <items id> x<amount> lv<level> r<refinement>`."
+  - text: "Utilize the `/give` command to manage items. The full command structure is `/give <items id> x<amount> lv<level> r<refinement>`."

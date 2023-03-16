@@ -65,3 +65,8 @@ stories:
   steps:
   - intent: tell_my_name
   - action: action_tell_my_name
+
+- story: Bot name
+  steps:
+  - intent: bot_name
+  - action: utter_bot_name

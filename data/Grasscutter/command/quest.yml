@@ -1,0 +1,34 @@
+version: "3.1"
+
+nlu:
+  - intent: grasscutter_command_quest
+    examples: |
+      - command quests
+      - Can you tell me command for quests
+      - What is command for quests
+      - What comand for quests
+      - Can you send me a command for quests
+      - Is there a command for quests?
+      - command for quests
+      - what the command for quests
+      - What's the command to access quests?
+      - Tell me the command for quests, please.
+      - How do I use the command for quests?
+      - Could you provide the quest command?
+      - What is the command for interacting with quests?
+      - Please share the command related to quests.
+      - I need the command to manage quests.
+      - Which command is used for quests?
+
+responses:
+  utter_grasscutter_command_quest:
+  - text: "You can try to use command for add quest: `/q add <id quests>`\n\nAnd for remove quest you can try with: `/q remove <id quest>`"
+  - text: "For adding a quest, use the command: `/q add <id quests>`\n\nTo remove a quest, use the command: `/q remove <id quest>`"
+  - text: "To add a quest, input the command: `/q add <id quests>`\n\nFor removing a quest, type: `/q remove <id quest>`"
+  - text: "Use the command `/q add <id quests>` to add a quest.\n\nTo remove a quest, type `/q remove <id quest>`"
+  - text: "Adding a quest can be done with the command: `/q add <id quests>`\n\nFor quest removal, use: `/q remove <id quest>`"
+  - text: "Employ the command `/q add <id quests>` to add a quest.\n\nTo delete a quest, input `/q remove <id quest>`"
+  - text: "To insert a quest, utilize the command: `/q add <id quests>`\n\nFor quest elimination, try: `/q remove <id quest>`"
+  - text: "The command for adding a quest is `/q add <id quests>`\n\nFor quest removal, use the command `/q remove <id quest>`"
+  - text: "Initiate a quest with the command `/q add <id quests>`\n\nTo cancel a quest, type `/q remove <id quest>`"
+  - text: "For quest initiation, use the command `/q add <id quests>`\n\nIn order to remove a quest, input `/q remove <id quest>`"

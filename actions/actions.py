@@ -11,7 +11,6 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 from datetime import date
 import random, re, os, json

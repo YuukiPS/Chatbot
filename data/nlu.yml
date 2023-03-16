@@ -103,6 +103,15 @@ nlu:
     - What name am I known by?
     - Please let me know my name.
 
+- intent: bot_name
+  examples: |
+    - What is your name?
+    - Tell me your name
+    - Your name
+    - Do you have name?
+    - What you name
+    - Tell your name
+
 - intent: current_date
   examples: |
     - what is the date
@@ -124,3 +133,10 @@ nlu:
     - Why you give wrong answer
     - Wrong answer
     - this is wrong answer
+
+- intent: what_can_bot_do
+  examples: |
+    - What can you do?
+    - How can you assist me?
+    - What kind of support can you give me?
+    - What are some things you can help with?
