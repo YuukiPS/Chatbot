@@ -12,5 +12,4 @@ def search(keywords):
         else:
             continue
         break
-    print(results)
     return final
