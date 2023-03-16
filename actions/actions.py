@@ -15,6 +15,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from datetime import date
 import random, re, os, json
 from actions.findID import searchGM
+from actions.searchInternet import search
 #
 #
 # class ActionHelloWorld(Action):
@@ -313,4 +314,17 @@ class ActionTellMyName(Action):
                 "I'm unable to recognize your name."
             ]
             dispatcher.utter_message(text=random.choice(randomAnswer))
+        return []
+
+class ActionFallback(Action):
+    def name(self) -> Text:
+        return "action_fallback"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        results = search(tracker.latest_message["text"])
+        
+        dispatcher.utter_message(text=results)
         return []

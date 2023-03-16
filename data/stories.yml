@@ -52,7 +52,7 @@ stories:
 - story: Fallback scenario
   steps:
   - intent: nlu_fallback
-  - action: utter_default
+  - action: action_fallback
 
 - story: Talking about mod game
   steps:

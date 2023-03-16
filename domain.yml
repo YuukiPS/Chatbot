@@ -143,3 +143,4 @@ actions:
 - action_tell_my_name
 - action_grasscutter_android_tutorial
 - action_grasscutter_android_account_password_error
+- action_fallback
