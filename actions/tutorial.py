@@ -20,7 +20,7 @@ class ActionTutorialAndroid(Action):
             version = version.group(1)
             if version == "3.2":
                 randomAnswer = [
-                    "You can check out the {} tutorial here: https://youtu.be/VHMor4bl_Cs. Let me know if you have any questions.".format(version.group(1)),
+                    "You can check out the {} tutorial here: https://youtu.be/VHMor4bl_Cs. Let me know if you have any questions.".format(version),
                     "For a step-by-step guide, see the {} tutorial at https://youtu.be/VHMor4bl_Cs. Feel free to ask me anything.".format(version),
                     "Need some help with {}? Check out this tutorial at https://youtu.be/VHMor4bl_Cs. If you have any doubts, just ask!".format(version),
                     "The {} tutorial is available at https://youtu.be/VHMor4bl_Cs. If you need any clarification, don't hesitate to ask me.".format(version),
@@ -36,6 +36,7 @@ class ActionTutorialAndroid(Action):
                     "We apologize, but a mobile {} tutorial is not available at this time. You can always check our website or the official document at https://doc.yuuki.me for additional resources.".format(version),
                     "It's unfortunate, but we currently don't have a mobile {} tutorial. For more information, please visit our website or consult the official document at https://doc.yuuki.me.".format(version)
                 ]
+                dispatcher.utter_message(random.choice(randomAnswer))
                 return []
         else:
             randomAnswer = [
@@ -53,3 +54,34 @@ class ActionTutorialAndroid(Action):
             dispatcher.utter_message(random.choice(randomAnswer))
 
         return []
+
+class ActionNoTutorialVideoAndroid(Action):
+    def name(self) -> Text:
+        return "action_grasscutter_android_tutorial_reason"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        # get message
+        message = tracker.latest_message['text']
+        # extract version
+        version = re.search(r'(\d+\.\d+(\.\d+)?)', message)
+        if version:
+            randomAnswer = [
+                "I'm sorry to inform you that a mobile {} tutorial is currently unavailable. You can visit our website or access our official document at https://doc.yuuki.me for further details.".format(version),
+                "At present, we do not offer a mobile {} tutorial. Please feel free to explore our website or review our official documentation at https://doc.yuuki.me to find more information.".format(version),
+                "We apologize, but a mobile {} tutorial is not available at this time. You can always check our website or the official document at https://doc.yuuki.me for additional resources.".format(version),
+                "It's unfortunate, but we currently don't have a mobile {} tutorial. For more information, please visit our website or consult the official document at https://doc.yuuki.me.".format(version)
+            ]
+            dispatcher.utter_message(random.choice(randomAnswer))
+            return []
+        else:
+            randomAnswer = [
+                "I am sorry that there is no mobile tutorial available at the moment. You can visit our website or access our official document at https://doc.yuuki.me for further details.",
+                "At present, we do not offer a mobile tutorial. Please feel free to explore our website or review our official documentation at https://doc.yuuki.me to find more information.",
+                "We apologize, but a mobile tutorial is not available at this time. You can always check our website or the official document at https://doc.yuuki.me for additional resources.",
+                "It's unfortunate, but we currently don't have a mobile tutorial. For more information, please visit our website or consult the official document at https://doc.yuuki.me."
+            ]
+            dispatcher.utter_message(random.choice(randomAnswer))
+            return []

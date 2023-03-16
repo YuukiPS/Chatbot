@@ -10,6 +10,37 @@ stories:
     steps:
     - intent: grasscutter_android_tutorial
     - action: action_grasscutter_android_tutorial
+    - intent: grasscutter_android_tutorial_reason
+    - action: action_grasscutter_android_tutorial_reason
+    - intent: grasscutter_android_tutorial_another_version
+    - action: action_grasscutter_android_tutorial
+
+  - story: Tutorial for 3.5 Android
+    steps:
+    - intent: grasscutter_android_tutorial
+    - action: action_grasscutter_android_tutorial
+    - intent: grasscutter_android_tutorial_another_version
+    - action: action_grasscutter_android_tutorial
+    - intent: grasscutter_android_tutorial_reason
+    - action: action_grasscutter_android_tutorial_reason
+  
+  - story: Tutorial for 3.5 Android
+    steps:
+    - intent: grasscutter_android_tutorial_another_version
+    - action: action_grasscutter_android_tutorial
+    - intent: grasscutter_android_tutorial
+    - action: action_grasscutter_android_tutorial
+    - intent: grasscutter_android_tutorial_reason
+    - action: action_grasscutter_android_tutorial_reason
+
+  - story: Tutorial for 3.5 Android
+    steps:
+    - intent: grasscutter_android_tutorial_another_version
+    - action: action_grasscutter_android_tutorial
+    - intent: grasscutter_android_tutorial_reason
+    - action: action_grasscutter_android_tutorial_reason
+    - intent: grasscutter_android_tutorial
+    - action: action_grasscutter_android_tutorial
 
 rules:
   - rule: Tutorial for 3.5 Android

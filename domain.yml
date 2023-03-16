@@ -31,6 +31,12 @@ intents:
 - what_can_bot_do
 - grasscutter_command_item
 - grasscutter_command_quest
+- grasscutter_android_tutorial_reason
+- grasscutter_android_tutorial_another_version
+- grasscutter_gm_handbook
+- gio_no_bot
+- gio_no_bot_not_playing_in_gio
+- grasscutter_pc_update_game
 entities:
 - user_name
 - now_date
@@ -144,3 +150,5 @@ actions:
 - action_grasscutter_android_tutorial
 - action_grasscutter_android_account_password_error
 - action_fallback
+- action_grasscutter_android_tutorial_reason
+- action_grasscutter_pc_update_game

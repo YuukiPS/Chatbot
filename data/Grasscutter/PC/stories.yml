@@ -7,3 +7,8 @@ stories:
   - action: action_fiddler
   - intent: fiddler_another_domain
   - action: action_fiddler
+
+- story: How to update the game
+  steps:
+  - intent: grasscutter_pc_update_game
+  - action: action_grasscutter_pc_update_game

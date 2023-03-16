@@ -1,0 +1,2 @@
+duckduckgo_search==2.8.5
+rasa_sdk==3.4.1

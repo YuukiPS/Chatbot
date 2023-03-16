@@ -1,0 +1,35 @@
+version: "3.1"
+
+stories:
+  - story: gio_no_bot
+    steps:
+    - intent: gio_no_bot
+    - action: utter_gio_no_bot
+    - intent: gio_no_bot_not_playing_in_gio
+    - action: utter_gio_no_bot_not_playing_in_gio
+
+responses:
+  utter_gio_no_bot:
+  - text: "If you playing in GIO server, its normal. use <#987879230585069609> with `/cmd` to get a avatar or item, and use `/gm` to get a ID of Avatars"
+  - text: "If you talking about Ayaka's bot, its normal. Ayaka's bot is not available in GIO server."
+  - text: "Ayaka's bot is not available in the GIO server, but you can still get an avatar or item by using `/cmd` in <#987879230585069609>, or get an avatar ID by using `/gm`."
+  - text: "Unfortunately, Ayaka's bot is not supported in the GIO server. However, you can use `/cmd` in <#987879230585069609> to get an avatar or item, or use `/gm` to get an ID of Avatars."
+  - text: "Ayaka's bot is not currently available in the GIO server, but you can still use `/cmd` in <#987879230585069609> to get an avatar or item, or use `/gm` to get an ID of Avatars."
+  - text: "You won't find Ayaka's bot in the GIO server, but don't worry! You can still use `/cmd` in <#987879230585069609> to get an avatar or item, or use `/gm` to get an ID of Avatars."
+  - text: "Ayaka's bot is not available in the GIO server, but you can still use <#987879230585069609> with `/cmd` to get an avatar or item, and use `/gm` to get an ID of Avatars."
+  - text: "Ayaka's bot is not supported in the GIO server, but you can still use <#987879230585069609> with `/cmd` to get an avatar or item, and use `/gm` to get an ID of Avatars."
+  - text: "Unfortunately, Ayaka's bot is not available in the GIO server. However, you can still use <#987879230585069609> with `/cmd` to get an avatar or item, or use `/gm` to get an ID of Avatars."
+  - text: "Ayaka's bot is not currently supported in the GIO server, but you can still use `/cmd` in <#987879230585069609> to get an avatar or item, or use `/gm` to get an ID of Avatars."
+  - text: "You won't find Ayaka's bot in the GIO server, but you can still get an avatar or item by using `/cmd` in <#987879230585069609>, or get an avatar ID by using `/gm`."
+  - text: "Ayaka's bot is not available in the GIO server, but you can still get an avatar or item by using `/cmd` in <#987879230585069609>, or get an avatar ID by using `/gm`."
+  utter_gio_no_bot_not_playing_in_gio:
+  - text: "I apologize for the confusion. If you're not playing in the GIO server, try logging out and logging back in to the game and try again."
+  - text: "Sorry about that. If you're not in the GIO server, try logging out of the game and logging back in to see if it helps."
+  - text: "I'm sorry for the mix-up. If you're not playing in the GIO server, try logging out of the game and logging back in to see if that helps."
+  - text: "Apologies if I mentioned the wrong server. If you're not playing in GIO, try logging out and back in to the game and try again."
+  - text: "My apologies for any confusion. If you're not in the GIO server, try logging out and logging back in to the game to see if that resolves the issue."
+  - text: "I'm sorry for any confusion caused. If you're not playing in the GIO server, try logging out and logging back in to the game and try again."
+  - text: "I apologize if I gave you incorrect information. If you're not playing in the GIO server, try logging out of the game and logging back in to see if that helps."
+  - text: "Sorry about that. If you're not in the GIO server, try logging out and logging back in to the game to see if that resolves the issue."
+  - text: "I'm sorry for the confusion. If you're not playing in the GIO server, try logging out and logging back in to the game and see if that works."
+  - text: "Apologies for any confusion caused. If you're not in the GIO server, try logging out of the game and logging back in to see if that resolves the issue."

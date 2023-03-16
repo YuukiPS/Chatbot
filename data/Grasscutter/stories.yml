@@ -33,6 +33,10 @@ stories:
     - action: utter_grasscutter_border_remove_border
     - intent: grasscutter_border_what_is_border
     - action: utter_grasscutter_border_what_is_border
+  - story: Link for GM Handbook
+    steps:
+    - intent: grasscutter_gm_handbook
+    - action: utter_grasscutter_gm_handbook
 responses:
   utter_wrong_id_item:
   - text: "Sorry for that, I will fix it soon."
@@ -57,3 +61,15 @@ responses:
   - text: "Erase bounds borders in your game by executing the command `/prop osall 1`. This command will remove all boundaries, allowing players and objects to travel beyond the game's predetermined limits."
   - text: "To clear bounds borders in your game, type the command `/prop osall 1`. This command will remove all bounds borders, enabling players and objects to move outside the game's established boundaries."
   - text: "Delete bounds borders in your game by entering the command `/prop osall 1`. This command will effectively remove all borders, giving players and objects the freedom to explore beyond the intended game limits."
+
+  utter_grasscutter_gm_handbook:
+  - text: "The latest handbook can be found in <#970380775264518244>. You can find the 3.5 GM_Handbook here: <https://discord.com/channels/964119462188040202/970380775264518244/1070347031031316561>"
+  - text: "To access the latest handbook, please visit <#970380775264518244>. Here is the link to the 3.5 GM_Handbook: <https://discord.com/channels/964119462188040202/970380775264518244/1070347031031316561>"
+  - text: "You'll find the latest handbook in <#970380775264518244>. Here's the link to the 3.5 GM_Handbook: <https://discord.com/channels/964119462188040202/970380775264518244/1070347031031316561>"
+  - text: "You can check <#970380775264518244> for the latest handbook. Here's the 3.5 GM_Handbook link: <https://discord.com/channels/964119462188040202/970380775264518244/1070347031031316561>"
+  - text: "The latest handbook is available in <#970380775264518244>. You can access the 3.5 GM_Handbook here: <https://discord.com/channels/964119462188040202/970380775264518244/1070347031031316561>"
+  - text: "To find the latest handbook, go to <#970380775264518244>. Here's the 3.5 GM_Handbook link: <https://discord.com/channels/964119462188040202/970380775264518244/1070347031031316561>"
+  - text: "The 3.5 GM_Handbook can be found in <#970380775264518244>. For the latest handbook, please visit this channel: <https://discord.com/channels/964119462188040202/970380775264518244>"
+  - text: "You can find the latest handbook in <#970380775264518244>. Here's the link to the 3.5 GM_Handbook: <https://discord.com/channels/964119462188040202/970380775264518244/1070347031031316561>"
+  - text: "For the latest handbook, head over to <#970380775264518244>. You can find the 3.5 GM_Handbook here: <https://discord.com/channels/964119462188040202/970380775264518244/1070347031031316561>"
+  - text: "The 3.5 GM_Handbook is located in <#970380775264518244>. To access the latest handbook, visit this channel: <https://discord.com/channels/964119462188040202/970380775264518244>"
