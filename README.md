@@ -2,6 +2,26 @@
 
 This is a simple chatbot that uses the Rasa framework to handle user input and generate responses.
 
+## Contributing
+
+Contributions to this project are welcome! If you would like to contribute, please follow these steps:
+
+1. Fork this repository.
+2. Create a new branch for your changes.
+3. Make your changes and test them thoroughly.
+4. Submit a pull request.
+
+Please make sure that your code follows the existing style and conventions, and that any new features or changes are well-documented.
+
+## Acknowledgments
+
+This chatbot was developed using the Rasa framework, which is an open source tool for building chatbots and voice assistants. We would like to thank the Rasa community for their contributions and support.
+
+## References
+
+[Rasa documentation](https://rasa.com/docs/)\
+[Rasa GitHub repository](https://github.com/RasaHQ/rasa)
+
 ## Installation
 
 ### Install Rasa
@@ -105,3 +125,6 @@ curl -X POST -H "Content-Type: application/json" -d '{"message":"Hi", "sender":"
 
 Before running the code or command, you need to start Rasa with the `rasa run --enable-api` command. If you want to use custom actions, you need to start the action server with the `rasa run actions` command.
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/YuukiPS/Chatbot/blob/main/LICENSE) file for details.
