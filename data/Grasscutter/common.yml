@@ -10,3 +10,26 @@ nlu:
       - Can you tell me what is GC?
       - Mean of GC
       - What is GC mean?
+
+  - intent: grasscutter_what_is_grasscutter
+    examples: |
+      - What is Grasscutter?
+      - Explain what is Grasscutter
+      - Can you explain what is Grasscutter?
+      - Can you explain to me what is Grasscutter?
+      - Can you tell me what is Grasscutter?
+      - Mean of Grasscutter
+      - What is Grasscutter mean?
+      - Explain about Grasscutter
+
+  - intent: grasscutter_where_to_download
+    examples: |
+      - Where is download link?
+      - Where to download?
+      - Can you send me download link?
+      - Where to download Grasscutter?
+      - Is there download link
+      - Where to download GC?
+      - Please send me download link
+      - I want to play Private Server
+      - I want to play Genshin Impact Private Server

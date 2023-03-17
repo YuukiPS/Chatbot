@@ -1,0 +1,26 @@
+version: "3.1"
+
+nlu:
+- intent: grasscutter_account_delete
+  examples: |
+    - How to delete account
+    - Can you show me how to delete account
+    - Is it possible to delete account
+    - How can i delete account
+    - Is there a way to delete account
+
+- intent: grasscutter_account_delete_solution
+  examples: |
+    - I want to delete account
+    - Is there another way to delete account
+    - Another way to delete account
+    - How then can i delete account
+
+responses:
+  utter_grasscutter_account_delete:
+    - text: "You can't delete account. You have to create a new account to start from scratch"
+    - text: "This is not possible. You have to create a new account to start from scratch"
+
+  utter_grasscutter_account_delete_solution:
+    - text: "If you want really to delete account, you can try to host your own server. Then delete account from your server with the command or from the database."
+    - text: "You can try to host your own server. Then delete account from your server with the command or from the database."

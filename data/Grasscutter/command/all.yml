@@ -1,0 +1,26 @@
+version: "3.1"
+
+nlu:
+  - intent: grasscutter_command_all
+    examples: |
+      - How to get all
+      - Command to get all
+      - What is the command to get all
+      - I want to get character, item, weapons all in one command
+      - I want to get all command
+
+  - intent: grasscutter_command_all_character
+    examples: |
+      - Then how to get all character?
+      - Command to get all character
+      - What is the command to get all character?
+      - I want to get all character
+      - Is there another commnad than `/give all` to get all character?
+      - Command to get all character in one command
+      - I want to get all character in one command
+
+responses:
+  utter_grasscutter_command_all:
+  - text: "I am sorry but the command for `/give all` has been removed."
+  utter_grasscutter_command_all_character:
+  - text: "You can try with this command: `/give avatars` to get all character. You can also add a level or constellation with adding argument `lv<level> c<constellation>` after the command. For example: `/give avatars lv1 c1` to get all character with level 1 and constellation 1."

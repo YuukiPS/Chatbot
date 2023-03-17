@@ -14,3 +14,52 @@ stories:
     - action: utter_grasscutter_command_quest
     - intent: common_no_wrong_command
     - action: utter_common_no_wrong_command
+  
+  - story: Command to get all
+    steps:
+    - intent: grasscutter_command_all
+    - action: utter_grasscutter_command_all
+    - intent: grasscutter_command_all_character
+    - action: utter_grasscutter_command_all_character
+    - intent: common_no_wrong_command
+    - action: utter_common_no_wrong_command
+
+  - story: Command to get avatars
+    steps:
+    - intent: grasscutter_command_all_character
+    - action: utter_grasscutter_command_all_character
+    - intent: common_no_wrong_command
+    - action: utter_common_no_wrong_command
+
+  - story: Command to get Weapon, how to get id, example command
+    steps:
+    - intent: grasscutter_command_weapon
+    - action: utter_grasscutter_command_weapon
+    - intent: grasscutter_command_weapon_id
+    - action: utter_grasscutter_command_weapon_id
+    - intent: grasscutter_command_weapon_full_command
+    - action: utter_grasscutter_command_weapon_full_command
+    - intent: common_no_wrong_command
+    - action: utter_common_no_wrong_command
+
+  - story: Command to get Weapon, Wrong command
+    steps:
+    - intent: grasscutter_command_weapon
+    - action: utter_grasscutter_command_weapon
+    - intent: common_no_wrong_command
+    - action: utter_common_no_wrong_command
+    - intent: grasscutter_command_weapon_full_command
+    - action: utter_grasscutter_command_weapon_full_command
+    - intent: common_no_wrong_command
+    - action: utter_common_no_wrong_command
+    - intent: grasscutter_command_weapon_id
+    - action: utter_grasscutter_command_weapon_id
+
+  - story: Example command to get Weapon
+    steps:
+    - intent: grasscutter_command_weapon_full_command
+    - action: utter_grasscutter_command_weapon_full_command
+    - intent: common_no_wrong_command
+    - action: utter_common_no_wrong_command
+    - intent: grasscutter_command_weapon
+    - action: utter_grasscutter_command_weapon

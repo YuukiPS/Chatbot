@@ -41,6 +41,20 @@ stories:
     steps:
     - intent: grasscutter_what_is_gc
     - action: utter_grasscutter_what_is_gc
+  - story: How to delete account and solution
+    steps:
+    - intent: grasscutter_account_delete
+    - action: utter_grasscutter_account_delete
+    - intent: grasscutter_account_delete_solution
+    - action: utter_grasscutter_account_delete_solution
+  - story: What is Grasscutter mean?
+    steps:
+    - intent: grasscutter_what_is_grasscutter
+    - action: utter_grasscutter_what_is_grasscutter
+  - story: Where to download
+    steps:
+    - intent: grasscutter_where_to_download
+    - action: utter_grasscutter_where_to_download
 responses:
   utter_wrong_id_item:
   - text: "Sorry for that, I will fix it soon."
@@ -81,3 +95,9 @@ responses:
   utter_grasscutter_what_is_gc:
   - text: "GC refers to Grasscutter, which is software used to run a Genshin Impact server that allows you to obtain characters, items, weapons, and gacha for free, without needing to pay or top up. However, one major disadvantage is that there are many bugs related to character skills, domains, quests, and other features."
   - text: "GC stands for Grasscutter, It is a software that allows you to play Genshin Impact on a server that has all the characters, items, weapons, and gacha for free, without needing to pay or top up. However, one major disadvantage is that there are many bugs related to character skills, domains, quests, and other features."
+
+  utter_grasscutter_what_is_grasscutter:
+  - text: "Grasscutter is a software that allows you to play Genshin Impact on a server that has all the characters, items, weapons, and gacha for free, without needing to pay or top up. However, one major disadvantage is that there are many bugs related to character skills, domains, quests, and other features."
+
+  utter_grasscutter_where_to_download:
+  - text: "I am not sure what you mean, but you can check on our website or official document: https://doc.yuuki.me"

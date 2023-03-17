@@ -1,0 +1,46 @@
+version: "3.1"
+
+nlu:
+  - intent: grasscutter_command_weapon
+    examples: |
+      - How to get weapon?
+      - Command to get weapon
+      - Is there a command to get weapon?
+      - what's command to get a weapon?
+      - What is command to get weapon?
+      - Can you tell me command to get weapon?
+      - How to get weapon in Grasscutter?
+      - PLease tell me command to get weapon
+
+  - intent: grasscutter_command_weapon_id
+    examples: |
+      - What's id of weapon?
+      - What is id of weapon?
+      - Can you tell me id of weapon?
+      - Explain id of weapon
+      - I don't know id of weapon
+      - I don't understand id of weapon
+      - Please tell me id of weapon
+
+  - intent: grasscutter_command_weapon_full_command
+    examples: |
+      - Send me example for It
+      - Can you send me example for It
+      - Can you tell me example for It
+      - I don't know the command
+      - I don't understand the command
+      - Please tell me the command
+      - I want to know the command
+
+responses:
+  utter_grasscutter_command_weapon:
+  - text: "To get weapon, you can use the following command: `/give <weapon id> x<amount> lv<level> r<refinement>`"
+  - text: "You can use the command `/give <weapon id> x<amount> lv<level> r<refinement>` to get weapon"
+  - text: "To get weapon, use the command `/give <weapon id> x<amount> lv<level> r<refinement>`"
+
+  utter_grasscutter_command_weapon_id:
+  - text: "It's hard to tell you the id of weapon, because there are too many weapons in the game. You can ask me the name of the weapon, and I will tell you the id of the weapon."
+  - text: "I can't tell you the id of weapon, because there are too many weapons in the game. You can ask me the name of the weapon, and I will tell you the id of the weapon."
+
+  utter_grasscutter_command_weapon_full_command:
+  - text: "Here is full command for get a weapon: `/give 13501 x1 lv1 r0`. `x1` is amount that i got weapon, `lv1` is level of weapon, `r0` is refinement of weapon."

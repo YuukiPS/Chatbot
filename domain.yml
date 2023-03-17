@@ -52,6 +52,15 @@ intents:
 - gio_android_localhost
 - gio_android_download
 - grasscutter_what_is_gc
+- grasscutter_account_delete
+- grasscutter_account_delete_solution
+- grasscutter_command_all
+- grasscutter_command_all_character
+- grasscutter_what_is_grasscutter
+- grasscutter_command_weapon
+- grasscutter_command_weapon_id
+- grasscutter_command_weapon_full_command
+- grasscutter_where_to_download
 entities:
 - user_name
 - now_date
