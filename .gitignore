@@ -14,3 +14,4 @@ __pycache__
 /cache
 /rasa_server.service
 /rasa_action_server.service
+/huggingface.py

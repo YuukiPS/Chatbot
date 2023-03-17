@@ -70,3 +70,8 @@ stories:
   steps:
   - intent: bot_name
   - action: utter_bot_name
+
+- story: What can bot do
+  steps:
+  - intent: what_can_bot_do
+  - action: utter_what_can_bot_do

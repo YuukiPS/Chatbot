@@ -12,3 +12,10 @@ stories:
   steps:
   - intent: grasscutter_pc_update_game
   - action: action_grasscutter_pc_update_game
+
+- story: How to get the RSAPatch for PC
+  steps:
+  - intent: grasscutter_pc_rsa
+  - action: utter_grasscutter_pc_rsa
+  - intent: grasscutter_pc_rsa_android
+  - action: utter_grasscutter_pc_rsa_android

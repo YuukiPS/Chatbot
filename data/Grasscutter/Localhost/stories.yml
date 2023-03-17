@@ -1,0 +1,7 @@
+version: "3.1"
+
+stories:
+  - story: How to play together with friend on localhost?
+    steps:
+    - intent: grasscutter_localhost_how_to_play_together_with_friend
+    - action: utter_grasscutter_localhost_how_to_play_together_with_friend

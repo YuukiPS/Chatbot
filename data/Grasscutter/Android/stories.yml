@@ -42,6 +42,11 @@ stories:
     - intent: grasscutter_android_tutorial
     - action: action_grasscutter_android_tutorial
 
+  - story: Download link for Android
+    steps:
+    - intent: grasscutter_android_download_link
+    - action: utter_grasscutter_android_download_link
+
 rules:
   - rule: Tutorial for 3.5 Android
     steps:

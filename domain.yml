@@ -37,6 +37,11 @@ intents:
 - gio_no_bot
 - gio_no_bot_not_playing_in_gio
 - grasscutter_pc_update_game
+- grasscutter_pc_rsa
+- grasscutter_pc_rsa_android
+- grasscutter_android_download_link
+- grasscutter_localhost_how_to_play_together_with_friend
+- common_no_wrong_command
 entities:
 - user_name
 - now_date
@@ -74,9 +79,6 @@ slots:
     - type: from_text
       entity: VERSION
 responses:
-  utter_default:
-  - text: Sorry, I didn't get that. Could you please rephrase?
-  - text: I'm sorry, I didn't understand that. Could you please rephrase?
   utter_greet:
   - text: Hey! How are you?
   utter_cheer_up:

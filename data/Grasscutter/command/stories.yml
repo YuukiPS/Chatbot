@@ -5,8 +5,12 @@ stories:
     steps:
     - intent: grasscutter_command_item
     - action: utter_grasscutter_command_item
+    - intent: common_no_wrong_command
+    - action: utter_common_no_wrong_command
 
   - story: What is command for Quest
     steps:
     - intent: grasscutter_command_quest
     - action: utter_grasscutter_command_quest
+    - intent: common_no_wrong_command
+    - action: utter_common_no_wrong_command
