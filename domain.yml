@@ -42,6 +42,11 @@ intents:
 - grasscutter_android_download_link
 - grasscutter_localhost_how_to_play_together_with_friend
 - common_no_wrong_command
+- grasscutter_ios_download
+- grasscutter_ios_another_link
+- grasscutter_android_error_4214
+- gio_command
+- gio_command_how_to_use_it
 entities:
 - user_name
 - now_date

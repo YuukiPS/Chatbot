@@ -3,6 +3,8 @@ import random
 
 def search(keywords):
     final = None
+    # if you want to search on Internet, remove the 'return ""' line below
+    return ""
     if keywords == "":
         return "I'm sorry, I didn't understand that."
     while not final:

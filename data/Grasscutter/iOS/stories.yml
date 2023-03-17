@@ -1,0 +1,9 @@
+version: "3.1"
+
+stories:
+  - story: Is there download link for iOS?
+    steps:
+    - intent: grasscutter_ios_download
+    - action: utter_grasscutter_ios_download
+    - intent: grasscutter_ios_another_link
+    - action: utter_grasscutter_ios_another_link

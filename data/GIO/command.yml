@@ -1,0 +1,30 @@
+version: "3.1"
+
+nlu:
+  - intent: gio_command
+    examples: |
+      - Can you tell me a command list for GIO?
+      - What is the command list for GIO?
+      - Tell me list of command for GIO
+      - Please tell me a command list for GIO
+      - I want to know a command list for GIO
+      - I want to know list of command for GIO
+
+  - intent: gio_command_how_to_use_it
+    examples: |
+      - Where can i use it
+      - How to use it
+      - Can you tell me where to use it
+      - I want to know where to use it
+      - I want to know how to use it
+      - Please tell me where to use it
+
+responses:
+  utter_gio_command:
+    - text: "Here is the list of command list GIO:\n```\nstamina infinite off|on\nenergy infinite off|on\nkill self\nkill monster all\nwudi global avatar on|off (your infinite hp)\nwudi global monster on|off (monster infinite hp)\ntalent unlock all\npoint 3 all (unlock all teleports)\nquest accept 30904 (Unlock Multiplayer)\nquest accept 35801 (Unlock Wish)\nquest accept 35603 (Unlock Fly)\nequip add 13501 90 6 (item_id=13501 level=90 protomte_level=6) (Add Weapons)\nitem add 102 555 (102=id_item) (555=Amount) (Add Item)\nitem add all (add all item + including all characters in level 1)\nitem clear 102 555 (Remove item)\navatar add 10000002 (Add character) (10000002=Ayaka :*)\nquest add|accept|finish 30302 (Add/Accept/Finish Quest)\nplayer level 60 (Level Player)\njump 1009 (Teleports to scene_id) (1009=AngelShare, not all id_scene work)\ngoto 1 1 1 (x,y,z in gc use /pos to see location)\ndungeon 30604 (30604=id_scene not work) (Teleports to dungeon)\nmonster 20010101 5 20 {20010101=id_monster,5=total,20=level} spwan monster\nmcoin 10000 (Genesis Crystal)\nscoin 10000 (?)\nhcoin 10000 (?)\nhome_coin 1000 (Realm currency)```"
+    - text: "For command list GIO:\n```\nstamina infinite off|on\nenergy infinite off|on\nkill self\nkill monster all\nwudi global avatar on|off (your infinite hp)\nwudi global monster on|off (monster infinite hp)\ntalent unlock all\npoint 3 all (unlock all teleports)\nquest accept 30904 (Unlock Multiplayer)\nquest accept 35801 (Unlock Wish)\nquest accept 35603 (Unlock Fly)\nequip add 13501 90 6 (item_id=13501 level=90 protomte_level=6) (Add Weapons)\nitem add 102 555 (102=id_item) (555=Amount) (Add Item)\nitem add all (add all item + including all characters in level 1)\nitem clear 102 555 (Remove item)\navatar add 10000002 (Add character) (10000002=Ayaka :*)\nquest add|accept|finish 30302 (Add/Accept/Finish Quest)\nplayer level 60 (Level Player)\njump 1009 (Teleports to scene_id) (1009=AngelShare, not all id_scene work)\ngoto 1 1 1 (x,y,z in gc use /pos to see location)\ndungeon 30604 (30604=id_scene not work) (Teleports to dungeon)\nmonster 20010101 5 20 {20010101=id_monster,5=total,20=level} spwan monster\nmcoin 10000 (Genesis Crystal)\nscoin 10000 (?)\nhcoin 10000 (?)\nhome_coin 1000 (Realm currency)```"
+
+  utter_gio_command_how_to_use_it:
+    - text: "To use it, you can go to <#987879230585069609> channel, and type `/cmd`"
+    - text: "If you want to use it, you can go to <#987879230585069609> channel, and type `/cmd`"
+    - text: "You can use it by going to <#987879230585069609> channel, and type `/cmd`"

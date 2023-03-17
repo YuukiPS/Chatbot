@@ -47,6 +47,11 @@ stories:
     - intent: grasscutter_android_download_link
     - action: utter_grasscutter_android_download_link
 
+  - story: How to fix 4214 error in Android
+    steps:
+    - intent: grasscutter_android_error_4214
+    - action: utter_grasscutter_android_error_4214
+
 rules:
   - rule: Tutorial for 3.5 Android
     steps:
