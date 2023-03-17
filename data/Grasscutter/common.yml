@@ -1,0 +1,12 @@
+version: "3.1"
+
+nlu:
+  - intent: grasscutter_what_is_gc
+    examples: |
+      - What is GC?
+      - Explain what is GC
+      - Can you explain what is GC?
+      - Can you explain to me what is GC?
+      - Can you tell me what is GC?
+      - Mean of GC
+      - What is GC mean?

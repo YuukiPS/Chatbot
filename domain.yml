@@ -49,6 +49,9 @@ intents:
 - gio_command_how_to_use_it
 - gio_command_example
 - how_to_use_command_gm
+- gio_android_localhost
+- gio_android_download
+- grasscutter_what_is_gc
 entities:
 - user_name
 - now_date
@@ -100,6 +103,7 @@ responses:
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
   utter_provide_name:
+  # TOOD: FIx user_name slot output as None
   - text: Hi {user_name}, how can I help you?
   utter_bot_fine:
   - text: I am fine, thank you.

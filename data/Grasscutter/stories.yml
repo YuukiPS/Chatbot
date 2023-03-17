@@ -37,6 +37,10 @@ stories:
     steps:
     - intent: grasscutter_gm_handbook
     - action: utter_grasscutter_gm_handbook
+  - story: What is GC mean?
+    steps:
+    - intent: grasscutter_what_is_gc
+    - action: utter_grasscutter_what_is_gc
 responses:
   utter_wrong_id_item:
   - text: "Sorry for that, I will fix it soon."
@@ -73,3 +77,7 @@ responses:
   - text: "You can find the latest handbook in <#970380775264518244>. Here's the link to the 3.5 GM_Handbook: <https://discord.com/channels/964119462188040202/970380775264518244/1070347031031316561>"
   - text: "For the latest handbook, head over to <#970380775264518244>. You can find the 3.5 GM_Handbook here: <https://discord.com/channels/964119462188040202/970380775264518244/1070347031031316561>"
   - text: "The 3.5 GM_Handbook is located in <#970380775264518244>. To access the latest handbook, visit this channel: <https://discord.com/channels/964119462188040202/970380775264518244>"
+
+  utter_grasscutter_what_is_gc:
+  - text: "GC refers to Grasscutter, which is software used to run a Genshin Impact server that allows you to obtain characters, items, weapons, and gacha for free, without needing to pay or top up. However, one major disadvantage is that there are many bugs related to character skills, domains, quests, and other features."
+  - text: "GC stands for Grasscutter, It is a software that allows you to play Genshin Impact on a server that has all the characters, items, weapons, and gacha for free, without needing to pay or top up. However, one major disadvantage is that there are many bugs related to character skills, domains, quests, and other features."
