@@ -75,3 +75,8 @@ stories:
   steps:
   - intent: what_can_bot_do
   - action: utter_what_can_bot_do
+
+- story: How to use command `/gm`
+  steps:
+  - intent: how_to_use_command_gm
+  - action: utter_how_to_use_command_gm

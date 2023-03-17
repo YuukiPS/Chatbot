@@ -47,6 +47,8 @@ intents:
 - grasscutter_android_error_4214
 - gio_command
 - gio_command_how_to_use_it
+- gio_command_example
+- how_to_use_command_gm
 entities:
 - user_name
 - now_date
@@ -137,6 +139,39 @@ responses:
   - text: I'm able to supply questions concerning Private Servers, but be aware that my dataset has its constraints, and I might not have the information to answer some questions.
   - text: I can present questions on the topic of Private Servers, but it's important to mention that my dataset is not comprehensive, and I may struggle with responding to certain questions.
   - text: I have the capability to offer questions about Private Servers, but due to the limitations of my dataset, I may not have the necessary information to provide answers for some questions.
+  utter_how_to_use_command_gm:
+  - text: >
+      To use command `/gm`, first go to <#987879230585069609> channel, and type `/gm` then you can use it.
+      For example `/gm search: Kamisato Ayaka`, then you will find the result Id, Name, Category, and image of Kamisato Ayaka.
+      And there is 2 button for command that you can use it to get a Avatar, Weapon, Item, and other command.
+  - text: >
+      If you want to use command `/gm` to get a ID of a Character, Items, Weapons, and other. You can go to <#987879230585069609> channel, and type `/gm` then you can use it.
+      Here is the example: `/gm search: Kamisato Ayaka`, then you will find the result Id, Name, Category, and image of Kamisato Ayaka.
+      You will see 2 button for command that you can use it to get a Avatar, Weapon, Item, and other command.
+  - text: >
+      To use the `/gm` command, first navigate to the <#987879230585069609> channel and type `/gm`. From there, you can use the command to search for characters, items, weapons, and more.
+      For example, you could type `/gm search: Diluc` to get information about the character Diluc. You'll see a list of results with IDs, names, categories, and images.
+      There are also two buttons you can use with the command to get more detailed information.
+  - text: >
+      Ready to use the `/gm` command? Head over to the <#987879230585069609> channel and type `/gm` to get started. From there, you can search for characters, items, weapons, and more.
+      Here's an example: type `/gm search: Venti` to get information about the character Venti. You'll see a list of results with IDs, names, categories, and images.
+      You can also use two buttons to get even more information.
+  - text: >
+      Want to use the `/gm` command to search for information? First, go to the <#987879230585069609> channel and type `/gm`. From there, you can search for characters, items, weapons, and more.
+      For example, try typing `/gm search: Mona` to get information about the character Mona. You'll see a list of results with IDs, names, categories, and images.
+      There are also two buttons you can use to get more detailed information.
+  - text: >
+      The `/gm` command is a great way to find information about characters, items, weapons, and more. To use it, go to the <#987879230585069609> channel and type `/gm`.
+      For example, type `/gm search: Zhongli` to get information about the character Zhongli. You'll see a list of results with IDs, names, categories, and images.
+      Don't forget to use the two buttons to get more detailed information!
+  - text: >
+      If you're looking for information about characters, items, weapons, and more, the `/gm` command is a great place to start. To use it, go to the <#987879230585069609> channel and type `/gm`.
+      For example, try typing `/gm search: Ganyu` to get information about the character Ganyu. You'll see a list of results with IDs, names, categories, and images.
+      And don't forget to use the two buttons to get even more information!
+  - text: >
+      The `/gm` command is your ticket to finding information about characters, items, weapons, and more. To use it, go to the <#987879230585069609> channel and type `/gm`.
+      For example, type `/gm search: Hu Tao` to get information about the character Hu Tao. You'll see a list of results with IDs, names, categories, and images.
+      Be sure to use the two buttons to get more detailed information!
 response_selector:
   default:
   - text: I'm sorry, I don't understand. Could you please rephrase?

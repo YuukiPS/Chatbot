@@ -18,6 +18,15 @@ nlu:
       - I want to know where to use it
       - I want to know how to use it
       - Please tell me where to use it
+  
+  - intent: gio_command_example
+    examples: |
+      - Can you give me an example of command list for GIO?
+      - What is the example of command list for GIO?
+      - Tell me example of command for GIO
+      - Example to use it
+      - I want to know example of command for GIO
+      - Tell me example
 
 responses:
   utter_gio_command:
@@ -28,3 +37,6 @@ responses:
     - text: "To use it, you can go to <#987879230585069609> channel, and type `/cmd`"
     - text: "If you want to use it, you can go to <#987879230585069609> channel, and type `/cmd`"
     - text: "You can use it by going to <#987879230585069609> channel, and type `/cmd`"
+
+  utter_gio_command_example:
+    - text: "Sure, here is example to use it!\nThe command `/cmd id: <id> uid: <uid> command:<command>`\n\nExample:\n`/cmd id: gio2 uid: <your_uid_game_> command: avatar add 10000002`\n\nfor `10000002` id is Kamisato Ayaka. For find id you can try to use command `/gm` in <#987879230585069609>"

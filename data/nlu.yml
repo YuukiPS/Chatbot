@@ -122,6 +122,7 @@ nlu:
     - how are you created
     - who made you
     - who created you
+    - who is your owner
 - intent: bot_fine
   examples: |
     - how are you
@@ -140,3 +141,11 @@ nlu:
     - How can you assist me?
     - What kind of support can you give me?
     - What are some things you can help with?
+
+- intent: how_to_use_command_gm
+  examples: |
+    - How to use command /gm
+    - Can you tell me how to use command /gm
+    - Example of command /gm
+    - Explain command /gm
+    - Do you know how to use command /gm

@@ -8,12 +8,21 @@ stories:
     - intent: gio_no_bot_not_playing_in_gio
     - action: utter_gio_no_bot_not_playing_in_gio
 
-  - story: command list for GIO
+  - story: command list for GIO, how to use it, and example
     steps:
     - intent: gio_command
     - action: utter_gio_command
     - intent: gio_command_how_to_use_it
     - action: utter_gio_command_how_to_use_it
+    - intent: gio_command_example
+    - action: utter_gio_command_example
+
+  - story: How to use command in GIO, and example
+    steps:
+    - intent: gio_command_how_to_use_it
+    - action: utter_gio_command_how_to_use_it
+    - intent: gio_command_example
+    - action: utter_gio_command_example
 
 responses:
   utter_gio_no_bot:
