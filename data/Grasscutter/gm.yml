@@ -3,48 +3,149 @@ nlu:
 - intent: grasscutter_gm_what_is_id_item
   examples: |
     - What is id of [mora](item_name)
+    - What is id of [Kamisato Ayaka](item_name)
+    - What is id of [Crude Double-Decker Pallet](item_name)
+    - What is id of [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - What is id [mora](item_name)
+    - What is id [Kamisato Ayaka](item_name)
+    - What is id [Crude Double-Decker Pallet](item_name)
+    - What is id [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - What is id [mora](item_name) in gm handbook
+    - What is id [Kamisato Ayaka](item_name) in gm handbook
+    - What is id [Crude Double-Decker Pallet](item_name) in gm handbook
+    - What is id [Two-Tier Vendor's Booth: Rising Fortunes](item_name) in gm handbook
     - What is id of [mora](item_name) in gm handbook
+    - What is id of [Kamisato Ayaka](item_name) in gm handbook
+    - What is id of [Crude Double-Decker Pallet](item_name) in gm handbook
+    - What is id of [Two-Tier Vendor's Booth: Rising Fortunes](item_name) in gm handbook
     - Can you send me a id of [mora](item_name)
+    - Can you send me a id of [Kamisato Ayaka](item_name)
+    - Can you send me a id of [Crude Double-Decker Pallet](item_name)
+    - Can you send me a id of [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - Can you send me a id [mora](item_name)
+    - Can you send me a id [Kamisato Ayaka](item_name)
+    - Can you send me a id [Crude Double-Decker Pallet](item_name)
+    - Can you send me a id [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - Can you send me id of [mora](item_name)
+    - Can you send me id of [Kamisato Ayaka](item_name)
+    - Can you send me id of [Crude Double-Decker Pallet](item_name)
+    - Can you send me id of [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - Can you send me id [mora](item_name)
+    - Can you send me id [Kamisato Ayaka](item_name)
+    - Can you send me id [Crude Double-Decker Pallet](item_name)
+    - Can you send me id [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - id of [mora](item_name)
+    - id of [Kamisato Ayaka](item_name)
+    - id of [Crude Double-Decker Pallet](item_name)
+    - id of [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - id of [mora](item_name) in gm handbook
+    - id of [Kamisato Ayaka](item_name) in gm handbook
+    - id of [Crude Double-Decker Pallet](item_name) in gm handbook
+    - id of [Two-Tier Vendor's Booth: Rising Fortunes](item_name) in gm handbook
     - id [mora](item_name)
+    - id [Kamisato Ayaka](item_name)
+    - id [Crude Double-Decker Pallet](item_name)
+    - id [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - id [mora](item_name) in gm handbook
+    - id [Kamisato Ayaka](item_name) in gm handbook
+    - id [Crude Double-Decker Pallet](item_name) in gm handbook
+    - id [Two-Tier Vendor's Booth: Rising Fortunes](item_name) in gm handbook
     - find id of [mora](item_name)
+    - find id of [Kamisato Ayaka](item_name)
+    - find id of [Crude Double-Decker Pallet](item_name)
+    - find id of [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - find id [mora](item_name)
+    - find id [Kamisato Ayaka](item_name)
+    - find id [Crude Double-Decker Pallet](item_name)
+    - find id [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - find the id of [mora](item_name)
+    - find the id of [Kamisato Ayaka](item_name)
+    - find the id of [Crude Double-Decker Pallet](item_name)
+    - find the id of [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - find the id [mora](item_name)
+    - find the id [Kamisato Ayaka](item_name)
+    - find the id [Crude Double-Decker Pallet](item_name)
+    - find the id [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - what is id for mora?
+    - what is id for Kamisato Ayaka?
+    - what is id for Crude Double-Decker Pallet?
+    - what is id for Two-Tier Vendor's Booth: Rising Fortunes?
 - intent: grasscutter_gm_what_is_id_item2
   examples: |
     - How about id of [mora](item_name)
+    - How about id of [Kamisato Ayaka](item_name)
+    - How about id of [Crude Double-Decker Pallet](item_name)
+    - How about id of [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - How about [mora](item_name)
+    - How about [Kamisato Ayaka](item_name)
+    - How about [Crude Double-Decker Pallet](item_name)
+    - How about [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - How about [mora](item_name) id
+    - How about [Kamisato Ayaka](item_name) id
+    - How about [Crude Double-Decker Pallet](item_name) id
     - [mora](item_name)
+    - [Kamisato Ayaka](item_name)
+    - [Crude Double-Decker Pallet](item_name)
+    - [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - [mora](item_name) id
+    - [Kamisato Ayaka](item_name) id
+    - [Crude Double-Decker Pallet](item_name) id
+    - [Two-Tier Vendor's Booth: Rising Fortunes](item_name) id
     - [mora](item_name) id in gm handbook
+    - [Kamisato Ayaka](item_name) id in gm handbook
+    - [Crude Double-Decker Pallet](item_name) id in gm handbook
+    - [Two-Tier Vendor's Booth: Rising Fortunes](item_name) id in gm handbook
 - intent: grasscutter_gm_wrong_id_item
   examples: |
     - Wrong ID
     - Wrong ID of [mora](item_name)
+    - Wrong ID of [Kamisato Ayaka](item_name)
+    - Wrong ID of [Crude Double-Decker Pallet](item_name)
+    - Wrong ID of [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - You give wrong ID of [mora](item_name)
+    - You give wrong ID of [Kamisato Ayaka](item_name)
+    - You give wrong ID of [Crude Double-Decker Pallet](item_name)
+    - You give wrong ID of [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - Why you give wrong ID of [mora](item_name)
-    - wrong id
+    - Why you give wrong ID of [Kamisato Ayaka](item_name)
+    - Why you give wrong ID of [Crude Double-Decker Pallet](item_name)
+    - Why you give wrong ID of [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
 
 - intent: grasscutter_gm_command
   examples: |
     - How can i get that id
+    - How can i get that id of [mora](item_name)
+    - How can i get that id of [Kamisato Ayaka](item_name)
+    - How can i get that id of [Crude Double-Decker Pallet](item_name)
+    - How can i get that id of [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - Can you send me a command for it?
     - Can you send me a command?
     - Can you send me a command for id of [mora](item_name)
+    - Can you send me a command for id of [Kamisato Ayaka](item_name)
+    - Can you send me a command for id of [Crude Double-Decker Pallet](item_name)
+    - Can you send me a command for id of [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - Send me a command for id of [mora](item_name)
+    - Send me a command for id of [Kamisato Ayaka](item_name)
+    - Send me a command for id of [Crude Double-Decker Pallet](item_name)
+    - Send me a command for id of [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - Send me command please
     - How can i get that id of [mora](item_name)
+    - How can i get that id of [Kamisato Ayaka](item_name)
+    - How can i get that id of [Crude Double-Decker Pallet](item_name)
+    - How can i get that id of [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - Is there any command for id of [mora](item_name)
+    - Is there any command for id of [Kamisato Ayaka](item_name)
+    - Is there any command for id of [Crude Double-Decker Pallet](item_name)
+    - Is there any command for id of [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
     - How can i get that 
     - How can i get that id
     - How can i get that id of [mora](item_name)
+    - How can i get that id of [Kamisato Ayaka](item_name)
+    - How can i get that id of [Crude Double-Decker Pallet](item_name)
+    - How can i get that id of [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
+    - Send command
+    - Send command to use it
+    - Send command to use it for id of [mora](item_name)
+    - Send command to use it for id of [Kamisato Ayaka](item_name)
+    - Send command to use it for id of [Crude Double-Decker Pallet](item_name)
+    - Send command to use it for id of [Two-Tier Vendor's Booth: Rising Fortunes](item_name)
