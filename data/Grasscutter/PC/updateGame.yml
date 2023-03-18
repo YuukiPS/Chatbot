@@ -4,11 +4,11 @@ nlu:
   - intent: grasscutter_pc_update_game
     examples: |
       - How to update the game
-      - How can i update game from 3.4 to 3.5
+      - How can i update game from [3.4](VERSION) to [3.5](VERSION)
       - Can you tell me how to update the game
-      - How do I update the game to 3.5?
+      - How do I update the game to [3.5](VERSION)?
       - How to update game to latest version?
-      - How to update from 3.4 to 3.5?
+      - How to update from [3.4](VERSION) to [3.5](VERSION)?
       - How can I update the game?
       - How do I update the game on PC?
       - What's the process for updating the game?

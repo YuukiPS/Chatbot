@@ -80,3 +80,8 @@ stories:
   steps:
   - intent: how_to_use_command_gm
   - action: utter_how_to_use_command_gm
+
+- story: Translate to Indonesia
+  steps:
+  - intent: translate_text
+  - action: action_translate

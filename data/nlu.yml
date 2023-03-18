@@ -149,3 +149,30 @@ nlu:
     - Example of command /gm
     - Explain command /gm
     - Do you know how to use command /gm
+
+- intent: translate_text
+  examples: |
+    - Can you translate [Hello](text) to [Indonesian](language)
+    - Translate [Hello](text) to [Indonesian](language)
+    - Translate [How are you doing](text) to [Indonesian](language)
+    - Translate [I am fine](text) to [Indonesian](language)
+    - Please translate [Good morning](text) to [French](language)
+    - Can you help me translate [I love you](text) to [Spanish](language)
+    - Translate [Where is the train station](text) to [German](language)
+    - Translate [I need help](text) to [Japanese](language)
+    - Can you translate [It's a beautiful day](text) to [Italian](language)
+    - Translate [What's your name](text) to [Russian](language)
+    - Please translate [I'm hungry](text) to [Chinese](language)
+    - Translate [I have a reservation](text) to [Portuguese](language)
+    - Can you translate [Where can I find a taxi](text) to [Arabic](language)
+    - Translate [Thank you](text) to [Korean](language)
+    - Translate [I'm sorry](text) to [Dutch](language)
+    - Can you translate [I don't understand](text) to [Turkish](language)
+    - Translate [See you later](text) to [Swedish](language)
+    - Please translate [What time is it](text) to [Greek](language)
+    - Can you help me translate [Where is the restroom](text) to [Thai](language)
+    - Translate [How much does it cost](text) to [Polish](language)
+    - Translate [Could you give me directions](text) to [Czech](language)
+    - Can you translate [What's the weather like](text) to [Danish](language)
+    - Translate [I'm lost](text) to [Finnish](language)
+    - Translate [I'm cold](text) in [Norwegian](language)

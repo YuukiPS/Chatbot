@@ -24,7 +24,7 @@ stories:
     - intent: common_no_wrong_command
     - action: utter_common_no_wrong_command
 
-  - story: Command to get avatars
+  - story: Command to get all character
     steps:
     - intent: grasscutter_command_all_character
     - action: utter_grasscutter_command_all_character
@@ -63,3 +63,10 @@ stories:
     - action: utter_common_no_wrong_command
     - intent: grasscutter_command_weapon
     - action: utter_grasscutter_command_weapon
+
+  - story: Command to get Avatar
+    steps:
+    - intent: grasscutter_command_avatar
+    - action: utter_grasscutter_command_avatar
+    - intent: common_no_wrong_command
+    - action: utter_common_no_wrong_command

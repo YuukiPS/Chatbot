@@ -1,0 +1,25 @@
+version: "3.1"
+
+nlu:
+  - intent: grasscutter_command_avatar
+    examples: |
+      - What is command for Avatar
+      - Can you tell me command for Avatar
+      - What is command for Avatar in game
+      - Command for Avatar
+      - Command Avatar
+      - How do I use the Avatar command
+      - Show me the Avatar command
+      - Please provide the Avatar command
+      - What's the command to control Avatar
+      - Avatar command in Grasscutter game
+      - How can I use Avatar command in the game
+      - Grasscutter game Avatar command
+      - Reveal the command for Avatar
+      - Guide me to the Avatar command
+      - In-game command for Avatar usage
+
+responses:
+  utter_grasscutter_command_avatar:
+  - text: "You can use a command to access Avatar. The command is `/give`\nHere is the full command `/give <Avatar id> x<amount> lv<level> c<constellation>`."
+  - text: "To interact with Avatar, use the `/give` command. The complete command looks like this: `/give <Avatar id> x<amount> lv<level> c<constellation>`."

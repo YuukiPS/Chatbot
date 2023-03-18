@@ -16,3 +16,5 @@ __pycache__
 /rasa_action_server.service
 /huggingface.py
 /convert.py
+/.env
+/test_entity.py

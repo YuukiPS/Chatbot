@@ -14,8 +14,9 @@ from rasa_sdk.executor import CollectingDispatcher
 
 from datetime import date
 import random, re, os, json
-from actions.findID import searchGM
-from actions.searchInternet import search
+from actions.Util.findID import searchGM
+from actions.Util.searchInternet import search
+from actions.Util.translate import my_translate
 #
 #
 # class ActionHelloWorld(Action):
@@ -84,7 +85,7 @@ class ActionFindIDGMHandbook(Action):
             search = tracker.latest_message["text"]
 
             match = re.search(r'\b(id|name)\b\s*(?:for|of)?\s*([\w\s]+)', search)
-            
+
             if match:
                 result = await searchGM(match.group(2))
                 if result["id"] == "Not Found":
@@ -138,8 +139,6 @@ class ActionCommandGMHandbook(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        getMessage = tracker.latest_message
         
         pathFolder = "./cache/" + tracker.sender_id
         pathFile = pathFolder + "/gm.json"
@@ -327,4 +326,29 @@ class ActionFallback(Action):
         results = search(tracker.latest_message["text"])
         
         dispatcher.utter_message(text=results)
+        return []
+
+
+class ActionTranslate(Action):
+    def name(self) -> Text:
+        return "action_translate"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        print(tracker.latest_message)
+        if "entities" in tracker.latest_message:
+            entities = tracker.latest_message["entities"]
+            text = None
+            language = None
+            if len(entities) > 0 and "value" in entities[0]:
+                text = entities[0]["value"]
+            if len(entities) > 1 and "value" in entities[1]:
+                language = entities[1]["value"]
+            result = my_translate(text, language)
+            dispatcher.utter_message(text=result)
+        else:
+            # code to handle non-existent entities
+            dispatcher.utter_message(text="I'm sorry, I didn't understand what you want to translate.")
+        # translate text
         return []

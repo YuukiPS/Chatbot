@@ -61,6 +61,8 @@ intents:
 - grasscutter_command_weapon_id
 - grasscutter_command_weapon_full_command
 - grasscutter_where_to_download
+- grasscutter_command_avatar
+- translate_text
 entities:
 - user_name
 - now_date
@@ -69,8 +71,11 @@ entities:
 - ORG
 - GPE
 - LANGUAGE
+- language
 - PERSON
 - VERSION
+- text
+- domain
 slots:
   user_name:
     type: any
@@ -80,23 +85,39 @@ slots:
   now_date:
     type: text
     mappings:
-    - type: from_text
+    - type: from_entity
       entity: now_date
   item_name:
     type: text
     mappings:
-    - type: from_text
+    - type: from_entity
       entity: item_name
   name_game:
     type: text
     mappings:
-    - type: from_text
+    - type: from_entity
       entity: name_game
   VERSION:
     type: text
     mappings:
-    - type: from_text
+    - type: from_entity
       entity: VERSION
+  text:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: text
+  language:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: language
+  domain:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: domain
+
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -207,3 +228,4 @@ actions:
 - action_fallback
 - action_grasscutter_android_tutorial_reason
 - action_grasscutter_pc_update_game
+- action_translate
