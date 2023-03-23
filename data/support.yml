@@ -1,0 +1,325 @@
+version: "3.1"
+
+nlu:
+
+- intent: support_start
+  examples: |
+    -help
+    -Help
+
+- intent: support_start_connect
+  examples: |
+    - 1
+    - connect
+    - Connect
+    - 1 connect
+    - 1 Connect
+    - 1. connect
+    - 1. Connect
+    - 1. Connect (How to connect to GC, GIO, etc.)
+
+- intent: support_start_connect_GC
+  examples: |
+    - 1
+    - gc
+    - GC
+    - 1 gc
+    - 1 GC
+    - 1. gc
+    - 1. GC
+
+- intent: support_start_connect_GIO
+  examples: |
+   - 2
+   - gio
+   - GIO
+   - 2 gio
+   - 2 GIO
+   - 2. gio
+   - 2. GIO
+
+- intent: support_start_connect_localhost
+  examples: |
+   - 3
+   - localhost
+   - Localhost
+   - LocalHost
+   - LOCALHOST
+   - 3 localhost
+   - 3 Localhost
+   - 3 LocalHost
+   - 3 LOCALHOST
+   - 3. localhost
+   - 3. Localhost
+   - 3. LocalHost
+   - 3. LOCALHOST
+
+- intent: support_start_server
+  examples: |
+    - 2
+    - server
+    - Server
+    - 2 server
+    - 2 Server
+    - 2. server
+    - 2. Server
+    - 2. Server (What is GC, GIO, etc.)
+
+- intent: support_start_command
+  examples: |
+    - 3
+    - command
+    - Command
+    - 3 command
+    - 3 Command
+    - 3. command
+    - 3. Command
+    - 3. Command (GC commands, GIO commands, etc.)
+
+- intent: support_start_modding
+  examples: |
+    - 4
+    - modding
+    - Modding
+    - 4 modding
+    - 4 Modding
+    - 4. modding
+    - 4. Modding
+    - 4. Modding (Character custom skin, cheat, etc.)
+
+responses:
+
+- utter_support_start: |
+    Hello there, what can I help you with?
+
+    ```
+    Please choose one of the following choice:
+    1. Connect (How to connect to GC, GIO, etc.)
+    2. Server (What is GC, GIO, etc.)
+    3. Command (GC commands, GIO commands, etc.)
+    4. Modding (Character custom skin, cheat, etc.)
+    ```
+    note: Type `cancel` to go back to the previous question or type `finish` to finish the conversation with the bot.
+
+- utter_support_start_connect: |
+     What server do you want to connect to?
+
+     ```
+     Please choose one of the following choice:
+     1. GC
+     2. GIO
+     3. Localhost
+     4. Official Server
+     ```
+     note: Type `cancel` to go back to the previous question or type `finish` to finish the conversation with the bot.
+
+- utter_support_start_connect_GC: |
+     What device are you going to use to join the server?
+
+     ```
+     Please choose one of the following choice:
+     1. Android
+     2. PC
+     3. iOS
+     ```
+     note: Type `cancel` to go back to the previous question or type `finish` to finish the conversation with the bot.
+
+- utter_support_start_connect_GC_android: |
+     To connect to GC private server using an Android device you have to download the full game resource first.
+     There are several ways to download the game resource:
+     
+     1. Download resource from the official server
+     To do this, what you have to do is install the official app from Play Store or Taptap, login to your official account, download the game resource until it has completed verifying game resource. You should be able to see the "celestia door" that show when your game resource is fully downloaded, verified, and ready to be used. Enter the game, open the Paimon menu, go to "settings" and download the voice over you would like to use to play in the "language" section.
+
+     After you have downloaded all the resource required, go to your file manager (recommended to use zArchiver), go to `storage/emulated/0/Android/data/com.miHoYo.GenshinImpact`. Most file manager already start at `storage/emulated/0` so you're left to look for the `Android/data/com.miHoYo.GenshinImpact' folder. Once you have found the `com.miHoYo.GenshinImpact` folder, you must rename it accordingly to the apk you're using (This will be stated at the "Download from the private server" section.
+
+     After renaming the folder, download the patched apk, install, then run it. You should now be redirected to the private server if you're using the patched apk.
+
+     To login, you can put anything in the `username` box. Make sure that this "username" is easy enough for you to remember but unique enough for anyone not to guess it. Password doesn't work in private server so people can login to your account just by guessing its username!
+
+
+     2. Download resource from third party cloud storage
+     You can also download the resource from any 3rd party source the you trust. You should be able to find all the download link for the game resource and apk in <#970380775264518244>. Most of the resource are splitted into several parts. If the download link contain several files, you will have to download everything, make sure they are all in the same folder, and extract the base zip file.
+
+     Check here to get more information about extracting parts files :
+     <https://www.google.com/search?q=how+to+extract+part+files&oq=how+to+extract+part+files>
+
+     After renaming the folder, download the patched apk, install, then run it. You should now be redirected to the private server if you're using the patched apk.
+
+     To login, you can put anything in the `username` box. Make sure that this "username" is easy enough for you to remember but unique enough for anyone not to guess it. Password doesn't work in private server so people can login to your account just by guessing its username!
+
+
+     3. Download resource from the private server
+     This is the most simple way to get the game resource, all you have to do is to download the game apk, install it, run it, put in the login credential you want to use for the private server, and then it should start downloading if the server is running.
+
+     Keep in mind that this method is exclusive to YuukiPS. If this method isn't working, its either that you're not playing in YuukiPS, the server isn't running correctly, or YuukiPS no longer support in-game resource download.
+
+     Download the patched apk here :
+     Android - Genshin Impact 3.5 global (GC)
+     <https://file2.yuuki.me/d/Public/OD1/Project/GenshinImpact/Data/Android/3.5.0/Global/YuukiPS.apk>
+     game resource folder name : `com.moe.yuukips`
+
+     Android - Genshin Impact 3.5 China (GC)
+     <https://file2.yuuki.me/p/Public/Local_EU/Project/GenshinImpact/Data/Android/3.5.0/Chinese/YuukiPS.apk>
+     game resource folder name : `com.miHoYo.Yuanshen`
+
+     
+     Hint: Type `simplify` to make the text shorter and only include the important part.
+     
+- utter_support_start_connect_GC_android_simplify: |
+     To connect to GC private server using an Android device you have to download the full game resource first.
+     There are several ways to download the game resource:
+     
+     - Download resource from the official server
+     1. Download official app from Play Store/Taptap
+     2. Login and download game resource
+     2.1. Download voice over language (optional)
+     3. Rename game folder in `storage/emulated/0/Android/data/` from `com.miHoYo.GenshinImpact` to patched apk game package name
+     4. Open the patched apk to play
+
+     - Download resource from third party cloud storage
+     1. Download game resource from provided links in <#970380775264518244>
+     2. Extract game resource
+     3. Rename game folder to patched apk game package name and move it to `storage/emulated/0/Android/data/`
+     4. Open the patched apk to play
+
+     - Download resource from the private server
+     1. Download and install patched apk
+     2. Login and download game resource
+     3. You're already in the patched apk, tap on the door to play. 
+
+
+     Download the patched apk here :
+     Android - Genshin Impact 3.5 global (GC)
+     <https://file2.yuuki.me/d/Public/OD1/Project/GenshinImpact/Data/Android/3.5.0/Global/YuukiPS.apk>
+     game resource folder name/game package : `com.moe.yuukips`
+
+     Android - Genshin Impact 3.5 China (GC)
+     <https://file2.yuuki.me/p/Public/Local_EU/Project/GenshinImpact/Data/Android/3.5.0/Chinese/YuukiPS.apk>
+     game resource folder name/game package : `com.miHoYo.Yuanshen`
+
+- utter_support_start_connect_GIO: |
+     What device are you going to use to join the server?
+
+     ```
+     Please choose one of the following choice:
+     1. Android
+     2. PC
+     3. iOS
+     ```
+     note: Type `cancel` to go back to the previous question or type `finish` to finish the conversation with the bot.
+
+- utter_support_start_connect_localhost: |
+     What device are you going to use to join the server?
+
+     ```
+     Please choose one of the following choice:
+     1. Android
+     2. PC
+     3. iOS
+     ```
+     note: Type `cancel` to go back to the previous question or type `finish` to finish the conversation with the bot.
+
+- utter_support_start_server: |
+    What server would you like to know about?
+
+    ```
+    Please choose one of the following choice:
+    1. GC
+    2. GIO
+    3. Localhost
+    ```
+    note: Type `cancel` to go back to the previous question or type `finish` to finish the conversation with the bot.
+
+- utter_support_start_modding: |
+    What modification would you like to apply to the game?
+
+    ```
+    1. GIMI (Custom model/skin of characters, weapons, etc)
+    2. Akebi/Acrepi (Cheat)
+    ```
+    note: Type `cancel` to go back to the previous question or type `finish` to finish the conversation with the bot.
+
+- utter_end: |
+    This is the end of the conversation. The bot is still a work in progress, if you still have further question, please create a support post in <#1048860849495875594>
+
+    Type `help` to restart the conversation.
+
+stories:
+
+  - story: start of support conversation.
+    steps:
+    - intent: support_start
+    - action: utter_support_start
+    - checkpoint: check_support_start
+
+    - story: start > connect
+      steps:
+       - checkpoint: check_support_start
+       - intent: support_start_connect
+       - action: utter_support_start_connect
+       - checkpoint: check_support_start_connect
+
+       - story: .. connect > GC
+         steps:
+         - checkpoint: check_support_start_connect
+         - intent: support_start_connect_GC
+         - action: utter_support_start_connect_GC
+         - checkpoint: check_support_start_connect_GC
+
+         - story: .. GC > android
+           steps:
+           - checkpoint: check_support_start_connect_GC
+           - intent: support_start_connect_GC_android
+           - action: utter_support_start_connect_GC_android
+           - checkpoint: check_support_start_connect_GC_android
+
+           - story: .. GC > android > simplify
+             steps:
+             - checkpoint: check_support_start_connect_GC_android
+             - intent: support_start_connect_GC_android_simplify
+             - action: utter_support_start_connect_GC_android_simplify
+             - checkpoint: check_support_start_connect_GC_android_simplify
+             - action: utter_end # remove this once new conversation has been added
+
+         - story: .. GC > PC
+           steps:
+           - checkpoint: check_support_start_connect_GC
+           - intent: support_start_connect_GC_PC
+           - action: utter_support_start_connect_GC_PC
+           - checkpoint: check_support_start_connect_GC_PC
+           - action: utter_end # remove this once new conversation has been added
+
+         - story: .. GC > iOS
+           steps:
+           - checkpoint: check_support_start_connect_GC
+           - intent: support_start_connect_GC_iOS
+           - action: utter_support_start_connect_GC_iOS
+           - checkpoint: check_support_start_connect_GC_iOS
+           - action: utter_end # remove this once new conversation has been added
+
+    - story: start > server
+      steps:
+      - checkpoint: check_support_start
+      - intent: support_start_server
+      - action: utter_support_start_server
+      - checkpoint: check_support_start_server
+      - action: utter_end # remove this once new conversation has been added
+
+    - story: start > command
+      steps:
+      - checkpoint: check_support_start
+      - intent: support_start_command
+      - action: utter_support_start_command
+      - checkpoint: check_support_start_command
+      - action: utter_end # remove this once new conversation has been added
+
+    - story: start > modding
+      steps:
+      - checkpoint: check_support_start
+      - intent: support_start_modding
+      - action: utter_support_start_modding
+      - checkpoint: check_support_start_modding
+      - action: utter_end # remove this once new conversation has been added
+
+# end of the code
