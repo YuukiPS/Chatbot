@@ -4,69 +4,69 @@ intents:
 - affirm
 - bot_challenge
 - bot_fine
+- bot_name
+- common_no_wrong_command
 - current_date
 - deny
 - fiddler
 - fiddler_another_domain
+- gio_android_download
+- gio_android_localhost
+- gio_command
+- gio_command_example
+- gio_command_how_to_use_it
+- gio_no_bot
+- gio_no_bot_not_playing_in_gio
 - goodbye
+- grasscutter_account_delete
+- grasscutter_account_delete_solution
+- grasscutter_android_account_password_error
+- grasscutter_android_download_link
+- grasscutter_android_error_4214
+- grasscutter_android_tutorial
+- grasscutter_android_tutorial_another_version
+- grasscutter_android_tutorial_reason
+- grasscutter_border_remove_border
+- grasscutter_border_what_is_border
+- grasscutter_command_all
+- grasscutter_command_all_character
+- grasscutter_command_avatar
+- grasscutter_command_item
+- grasscutter_command_quest
+- grasscutter_command_weapon
+- grasscutter_command_weapon_full_command
+- grasscutter_command_weapon_id
+- grasscutter_gm_command
+- grasscutter_gm_handbook
 - grasscutter_gm_what_is_id_item
 - grasscutter_gm_what_is_id_item2
 - grasscutter_gm_wrong_id_item
-- grasscutter_gm_command
+- grasscutter_ios_another_link
+- grasscutter_ios_download
+- grasscutter_localhost_how_to_play_together_with_friend
+- grasscutter_pc_rsa
+- grasscutter_pc_rsa_android
+- grasscutter_pc_update_game
+- grasscutter_what_is_gc
+- grasscutter_what_is_grasscutter
+- grasscutter_where_to_download
 - greet
 - how_bot_made
 - how_to_install_gcandroid
+- how_to_use_command_gm
 - mod_game
 - mod_game_why
 - mood_great
 - mood_unhappy
 - provide_name
-- wrong_answer
-- grasscutter_border_what_is_border
-- grasscutter_border_remove_border
 - tell_my_name
-- grasscutter_android_tutorial
-- grasscutter_android_account_password_error
-- bot_name
-- what_can_bot_do
-- grasscutter_command_item
-- grasscutter_command_quest
-- grasscutter_android_tutorial_reason
-- grasscutter_android_tutorial_another_version
-- grasscutter_gm_handbook
-- gio_no_bot
-- gio_no_bot_not_playing_in_gio
-- grasscutter_pc_update_game
-- grasscutter_pc_rsa
-- grasscutter_pc_rsa_android
-- grasscutter_android_download_link
-- grasscutter_localhost_how_to_play_together_with_friend
-- common_no_wrong_command
-- grasscutter_ios_download
-- grasscutter_ios_another_link
-- grasscutter_android_error_4214
-- gio_command
-- gio_command_how_to_use_it
-- gio_command_example
-- how_to_use_command_gm
-- gio_android_localhost
-- gio_android_download
-- grasscutter_what_is_gc
-- grasscutter_account_delete
-- grasscutter_account_delete_solution
-- grasscutter_command_all
-- grasscutter_command_all_character
-- grasscutter_what_is_grasscutter
-- grasscutter_command_weapon
-- grasscutter_command_weapon_id
-- grasscutter_command_weapon_full_command
-- grasscutter_where_to_download
-- grasscutter_command_avatar
 - translate_text
+- what_can_bot_do
+- wrong_answer
 entities:
+- item_name
 - user_name
 - now_date
-- item_name
 - name_game
 - ORG
 - GPE
@@ -117,7 +117,6 @@ slots:
     mappings:
     - type: from_entity
       entity: domain
-
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -133,7 +132,6 @@ responses:
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
   utter_provide_name:
-  # TOOD: FIx user_name slot output as None
   - text: Hi {user_name}, how can I help you?
   utter_bot_fine:
   - text: I am fine, thank you.
@@ -174,38 +172,23 @@ responses:
   - text: I can present questions on the topic of Private Servers, but it's important to mention that my dataset is not comprehensive, and I may struggle with responding to certain questions.
   - text: I have the capability to offer questions about Private Servers, but due to the limitations of my dataset, I may not have the necessary information to provide answers for some questions.
   utter_how_to_use_command_gm:
-  - text: >
-      To use command `/gm`, first go to <#987879230585069609> channel, and type `/gm` then you can use it.
-      For example `/gm search: Kamisato Ayaka`, then you will find the result Id, Name, Category, and image of Kamisato Ayaka.
-      And there is 2 button for command that you can use it to get a Avatar, Weapon, Item, and other command.
-  - text: >
-      If you want to use command `/gm` to get a ID of a Character, Items, Weapons, and other. You can go to <#987879230585069609> channel, and type `/gm` then you can use it.
-      Here is the example: `/gm search: Kamisato Ayaka`, then you will find the result Id, Name, Category, and image of Kamisato Ayaka.
-      You will see 2 button for command that you can use it to get a Avatar, Weapon, Item, and other command.
-  - text: >
-      To use the `/gm` command, first navigate to the <#987879230585069609> channel and type `/gm`. From there, you can use the command to search for characters, items, weapons, and more.
-      For example, you could type `/gm search: Diluc` to get information about the character Diluc. You'll see a list of results with IDs, names, categories, and images.
-      There are also two buttons you can use with the command to get more detailed information.
-  - text: >
-      Ready to use the `/gm` command? Head over to the <#987879230585069609> channel and type `/gm` to get started. From there, you can search for characters, items, weapons, and more.
-      Here's an example: type `/gm search: Venti` to get information about the character Venti. You'll see a list of results with IDs, names, categories, and images.
-      You can also use two buttons to get even more information.
-  - text: >
-      Want to use the `/gm` command to search for information? First, go to the <#987879230585069609> channel and type `/gm`. From there, you can search for characters, items, weapons, and more.
-      For example, try typing `/gm search: Mona` to get information about the character Mona. You'll see a list of results with IDs, names, categories, and images.
-      There are also two buttons you can use to get more detailed information.
-  - text: >
-      The `/gm` command is a great way to find information about characters, items, weapons, and more. To use it, go to the <#987879230585069609> channel and type `/gm`.
-      For example, type `/gm search: Zhongli` to get information about the character Zhongli. You'll see a list of results with IDs, names, categories, and images.
-      Don't forget to use the two buttons to get more detailed information!
-  - text: >
-      If you're looking for information about characters, items, weapons, and more, the `/gm` command is a great place to start. To use it, go to the <#987879230585069609> channel and type `/gm`.
-      For example, try typing `/gm search: Ganyu` to get information about the character Ganyu. You'll see a list of results with IDs, names, categories, and images.
-      And don't forget to use the two buttons to get even more information!
-  - text: >
-      The `/gm` command is your ticket to finding information about characters, items, weapons, and more. To use it, go to the <#987879230585069609> channel and type `/gm`.
-      For example, type `/gm search: Hu Tao` to get information about the character Hu Tao. You'll see a list of results with IDs, names, categories, and images.
-      Be sure to use the two buttons to get more detailed information!
+  - text: |
+      To use command `/gm`, first go to <#987879230585069609> channel, and type `/gm` then you can use it. For example `/gm search: Kamisato Ayaka`, then you will find the result Id, Name, Category, and image of Kamisato Ayaka. And there is 2 button for command that you can use it to get a Avatar, Weapon, Item, and other command.
+  - text: |
+      If you want to use command `/gm` to get a ID of a Character, Items, Weapons, and other. You can go to <#987879230585069609> channel, and type `/gm` then you can use it. Here is the example: `/gm search: Kamisato Ayaka`, then you will find the result Id, Name, Category, and image of Kamisato Ayaka. You will see 2 button for command that you can use it to get a Avatar, Weapon, Item, and other command.
+  - text: |
+      To use the `/gm` command, first navigate to the <#987879230585069609> channel and type `/gm`. From there, you can use the command to search for characters, items, weapons, and more. For example, you could type `/gm search: Diluc` to get information about the character Diluc. You'll see a list of results with IDs, names, categories, and images. There are also two buttons you can use with the command to get more detailed information.
+  - text: |
+      Ready to use the `/gm` command? Head over to the <#987879230585069609> channel and type `/gm` to get started. From there, you can search for characters, items, weapons, and more. Here's an example: type `/gm search: Venti` to get information about the character Venti. You'll see a list of results with IDs, names, categories, and images. You can also use two buttons to get even more information.
+  - text: |
+      Want to use the `/gm` command to search for information? First, go to the <#987879230585069609> channel and type `/gm`. From there, you can search for characters, items, weapons, and more. For example, try typing `/gm search: Mona` to get information about the character Mona. You'll see a list of results with IDs, names, categories, and images. There are also two buttons you can use to get more detailed information.
+  - text: |
+      The `/gm` command is a great way to find information about characters, items, weapons, and more. To use it, go to the <#987879230585069609> channel and type `/gm`. For example, type `/gm search: Zhongli` to get information about the character Zhongli. You'll see a list of results with IDs, names, categories, and images. Don't forget to use the two buttons to get more detailed information!
+  - text: |
+      If you're looking for information about characters, items, weapons, and more, the `/gm` command is a great place to start. To use it, go to the <#987879230585069609> channel and type `/gm`. For example, try typing `/gm search: Ganyu` to get information about the character Ganyu. You'll see a list of results with IDs, names, categories, and images. And don't forget to use the two buttons to get even more information!
+  - text: |
+      The `/gm` command is your ticket to finding information about characters, items, weapons, and more. To use it, go to the <#987879230585069609> channel and type `/gm`. For example, type `/gm search: Hu Tao` to get information about the character Hu Tao. You'll see a list of results with IDs, names, categories, and images. Be sure to use the two buttons to get more detailed information!
+
 response_selector:
   default:
   - text: I'm sorry, I don't understand. Could you please rephrase?
@@ -213,15 +196,15 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 actions:
-- utter_wrong_id_item
+- action_find_command_gm_handbook
 - action_find_id_gm_handbook
+- utter_wrong_id_item
 - utter_provide_name
 - utter_happy
 - action_current_date
 - action_how_bot_made
 - action_mod_game
 - action_fiddler
-- action_find_command_gm_handbook
 - action_tell_my_name
 - action_grasscutter_android_tutorial
 - action_grasscutter_android_account_password_error

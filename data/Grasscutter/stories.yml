@@ -4,8 +4,12 @@ stories:
   - story: Answer question for find id GM Handbook
     steps:
     - intent: grasscutter_gm_what_is_id_item
+      entities: 
+      - text: mora
     - action: action_find_id_gm_handbook
     - intent: grasscutter_gm_what_is_id_item2
+      entities:
+      - text: mora
     - action: action_find_id_gm_handbook
     - intent: grasscutter_gm_wrong_id_item
     - action: utter_wrong_id_item

@@ -85,3 +85,15 @@ stories:
   steps:
   - intent: translate_text
   - action: action_translate
+- story: interactive_story_1
+  steps:
+  - intent: grasscutter_gm_what_is_id_item
+    entities:
+    - item_name: Electro Sigil
+  - slot_was_set:
+    - item_name: Electro Sigil
+  - action: action_find_id_gm_handbook
+  - intent: grasscutter_gm_what_is_id_item
+    entities:
+    - item_name: primogem
+  - action: action_find_id_gm_handbook

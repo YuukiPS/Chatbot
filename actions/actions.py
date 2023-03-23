@@ -336,7 +336,6 @@ class ActionTranslate(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print(tracker.latest_message)
         if "entities" in tracker.latest_message:
             entities = tracker.latest_message["entities"]
             text = None

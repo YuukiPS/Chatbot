@@ -87,7 +87,6 @@ nlu:
     - I'm [ElaXan](user_name)
     - My name is [ElaXan](user_name)
     - Tell my name is [ElaXan](user_name)
-
 - intent: tell_my_name
   examples: |
     - What is my name
@@ -102,7 +101,6 @@ nlu:
     - What name do you have for me?
     - What name am I known by?
     - Please let me know my name.
-
 - intent: bot_name
   examples: |
     - What is your name?
@@ -111,11 +109,15 @@ nlu:
     - Do you have name?
     - What you name
     - Tell your name
-
 - intent: current_date
   examples: |
     - what is the date
     - what is the date today
+    - current data
+    - tell me the date now
+    - what is the date now
+    - do you know the date
+    - how is the date today
 - intent: how_bot_made
   examples: |
     - how are you made
@@ -134,14 +136,12 @@ nlu:
     - Why you give wrong answer
     - Wrong answer
     - this is wrong answer
-
 - intent: what_can_bot_do
   examples: |
     - What can you do?
     - How can you assist me?
     - What kind of support can you give me?
     - What are some things you can help with?
-
 - intent: how_to_use_command_gm
   examples: |
     - How to use command /gm
@@ -149,7 +149,6 @@ nlu:
     - Example of command /gm
     - Explain command /gm
     - Do you know how to use command /gm
-
 - intent: translate_text
   examples: |
     - Can you translate [Hello](text) to [Indonesian](language)
