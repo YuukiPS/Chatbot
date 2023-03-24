@@ -59,6 +59,26 @@ stories:
     steps:
     - intent: grasscutter_where_to_download
     - action: utter_grasscutter_where_to_download
+  - story: How to add quest
+    steps:
+    - intent: grasscutter_how_to_add_quest
+    - action: utter_grasscutter_how_to_add_quest
+  - story: How to remove quest
+    steps:
+    - intent: grasscutter_how_to_remove_quest
+    - action: utter_grasscutter_how_to_remove_quest
+  - story: How to add artifact
+    steps:
+    - intent: grasscutter_how_to_add_artifact
+    - action: utter_grasscutter_how_to_add_artifact
+  - story: How to remove artifact
+    steps:
+    - intent: grasscutter_how_to_remove_artifact
+    - action: utter_grasscutter_how_to_remove_artifact
+  - story: How to level up Character
+    steps:
+    - intent: grasscutter_how_to_level_up_character
+    - action: utter_grasscutter_how_to_level_up_character
 responses:
   utter_wrong_id_item:
   - text: "Sorry for that, I will fix it soon."
@@ -105,3 +125,13 @@ responses:
 
   utter_grasscutter_where_to_download:
   - text: "I am not sure what you mean, but you can check on our website or official document: https://doc.yuuki.me"
+  utter_grasscutter_how_to_remove_quest:
+  - text: "To remove quest, you can use this command `/q remove <quest id>`"
+  utter_grasscutter_how_to_add_quest:
+  - text: "To add quest, you can use this command `/q add <quest id>`"
+  utter_grasscutter_how_to_add_artifact:
+  - text: "Add Artifact you can follow or use this command `/give <artifact id> x<amount> lv<level>`"
+  utter_grasscutter_how_to_remove_artifact:
+  - text: "You can follow this command to remove artifact `/clear artifact` if you want to remove only 5 star artifact you can use this command `/clear artifact *5`"
+  utter_grasscutter_how_to_level_up_character:
+  - text: "If you already add a character to your account, you can't level up character unless you level up them with materials. However, if you haven't add a character to your account, you can use this command `/give <character id> x<amount> lv<level>` c<consideration> to level up character and add them to your account."

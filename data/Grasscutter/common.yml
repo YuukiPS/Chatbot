@@ -33,3 +33,44 @@ nlu:
       - Please send me download link
       - I want to play Private Server
       - I want to play Genshin Impact Private Server
+
+  - intent: grasscutter_how_to_remove_quest
+    examples: |
+      - How to remove quest?
+      - can you tell me how to remove quest?
+      - Please tell me how to remove quest?
+      - Tell me how to remove quest?
+
+  - intent: grasscutter_how_to_add_quest
+    examples: |
+      - How to add quest?
+      - can you tell me how to add quest?
+      - Please tell me how to add quest?
+      - Tell me how to add quest?
+
+  - intent: grasscutter_how_to_remove_artifact
+    examples: |
+      - How to remove artifact?
+      - can you tell me how to remove artifact?
+      - Please tell me how to remove artifact?
+      - Tell me how to remove artifact?
+
+  - intent: grasscutter_how_to_add_artifact
+    examples: |
+      - How to add artifact?
+      - can you tell me how to add artifact?
+      - Please tell me how to add artifact?
+      - Tell me how to add artifact?
+
+  - intent: grasscutter_how_to_level_up_character
+    examples: |
+      - How to level up character?
+      - How to level up avatar?
+      - Please tell me how to level up character?
+      - Please tell me how to level up avatar?
+      - Is there any way to level up character?
+      - Is there any way to level up avatar?
+      - Tell me how to level up character?
+      - Tell me how to level up avatar?
+      - Can you tell me how to level up character?
+      - Can you tell me how to level up avatar?
