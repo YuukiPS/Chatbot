@@ -63,6 +63,14 @@ intents:
 - translate_text
 - what_can_bot_do
 - wrong_answer
+- gio_command_weapon
+- grasscutter_how_to_remove_quest
+- grasscutter_how_to_add_quest
+- gio_command_find_id
+- grasscutter_how_to_add_artifact
+- grasscutter_how_to_remove_artifact
+- grasscutter_how_to_level_up_character
+- how_to_use_command
 entities:
 - item_name
 - user_name
@@ -188,7 +196,17 @@ responses:
       If you're looking for information about characters, items, weapons, and more, the `/gm` command is a great place to start. To use it, go to the <#987879230585069609> channel and type `/gm`. For example, try typing `/gm search: Ganyu` to get information about the character Ganyu. You'll see a list of results with IDs, names, categories, and images. And don't forget to use the two buttons to get even more information!
   - text: |
       The `/gm` command is your ticket to finding information about characters, items, weapons, and more. To use it, go to the <#987879230585069609> channel and type `/gm`. For example, type `/gm search: Hu Tao` to get information about the character Hu Tao. You'll see a list of results with IDs, names, categories, and images. Be sure to use the two buttons to get more detailed information!
+  utter_how_to_use_command:
+  - text: |
+      Here is to use command in GC:
+      First open the chat and add bot `Kamisato Ayaka`
+      After that enter command `/help` to see list of command
+      For example if you want to get all characters `/give avatars` and also you can add argument like `lv<level> c<constellation>`
 
+      GIO:
+      First go to <#987879230585069609> channel, and type `/cmd`
+      To see list of command check this link "<https://discord.com/channels/964119462188040202/970380775264518244/1049384699098828942>"
+      For example if you want to get a items Primogems `/cmd id: gio2 uid: <your uid> command: item add 201`
 response_selector:
   default:
   - text: I'm sorry, I don't understand. Could you please rephrase?

@@ -1,0 +1,24 @@
+version: "3.1"
+
+stories:
+  - story: What is command GIO for weapon
+    steps:
+    - intent: gio_command_weapon
+    - action: utter_gio_command_weapon
+
+  - story: command list for GIO, how to use it, and example
+    steps:
+    - intent: gio_command
+    - action: utter_gio_command
+    - intent: gio_command_how_to_use_it
+    - action: utter_gio_command_how_to_use_it
+    - intent: gio_command_example
+    - action: utter_gio_command_example
+  - story: command list for GIO, find id, and example
+    steps:
+    - intent: gio_command
+    - action: utter_gio_command
+    - intent: gio_command_find_id
+    - action: utter_gio_command_find_id
+    - intent: gio_command_example
+    - action: utter_gio_command_example
