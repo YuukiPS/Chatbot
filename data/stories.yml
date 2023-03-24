@@ -97,3 +97,7 @@ stories:
     entities:
     - item_name: primogem
   - action: action_find_id_gm_handbook
+- story: How to use command
+  steps:
+  - intent: how_to_use_command
+  - action: utter_how_to_use_command
