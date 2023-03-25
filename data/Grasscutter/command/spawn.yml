@@ -1,0 +1,33 @@
+version: "3.1"
+
+nlu:
+  - intent: grasscutter_command_spawn
+    examples: |
+      - Command to spawn enemy in Grasscutter?
+      - Is there a command to spawn enemy in Grasscutter?
+      - Command to spawn enemy in GC
+      - Is there a command to spawn enemy in GC?
+      - Any command to spawn enemy in Grasscutter?
+      - Any command to spawn enemy in GC?
+      - Need to spawn enemy in Grasscutter, any command?
+      - Need to spawn enemy in GC, any command?
+      - Command to spawn monster in Grasscutter?
+      - Is there a command to spawn monster in Grasscutter?
+      - Command to spawn monster in GC
+      - Is there a command to spawn monster in GC?
+      - Any command to spawn monster in Grasscutter?
+      - Any command to spawn monster in GC?
+      - Need to spawn monster in Grasscutter, any command?
+      - Need to spawn monster in GC, any command?
+      - Command to spawn mob in Grasscutter?
+      - Is there a command to spawn mob in Grasscutter?
+      - Command to spawn mob in GC
+      - Is there a command to spawn mob in GC?
+      - Any command to spawn mob in Grasscutter?
+      - Any command to spawn mob in GC?
+      - Need to spawn mob in Grasscutter, any command?
+      - Need to spawn mob in GC, any command?
+
+responses:
+  utter_grasscutter_command_spawn:
+  - text: "You can use the command `/spawn <enemy id> x<amount> lv<level> hp<health>` to spawn monster in Grasscutter"

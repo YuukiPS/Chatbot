@@ -101,3 +101,11 @@ stories:
   steps:
   - intent: how_to_use_command
   - action: utter_how_to_use_command
+- story: Can you send your source code chatbot?
+  steps:
+  - intent: source_code_chatbot
+  - action: utter_source_code_chatbot
+- story: What is your goal?
+  steps:
+  - intent: what_is_your_goal
+  - action: utter_what_is_your_goal

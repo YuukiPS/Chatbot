@@ -84,3 +84,12 @@ nlu:
       - How to skip cutscenes in Genshin Impact Private Server
       - How to skip cutscenes in GC
       - Tell me how to skip cutscenes
+  
+  - intent: grasscutter_mute_ayaka_bot
+    examples: |
+      - Is there a way to mute the ayaka chat
+      - How to mute the ayaka chat
+      - Please tell me how to mute the ayaka chat
+      - Just tell me how to mute the ayaka chat
+      - Show me how to mute the ayaka chat
+      - Tell me how to mute the ayaka chat

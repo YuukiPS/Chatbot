@@ -182,3 +182,18 @@ nlu:
     - Can you tell me how to use command
     - Example of command
     - Explain to use command
+
+- intent: source_code_chatbot
+  examples: |
+    - Can you send me your source code
+    - Send me your source code
+    - May I have your source code
+    - Kindly send me your source code
+    - Please send me a copy of your source code
+    - Send your code to me
+    - Can you send me your code
+
+- intent: what_is_your_goal
+  examples: |
+    - What is your goal
+    - What is your goal for today

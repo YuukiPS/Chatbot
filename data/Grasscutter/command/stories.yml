@@ -89,3 +89,20 @@ stories:
     steps:
     - intent: grasscutter_command_level_up_account
     - action: utter_grasscutter_command_level_up_account
+  
+  - story: How to spawn monster in Grasscutter
+    steps:
+    - intent: grasscutter_command_spawn
+    - action: utter_grasscutter_command_spawn
+  
+  - story: How to turn on and off godmode in Grasscutter
+    steps:
+    - intent: grasscutter_command_godmode_on
+    - action: utter_grasscutter_command_godmode_on
+    - intent: grasscutter_command_godmode_on_turn_off
+    - action: utter_grasscutter_command_godmode_on_turn_off
+  
+  - story: How to turn off godmode in Grasscutter
+    steps:
+    - intent: grasscutter_command_godmode_off
+    - action: utter_grasscutter_command_godmode_off

@@ -1,0 +1,35 @@
+version: "3.1"
+
+nlu:
+  - intent: grasscutter_command_godmode_on
+    examples: |
+      - How to activate god mode in Grasscutter
+      - Activate god mode in Grasscutter
+      - Can you activate god mode in Grasscutter
+      - How to activate god mode in Grasscutter
+      - Command to activate god mode in Grasscutter
+      - Please activate god mode in Grasscutter
+      - Turn on god mode in Grasscutter
+  - intent: grasscutter_command_godmode_on_turn_off
+    examples: |
+      - How can i turn off it
+      - How to turn off it
+      - After activate god mode in Grasscutter, how to turn off it
+      - Tell me how to turn off god mode in Grasscutter
+  
+  - intent: grasscutter_command_godmode_off
+    examples: |
+      - How to deactivate god mode in Grasscutter
+      - How to turn off god mode in Grasscutter
+      - Please turn off god mode in Grasscutter
+      - Turn off god mode in Grasscutter
+      - Command to turn off god mode in Grasscutter
+      - Can you turn off god mode in Grasscutter
+
+responses:
+  utter_grasscutter_command_godmode_on:
+  - text: "To activate god mode in Grasscutter, type the following command: `/prop godmode 1` in bot Ayaka's chat."
+  utter_grasscutter_command_godmode_on_turn_off:
+  - text: "After you activate god mode in Grasscutter, and want to turn off it, type the following command: `/prop godmode 0` in bot Ayaka's chat."
+  utter_grasscutter_command_godmode_off:
+  - text: "To deactivate god mode in Grasscutter, type the following command: `/prop godmode 0` in bot Ayaka's chat."

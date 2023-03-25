@@ -81,6 +81,15 @@ intents:
 - gio_common_level_up_character
 - gio_command_delete_artifact
 - gio_command_delete_quest
+- grasscutter_command_spawn
+- grasscutter_command_godmode_on
+- grasscutter_command_godmode_on_turn_off
+- grasscutter_command_godmode_off
+- id_water
+- id_water_command
+- source_code_chatbot
+- what_is_your_goal
+- grasscutter_mute_ayaka_bot
 entities:
 - item_name
 - user_name
@@ -217,6 +226,10 @@ responses:
       First go to <#987879230585069609> channel, and type `/cmd`
       To see list of command check this link "<https://discord.com/channels/964119462188040202/970380775264518244/1049384699098828942>"
       For example if you want to get a items Primogems `/cmd id: gio2 uid: <your uid> command: item add 201`
+  utter_source_code_chatbot:
+  - text: "You can find my source code here: <https://github.com/YuukiPS/Chatbot>\nUsing Rasa Open Source, a Python-based machine learning framework."
+  utter_what_is_your_goal:
+  - text: "Our goal is to collect data about Private Servers, You can help us to collect data by using our bot."
 response_selector:
   default:
   - text: I'm sorry, I don't understand. Could you please rephrase?
