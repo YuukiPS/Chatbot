@@ -1,0 +1,28 @@
+version: "3.1"
+
+nlu:
+  - intent: gio_command_delete_artifact
+    examples: |
+      - Command to delete all artifacts at once in GIO server?
+      - Is there a command to delete all artifacts at once in GIO server?
+      - Delete all artifacts at once in GIO server, command exists?
+      - Can you send me a command to delete all artifacts at once in GIO server?
+      - I want to delete all artifacts at once in GIO server, is there a command for that?
+      - One command to delete all artifacts at once in GIO server, exists?
+      - Any command to delete all artifacts at once in GIO server?
+      - Quick command to delete all artifacts at once in GIO server, exists?
+  
+  - intent: gio_command_delete_quest
+    examples: |
+      - How to delete quest in GIO
+      - Can you tell me how to delete quest in GIO
+      - Delete quest in GIO, how?
+      - Let me know how to delete quest in GIO
+      - Need to delete quest in GIO, how?
+      - Quick way to delete quest in GIO
+
+responses:
+  utter_gio_command_delete_artifact:
+  - text: "I am sorry, you can try to delete 1 by 1 for artifacts. I don't have any information to delete all artifacts at once.\nYou can try with command `/cmd id: gio2 uid: <your uid> command: item clear <artifact id> <amount>"
+  utter_gio_command_delete_quest:
+  - text: "You can try to delete quest using command `quest finish <quest id>` to delete quest in GIO server. Go to <#987879230585069609> and type `/cmd id: gio2 uid: <your uid> command: quest finish <quest id>`"

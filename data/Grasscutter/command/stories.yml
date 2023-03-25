@@ -70,3 +70,22 @@ stories:
     - action: utter_grasscutter_command_avatar
     - intent: common_no_wrong_command
     - action: utter_common_no_wrong_command
+
+  - story: My quest is glitch, is there a command to fix it?
+    steps:
+    - intent: grasscutter_command_quest_glitch
+    - action: utter_grasscutter_command_quest_glitch
+  
+  - story: I use command /give but didn't receive the item
+    steps:
+    - intent: grasscutter_command_not_received
+    - action: utter_grasscutter_command_not_received
+    - intent: grasscutter_command_not_received_remove
+    - action: utter_grasscutter_command_not_received_remove
+    - intent: common_no_wrong_command
+    - action: utter_common_no_wrong_command
+  
+  - story: How to level up my account?
+    steps:
+    - intent: grasscutter_command_level_up_account
+    - action: utter_grasscutter_command_level_up_account

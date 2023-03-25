@@ -74,3 +74,13 @@ nlu:
       - Tell me how to level up avatar?
       - Can you tell me how to level up character?
       - Can you tell me how to level up avatar?
+
+  - intent: grasscutter_how_to_skip_cutscene
+    examples: |
+      - How can you skip cutscenes
+      - How to skip cutscenes
+      - Command to skip cutscenes
+      - How to skip cutscenes in Genshin Impact
+      - How to skip cutscenes in Genshin Impact Private Server
+      - How to skip cutscenes in GC
+      - Tell me how to skip cutscenes

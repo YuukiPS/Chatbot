@@ -22,3 +22,11 @@ stories:
     - action: utter_gio_command_find_id
     - intent: gio_command_example
     - action: utter_gio_command_example
+  - story: How to delete artifact in GIO server
+    steps:
+    - intent: gio_command_delete_artifact
+    - action: utter_gio_command_delete_artifact
+  - story: How to delete quest in GIO server
+    steps:
+    - intent: gio_command_delete_quest
+    - action: utter_gio_command_delete_quest

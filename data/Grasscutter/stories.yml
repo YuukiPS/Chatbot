@@ -79,6 +79,10 @@ stories:
     steps:
     - intent: grasscutter_how_to_level_up_character
     - action: utter_grasscutter_how_to_level_up_character
+  - story: How to skip cutscene
+    steps:
+    - intent: grasscutter_how_to_skip_cutscene
+    - action: utter_grasscutter_how_to_skip_cutscene
 responses:
   utter_wrong_id_item:
   - text: "Sorry for that, I will fix it soon."
@@ -135,3 +139,5 @@ responses:
   - text: "You can follow this command to remove artifact `/clear artifact` if you want to remove only 5 star artifact you can use this command `/clear artifact *5`"
   utter_grasscutter_how_to_level_up_character:
   - text: "If you already add a character to your account, you can't level up character unless you level up them with materials. However, if you haven't add a character to your account, you can use this command `/give <character id> x<amount> lv<level>` c<consideration> to level up character and add them to your account."
+  utter_grasscutter_how_to_skip_cutscene:
+  - text: "You can't skip cutscene, you need to use Cheat Software to skip cutscene."

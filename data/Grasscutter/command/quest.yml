@@ -19,6 +19,15 @@ nlu:
       - Please share the command related to quests.
       - I need the command to manage quests.
       - Which command is used for quests?
+  - intent: grasscutter_command_quest_glitch
+    examples: |
+      - How to fix story mode glitch with command?
+      - Why the story mode glitch with command?
+      - Story glitch, is there a command to fix it?
+      - Story mode glitch, is there a command to fix it?
+      - My quest is glitch, is there a command to fix it?
+      - My quest is glitch, send me a command to fix it
+      - My quest is glitch, what is the command to fix it?
 
 responses:
   utter_grasscutter_command_quest:
@@ -32,3 +41,6 @@ responses:
   - text: "The command for adding a quest is `/q add <id quests>`\n\nFor quest removal, use the command `/q remove <id quest>`"
   - text: "Initiate a quest with the command `/q add <id quests>`\n\nTo cancel a quest, type `/q remove <id quest>`"
   - text: "For quest initiation, use the command `/q add <id quests>`\n\nIn order to remove a quest, input `/q remove <id quest>`"
+
+  utter_grasscutter_command_quest_glitch:
+  - text: "If you encounter a bug in a quest, you can try using the command `/q skip` to skip that quest."

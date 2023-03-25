@@ -7,6 +7,20 @@ stories:
     - action: utter_gio_no_bot
     - intent: gio_no_bot_not_playing_in_gio
     - action: utter_gio_no_bot_not_playing_in_gio
+  
+  - story: What is GIO2 id
+    steps:
+    - intent: gio_common_what_is_gio2
+    - action: utter_gio_common_what_is_gio2
+  
+  - story: How to use /cmd command in GIO
+    steps:
+    - intent: gio_common_how_to_use_command_cmd
+    - action: utter_gio_common_how_to_use_command_cmd
+  - story: How to level up characters in GIO
+    steps:
+    - intent: gio_common_level_up_character
+    - action: utter_gio_common_level_up_character
 
 responses:
   utter_gio_no_bot:
@@ -33,3 +47,10 @@ responses:
   - text: "Sorry about that. If you're not in the GIO server, try logging out and logging back in to the game to see if that resolves the issue."
   - text: "I'm sorry for the confusion. If you're not playing in the GIO server, try logging out and logging back in to the game and see if that works."
   - text: "Apologies for any confusion caused. If you're not in the GIO server, try logging out of the game and logging back in to see if that resolves the issue."
+
+  utter_gio_common_what_is_gio2:
+  - text: "Gio2 is a server ID used to access commands. It allows players to interact, get items, level up character, and others with the commands such as '/cmd'."
+  utter_gio_common_how_to_use_command_cmd:
+  - text: "To use `/cmd` command, first go to <#987879230585069609> and type `/cmd` and then type the command you want to use. For example, if you want to get a avatar, type `/cmd id: gio2 uid: <your uid> command: avatar add 10000002`. If you want to get an item, type `/cmd id: gio2 uid: <your uid> command: item add 202 1`."
+  utter_gio_common_level_up_character:
+  - text: "You can try to level up a character by materials. You can't get or add character with level 90 or higher with command in GIO, you need to manual level up them."

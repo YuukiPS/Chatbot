@@ -71,6 +71,16 @@ intents:
 - grasscutter_how_to_remove_artifact
 - grasscutter_how_to_level_up_character
 - how_to_use_command
+- grasscutter_command_quest_glitch
+- grasscutter_command_not_received
+- grasscutter_command_not_received_remove
+- grasscutter_command_level_up_account
+- gio_common_what_is_gio2
+- gio_common_how_to_use_command_cmd
+- grasscutter_how_to_skip_cutscene
+- gio_common_level_up_character
+- gio_command_delete_artifact
+- gio_command_delete_quest
 entities:
 - item_name
 - user_name
