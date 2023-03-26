@@ -106,3 +106,16 @@ stories:
     steps:
     - intent: grasscutter_command_godmode_off
     - action: utter_grasscutter_command_godmode_off
+  
+  - story: What is command to change weather
+    steps:
+    - intent: grasscutter_command_weather
+    - action: utter_grasscutter_command_weather
+  - story: What is command for Artifact?
+    steps:
+    - intent: grasscutter_command_artifact
+    - action: utter_grasscutter_command_artifact
+  - story: How to custom artifact?
+    steps:
+    - intent: grasscutter_command_artifact_custom
+    - action: utter_grasscutter_command_artifact_custom

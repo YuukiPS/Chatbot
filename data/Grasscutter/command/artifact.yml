@@ -1,0 +1,26 @@
+version: "3.1"
+
+nlu:
+  - intent: grasscutter_command_artifact_custom
+    examples: |
+      - How to custom artifact?
+      - Custom artifact
+      - Can you send me link for custom artifact?
+      - I want to know how to custom artifact
+      - Link for custom artifact
+      - Send me link for custom artifact
+  - intent: grasscutter_command_artifact
+    examples: |
+      - What is command for artifact?
+      - How to get artifact?
+      - Command for artifact
+      - Can you tell me commmand for artifact in Grasscutter
+      - I want to know command for artifact
+      - Command for artifact in Grasscutter
+      - How to get artifact in Grasscutter
+
+responses:
+  utter_grasscutter_command_artifact_custom:
+  - text: "For Custom Artifact in Grasscutter, you can check this link: <https://null-grasscutter-tools.vercel.app/#/artifact/index>"
+  utter_grasscutter_command_artifact:
+  - text: "If you want to get artifact in Grasscutter, you can try with this command: `/give <artifact id> lv<level> x<amount>`"

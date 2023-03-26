@@ -6,17 +6,22 @@ nlu:
       - How to activate god mode in Grasscutter
       - Activate god mode in Grasscutter
       - Can you activate god mode in Grasscutter
-      - How to activate god mode in Grasscutter
       - Command to activate god mode in Grasscutter
       - Please activate god mode in Grasscutter
       - Turn on god mode in Grasscutter
+      - What is command god mode in Grasscutter
+      - What is command god mode in GC
+      - Is there a command god mode in Grasscutter
+      - Command god mode in Grasscutter
+      - Can you send me a command god mode in Grasscutter
+      - Can you send me a command god mode in GC
+      - Command god mode in GC
   - intent: grasscutter_command_godmode_on_turn_off
     examples: |
       - How can i turn off it
       - How to turn off it
       - After activate god mode in Grasscutter, how to turn off it
       - Tell me how to turn off god mode in Grasscutter
-  
   - intent: grasscutter_command_godmode_off
     examples: |
       - How to deactivate god mode in Grasscutter
@@ -25,6 +30,13 @@ nlu:
       - Turn off god mode in Grasscutter
       - Command to turn off god mode in Grasscutter
       - Can you turn off god mode in Grasscutter
+      - Can you turn off god mode in GC
+      - Is there a command to turn off god mode in Grasscutter
+      - Is there a command to turn off god mode in GC
+      - Can you tell me command to turn off god mode in Grasscutter
+      - Can you tell me command to turn off god mode in GC
+      - I want to know command to turn off god mode in Grasscutter
+      - Please tell me command to turn off god mode in Grasscutter
 
 responses:
   utter_grasscutter_command_godmode_on:

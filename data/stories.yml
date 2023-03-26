@@ -109,3 +109,44 @@ stories:
   steps:
   - intent: what_is_your_goal
   - action: utter_what_is_your_goal
+
+- story: How to rename folder data in Android
+  steps:
+  - intent: how_to_rename_folder_android
+  - action: utter_how_to_rename_folder_android
+
+- story: How to join Private Server, and in Android
+  steps:
+  - intent: how_to_join_private_server_yuukips
+  - action: utter_how_to_join_private_server_yuukips
+  - intent: how_to_join_private_server_yuukips_reply_android
+  - action: utter_how_to_join_private_server_yuukips_reply_android
+
+- story: How to Join Private Server, and in iOS
+  steps:
+  - intent: how_to_join_private_server_yuukips
+  - action: utter_how_to_join_private_server_yuukips
+  - intent: how_to_join_private_server_yuukips_reply_ios
+  - action: utter_how_to_join_private_server_yuukips_reply_ios
+
+- story: How to join Private Server, and in PC
+  steps:
+  - intent: how_to_join_private_server_yuukips
+  - action: utter_how_to_join_private_server_yuukips
+  - intent: how_to_join_private_server_yuukips_reply_pc
+  - action: utter_how_to_join_private_server_yuukips_reply_pc
+
+- story: How to join Private Server Android
+  steps:
+  - intent: how_to_join_private_server_yuukips_android
+  - action: utter_how_to_join_private_server_yuukips_reply_android
+
+- story: How to join Private Server iOS
+  steps:
+  - intent: how_to_join_private_server_yuukips_ios
+  - action: utter_how_to_join_private_server_yuukips_reply_ios
+
+- story: How to join Private Server PC
+  steps:
+  - intent: how_to_join_private_server_yuukips_pc
+  - action: utter_how_to_join_private_server_yuukips_reply_pc

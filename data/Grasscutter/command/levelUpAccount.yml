@@ -11,6 +11,16 @@ nlu:
       - Command to level up my account
       - Command to level up my adventure rank
       - How to level up my account
+      - How to add exp to adventure rank
+      - How to add exp to my account
+      - How to add exp to my adventure rank
+      - Is there a command to add exp to my account
+      - Command to add exp to my account
+      - I want to know command to add exp to my account
+      - Tell me command to add exp to my account
+      - Add exp to my account
+      - Add exp to my adventure rank
+      - Add adventure rank to my account
 
 responses:
   utter_grasscutter_command_level_up_account:

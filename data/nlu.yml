@@ -197,3 +197,284 @@ nlu:
   examples: |
     - What is your goal
     - What is your goal for today
+
+- intent: how_to_rename_folder_android
+  examples: |
+    - How to rename folder Android/data
+    - Can you please tell me how to rename folder Android/data
+    - How can i rename folder Android/data
+    - Is there a tutorial to rename folder Android/data
+    - Tell me how to rename folder Android/data
+    - Rename folder Android/data
+    - How to rename folder Android/data
+
+- intent: how_to_join_private_server_yuukips
+  examples: |
+    - how do i join the genshin impact private server using yuukips
+    - Can you please tell me how to join the genshin impact private server using yuukips
+    - Tutorial to join the genshin impact private server using yuukips
+    - Do you know how to join the genshin impact server using yuukips
+    - Tell me how to join the genshin impact private server using yuukips
+    - Join the genshin impact private server using yuukips
+    - How to join the genshin impact private server using yuukips
+    - How to play Private Server
+    - Can you please tell me how to play Private Server
+    - How to download Private Server
+    - Can you please tell me how to download Private Server
+    - What are the steps to join the Genshin Impact private server using YuukiPS?
+    - What is the process to join the Genshin Impact server through YuukiPS?
+    - Guide me to join the Genshin Impact private server using YuukiPS, please.
+    - I'd like to join the Genshin Impact server with YuukiPS, how do I do it?
+    - What should I do to access the Genshin Impact server on YuukiPS?
+    - How can I join the Genshin Impact private server using the YuukiPS platform?
+    - Explain the method to join the Genshin Impact server using YuukiPS.
+    - How do I get into the Genshin Impact private server with YuukiPS?
+    - Steps to join Genshin Impact private server through YuukiPS, please.
+    - I want to join the Genshin Impact server on YuukiPS, what do I need to do?
+    - How do I connect to the Genshin Impact private server using YuukiPS?
+    - Can you walk me through joining the Genshin Impact private server on YuukiPS?
+    - How do I participate in the Genshin Impact private server with YuukiPS?
+    - Provide instructions to join the Genshin Impact server using YuukiPS.
+    - What's the procedure to join the Genshin Impact private server via YuukiPS?
+    - How to enter the Genshin Impact private server using YuukiPS?
+    - Can you guide me on joining the Genshin Impact private server on YuukiPS?
+    - Teach me how to access the Genshin Impact server with YuukiPS.
+    - How to sign up for the Genshin Impact private server using YuukiPS?
+    - How do I play on the Genshin Impact private server through YuukiPS?
+    - Join Genshin private server via YuukiPS?
+    - How to access Genshin private server on YuukiPS?
+    - Genshin private server on YuukiPS, how?
+    - YuukiPS Genshin private server guide?
+    - Use YuukiPS for Genshin private server?
+    - Play on Genshin private server via YuukiPS?
+    - YuukiPS Genshin private server access?
+    - Connect to Genshin private server, YuukiPS?
+    - Genshin Impact private server on YuukiPS?
+    - Join Genshin private server with YuukiPS?
+
+- intent: how_to_join_private_server_yuukips_reply_android
+  examples: |
+    - I use android
+    - Android
+    - Show me the tutorial for android
+    - I use android device
+    - I use android phone
+    - I use android phone to join the genshin impact server using yuukips
+    - I use android device to join the genshin impact server using yuukips
+    - My device is android
+    - My phone is android
+    - Android user here
+    - I have an Android phone
+    - Android version, please
+    - Guide for Android, please
+    - I'm on an Android device
+    - Using Android for YuukiPS
+    - Android tutorial needed
+    - How to join with an Android device?
+    - Instructions for Android, please
+    - Android phone for Genshin private server
+
+- intent: how_to_join_private_server_yuukips_reply_ios
+  examples: |
+    - I use ios
+    - ios
+    - Show me the tutorial for ios
+    - I use ios device
+    - I use ios phone
+    - I use ios phone to join the genshin impact server using yuukips
+    - I use ios device to join the genshin impact server using yuukips
+    - My device is ios
+    - My phone is ios
+    - iOS user here
+    - I have an iOS phone
+    - iOS version, please
+    - Guide for iOS, please
+    - I'm on an iOS device
+    - Using iOS for YuukiPS
+    - iOS tutorial needed
+    - How to join with an iOS device?
+    - Instructions for iOS, please
+    - iOS phone for Genshin private server
+
+- intent: how_to_join_private_server_yuukips_reply_pc
+  examples: |
+    - I use pc
+    - pc
+    - Show me the tutorial for pc
+    - I use pc device
+    - I use pc phone
+    - I use pc phone to join the genshin impact server using yuukips
+    - I use pc device to join the genshin impact server using yuukips
+    - My device is pc
+    - My phone is pc
+    - PC user here
+    - I have a PC
+    - PC version, please
+    - Guide for PC, please
+    - I'm on a PC
+    - Using PC for YuukiPS
+    - PC tutorial needed
+    - How to join with a PC?
+    - Instructions for PC, please
+    - PC for Genshin private server
+
+- intent: how_to_join_private_server_yuukips_android
+  examples: |
+    - How to join the genshin impact private server using yuukips on android
+    - Can you please tell me how to join the genshin impact private server using yuukips on android
+    - Tutorial to join the genshin impact private server using yuukips on android
+    - Do you know how to join the genshin impact server using yuukips on android
+    - Tell me how to join the genshin impact private server using yuukips on android
+    - Join the genshin impact private server using yuukips on android
+    - How to play Private Server on android
+    - How to download Private Server on android
+    - What are the steps to join the Genshin Impact private server using YuukiPS on android?
+    - What is the process to join the Genshin Impact server through YuukiPS on android?
+    - Guide me to join the Genshin Impact private server using YuukiPS on android, please.
+    - I'd like to join the Genshin Impact server with YuukiPS on android, how do I do it?
+    - What should I do to access the Genshin Impact server on YuukiPS on android?
+    - How can I join the Genshin Impact private server using the YuukiPS platform on android?
+    - Explain the method to join the Genshin Impact server using YuukiPS on android.
+    - How do I get into the Genshin Impact private server with YuukiPS on android?
+    - Steps to join Genshin Impact private server through YuukiPS on android, please.
+    - I want to join the Genshin Impact server on YuukiPS on android, what do I need to do?
+    - How do I connect to the Genshin Impact private server using YuukiPS on android?
+    - Can you walk me through joining the Genshin Impact private server on YuukiPS on android?
+    - How do I participate in the Genshin Impact private server with YuukiPS on android?
+    - Provide instructions to join the Genshin Impact server using YuukiPS on android.
+    - What's the procedure to join the Genshin Impact private server via YuukiPS on android?
+    - How to enter the Genshin Impact private server using YuukiPS on android?
+    - Can you guide me on joining the Genshin Impact private server on YuukiPS on android?
+    - Teach me how to access the Genshin Impact server with YuukiPS on android.
+    - How to sign up for the Genshin Impact private server using YuukiPS on android?
+    - How do I play on the Genshin Impact private server through YuukiPS on android?
+    - Join Genshin private server via YuukiPS on android?
+    - How to access Genshin private server on YuukiPS on android?
+    - Genshin private server with YuukiPS on Android?
+    - Join Genshin server on Android via YuukiPS?
+    - Genshin server, YuukiPS, Android guide?
+    - Android YuukiPS Genshin server access?
+    - YuukiPS Genshin private server for Android?
+    - How to use YuukiPS for Genshin on Android?
+    - Joining Genshin server with YuukiPS & Android?
+    - Genshin private server, Android, YuukiPS help?
+    - Android steps for Genshin YuukiPS server?
+    - Genshin YuukiPS server on Android, how?
+
+  
+- intent: how_to_join_private_server_yuukips_ios
+  examples: |
+    - How to join the genshin impact private server using yuukips on ios
+    - Can you please tell me how to join the genshin impact private server using yuukips on ios
+    - Tutorial to join the genshin impact private server using yuukips on ios
+    - Do you know how to join the genshin impact server using yuukips on ios
+    - Tell me how to join the genshin impact private server using yuukips on ios
+    - Join the genshin impact private server using yuukips on ios
+    - How to play Private Server on ios
+    - How to download Private Server on ios
+    - What are the steps to join the Genshin Impact private server using YuukiPS on ios?
+    - What is the process to join the Genshin Impact server through YuukiPS on ios?
+    - Guide me to join the Genshin Impact private server using YuukiPS on ios, please.
+    - I'd like to join the Genshin Impact server with YuukiPS on ios, how do I do it?
+    - What should I do to access the Genshin Impact server on YuukiPS on ios?
+    - How can I join the Genshin Impact private server using the YuukiPS platform on ios?
+    - Explain the method to join the Genshin Impact server using YuukiPS on ios.
+    - How do I get into the Genshin Impact private server with YuukiPS on ios?
+    - Steps to join Genshin Impact private server through YuukiPS on ios, please.
+    - I want to join the Genshin Impact server on YuukiPS on ios, what do I need to do?
+    - How do I connect to the Genshin Impact private server using YuukiPS on ios?
+    - Can you walk me through joining the Genshin Impact private server on YuukiPS on ios?
+    - How do I participate in the Genshin Impact private server with YuukiPS on ios?
+    - Provide instructions to join the Genshin Impact server using YuukiPS on ios.
+    - What's the procedure to join the Genshin Impact private server via YuukiPS on ios?
+    - How to enter the Genshin Impact private server using YuukiPS on ios?
+    - Can you guide me on joining the Genshin Impact private server on YuukiPS on ios?
+    - Teach me how to access the Genshin Impact server with YuukiPS on ios.
+    - How to sign up for the Genshin Impact private server using YuukiPS on ios?
+    - How do I play on the Genshin Impact private server through YuukiPS on ios?
+    - Join Genshin private server via YuukiPS on ios?
+    - How to access Genshin private server on YuukiPS on ios?
+    - Genshin private server with YuukiPS on ios?
+    - Join Genshin server on ios via YuukiPS?
+    - Genshin server, YuukiPS, ios guide?
+    - ios YuukiPS Genshin server access?
+    - YuukiPS Genshin private server for ios?
+    - How to use YuukiPS for Genshin on ios?
+    - Joining Genshin server with YuukiPS & ios?
+    - Genshin private server, ios, YuukiPS help?
+    - ios steps for Genshin YuukiPS server?
+    - Genshin YuukiPS server on ios, how?
+
+
+- intent: how_to_join_private_server_yuukips_pc
+  examples: |
+    - How to join the genshin impact private server using yuukips on pc
+    - Can you please tell me how to join the genshin impact private server using yuukips on pc
+    - Tutorial to join the genshin impact private server using yuukips on pc
+    - Do you know how to join the genshin impact server using yuukips on pc
+    - Tell me how to join the genshin impact private server using yuukips on pc
+    - Join the genshin impact private server using yuukips on pc
+    - How to join the genshin impact private server using yuukips on pc
+    - How to play Private Server on pc
+    - Can you please tell me how to play Private Server on pc
+    - How to download Private Server on pc
+    - Can you please tell me how to download Private Server on pc
+    - What are the steps to join the Genshin Impact private server using YuukiPS on pc?
+    - What is the process to join the Genshin Impact server through YuukiPS on pc?
+    - Guide me to join the Genshin Impact private server using YuukiPS on pc, please.
+    - I'd like to join the Genshin Impact server with YuukiPS on pc, how do I do it?
+    - What should I do to access the Genshin Impact server on YuukiPS on pc?
+    - How can I join the Genshin Impact private server using the YuukiPS platform on pc?
+    - Explain the method to join the Genshin Impact server using YuukiPS on pc.
+    - How do I get into the Genshin Impact private server with YuukiPS on pc?
+    - Steps to join Genshin Impact private server through YuukiPS on pc, please.
+    - I want to join the Genshin Impact server on YuukiPS on pc, what do I need to do?
+    - How do I connect to the Genshin Impact private server using YuukiPS on pc?-
+    - Can you walk me through joining the Genshin Impact private server on YuukiPS on pc?
+    - How do I participate in the Genshin Impact private server with YuukiPS on pc?
+    - Provide instructions to join the Genshin Impact server using YuukiPS on pc.
+    - What's the procedure to join the Genshin Impact private server via YuukiPS on pc?
+    - How to enter the Genshin Impact private server using YuukiPS on pc?
+    - Can you guide me on joining the Genshin Impact private server on YuukiPS on pc?
+    - Teach me how to access the Genshin Impact server with YuukiPS on pc.
+    - How to sign up for the Genshin Impact private server using YuukiPS on pc?
+    - How do I play on the Genshin Impact private server through YuukiPS on pc?
+    - Join Genshin private server via YuukiPS on pc?
+    - How to access Genshin private server on YuukiPS on pc?
+    - Genshin private server with YuukiPS on pc?
+    - Join Genshin server on pc via YuukiPS?
+    - Genshin server, YuukiPS, pc guide?
+    - pc YuukiPS Genshin server access?
+    - YuukiPS Genshin private server for pc?
+    - How to use YuukiPS for Genshin on pc?
+    - Joining Genshin server with YuukiPS & pc?
+    - Genshin private server, pc, YuukiPS help?
+    - pc steps for Genshin YuukiPS server?
+    - Genshin YuukiPS server on pc, how?
+    - How to join the genshin impact private server using yuukips on pc
+    - Can you please tell me how to join the genshin impact private server using yuukips on pc
+    - Tutorial to join the genshin impact private server using yuukips on pc
+    - Do you know how to join the genshin impact server using yuukips on pc
+    - Tell me how to join the genshin impact private server using yuukips on pc
+    - Join the genshin impact private server using yuukips on pc
+    - How to join the genshin impact private server using yuukips on pc
+    - How to play Private Server on pc
+    - Can you please tell me how to play Private Server on pc
+    - How to download Private Server on pc
+    - Can you please tell me how to download Private Server on pc
+    - What are the steps to join the Genshin Impact private server using YuukiPS on pc?
+    - What is the process to join the Genshin Impact server through YuukiPS on pc?
+    - Guide me to join the Genshin Impact private server using YuukiPS on pc, please.
+    - I'd like to join the Genshin Impact server with YuukiPS on pc, how do I do it?
+    - What should I do to access the Genshin Impact server on YuukiPS on pc?
+    - How can I join the Genshin Impact private server using the YuukiPS platform on pc?
+    - Explain the method to join the Genshin Impact server using YuukiPS on pc.
+    - How do I get into the Genshin Impact private server with YuukiPS on pc?
+    - Steps to join Genshin Impact private server through YuukiPS on pc, please.
+    - I want to join the Genshin Impact server on YuukiPS on pc, what do I need to do?
+    - How do I connect to the Genshin Impact private server using YuukiPS on pc?-
+    - Can you walk me through joining the Genshin Impact private server on YuukiPS on pc?
+    - How do I participate in the Genshin Impact private server with YuukiPS on pc?
+    - Provide instructions to join the Genshin Impact server using YuukiPS on pc.
+    - What's the procedure to join the Genshin Impact private server via YuukiPS on pc?
+    - How to enter the Genshin Impact private server using YuukiPS on pc?

@@ -90,6 +90,17 @@ intents:
 - source_code_chatbot
 - what_is_your_goal
 - grasscutter_mute_ayaka_bot
+- grasscutter_command_weather
+- grasscutter_command_artifact
+- grasscutter_command_artifact_custom
+- how_to_rename_folder_android
+- how_to_join_private_server_yuukips
+- how_to_join_private_server_yuukips_reply_android
+- how_to_join_private_server_yuukips_reply_ios
+- how_to_join_private_server_yuukips_reply_pc
+- how_to_join_private_server_yuukips_android
+- how_to_join_private_server_yuukips_ios
+- how_to_join_private_server_yuukips_pc
 entities:
 - item_name
 - user_name
@@ -230,6 +241,16 @@ responses:
   - text: "You can find my source code here: <https://github.com/YuukiPS/Chatbot>\nUsing Rasa Open Source, a Python-based machine learning framework."
   utter_what_is_your_goal:
   - text: "Our goal is to collect data about Private Servers, You can help us to collect data by using our bot."
+  utter_how_to_rename_folder_android:
+  - text: "You can rename folder in Android by long press the folder and then click rename."
+  utter_how_to_join_private_server_yuukips:
+  - text: "Please tell me which platform you want to join, Android or PC?"
+  utter_how_to_join_private_server_yuukips_reply_android:
+  - text: "Sure, for Android first try to download this apk <https://www.mediafire.com/file/6hci46swpgrva0i/YuukiPS_35_V1_R2.apk/file>.\nInstall it and open your favorite file manager, then go to `Android/data` and rename folder `com.miHoYo.GenshinImpact` to `com.moe.yuukips`. After that open the game and login with your account."
+  utter_how_to_join_private_server_yuukips_reply_ios:
+  - text: "Sorry, I don't have knowledge about iOS. You can go to this link <https://doc.yuuki.me/docs/tutorial-connect/ios> to install for iOS."
+  utter_how_to_join_private_server_yuukips_reply_pc:
+  - text: "Sure, for PC first try to download DotNet Runtime Desktop <https://dotnet.microsoft.com/en-us/download/dotnet/6.0/runtime>. Then download for YuukiPS-Launcher <https://github.com/YuukiPS/Launcher-PC/releases>. Download the latest version as `.zip` file, extract the zip file to folder, Run `YuukiPS.exe` as administrator. Set the game path to your Genshin Impact folder in section `Config` and click `Save`. Select server then launch the game. Login with your account and enjoy."
 response_selector:
   default:
   - text: I'm sorry, I don't understand. Could you please rephrase?
