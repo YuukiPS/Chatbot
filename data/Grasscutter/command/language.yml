@@ -1,0 +1,31 @@
+version: "3.1"
+
+nlu:
+  - intent: grasscutter_command_language
+    examples: |
+      - How to change language?
+      - Is there a command to change a language in Grasscutter?
+      - I want to know command to change a language in Grasscutter
+      - What is command to change a language in Grasscutter?
+      - Send me command to change a language in Grasscutter
+      - Tell me command to change a language in Grasscutter
+      - Grasscutter command for change a language
+      - How do I change the language in Grasscutter?
+      - What's the Grasscutter command for language change?
+      - Grasscutter language change command?
+      - Can I change the language in Grasscutter with a command?
+      - How to switch languages in Grasscutter?
+      - What command should I use to change the language in Grasscutter?
+      - How can I change the game language in Grasscutter?
+      - Grasscutter language settings command?
+      - How to modify the language settings in Grasscutter?
+      - Command for adjusting language in Grasscutter?
+      - What's the way to change language settings in Grasscutter?
+      - How do I alter the language in Grasscutter with a command?
+      - Grasscutter command to switch languages?
+      - What command is used for language change in Grasscutter?
+      - How to set a different language in Grasscutter using a command?
+
+responses:
+  utter_grasscutter_command_language:
+  - text: "If you want to change language in bot Ayaka, you can do with a command `/language <language>`\n\nLanguage can be: `en`, `ja`, `ko`, `zh`, and others."

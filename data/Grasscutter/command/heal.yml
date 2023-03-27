@@ -1,0 +1,39 @@
+version: "3.1"
+
+nlu:
+  - intent: grasscutter_command_heal
+    examples: |
+      - What is command heal in Grasscutter
+      - Send me command heal in Grasscutter
+      - Tell me heal command in Grasscutter
+      - Grasscutter command for heal
+      - I want to know heal command in Grasscutter
+      - Is there command heal in Grasscutter
+      - How to heal my character
+      - How to heal my avatars
+      - Is there a command to heal my character
+      - Is there a command to heal my avatars
+      - Grasscutter healing command?
+      - How do I heal in Grasscutter?
+      - Command to heal character in Grasscutter?
+      - What's the Grasscutter heal command?
+      - Heal command for Grasscutter?
+      - Grasscutter command to restore health?
+      - Healing my avatar in Grasscutter?
+      - How to use the heal command in Grasscutter?
+      - What command heals in Grasscutter?
+      - How to recover health in Grasscutter?
+      - What is the specific command to heal my character in Grasscutter?
+      - Can you please provide me with the healing command in Grasscutter?
+      - What is the exact command to heal my avatar while playing Grasscutter?
+      - How can I heal my character in Grasscutter using a command?
+      - What command should I use in Grasscutter to heal my character's health?
+      - Is there a specific command in Grasscutter to recover my avatar's health?
+      - Can you tell me the command to restore my character's health in Grasscutter?
+      - How do I use a command to heal my avatar in the game Grasscutter?
+      - What is the appropriate command to heal my character when playing Grasscutter?
+      - How can I utilize a command to restore my avatar's health in Grasscutter?
+
+responses:
+  utter_grasscutter_command_heal:
+  - text: "To heal your character, you can try this command to heal all your avatars: `/heal`"

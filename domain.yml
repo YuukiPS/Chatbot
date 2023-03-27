@@ -101,6 +101,9 @@ intents:
 - how_to_join_private_server_yuukips_android
 - how_to_join_private_server_yuukips_ios
 - how_to_join_private_server_yuukips_pc
+- grasscutter_command_language
+- grasscutter_command_heal
+- grasscutter_command_talent
 entities:
 - item_name
 - user_name

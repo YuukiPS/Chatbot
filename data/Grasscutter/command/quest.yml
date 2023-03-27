@@ -27,7 +27,8 @@ nlu:
       - Story mode glitch, is there a command to fix it?
       - My quest is glitch, is there a command to fix it?
       - My quest is glitch, send me a command to fix it
-      - My quest is glitch, what is the command to fix it?
+      - My quest is glitch, how can I fix it?
+      - My quest is glitch, what can I do?
 
 responses:
   utter_grasscutter_command_quest:

@@ -1,0 +1,36 @@
+version: "3.1"
+
+nlu:
+  - intent: grasscutter_command_talent
+    examples: |
+      - What is command for Talent
+      - How to change Talent
+      - How to change or upgrade Talent
+      - How to change or upgrade Talent in Grasscutter
+      - What is command for Talent in Grasscutter
+      - Talent command
+      - Please tell me Talent command
+      - Do you know Talent command
+      - Send command Talent
+      - Example command talent in Grasscutter
+      - Can you give me an example command talent in Grasscutter?
+      - What is command talent in Grasscutter
+      - How do I change or upgrade talents in Grasscutter?
+      - Grasscutter talent command?
+      - What's the command for talents in Grasscutter?
+      - How to use talent commands in Grasscutter?
+      - Command for managing talents in Grasscutter?
+      - What command should I use for talents in Grasscutter?
+      - How to modify or upgrade talents using commands in Grasscutter?
+      - Grasscutter command for talent upgrades?
+      - How can I adjust my talents in Grasscutter with a command?
+      - What's the way to change talents using commands in Grasscutter?
+      - How do I manage my talents in Grasscutter using commands?
+      - Grasscutter command to change or improve talents?
+      - What command is used for talent management in Grasscutter?
+      - How to change my character's talents in Grasscutter using commands?
+      - How to use commands to upgrade or modify talents in Grasscutter?
+
+responses:
+  utter_grasscutter_command_talent:
+  - text: "To change or upgrade talent in Grasscutter, you can try with this command make sure you using current character to use this command.\n\n`/talent n 10`, `/talent e 10`, `/talent q 10`. Where `n`, `e`, `q` is the name of the talent in Genshin Impact, and `10` is the level of the talent."

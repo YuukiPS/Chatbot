@@ -119,3 +119,17 @@ stories:
     steps:
     - intent: grasscutter_command_artifact_custom
     - action: utter_grasscutter_command_artifact_custom
+  
+  - story: How to heal my character?
+    steps:
+    - intent: grasscutter_command_heal
+    - action: utter_grasscutter_command_heal
+
+  - story: How to change language bot Ayaka?
+    steps:
+    - intent: grasscutter_command_language
+    - action: utter_grasscutter_command_language
+  - story: What is command for talent?
+    steps:
+    - intent: grasscutter_command_talent
+    - action: utter_grasscutter_command_talent

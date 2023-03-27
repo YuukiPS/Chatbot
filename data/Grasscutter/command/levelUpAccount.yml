@@ -24,4 +24,4 @@ nlu:
 
 responses:
   utter_grasscutter_command_level_up_account:
-  - text: "You can use a following command to level up your account: `/give 102 <amount>`. Replace `<amount>` with the amount of experience you want to add to your account."
+  - text: "You can use a following command to level up your account: `/give 102 x<amount>`. Replace `<amount>` with the amount of experience you want to add to your account."
