@@ -104,6 +104,11 @@ intents:
 - grasscutter_command_language
 - grasscutter_command_heal
 - grasscutter_command_talent
+- blocked_using_gm_command
+- how_to_find_id
+- use_original_account_private_server
+- grasscutter_command_worldlevel
+- connection_lost_after_naming_charcter
 entities:
 - item_name
 - user_name
@@ -254,6 +259,14 @@ responses:
   - text: "Sorry, I don't have knowledge about iOS. You can go to this link <https://doc.yuuki.me/docs/tutorial-connect/ios> to install for iOS."
   utter_how_to_join_private_server_yuukips_reply_pc:
   - text: "Sure, for PC first try to download DotNet Runtime Desktop <https://dotnet.microsoft.com/en-us/download/dotnet/6.0/runtime>. Then download for YuukiPS-Launcher <https://github.com/YuukiPS/Launcher-PC/releases>. Download the latest version as `.zip` file, extract the zip file to folder, Run `YuukiPS.exe` as administrator. Set the game path to your Genshin Impact folder in section `Config` and click `Save`. Select server then launch the game. Login with your account and enjoy."
+  utter_blocked_using_gm_command:
+  - text: "Reason you got blocked from using command `/gm` is because you are using `/gm` command in other channel than <#987879230585069609>. There is no way to get unblocked from using `/gm` command. If you want still to use `/gm` command."
+  utter_how_to_find_id:
+  - text: "You can find ID by using `/gm` command. For example if you want to find ID for character Mona, you can type `/gm search: Mona` and you will get list of result. Then you can click on the button `ID` to get ID for character Mona."
+  utter_use_original_account_private_server:
+  - text: "You can use your original account in Private Server. However it's not recommended to use your original account in Private Server, you can create new account by using random username but easy to remember."
+  utter_connection_lost_after_naming_charcter:
+  - text: "No, giving your main character doesn't cause you to get connection error. What caused it is mainly  because either your network or the server you're playing at is having an issue. The reason you didn't get it initially is because the fight scene between the unknown god and the twin is a cutscene, which prevent the error message to popup. Once the cutscene is done, the game can finally kick you out for losing connection with the server."
 response_selector:
   default:
   - text: I'm sorry, I don't understand. Could you please rephrase?

@@ -150,3 +150,23 @@ stories:
   steps:
   - intent: how_to_join_private_server_yuukips_pc
   - action: utter_how_to_join_private_server_yuukips_reply_pc
+
+- story: Why i got blocked from using command `/gm`
+  steps:
+  - intent: blocked_using_gm_command
+  - action: utter_blocked_using_gm_command
+
+- story: How can i find id in GM Handbook
+  steps:
+  - intent: how_to_find_id
+  - action: utter_how_to_find_id
+
+- story: Can i use original account in Private Server?
+  steps:
+  - intent: use_original_account_private_server
+  - action: utter_use_original_account_private_server
+
+- story: Why connection lost after naming a character?
+  steps:
+  - intent: connection_lost_after_naming_charcter
+  - action: utter_connection_lost_after_naming_charcter

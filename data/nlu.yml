@@ -478,3 +478,152 @@ nlu:
     - Provide instructions to join the Genshin Impact server using YuukiPS on pc.
     - What's the procedure to join the Genshin Impact private server via YuukiPS on pc?
     - How to enter the Genshin Impact private server using YuukiPS on pc?
+
+- intent: blocked_using_gm_command
+  examples: |
+    - Why i got blocked from using /gm Command
+    - Can you tell me i got blocked from using /gm Command
+    - Why am I getting an error when I try to use the /gm command?
+    - What does it mean if I'm blocked from using the /gm command?
+    - Can you explain why I can't use the /gm command anymore?
+    - I used to be able to use the /gm command, but now it's not working. What happened?
+    - How come I'm not able to use the /gm command anymore?
+    - Did I do something wrong that caused me to get blocked from using the /gm command?
+    - Is there a reason why I'm not able to use the /gm command anymore?
+    - What are the possible reasons why I can't use the /gm command?
+    - How can I find out why I'm blocked from using the /gm command?
+    - Who can help me with figuring out why I can't use the /gm command?
+    - What should I do if I've been blocked from using the /gm command?
+    - Can you give me some advice on how to get unblocked from using the /gm command?
+    - Are there any alternative commands that I can use instead of /gm if I'm blocked from using it?
+    - Is there a way to get unblocked from using the /gm command?
+    - How long does it usually take to get unblocked from using the /gm command?
+    - /gm command not working. Why?
+    - Why am I blocked from using /gm command?
+    - What's wrong with /gm command? Why can't I use it?
+    - Why can't I use the /gm command anymore?
+    - Did I do something to get blocked from using /gm command?
+    - Can't use /gm command. What's the reason?
+    - Why does /gm command show an error message?
+    - Why is /gm command not responding?
+    - What happened to /gm command? Why can't I use it?
+    - Why is /gm command unavailable to me?
+    - How come I can't use /gm command anymore?
+    - Why am I getting a "blocked" message when I try to use /gm command?
+    - Why has my access to /gm command been restricted?
+    - Why am I suddenly unable to use /gm command?
+    - What could be causing /gm command to be blocked for me?
+
+- intent: how_to_find_id
+  examples: |
+    - How do I find ID
+    - How to find id in GM Handbook
+    - Can you tell me how can i find id in GM Handbook
+    - How to find id
+    - Please tell me how to find id
+    - Is there a way to find id?
+    - Is there way to find id in GM Handbook
+    - Tell me, how can i find id in GM Handbook
+    - I'm having trouble locating a specific ID in the GM Handbook. Can you walk me through the steps to find it?
+    - Can you provide a detailed explanation of how to find a particular ID in the GM Handbook?
+    - I'm not sure where to look in the GM Handbook to find the ID I need. Can you help me?
+    - Is there a specific section in the GM Handbook that explains how to find IDs? If so, can you point me in the right direction?
+    - How can I easily navigate the GM Handbook to locate the ID I need?
+    - I've been searching for the ID I need in the GM Handbook, but I can't seem to find it. Can you assist me with this?
+    - I'm struggling to locate the ID I need in the GM Handbook, and I'm not sure where to start. Can you provide some guidance?
+    - Could you give me some tips or tricks for finding the ID I'm looking for in the GM Handbook?
+    - I'm new to using the GM Handbook, and I'm not familiar with how to locate IDs. Can you provide a detailed explanation of the process?
+    - I've looked through the GM Handbook multiple times, but I still can't find the ID I need. Is there a more efficient way to locate it?
+    - Can you demonstrate how to search for a specific ID in the GM Handbook?
+    - Is there a search function in the GM Handbook that I can use to find the ID I need?
+    - How can I make sure that I'm looking in the right section of the GM Handbook to find the ID I need?
+    - Can you explain how IDs are organized and indexed in the GM Handbook to make them easier to find?
+    - I'm afraid I might be overlooking something obvious when trying to find the ID I need in the GM Handbook. Can you help me identify what I might be missing?
+    - How to find ID in GM Handbook?
+    - Where to find ID in GM Handbook?
+    - How can I locate ID in GM Handbook?
+    - Find ID in GM Handbook?
+    - How do I find ID in GM Handbook?
+    - How to search for ID in GM Handbook?
+    - How to look up ID in GM Handbook?
+    - Can you help me find ID in GM Handbook?
+    - Where in GM Handbook can I find ID?
+    - How to get ID from GM Handbook?
+    - How to locate specific ID in GM Handbook?
+    - How to access ID in GM Handbook?
+    - How to navigate GM Handbook to find ID?
+    - How to find the right ID in GM Handbook?
+    - Is there a quick way to find ID in GM Handbook?
+
+- intent: use_original_account_private_server
+  examples: |
+    - Can i use original account in Private Server?
+    - Can i use original account in this server?
+    - I've been playing on a private server for a while, and I'm curious if it's possible to use my original account. Is that allowed?
+    - Can I use my original account to play on this private server, or do I need to create a new one?
+    - I'm interested in playing on this private server, but I'm not sure if I can use my original account. Can you provide some insight on this?
+    - Is it safe to use my original account to play on a private server, or should I create a new one?
+    - Can you explain the rules around using original accounts on private servers? I'm not sure if it's allowed or not.
+    - I've heard conflicting information about whether or not I can use my original account on a private server. Can you clarify this for me?
+    - Is there any risk to using my original account to play on a private server? I want to make sure my account stays secure.
+    - What are the potential consequences of using my original account to play on a private server?
+    - If I do decide to use my original account on a private server, what steps can I take to protect my account?
+    - I don't want to risk losing my original account, but I'm interested in playing on a private server. Is there any way to do this without using my original account?
+    - Can I transfer my progress from my original account to a new account on the private server? Or do I have to start over?
+    - If I decide to create a new account for the private server, will I still have access to my original account?
+    - Can I use my original account to play on multiple private servers, or do I need to create a new account for each one?
+    - How can I ensure that my original account is safe if I decide to use it on a private server?
+    - Are there any best practices or tips for using my original account on a private server without putting it at risk?
+    - Can I use my original account on this private server?
+    - Is it allowed to use my original account in a private server?
+    - Original account on private server?
+    - Can I log in with my original account on this server?
+    - Is it safe to use my original account in a private server?
+    - Can I play on a private server with my existing account?
+    - Can I transfer my account to a private server?
+    - Original account for private server?
+    - Is it risky to use my original account in a private server?
+    - Can I use my regular account on a private server?
+    - What are the rules regarding original accounts on private servers?
+    - Can I keep using my original account while playing on a private server?
+    - Using my original account in a private server?
+    - Is it recommended to use my original account on a private server?
+    - Can I link my original account to a private server account?
+
+- intent: connection_lost_after_naming_charcter
+  examples: |
+    - What could be causing me to lose connection to the server after I enter the name for my main character?
+    - I'm having trouble with the server connection whenever I enter a name for my main character. Any idea what's causing this issue?
+    - How can I prevent losing connection to the server after entering the name for my main character?
+    - I keep losing connection to the server every time I enter a name for my main character. Any suggestions on how to fix this?
+    - Why do I get disconnected from the server after entering the name for my main character, and how can I resolve this?
+    - What are some possible reasons for losing connection to the server after entering the name for my main character?
+    - I've been restarting the game multiple times, but I still lose connection to the server after entering the name for my main character. What can I do?
+    - Why is there a connection loss every time I enter the name for my main character, and how can I prevent this from happening?
+    - What steps can I take to troubleshoot the connection loss issue after entering the name for my main character?
+    - Could it be a bug or glitch causing me to lose connection to the server after entering the name for my main character?
+    - Is this a common issue for players, losing connection to the server after entering the name for their main character?
+    - How can I determine if the connection loss after entering the name for my main character is a server issue or a problem on my end?
+    - Why is the server disconnecting me after I enter the name for my main character, and how can I avoid this problem in the future?
+    - Is there a certain character or naming convention that might be causing the connection loss after entering the name for my main character?
+    - What could be causing the server to disconnect me after entering the name for my main character and changing my UID to Yuukips ID?
+    - Why does naming my main character cause a connection loss?
+    - Why do I lose connection after entering the name for my main character?
+    - Connection loss after naming main character?
+    - How to avoid losing connection after naming main character?
+    - Any fix for connection loss after entering main character's name?
+    - What causes the server to lose connection after naming my main character?
+    - Losing connection after entering main character name?
+    - What's causing the connection loss after naming my main character?
+    - Server disconnects after naming main character?
+    - How to prevent losing connection after entering main character's name?
+    - Main character naming causing connection loss?
+    - What could be causing the server to disconnect after naming my main character?
+    - Why does the server lose connection when I enter my main character's name?
+    - Is there a way to fix the connection loss issue after naming my main character?
+    - How can I troubleshoot the connection loss problem after naming my main character?
+    - Why connection lost after naming?
+    - How to avoid connection loss after naming?
+    - What causes server disconnection after naming?
+    - Troubleshoot connection loss after naming?
+    - Naming main character causes disconnection?

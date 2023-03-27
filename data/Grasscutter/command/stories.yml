@@ -133,3 +133,8 @@ stories:
     steps:
     - intent: grasscutter_command_talent
     - action: utter_grasscutter_command_talent
+
+  - story: Command to change world level?
+    steps:
+    - intent: grasscutter_command_worldlevel
+    - action: utter_grasscutter_command_worldlevel
