@@ -97,11 +97,7 @@ const modelEndpoint = 'http://127.0.0.1:5005/webhooks/rest/webhook';
 
 axios.post(modelEndpoint, {
     message: message,
-    sender: sender,
-    tracker: {
-        sender_id: sender,
-        conversation_id: sender
-    }
+    sender: sender
 })
 .then(response => {
     // Combine the text of all messages
@@ -120,7 +116,7 @@ axios.post(modelEndpoint, {
 If you want to use a cURL command to communicate with the chatbot, you can use the following command:
 
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{"message":"Hi", "sender":"ElaXan", "tracker": {"sender_id": "ElaXan", "conversation_id": "ElaXan"}}' http://127.0.0.1:5005/webhooks/rest/webhook
+curl -X POST -H "Content-Type: application/json" -d '{"message":"Hi", "sender":"ElaXan"}' http://127.0.0.1:5005/webhooks/rest/webhook
 ```
 
 Before running the code or command, you need to start Rasa with the `rasa run --enable-api` command. If you want to use custom actions, you need to start the action server with the `rasa run actions` command.
