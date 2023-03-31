@@ -138,3 +138,8 @@ stories:
     steps:
     - intent: grasscutter_command_worldlevel
     - action: utter_grasscutter_command_worldlevel
+  
+  - story: Can you send me command list in Grasscutter?
+    steps:
+    - intent: grasscutter_command_common_list
+    - action: utter_grasscutter_command_common_list

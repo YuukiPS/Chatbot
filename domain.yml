@@ -22,7 +22,6 @@ intents:
 - grasscutter_account_delete_solution
 - grasscutter_android_account_password_error
 - grasscutter_android_download_link
-- grasscutter_android_error_4214
 - grasscutter_android_tutorial
 - grasscutter_android_tutorial_another_version
 - grasscutter_android_tutorial_reason
@@ -109,6 +108,12 @@ intents:
 - use_original_account_private_server
 - grasscutter_command_worldlevel
 - connection_lost_after_naming_charcter
+- grassscutter_android_storage_problem
+- grasscutter_command_common_list
+- grasscutter_error_android_4214
+- grasscutter_error_pc_4214
+- grasscutter_change_banner_public_server
+- grasscutter_change_banner_localhost
 entities:
 - item_name
 - user_name

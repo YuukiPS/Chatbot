@@ -1,15 +1,25 @@
 version: "3.1"
 
 nlu:
-  - intent: grasscutter_android_error_4214
+  - intent: grasscutter_error_android_4214
     examples: |
       - I got error 4214 on Android
       - How to fix error 4214 on Android
       - Is there any solution for error 4214 on Android
       - What is error 4214 on Android
+  
+  - intent: grasscutter_error_pc_4214
+    examples: |
+      - I got error 4214 on PC
+      - How to fix error 4214 on PC
+      - Is there any solution for error 4214 on PC
+      - What is error 4214 on PC
 
 responses:
-  utter_grasscutter_android_error_4214:
+  utter_grasscutter_error_android_4214:
     - text: "If you enter official server, which actually is not allowed to connect to official server using apk launcher mod because it is risky\n\nIf you try to connect to Private Server and get this error message, then the proxy failed to change a domain or server to Private Server. You can try to re open the game and try again"
     - text: "This error message is caused by the proxy failed to change a domain or server to Private Server. You can try to re open the game and try again"
     - text: "To fix this error, you can try to re open the game and try again"
+  
+  utter_grasscutter_error_pc_4214:
+    - text: "Make sure you already patch with RSAPatch. You can check RSAPatch download here: https://github.com/34736384/RSAPatch/releases"

@@ -93,3 +93,75 @@ nlu:
       - Just tell me how to mute the ayaka chat
       - Show me how to mute the ayaka chat
       - Tell me how to mute the ayaka chat
+  
+  - intent: grasscutter_change_banner_public_server
+    examples: |
+      - How to change banner?
+      - How to change banner in public server?
+      - Can you tell me how to change banner in public server?
+      - How to change banner in YuukiPS?
+      - What is the process for changing the banner in a public server?
+      - How can I change the banner in a public server?
+      - Is there a specific command to change the banner in a public server?
+      - Can you provide step-by-step instructions for changing the banner in a public server?
+      - How do I customize the banner in a public server?
+      - What are the requirements for changing the banner in a public server?
+      - How to change the banner in a public server like YuukiPS?
+      - Can I use a custom image as a banner in a public server?
+      - Is it possible to change the banner in a public server without administrator privileges?
+      - How frequently can I change the banner in a public server?
+      - Can I change the banner in a public server using a mobile device?
+      - Are there any restrictions on the size or format of the banner image in a public server?
+      - Can you recommend any tools or software for creating custom banners for a public server?
+      - What are some examples of customized banners used in public servers like YuukiPS?
+      - How to change server banner?
+      - Change banner in public server?
+      - How to customize banner in public server?
+      - Public server banner change process?
+      - Banner customization in YuukiPS?
+      - How to change banner in YuukiPS?
+      - YuukiPS banner change steps?
+      - Changing banner in a public server?
+      - YuukiPS banner customization process?
+      - Can I change banner in YuukiPS?
+      - Public server banner customization?
+      - YuukiPS banner update process?
+      - How often can I change the banner in a public server?
+      - What are the banner requirements for YuukiPS?
+      - How to reset banner to default in public server like YuukiPS?
+  
+  - intent: grasscutter_change_banner_localhost
+    examples: |
+      - How to change banner in localhost?
+      - How to change banner in local server?
+      - How to change banner in local host?
+      - Is there a tutorial to change banner in localhost?
+      - How to change banner in local server like localhost?
+      - Change banner in localhost?
+      - How to customize banner in localhost?
+      - How to change banner in localhost by editing `banners.json`
+      - How do I change the banner in my local server?
+      - What is the process for customizing the banner in a local server?
+      - Can I change the banner in my local server without using the `banners.json` file?
+      - How do I access and modify the banner in my local server?
+      - Are there any specific requirements for the banner in my local server?
+      - How can I make sure my custom banner is properly displayed in my local server?
+      - What are some best practices for changing the banner in my local server?
+      - Is it possible to add multiple custom banner to my local server?
+      - Can I use any file type or size when customizing the banner in my local server?
+      - What are some common mistakes to avoid when customizing the banner in my local server?
+      - How can I ensure my edited banner is saved properly in my local server?
+      - Can you provide a step-by-step guide for changing the banner in my local server?
+      - How to change local server banner?
+      - Can I customize banner in my local server?
+      - Steps to change banner in local server?
+      - Is there a command to change banner in local server?
+      - Local server banner change process?
+      - How to edit banner in local server?
+      - How often can I change banner in local server?
+      - How to troubleshoot banner not displaying in local server?
+      - How to add custom banner in local server?
+      - What are the requirements for local server banner?
+      - Can I use any file type or size for local server banner?
+      - How to save edited banner in local server?
+      - What are some tips for changing banner in local server?

@@ -46,11 +46,11 @@ stories:
     steps:
     - intent: grasscutter_android_download_link
     - action: utter_grasscutter_android_download_link
-
-  - story: How to fix 4214 error in Android
+  
+  - story: How to fix storage problem in Private Server Android?
     steps:
-    - intent: grasscutter_android_error_4214
-    - action: utter_grasscutter_android_error_4214
+    - intent: grassscutter_android_storage_problem
+    - action: utter_grassscutter_android_storage_problem
 
 rules:
   - rule: Tutorial for 3.5 Android
