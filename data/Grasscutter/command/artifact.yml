@@ -9,6 +9,35 @@ nlu:
       - I want to know how to custom artifact
       - Link for custom artifact
       - Send me link for custom artifact
+      - How can I customize an artifact in Grasscutter?
+      - Is it possible to create custom artifacts in Grasscutter?
+      - Can you provide a tutorial on customizing artifacts in Grasscutter?
+      - How do I create my own artifacts in Grasscutter?
+      - What are the steps to customize an artifact in Grasscutter?
+      - Is there a guide for creating custom artifacts in Grasscutter?
+      - How to make custom artifacts in Grasscutter?
+      - Where can I find information on customizing artifacts in Grasscutter?
+      - How can I add my own artifacts to Grasscutter?
+      - Can you recommend any resources for creating custom artifacts in Grasscutter?
+      - How do I design a custom artifact for Grasscutter?
+      - How do I modify existing artifacts in Grasscutter?
+      - Is there a way to import custom artifacts into Grasscutter?
+      - What tools are needed to create custom artifacts in Grasscutter?
+      - Command to custom artifact in Grasscutter?
+      - How to custom artifact in Grasscutter?
+      - Is there a command to custom artifact in Grasscutter?
+      - Custom artifact in Grasscutter, command exists?
+      - Custom artifact in Grasscutter, command available?
+      - Can you send me a command to custom artifact in Grasscutter?
+      - I want to custom artifact in Grasscutter, is there a command for that?
+      - One command to custom artifact in Grasscutter, exists?
+      - Any command to custom artifact in Grasscutter?
+      - Quick command to custom artifact in Grasscutter, exists?
+      - Is there a way to quickly custom artifact in Grasscutter?
+      - Command to custom artifact in Grasscutter?
+      - Is there a single command to custom artifact in Grasscutter?
+      - What is the shortcut to custom artifact in Grasscutter?
+      - Any fast way to custom artifact in Grasscutter?
   - intent: grasscutter_command_artifact
     examples: |
       - What is command for artifact?
@@ -18,6 +47,21 @@ nlu:
       - I want to know command for artifact
       - Command for artifact in Grasscutter
       - How to get artifact in Grasscutter
+      - How do I obtain an artifact in Grasscutter?
+      - Command for obtaining artifacts in Grasscutter?
+      - Is there a specific command for getting artifacts in Grasscutter?
+      - How to get artifacts with a command in Grasscutter?
+      - Command to acquire artifacts in Grasscutter?
+      - Any quick way to get artifacts in Grasscutter using a command?
+      - How can I use a command to obtain artifacts in Grasscutter?
+      - What is the Grasscutter command to get artifacts?
+      - How to use a command to obtain artifacts in Grasscutter?
+      - What's the artifact command in Grasscutter?
+      - How to use the artifact command in Grasscutter?
+      - What's the command to get an artifact in Grasscutter?
+      - How can I obtain an artifact using a command in Grasscutter?
+      - Is there a Grasscutter command for artifacts?
+      - Command to obtain artifact in Grasscutter?
 
 responses:
   utter_grasscutter_command_artifact_custom:

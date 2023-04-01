@@ -16,6 +16,18 @@ nlu:
       - Can you send me a command god mode in Grasscutter
       - Can you send me a command god mode in GC
       - Command god mode in GC
+      - How can I enter god mode in Grasscutter?
+      - What is the shortcut to activate god mode in Grasscutter?
+      - Is there a way to quickly activate god mode in Grasscutter?
+      - How do I turn on god mode in Grasscutter?
+      - Can I enable god mode in Grasscutter using a command?
+      - How can I enable god mode in GC?
+      - Is there a GC command to turn on god mode?
+      - Command to turn on god mode in Grasscutter?
+      - What is the Grasscutter command to activate god mode?
+      - Is there a one-command way to activate god mode in Grasscutter?
+      - Can you tell me how to activate god mode in Grasscutter with a command?
+      - Is god mode activation possible through a Grasscutter command?
   - intent: grasscutter_command_godmode_on_turn_off
     examples: |
       - How can i turn off it
@@ -37,6 +49,31 @@ nlu:
       - Can you tell me command to turn off god mode in GC
       - I want to know command to turn off god mode in Grasscutter
       - Please tell me command to turn off god mode in Grasscutter
+      - How do I exit god mode in Grasscutter?
+      - What is the Grasscutter command to turn off god mode?
+      - How can I disable god mode in Grasscutter?
+      - What is the shortcut to turn off god mode in Grasscutter?
+      - Can I turn off god mode in Grasscutter using a command?
+      - Is there a GC command to deactivate god mode?
+      - How can I turn off god mode in GC?
+      - What is the one-command way to turn off god mode in Grasscutter?
+      - Any fast way to turn off god mode in Grasscutter with a command?
+      - Command to turn off god mode in Grasscutter quickly?
+      - Can you send me the command to turn off god mode in Grasscutter?
+      - How to turn off god mode in Grasscutter?
+      - Command to turn off god mode?
+      - How to disable god mode in Grasscutter?
+      - Turn off god mode in GC?
+      - Command to disable god mode?
+      - Is there a shortcut to turn off god mode in Grasscutter?
+      - Any fast way to turn off god mode in Grasscutter with one command?
+      - Can I turn off god mode in Grasscutter using one command?
+      - How can I disable god mode in GC?
+      - Is there a Grasscutter command to turn off god mode?
+      - What is the shortcut to disable god mode in Grasscutter?
+      - How to turn off god mode in Grasscutter after activating it?
+      - Can you tell me how to turn off god mode in Grasscutter with a command?
+      - How do I turn off god mode in Grasscutter?
 
 responses:
   utter_grasscutter_command_godmode_on:

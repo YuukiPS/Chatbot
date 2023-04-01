@@ -8,6 +8,29 @@ nlu:
       - What is the command to get all
       - I want to get character, item, weapons all in one command
       - I want to get all command
+      - What is the command to get all in Grasscutter?
+      - Command to get all in Grasscutter?
+      - How to get all in Grasscutter?
+      - Is there a command to get all characters, items, and weapons in Grasscutter?
+      - Can you send me a command to get all characters, items, and weapons in Grasscutter?
+      - I want to get all characters, items, and weapons in Grasscutter, is there a command for that?
+      - How can I get all characters, items, and weapons in Grasscutter with one command?
+      - What is the shortcut to get all characters, items, and weapons in Grasscutter?
+      - Any fast way to get all characters, items, and weapons in Grasscutter with one command?
+      - Command to get all characters, items, and weapons in Grasscutter at once?
+      - Can I get all characters, items, and weapons in Grasscutter using one command?
+      - How to get all in Grasscutter?
+      - Command to get all in Grasscutter?
+      - What is the command to get all in Grasscutter?
+      - I want to get everything in one command
+      - Command to get all characters, items, and weapons in Grasscutter?
+      - Can you send me a command to get everything in Grasscutter?
+      - I want to get everything in Grasscutter, is there a command for that?
+      - How can I get everything in Grasscutter with one command?
+      - What is the shortcut to get everything in Grasscutter?
+      - Any fast way to get everything in Grasscutter with one command?
+      - Command to get everything in Grasscutter at once?
+      - Can I get everything in Grasscutter using one command?
 
   - intent: grasscutter_command_all_character
     examples: |
@@ -18,6 +41,25 @@ nlu:
       - Is there another commnad than `/give all` to get all character?
       - Command to get all character in one command
       - I want to get all character in one command
+      - What is the Grasscutter command to obtain all characters at once?
+      - How can I retrieve all characters with a single command in Grasscutter?
+      - Is there a way to get all characters in Grasscutter with one command?
+      - Can you send me the command to obtain all characters in Grasscutter?
+      - How do I get all characters in Grasscutter with a single command?
+      - Is there a shortcut to get all characters in Grasscutter at once?
+      - What is the quickest way to get all characters in Grasscutter with a command?
+      - How can I obtain all characters in Grasscutter simultaneously using one command?
+      - Any command to get all characters in Grasscutter?
+      - How to obtain all characters in Grasscutter with one command?
+      - Command to get all characters in Grasscutter?
+      - How to get all characters with one command in Grasscutter?
+      - Is there a Grasscutter command to get all characters at once?
+      - What is the command to get all characters in Grasscutter?
+      - Can you tell me the command to get all characters in Grasscutter?
+      - I want to get all characters with a single command in Grasscutter, is that possible?
+      - How can I get all characters in Grasscutter using a command?
+      - Is there a shortcut to get all characters in Grasscutter with one command?
+      - Quick command to get all characters in Grasscutter, does it exist?
 
 responses:
   utter_grasscutter_command_all:

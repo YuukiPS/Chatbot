@@ -158,4 +158,27 @@ responses:
   utter_grasscutter_change_banner_public_server:
   - text: "You can't change banner in public server, you can try to change banner in localhost server. Just edit a `banners.json` or `banners.tsj` file"
   utter_grasscutter_change_banner_localhost:
-  - text: "You can try to change banner edit a `banners.json`, here is example:\n```json\n[\n\t{\n\t\t\"gachaType\": 301,\n\t\t\"scheduleId\": 903,\n\t\t\"bannerType\": \"EVENT\",\n\t\t\"prefabPath\": \"GachaShowPanel_A124\",\n\t\t\"previewPrefabPath\": \"\",\n\t\t\"titlePath\": \"UI_GACHA_SHOW_PANEL_A065_TITLE\",\n\t\t\"costItemId\": 223,\n\t\t\"beginTime\": 0,\n\t\t\"endTime\": 1924992000,\n\t\t\"sortId\": 1003,\n\t\t\"weights5\": [[1,80], [73,160], [74,730], [75, 1300], [76,1900], [77,2450], [78,3050], [79,3680], [80,4200], [81,4750], [82,5320], [83,5750], [84,6100], [85,5800], [86,4850], [87,3080], [88,2450], [89,3050], [90,10000]],\n\t\t\"eventChance5\": 150,\n\t\t\"rateUpItems5\": [1063],\n\t\t\"rateUpItems4\": [1039, 1043, 1080],\n\t\t\"fallbackItems5Pool1\": [1003, 1016, 1041, 1035, 1042, 1069],\n\n\t\t\"fallbackItems5Pool2\": [1003, 1016, 1041, 1035, 1042, 1069]\n\t}\n]"
+  - text: |
+      You can try to change the banner by editing the `banners.json` file. Here is an example:
+      ```json
+      [
+        {
+          "gachaType": 301,
+          "scheduleId": 903,
+          "bannerType": "EVENT",
+          "prefabPath": "GachaShowPanel_A124",
+          "previewPrefabPath": "",
+          "titlePath": "UI_GACHA_SHOW_PANEL_A065_TITLE",
+          "costItemId": 223,
+          "beginTime": 0,
+          "endTime": 1924992000,
+          "sortId": 1003,
+          "weights5": [[1,80], [73,160], [74,730], [75, 1300], [76,1900], [77,2450], [78,3050], [79,3680], [80,4200], [81,4750], [82,5320], [83,5750], [84,6100], [85,5800], [86,4850], [87,3080], [88,2450], [89,3050], [90,10000]],
+          "eventChance5": 150,
+          "rateUpItems5": [1063],
+          "rateUpItems4": [1039, 1043, 1080],
+          "fallbackItems5Pool1": [1003, 1016, 1041, 1035, 1042, 1069],
+          "fallbackItems5Pool2": [1003, 1016, 1041, 1035, 1042, 1069]
+        }
+      ]
+      ```

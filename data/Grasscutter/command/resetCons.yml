@@ -1,0 +1,51 @@
+version: "3.1"
+
+nlu:
+  - intent: grasscutter_command_reset_cons_current_characters
+    examples: |
+      - Command to reset cons of current characters in Grasscutter?
+      - Command to reset constellation of current characters in Grasscutter?
+      - Is there a command to reset cons of current characters in Grasscutter?
+      - Is there a command to reset constellation of current characters in Grasscutter?
+      - Reset cons of current characters in Grasscutter, command exists?
+      - Reset constellation of current characters in Grasscutter, command exists?
+      - Reset cons of current characters in Grasscutter, command available?
+      - Reset constellation of current characters in Grasscutter, command available?
+      - Can you send me a command to reset cons of current characters in Grasscutter?
+      - Can you send me a command to reset constellation of current characters in Grasscutter?
+      - I want to reset cons of current characters in Grasscutter, is there a command for that?
+      - I want to reset constellation of current characters in Grasscutter, is there a command for that?
+      - One command to reset cons of current characters in Grasscutter, exists?
+      - One command to reset constellation of current characters in Grasscutter, exists?
+      - Any command to reset cons of current characters in Grasscutter?
+      - Any command to reset constellation of current characters in Grasscutter?
+      - Quick command to reset cons of current characters in Grasscutter, exists?
+      - Quick command to reset constellation of current characters in Grasscutter, exists?
+      - How to reset cons of current characters in Grasscutter?
+      - How to reset constellation of current characters in Grasscutter?
+      - Is there a way to quickly reset cons of current characters in Grasscutter?
+      - Is there a way to quickly reset constellation of current characters in Grasscutter?
+      - Command to reset cons of current characters in Grasscutter?
+      - Command to reset constellation of current characters in Grasscutter?
+      - How to reset cons of current characters in Grasscutter?
+      - How to reset constellation of current characters in Grasscutter?
+      - Is there a single command to reset cons of current characters in Grasscutter?
+      - Is there a single command to reset constellation of current characters in Grasscutter?
+      - What is the shortcut to reset cons of current characters in Grasscutter?
+      - What is the shortcut to reset constellation of current characters in Grasscutter?
+      - Any fast way to reset cons of current characters in Grasscutter?
+      - Any fast way to reset constellation of current characters in Grasscutter?
+      - Command to reset cons in Grasscutter?
+      - How to reset constellation in Grasscutter?
+      - Command to reset current character cons in Grasscutter?
+      - Is there a Grasscutter command to reset current character constellation?
+      - Grasscutter command to reset cons of current characters?
+      - Resetting current character constellation in Grasscutter with one command?
+      - How to quickly reset cons of current characters in Grasscutter?
+      - Any shortcut to reset constellation of current characters in Grasscutter?
+      - Quick way to reset current character cons in Grasscutter?
+      - Is there a single command to reset cons or constellation in Grasscutter?
+  
+responses:
+  utter_grasscutter_command_reset_cons_current_characters:
+  - text: "To reset constellation in Grasscutter, you can try with this command: `/resetConst`. You will need to relog after using the command to see any changes"

@@ -143,3 +143,13 @@ stories:
     steps:
     - intent: grasscutter_command_common_list
     - action: utter_grasscutter_command_common_list
+  
+  - story: How to reset cons current characters in Grasscutter?
+    steps:
+    - intent: grasscutter_command_reset_cons_current_characters
+    - action: utter_grasscutter_command_reset_cons_current_characters
+  
+  - story: How to kill all entity in Grasscutter?
+    steps:
+    - intent: grasscutter_command_kill_all_entity
+    - action: utter_grasscutter_command_kill_all_entity

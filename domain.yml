@@ -114,6 +114,8 @@ intents:
 - grasscutter_error_pc_4214
 - grasscutter_change_banner_public_server
 - grasscutter_change_banner_localhost
+- grasscutter_command_reset_cons_current_characters
+- grasscutter_command_kill_all_entity
 entities:
 - item_name
 - user_name

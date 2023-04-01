@@ -9,6 +9,21 @@ nlu:
       - Please tell me a command list for GIO
       - I want to know a command list for GIO
       - I want to know list of command for GIO
+      - Command list for GIO?
+      - List of commands for GIO?
+      - GIO command list?
+      - How do I access the command list for GIO?
+      - Where can I find a list of commands for GIO?
+      - Can you send me the command list for GIO?
+      - How can I view the command list for GIO?
+      - What commands are available in GIO?
+      - Is there a specific command to view the GIO command list?
+      - What is the recommended way to access the GIO command list?
+      - I need a list of commands for GIO, can you help?
+      - GIO server commands?
+      - Can you recommend a resource for learning about GIO commands?
+      - How do I find the complete list of commands for GIO?
+      - What is the process for adding custom commands to GIO, and where can I find information on the existing commands?
 
   - intent: gio_command_how_to_use_it
     examples: |
@@ -27,6 +42,21 @@ nlu:
       - Example to use it
       - I want to know example of command for GIO
       - Tell me example
+      - Example of GIO command list?
+      - Can you provide an example of GIO commands?
+      - What is a sample GIO command list?
+      - Example usage of GIO commands?
+      - Where can I find examples of GIO commands?
+      - Can you show me a GIO command list example?
+      - How do I use GIO commands? Example please.
+      - What is the format for GIO commands? Example needed.
+      - I need to see how GIO commands are used, can you provide an example?
+      - Can you walk me through an example of a GIO command?
+      - Is there a tutorial or guide with GIO command examples?
+      - How can I learn GIO commands through examples?
+      - Could you demonstrate a GIO command for me?
+      - GIO command list example, please?
+      - What are some common GIO commands and their examples?
 
 responses:
   utter_gio_command:
