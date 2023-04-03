@@ -29,6 +29,16 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
+- story: Thanks
+  steps:
+  - intent: mood_affirm
+  - action: utter_mood_affirm
+
+- story: BRUH
+  steps:
+  - intent: unknown_question
+  - action: utter_unknown_question
+
 - story: user say name
   steps:
   - intent: provide_name

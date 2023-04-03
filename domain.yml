@@ -2,6 +2,8 @@ version: '3.1'
 intents:
 - about_gcandroid
 - affirm
+- mood_affirm
+- unknown_question
 - bot_challenge
 - bot_fine
 - bot_name
@@ -116,6 +118,20 @@ intents:
 - grasscutter_change_banner_localhost
 - grasscutter_command_reset_cons_current_characters
 - grasscutter_command_kill_all_entity
+- grasscutter_command_achievement_grant_all
+- grasscutter_command_achievement_revoke_all
+- grasscutter_command_achievement_grant
+- grasscutter_command_achievement_revoke
+- grasscutter_command_stats_remove_cooldown
+- grasscutter_command_help
+- grasscutter_command_help_achievement
+- grasscutter_command_help_clear
+- grasscutter_command_help_daily
+- grasscutter_command_help_enter_dungeon
+- grasscutter_command_help_entity
+- grasscutter_command_help_enka
+- grasscutter_command_help_equip
+
 entities:
 - item_name
 - user_name
@@ -182,6 +198,12 @@ responses:
   - text: Great, carry on!
   utter_goodbye:
   - text: Bye
+  utter_mood_affirm:
+  - text: "You're welcome."
+  - text: "I'm happy to help."
+  - text: "Any time!"
+  utter_unknown_question:
+  - text: "I am not sure what you are asking. Can you rephrase your question?"
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
   utter_provide_name:

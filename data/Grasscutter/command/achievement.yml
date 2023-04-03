@@ -1,0 +1,191 @@
+version: "3.1"
+
+nlu:
+  - intent: grasscutter_command_achievement_grant_all
+    examples: |
+      - Is there command to grant all achievements in Grasscutter?
+      - Is there command to grant all achievements in GC?
+      - Is there command to get all achievements in Grasscutter?
+      - Is there command to get all achievements in GC?
+      - Can you send me a command to grant all achievements in Grasscutter?
+      - Can you send me a command to grant all achievements in GC?
+      - Can you send me a command to get all achievements in Grasscutter?
+      - Can you send me a command to get all achievements in GC?
+      - I want to grant all achievements in Grasscutter, is there a command for that?
+      - I want to grant all achievements in GC, is there a command for that?
+      - I want to get all achievements in Grasscutter, is there a command for that?
+      - I want to get all achievements in GC, is there a command for that?
+      - One command to grant all achievements in Grasscutter, exists?
+      - One command to grant all achievements in GC, exists?
+      - One command to get all achievements in Grasscutter, exists?
+      - One command to get all achievements in GC, exists?
+      - Any command to grant all achievements in Grasscutter?
+      - Any command to grant all achievements in GC?
+      - Any command to get all achievements in Grasscutter?
+      - Any command to get all achievements in GC?
+      - So, i play on Grasscutter, is there a command to grant all achievements?
+      - So, i play on Grasscutter, is there a command to get all achievements?
+      - So, i play on GC, is there a command to grant all achievements?
+      - So, i play on GC, is there a command to get all achievements?
+      - Quick command to grant all achievements in Grasscutter, exists?
+      - Quick command to grant all achievements in GC, exists?
+      - Quick command to get all achievements in Grasscutter, exists?
+      - Quick command to get all achievements in GC, exists?
+      - How to grant all achievements in Grasscutter?
+      - How to grant all achievements in GC?
+      - How to get all achievements in Grasscutter?
+      - How to get all achievements in GC?
+      - Is there a way to quickly grant all achievements in Grasscutter?
+      - Is there a way to quickly grant all achievements in GC?
+      - Is there a way to quickly get all achievements in Grasscutter?
+      - Is there a way to quickly get all achievements in GC?
+      - Command to grant all achievements in Grasscutter?
+      - Command to grant all achievements in GC?
+      - Command to get all achievements in Grasscutter?
+      - Command to get all achievements in GC?
+      - How to grant all achievements in Grasscutter?
+      - How to grant all achievements in GC?
+      - How to get all achievements in Grasscutter?
+      - How to get all achievements in GC?
+      - Is there a single command to grant all achievements in Grasscutter?
+      - Is there a single command to grant all achievements in GC?
+      - Is there a single command to get all achievements in Grasscutter?
+      - Is there a single command to get all achievements in GC?
+      - What is the shortcut to grant all achievements in Grasscutter?
+      - What is the shortcut to grant all achievements in GC?
+      - What is the shortcut to get all achievements in Grasscutter?
+      - What is the shortcut to get all achievements in GC?
+      - Any fast way to grant all achievements in Grasscutter?
+      - Any fast way to grant all achievements in GC?
+      - Any fast way to get all achievements in Grasscutter?
+      - Any fast way to get all achievements in GC?
+      - Command to grant all achievements in Grasscutter?
+      - Command to grant all achievements in GC?
+      - Command to get all achievements in Grasscutter?
+      - Command to get all achievements in GC?
+      - How to grant all achievements in Grasscutter?
+      - How to grant all achievements in GC?
+      - How to get all achievements in Grasscutter?
+      - How to get all achievements in GC?
+
+  - intent: grasscutter_command_achievement_revoke_all
+    examples: |
+      - Is there command to revoke all achievements in Grasscutter?
+      - Is there command to revoke all achievements in GC?
+      - Can you send me a command to revoke all achievements in Grasscutter?
+      - Can you send me a command to revoke all achievements in GC?
+      - I want to revoke all achievements in Grasscutter, is there a command for that?
+      - I want to revoke all achievements in GC, is there a command for that?
+      - One command to revoke all achievements in Grasscutter, exists?
+      - One command to revoke all achievements in GC, exists?
+      - Any command to revoke all achievements in Grasscutter?
+      - Any command to revoke all achievements in GC?
+      - So, i play on Grasscutter, is there a command to revoke all achievements?
+      - So, i play on GC, is there a command to revoke all achievements?
+      - Quick command to revoke all achievements in Grasscutter, exists?
+      - Quick command to revoke all achievements in GC, exists?
+      - How to revoke all achievements in Grasscutter?
+      - How to revoke all achievements in GC?
+      - Is there a way to quickly revoke all achievements in Grasscutter?
+      - Is there a way to quickly revoke all achievements in GC?
+      - Command to revoke all achievements in Grasscutter?
+      - Command to revoke all achievements in GC?
+      - Is there a single command to revoke all achievements in Grasscutter?
+      - Is there a single command to revoke all achievements in GC?
+      - What is the shortcut to revoke all achievements in Grasscutter?
+      - What is the shortcut to revoke all achievements in GC?
+      - Any fast way to revoke all achievements in Grasscutter?
+      - Any fast way to revoke all achievements in GC?
+      - Command to revoke all achievements in Grasscutter?
+      - Command to revoke all achievements in GC?
+      - How to revoke all achievements in Grasscutter?
+      - How to revoke all achievements in GC?
+      - Is there a single command to revoke all achievements in Grasscutter?
+      - Is there a single command to revoke all achievements in GC?
+      - What is the shortcut to revoke all achievements in Grasscutter?
+      - What is the shortcut to revoke all achievements in GC?
+      - Any fast way to revoke all achievements in Grasscutter?
+      - Any fast way to revoke all achievements in GC?
+      - Command to revoke all achievements in Grasscutter?
+      - Command to revoke all achievements in GC?
+      - How to revoke all achievements in Grasscutter?
+      - How to revoke all achievements in GC?
+  
+  - intent: grasscutter_command_achievement_grant
+    examples: |
+      - Can you send me a command to grant achievement in Grasscutter?
+      - I want to get achievement in Grasscutter, Can you send me a command for that?
+      - Please send me a command to grant achievement in Grasscutter?
+      - Is there a command to grant achievement in Grasscutter?
+      - How can I unlock achievements in Grasscutter using a command?
+      - Can you provide me with a command to unlock achievements in Grasscutter?
+      - What is the command to grant achievements in Grasscutter?
+      - I need a command to unlock achievements in Grasscutter, can you help me with that?
+      - Is there a specific command to grant achievements in Grasscutter or can any command be used?
+      - Can you send me the exact command to grant achievements in Grasscutter?
+      - How do I use the command to grant achievements in Grasscutter?
+      - Are there any prerequisites or requirements to use the command for granting achievements in Grasscutter?
+      - Can I use the command to grant achievements in Grasscutter multiple times?
+      - What happens if I use the command to grant achievements in Grasscutter but I already have the achievement?
+      - Is there a limit to the number of achievements I can unlock using the command in Grasscutter?
+      - Can I use the command to grant achievements in Grasscutter on any platform or device?
+      - How long does it take for the command to grant achievements in Grasscutter to take effect?
+      - Can I use the command to grant achievements in Grasscutter in multiplayer mode?
+      - Is there a way to check which achievements I have unlocked using the command in Grasscutter?
+      - Command for Grasscutter achievements?
+      - How to get achievements in Grasscutter using a command- Grasscutter achievement command?
+      - Need a command for Grasscutter achievements.
+      - How to use the command for Grasscutter achievements?
+      - Any requirements for using the Grasscutter achievement command?
+      - Can I use the command for Grasscutter achievements multiple times?
+      - Limitations of the Grasscutter achievement command?
+      - Can the Grasscutter achievement command be used on any device?
+      - Checking unlocked achievements using the Grasscutter command?
+  
+  - intent: grasscutter_command_achievement_revoke
+    examples: |
+      - Can you send me a command to revoke achievement in Grasscutter?
+      - Can you send me a command to remove or revoke achievement in Grasscutter?
+      - I want to revoke achievement in Grasscutter, Can you send me a command for that?
+      - I want to remove or revoke achievement in Grasscutter, Can you send me a command for that?
+      - How can I revoke an achievement in Grasscutter using a command?
+      - Is there a specific command to remove an achievement in Grasscutter?
+      - Can you provide me with a command to undo an achievement in Grasscutter?
+      - What is the syntax for revoking an achievement in Grasscutter using a command?
+      - How do I use a command to revoke an achievement in Grasscutter?
+      - Can you give me an example of a command to revoke an achievement in Grasscutter?
+      - What are the steps to revoke an achievement in Grasscutter using a command?
+      - Is it possible to revoke multiple achievements at once using a command in Grasscutter?
+      - Can you explain how to revoke an achievement in Grasscutter using a command line interface?
+      - What happens to the progress made towards an achievement when it is revoked using a command in Grasscutter?
+      - Can you provide me with a list of all the available commands to manage achievements in Grasscutter?
+      - How do I know if an achievement has been successfully revoked using a command in Grasscutter?
+      - Is there a way to revoke an achievement for a specific user using a command in Grasscutter?
+      - Can you explain the difference between removing and revoking an achievement in Grasscutter using a command?
+      - How do I revoke an achievement that was granted by mistake using a command in Grasscutter?
+      - How to revoke an achievement in Grasscutter with a command?
+      - Grasscutter command to remove an achievement?
+      - Example command to undo an achievement in Grasscutter?
+      - Syntax for revoking an achievement in Grasscutter using a command?
+      - Steps to revoke an achievement in Grasscutter with a command?
+      - List of available commands to manage achievements in Grasscutter?
+      - How to revoke an achievement for a specific user in Grasscutter using a command?
+      - Difference between removing and revoking an achievement in Grasscutter with a command?
+      - How to revoke a mistakenly granted achievement in Grasscutter with a command?
+
+
+responses:
+  utter_grasscutter_command_achievement_grant_all:
+  - text: "To grant all achievements in Grasscutter, you can try with the following command: `/am grantall`"
+  - text: "If you want to grant all achievements in Grasscutter, you can try with this command: `/am grantall`"
+  utter_grasscutter_command_achievement_revoke_all:
+  - text: "To revoke all achievements in Grasscutter, you can try with the following command: `/am revokeall`"
+  - text: "Here is the command to revoke all achievements in Grasscutter: `/am revokeall`"
+  utter_grasscutter_command_achievement_grant:
+  - text: "To grant an achievement in Grasscutter, you can try with the following command: `/am grant <achievement id>`. To get the achievement id, you can try to check on GM Handbook or use bot `/gm` in <#987879230585069609> channel."
+  - text: "Here is the command to grant an achievement in Grasscutter: `/am grant <achievement id>`. To get the achievement id, you can try to check on GM Handbook or use bot `/gm` in <#987879230585069609> channel."
+  - text: "Achievement command in Grasscutter is `/am grant <achievement id>`. To get the achievement id, you can try to check on GM Handbook or use bot `/gm` in <#987879230585069609> channel."
+  utter_grasscutter_command_achievement_revoke:
+  - text: "To revoke an achievement in Grasscutter, you can try with the following command: `/am revoke <achievement id>`. To get the achievement id, you can try to check on GM Handbook or use bot `/gm` in <#987879230585069609> channel."
+  - text: "Here is the command to revoke an achievement in Grasscutter: `/am revoke <achievement id>`. To get the achievement id, you can try to check on GM Handbook or use bot `/gm` in <#987879230585069609> channel."
+  - text: "Achievement command in Grasscutter is `/am revoke <achievement id>`. To get the achievement id, you can try to check on GM Handbook or use bot `/gm` in <#987879230585069609> channel."

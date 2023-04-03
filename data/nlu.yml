@@ -44,6 +44,21 @@ nlu:
     - don't like that
     - no way
     - not really
+- intent: mood_affirm
+  examples: |
+    - Thanks
+    - Thanks for your help
+    - Thanks for your support
+    - Wow, thanks
+    - Thank you
+    - Thank you very much
+    - Thank you so much
+    - Thank you for your help
+    - Thank you for your support
+    - Thanks a lot
+    - Thanks a bunch
+    - Thanks a ton
+    - Thanks for the help
 - intent: mood_great
   examples: |
     - perfect
@@ -76,6 +91,18 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+- intent: unknown_question
+  examples: |
+    - Bruh
+    - Lmao
+    - Lmfao
+    - Pog
+    - Poggers
+    - Pogchamp
+    - Pogger
+    - Ayy
+    - Wtf
+    - Wth
 - intent: bot_challenge
   examples: |
     - are you a bot?

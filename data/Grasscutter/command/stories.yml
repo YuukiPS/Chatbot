@@ -153,3 +153,68 @@ stories:
     steps:
     - intent: grasscutter_command_kill_all_entity
     - action: utter_grasscutter_command_kill_all_entity
+  
+  - story: How to grant all achievements in Grasscutter?
+    steps:
+    - intent: grasscutter_command_achievement_grant_all
+    - action: utter_grasscutter_command_achievement_grant_all
+  
+  - story: How to revoke all achievements in Grasscutter?
+    steps:
+    - intent: grasscutter_command_achievement_revoke_all
+    - action: utter_grasscutter_command_achievement_revoke_all
+  
+  - story: How to grant achievement in Grasscutter?
+    steps:
+    - intent: grasscutter_command_achievement_grant
+    - action: utter_grasscutter_command_achievement_grant
+  
+  - story: How to revoke achievement in Grasscutter?
+    steps:
+    - intent: grasscutter_command_achievement_revoke
+    - action: utter_grasscutter_command_achievement_revoke
+  
+  - story: How to remove cooldown in Grasscutter?
+    steps:
+    - intent: grasscutter_command_stats_remove_cooldown
+    - action: utter_grasscutter_command_stats_remove_cooldown
+  
+  - story: Whats is output for /help
+    steps:
+    - intent: grasscutter_command_help
+    - action: utter_grasscutter_command_help
+  
+  - story: What is output for /help am
+    steps:
+    - intent: grasscutter_command_help_achievement
+    - action: utter_grasscutter_command_help_achievement
+
+  - story: What is output for /help clear
+    steps:
+    - intent: grasscutter_command_help_clear
+    - action: utter_grasscutter_command_help_clear
+
+  - story: What is output for /help daily
+    steps:
+    - intent: grasscutter_command_help_daily
+    - action: utter_grasscutter_command_help_daily
+
+  - story: What is output for /help enka
+    steps:
+    - intent: grasscutter_command_help_enka
+    - action: utter_grasscutter_command_help_enka
+  
+  - story: What is output for /help enter_dungeon
+    steps:
+    - intent: grasscutter_command_help_enter_dungeon
+    - action: utter_grasscutter_command_help_enter_dungeon
+  
+  - story: What is output for /help entity
+    steps:
+    - intent: grasscutter_command_help_entity
+    - action: utter_grasscutter_command_help_entity
+  
+  - story: What is output for /help equip
+    steps:
+    - intent: grasscutter_command_help_equip
+    - action: utter_grasscutter_command_help_equip
