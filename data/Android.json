@@ -14,7 +14,7 @@
             "send 3.7 Android"
         ],
         "answer": [
-            "I am sorry. There is no download link for Android 3.7"
+            "I am sorry. Currently there is no download link for Android 3.7"
         ]
     },
     "storage_problem_android": {
@@ -84,6 +84,58 @@
             "If you enter official server, which actually is not allowed to connect to official server using apk launcher mod because it is risky\n\nIf you try to connect to Private Server and get this error message, then the proxy failed to change a domain or server to Private Server. You can try to re open the game and try again",
             "This error message is caused by the proxy failed to change a domain or server to Private Server. You can try to re open the game and try again",
             "To fix this error, you can try to re open the game and try again"
+        ]
+    },
+    "download_link_3.6_android": {
+        "question": [
+            "Download link for 3.6 in Android",
+            "Android 3.6 download link",
+            "Send link for Genshin Impact Private Server 3.6 in Android",
+            "Can you send me link download Android 3.6?",
+            "Where is download link for Android 3.6?"
+        ],
+        "answer": [
+            "You can find download link for Android 3.6 in <https://doc.yuuki.me/docs/tutorial-connect/android/install#install-mod-launcher-only-no-root-32-gio---36-gc>, or you can check in <#970380775264518244>"
+        ]
+    },
+    "localhost_grasscutter_android": {
+        "question": [
+            "How to do setup localhost on Android?",
+            "Please give me a tutorial how to localhost on Android?",
+            "How can I do localhost on Android?",
+            "Is there a way to do localhost on Android?",
+            "How to setup localhost on my Android phone?",
+            "Is there a way to do localhost on my Android phone?"
+        ],
+        "answer": [
+            "If you want to localhost Grasscutter on Android. You can check Github: <https://github.com/Score-Inc/GCAndroid>, Or you can try to execute this command to install Localhost on you're Android phone, make sure you have install Termux on your phone. Here is the command:\n```bash\nbash <(curl -s \"https://api.elaxan.com/Termux/installJarGrasscutter.sh\")```. And wait until installation is complete!"
+        ]
+    },
+    "download_link_gio_on_android": {
+        "question": [
+            "Can you send me download link for GIO Android?",
+            "Send me download link for GIO Android",
+            "Is there any download link for GIO Android?",
+            "Where can i get GIO in Android?",
+            "Where can i download GIO in Android?"
+        ],
+        "answer": [
+            "To download or install, You can check our official documentation here: https://doc.yuuki.me/docs/tutorial-connect/android/install#copy-data-game-no-root-32-gio",
+            "You can check our official documentation here: https://doc.yuuki.me/docs/tutorial-connect/android/install#copy-data-game-no-root-32-gio",
+            "If you want to play GIO in Android, You can check our official documentation here: https://doc.yuuki.me/docs/tutorial-connect/android/install#copy-data-game-no-root-32-gio"
+        ]
+    },
+    "localhost_gio_on_android": {
+        "question": [
+            "How to localhost GIO in Android?",
+            "Can you tell me how to localhost GIO in Android?",
+            "Send me tutorial for localhost GIO in Android",
+            "Can you send me tutorial for localhost GIO in Android?",
+            "Is there any tutorial for localhost GIO in Android?",
+            "Is it possible to localhost GIO in Android?"
+        ],
+        "answer": [
+            "There is no way you can do localhost on Android. Please check on https://discord.com/channels/964119462188040202/1049101257933066322/1099495316924944484 to get more information about how to localhost in you're Android phone"
         ]
     }
 }

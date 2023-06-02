@@ -7,20 +7,79 @@
             "Send me the link for the GM handbook",
             "Where can I find the GM handbook",
             "Where is the GM handbook",
+            "Download link for GM Handbook",
             "Where can I find the link for the GM handbook",
-            "Where is the link for the GM handbook"
+            "Where is the link for the GM handbook",
+            "What is the content of the GM handbook?",
+            "Can you provide a summary of the GM handbook?",
+            "Are there any specific requirements to access the GM handbook?",
+            "Is the GM handbook available for download?",
+            "Can you provide me with the download link for the GM handbook?",
+            "How can I get access to the GM handbook?",
+            "What is the website where I can find the GM handbook?",
+            "Do you know where I can download the GM handbook?",
+            "Is there a PDF version of the GM handbook that I can download?",
+            "Could you please share the download link for the GM handbook?",
+            "Are there any specific requirements to access the GM handbook?",
+            "Is the GM handbook free to download?",
+            "Can you recommend a reliable source to download the GM handbook?"
         ],
         "answer": [
-            "The latest handbook can be found in <#970380775264518244>. You can find the 3.5 GM_Handbook here: <https://discord.com/channels/964119462188040202/970380775264518244/1070347031031316561>",
-            "To access the latest handbook, please visit <#970380775264518244>. Here is the link to the 3.5 GM_Handbook: <https://discord.com/channels/964119462188040202/970380775264518244/1070347031031316561>",
-            "You'll find the latest handbook in <#970380775264518244>. Here's the link to the 3.5 GM_Handbook: <https://discord.com/channels/964119462188040202/970380775264518244/1070347031031316561>",
-            "You can check <#970380775264518244> for the latest handbook. Here's the 3.5 GM_Handbook link: <https://discord.com/channels/964119462188040202/970380775264518244/1070347031031316561>",
-            "The latest handbook is available in <#970380775264518244>. You can access the 3.5 GM_Handbook here: <https://discord.com/channels/964119462188040202/970380775264518244/1070347031031316561>",
-            "To find the latest handbook, go to <#970380775264518244>. Here's the 3.5 GM_Handbook link: <https://discord.com/channels/964119462188040202/970380775264518244/1070347031031316561>",
-            "The 3.5 GM_Handbook can be found in <#970380775264518244>. For the latest handbook, please visit this channel: <https://discord.com/channels/964119462188040202/970380775264518244>",
-            "You can find the latest handbook in <#970380775264518244>. Here's the link to the 3.5 GM_Handbook: <https://discord.com/channels/964119462188040202/970380775264518244/1070347031031316561>",
-            "For the latest handbook, head over to <#970380775264518244>. You can find the 3.5 GM_Handbook here: <https://discord.com/channels/964119462188040202/970380775264518244/1070347031031316561>",
-            "The 3.5 GM_Handbook is located in <#970380775264518244>. To access the latest handbook, visit this channel: <https://discord.com/channels/964119462188040202/970380775264518244>"
+            "The latest handbook can be found in <#970380775264518244>. You can find the 3.7 GM_Handbook here: <https://discord.com/channels/964119462188040202/970380775264518244/1111453926261268571>",
+            "To access the latest handbook, please visit <#970380775264518244>. Here is the link to the 3.7 GM_Handbook: <https://discord.com/channels/964119462188040202/970380775264518244/1111453926261268571>",
+            "You'll find the latest handbook in <#970380775264518244>. Here's the link to the 3.7 GM_Handbook: <https://discord.com/channels/964119462188040202/970380775264518244/1111453926261268571>",
+            "You can check <#970380775264518244> for the latest handbook. Here's the 3.7 GM_Handbook link: <https://discord.com/channels/964119462188040202/970380775264518244/1111453926261268571>",
+            "The latest handbook is available in <#970380775264518244>. You can access the 3.7 GM_Handbook here: <https://discord.com/channels/964119462188040202/970380775264518244/1111453926261268571>",
+            "To find the latest handbook, go to <#970380775264518244>. Here's the 3.7 GM_Handbook link: <https://discord.com/channels/964119462188040202/970380775264518244/1111453926261268571>",
+            "The 3.7 GM_Handbook can be found in <#970380775264518244>. For the latest handbook, please visit this channel: https://discord.com/channels/964119462188040202/970380775264518244",
+            "You can find the latest handbook in <#970380775264518244>. Here's the link to the 3.7 GM_Handbook: <https://discord.com/channels/964119462188040202/970380775264518244/1111453926261268571>",
+            "For the latest handbook, head over to <#970380775264518244>. You can find the 3.7 GM_Handbook here: <https://discord.com/channels/964119462188040202/970380775264518244/1111453926261268571>",
+            "The 3.7 GM_Handbook is located in <#970380775264518244>. To access the latest handbook, visit this channel: https://discord.com/channels/964119462188040202/970380775264518244"
+        ]
+    },
+    "create_account_yuukips": {
+        "question": [
+            "How to create account?",
+            "Tutorial how to create account.",
+            "How to use command /account to create account?",
+            "How to create account in Genshin Impact Private Server YuukiPS?"
+        ],
+        "answer": [
+            "To create account. First go to link <#987879230585069609> channel. And type command `/account metode: create, username: <you're username>`. If you got error `The application did not respond`, Maybe the bot is down. You can try to wait until bot is back online!\nAlternative you can use this link to register you're account: <https://login.yuuki.me/account/login>"
+        ]
+    },
+    "server_down": {
+        "question": [
+            "Is server down?",
+            "Why error when connecting to server?",
+            "I got error while connecting to server"
+        ],
+        "answer": [
+            "Please check on channel <#1051149545779777586>. To get information is server down"
+        ]
+    },
+    "link_document": {
+        "question": [
+            "Can you send me link document for YuukiPS?",
+            "Is there a link document for YuukiPS?",
+            "Link document for YuukiPS"
+        ],
+        "answer": [
+            "Here is link document for YuukiPS: <https://doc.yuuki.me>"
+        ]
+    },
+    "skip_cutscene_gc": {
+        "question": [
+            "How can you skip cutscenes",
+            "How to skip cutscenes",
+            "Command to skip cutscenes",
+            "How to skip cutscenes in Genshin Impact",
+            "How to skip cutscenes in Genshin Impact Private Server",
+            "How to skip cutscenes in GC",
+            "Tell me how to skip cutscenes"
+        ],
+        "answer": [
+            "You can't skip cutscene, you need to use Cheat Software to skip cutscene."
         ]
     }
 }

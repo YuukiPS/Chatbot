@@ -53,33 +53,6 @@
             "You can try to level up a character by materials. You can't get or add character with level 90 or higher with command in GIO, you need to manual level up them."
         ]
     },
-    "localhost_gio_on_android": {
-        "question": [
-            "How to localhost GIO in Android?",
-            "Can you tell me how to localhost GIO in Android?",
-            "Send me tutorial for localhost GIO in Android",
-            "Can you send me tutorial for localhost GIO in Android?",
-            "Is there any tutorial for localhost GIO in Android?",
-            "Is it possible to localhost GIO in Android?"
-        ],
-        "answer": [
-            "If you want to localhost GIO on Android. Please read here: https://discord.com/channels/964119462188040202/1049101257933066322/1099495316924944484"
-        ]
-    },
-    "download_link_gio_on_android": {
-        "question": [
-            "Can you send me download link for GIO Android?",
-            "Send me download link for GIO Android",
-            "Is there any download link for GIO Android?",
-            "Where can i get GIO in Android?",
-            "Where can i download GIO in Android?"
-        ],
-        "answer": [
-            "To download or install, You can check our official documentation here: https://doc.yuuki.me/docs/tutorial-connect/android/install#copy-data-game-no-root-32-gio",
-            "You can check our official documentation here: https://doc.yuuki.me/docs/tutorial-connect/android/install#copy-data-game-no-root-32-gio",
-            "If you want to play GIO in Android, You can check our official documentation here: https://doc.yuuki.me/docs/tutorial-connect/android/install#copy-data-game-no-root-32-gio"
-        ]
-    },
     "command_list_gio": {
         "question": [
             "Can you tell me a command list for GIO?",
@@ -135,6 +108,17 @@
         ],
         "answer": [
             "Sure, here is example to use it!\nThe command `/cmd id: <id> uid: <uid> command:<command>`\n\nExample:\n`/cmd id: gio2 uid: <your_uid_game_> command: avatar add 10000002`\n\nfor `10000002` id is Kamisato Ayaka. For find id you can try to use command `/gm` in <#987879230585069609>"
+        ]
+    },
+    "spawn_monster_gio": {
+        "question": [
+            "How to spawn monster in GIO?",
+            "Spawn monster in GIO?",
+            "Command to spawn monster in GIO?",
+            "Please tell me how to spawn monster in GIO."
+        ],
+        "answer": [
+            "You can use command `monster <monster id> to spawn monster in GIO server!. To get `<monster id>` please check on GM Handbook!"
         ]
     }
 }

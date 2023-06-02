@@ -1,0 +1,142 @@
+{
+    "spawn_monster_gc": {
+        "question": [
+            "How to spawn monster in Grasscutter?",
+            "How to spawn monster in GC?",
+            "Command to spawn monster in Grasscutter",
+            "Command to spawn monster in GC",
+            "What is command to spawn monster in Grasscutter?",
+            "Spawn monster",
+            "Is there a command to spawn monster in Grasscutter?",
+            "Spawn monster in Grasscutter?"
+        ],
+        "answer": [
+            "You can use the command `/spawn <monster id> x<amount> lv<level> hp<health point>. To get ID, please check on GM Handbook!"
+        ]
+    },
+    "remove_quest_gc": {
+        "question": [
+            "How to remove quest?",
+            "can you tell me how to remove quest?",
+            "Please tell me how to remove quest?",
+            "Tell me how to remove quest?"
+        ],
+        "answer": [
+            "To remove quest, you can use this command `/q remove <quest id>`"
+        ]
+    },
+    "add_quest_gc": {
+        "question": [
+            "How to add quest?",
+            "can you tell me how to add quest?",
+            "Please tell me how to add quest?",
+            "Tell me how to add quest?"
+        ],
+        "answer": [
+            "To add quest, you can use this command `/q add <quest id>`"
+        ]
+    },
+    "remove_artifact_gc": {
+        "question": [
+            "How to remove artifact?",
+            "can you tell me how to remove artifact?",
+            "Please tell me how to remove artifact?",
+            "Tell me how to remove artifact?"
+        ],
+        "answer": [
+            "You can follow this command to remove artifact `/clear artifact` if you want to remove only 5 star artifact you can use this command `/clear artifact *5`"
+        ]
+    },
+    "add_artifact_gc": {
+        "question": [
+            "How to add artifact?",
+            "can you tell me how to add artifact?",
+            "Please tell me how to add artifact?",
+            "Tell me how to add artifact?"
+        ],
+        "answer": [
+            "Add Artifact you can follow or use this command `/give <artifact id> x<amount> lv<level>`"
+        ]
+    },
+    "level_up_character_gc": {
+        "question": [
+            "How to level up character?",
+            "How to level up avatar?",
+            "Please tell me how to level up character?",
+            "Please tell me how to level up avatar?",
+            "Is there any way to level up character?",
+            "Is there any way to level up avatar?",
+            "Tell me how to level up character?",
+            "Tell me how to level up avatar?",
+            "Can you tell me how to level up character?",
+            "Can you tell me how to level up avatar?"
+        ],
+        "answer": [
+            "If you already add a character to your account, you can't level up character unless you level up them with materials. However, if you haven't add a character to your account, you can use this command `/give <character id> lv<level> c<consideration>` to level up character and add them to your account."
+        ]
+    },
+    "add_character_gc": {
+        "question": [
+            "How to obtain character in GC with command?",
+            "Is there a command to get character?",
+            "What is command to get character in GC?",
+            "Get character in GC",
+            "Command to get avatars in GC",
+            "How to add character?",
+            "Please send command to get avatars in GC.",
+            "Is there a command to get avatars in GC?"
+        ],
+        "answer": [
+            "To get characters in GC. You can use the command `/give <character id> x<amount> lv<level> c<constellation>`. To get character ID. Please check on GM Handbook or use bot in <#987879230585069609> with command `/gm`"
+        ]
+    },
+    "enable_god_mode_gc": {
+        "question": [
+            "How to enable god mode in Grasscutter?",
+            "Is there a command to enable god mode in Grasscutter?",
+            "Enable god mode in GC",
+            "What is command to enable god mode in Grasscutter",
+            "Can you tell me what is command to enable god mode in Grasscutter?",
+            "How to turn on God Mode?"
+        ],
+        "answer": [
+            "To enable God Mode in Grasscutter. You can try with this command: `/prop godmode 1`"
+        ]
+    },
+    "disable_god_mode_gc": {
+        "question": [
+            "How to disable god mode",
+            "Disable god mode in Grasscutter",
+            "Command to disable god mode in Grasscutter",
+            "How to turn off god mode in Grasscutter?",
+            "How to turn off god mode?",
+            "What is command to turn off god mode in Grasscutter?"
+        ],
+        "answer": [
+            "To turn off God Mode in Grasscutter. You can try with the following command, and use it in Ayaka bot (in game): `/prop godmode 0`"
+        ]
+    },
+    "kill_character_gc": {
+        "question": [
+            "How to kill my character",
+            "Is there a command to kill my character?",
+            "Kill character",
+            "Command to kill my character"
+        ],
+        "answer": [
+            "To kill you're current character. You can use command `/kill`. This will kill you're current character"
+        ]
+    },
+    "finish_all_daily": {
+        "question": [
+            "Command to finish all daily",
+            "Is there a command to finish all daily?",
+            "Finish all daily",
+            "Send command to finish all daily",
+            "What command to finish all daily?"
+        ],
+        "answer": [
+            "To finish all daily in Grasscutter, You can use the command `/daily finishall`"
+        ]
+    }
+}
