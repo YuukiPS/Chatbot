@@ -1,9 +1,0 @@
-version: "3.1"
-
-stories:
-  - story: What is the id for water?
-    steps:
-    - intent: id_water
-    - action: utter_id_water
-    - intent: id_water_command
-    - action: utter_id_water_command

@@ -1,0 +1,55 @@
+{
+    "fiddler": {
+        "question": [
+            "can you send me a fiddler script?",
+            "send fiddler script",
+            "where is the fiddler script?",
+            "fiddler script",
+            "fiddler script please"
+        ],
+        "answer": [
+            "Here is fiddler script:\n```\nimport System;\nimport System.Windows.Forms;\nimport Fiddler;\nimport System.Text.RegularExpressions;\n\nclass Handlers {\n\tstatic function OnBeforeRequest(oS: Session) {\n\t\tif(oS.host.EndsWith(\".yuanshen.com\") || oS.host.EndsWith(\".hoyoverse.com\") || oS.host.EndsWith(\".mihoyo.com\") || oS.uriContains(\"http://overseauspider.yuanshen.com:8888/log\")) {\n\t\t\t//This can also be replaced with another ip/domain server.\n\t\t\toS.host = \"login.yuuki.me\";\n\t\t}\n\t}\n};```"
+        ]
+    },
+    "error_4214_pc": {
+        "question": [
+            "I got error 4214 on PC",
+            "How to fix error 4214 on PC",
+            "Is there any solution for error 4214 on PC",
+            "What is error 4214 on PC",
+            "How can I fix error 4214 on my PC?",
+            "Why am I getting error 4214 on my computer?",
+            "Is there a known solution for error 4214 on PC?",
+            "What causes error 4214 on PC?",
+            "Can error 4214 on PC be fixed without professional help?",
+            "How do I troubleshoot error 4214 on my PC?",
+            "Are there any common fixes for error 4214 on PC?",
+            "What steps can I take to prevent error 4214 on my computer?",
+            "Is error 4214 on PC a hardware or software issue?",
+            "Can I still use my PC with error 4214?",
+            "How long does it take to fix error 4214 on PC?",
+            "What are some other common errors on PCs?",
+            "Can error 4214 on PC cause data loss?",
+            "How do I backup my data before fixing error 4214 on PC?",
+            "Is there a way to recover lost data after fixing error 4214 on PC?",
+            "How to fix PC error 4214?",
+            "PC error 4214 solution?",
+            "What is PC error 4214?",
+            "PC error 4214 help?",
+            "How to troubleshoot PC error 4214?",
+            "PC error 4214 fix?",
+            "PC error 4214 cause?",
+            "PC error 4214 prevention?",
+            "PC error 4214 hardware or software?",
+            "Can I use PC with error 4214?",
+            "How long to fix PC error 4214?",
+            "Other common PC errors?",
+            "PC error 4214 data loss?",
+            "Backup data before fixing PC error 4214?",
+            "Recover lost data after fixing PC error 4214?"
+        ],
+        "answer": [
+            "Make sure you already patch with RSAPatch. You can check RSAPatch download here: https://github.com/34736384/RSAPatch/releases"
+        ]
+    }
+}

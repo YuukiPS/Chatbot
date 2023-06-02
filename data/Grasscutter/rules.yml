@@ -1,9 +1,0 @@
-version: "3.1"
-
-rules:
-- rule: Find id item in GM Handbook
-  steps:
-  - intent: grasscutter_gm_what_is_id_item
-  - slot_was_set:
-    - item_name: mora
-  - action: action_find_id_gm_handbook

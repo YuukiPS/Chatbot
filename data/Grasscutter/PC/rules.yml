@@ -1,8 +1,0 @@
-version: "3.1"
-
-rules:
-
-- rule: Get domain from user
-  steps:
-  - intent: fiddler_another_domain
-  - action: action_fiddler

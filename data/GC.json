@@ -1,0 +1,198 @@
+{
+    "about_gc": {
+        "question": [
+            "What is GC?",
+            "Explain what is GC",
+            "Can you explain what is GC?",
+            "Can you explain to me what is GC?",
+            "Can you tell me what is GC?",
+            "Mean of GC",
+            "What is GC mean?"
+        ],
+        "answer": [
+            "GC refers to Grasscutter, which is software used to run a Genshin Impact server that allows you to obtain characters, items, weapons, and gacha for free, without needing to pay or top up. However, one major disadvantage is that there are many bugs related to character skills, domains, quests, and other features.",
+            "GC stands for Grasscutter, It is a software that allows you to play Genshin Impact on a server that has all the characters, items, weapons, and gacha for free, without needing to pay or top up. However, one major disadvantage is that there are many bugs related to character skills, domains, quests, and other features."
+        ]
+    },
+    "delete_account_gc": {
+        "question": [
+            "How to delete account",
+            "Can you show me how to delete account",
+            "Is it possible to delete account",
+            "How can i delete account",
+            "Is there a way to delete account"
+        ],
+        "answer": [
+            "You can't delete account. You have to create a new account to start from scratch",
+            "This is not possible. You have to create a new account to start from scratch"
+        ]
+    },
+    "remove_quest_gc": {
+        "question": [
+            "How to remove quest?",
+            "can you tell me how to remove quest?",
+            "Please tell me how to remove quest?",
+            "Tell me how to remove quest?"
+        ],
+        "answer": [
+            "To remove quest, you can use this command `/q remove <quest id>`"
+        ]
+    },
+    "add_quest_gc": {
+        "question": [
+            "How to add quest?",
+            "can you tell me how to add quest?",
+            "Please tell me how to add quest?",
+            "Tell me how to add quest?"
+        ],
+        "answer": [
+            "To add quest, you can use this command `/q add <quest id>`"
+        ]
+    },
+    "remove_artifact_gc": {
+        "question": [
+            "How to remove artifact?",
+            "can you tell me how to remove artifact?",
+            "Please tell me how to remove artifact?",
+            "Tell me how to remove artifact?"
+        ],
+        "answer": [
+            "You can follow this command to remove artifact `/clear artifact` if you want to remove only 5 star artifact you can use this command `/clear artifact *5`"
+        ]
+    },
+    "add_artifact_gc": {
+        "question": [
+            "How to add artifact?",
+            "can you tell me how to add artifact?",
+            "Please tell me how to add artifact?",
+            "Tell me how to add artifact?"
+        ],
+        "answer": [
+            "Add Artifact you can follow or use this command `/give <artifact id> x<amount> lv<level>`"
+        ]
+    },
+    "level_up_character_gc": {
+        "question": [
+            "How to level up character?",
+            "How to level up avatar?",
+            "Please tell me how to level up character?",
+            "Please tell me how to level up avatar?",
+            "Is there any way to level up character?",
+            "Is there any way to level up avatar?",
+            "Tell me how to level up character?",
+            "Tell me how to level up avatar?",
+            "Can you tell me how to level up character?",
+            "Can you tell me how to level up avatar?"
+        ],
+        "answer": [
+            "If you already add a character to your account, you can't level up character unless you level up them with materials. However, if you haven't add a character to your account, you can use this command `/give <character id> lv<level> c<consideration>` to level up character and add them to your account."
+        ]
+    },
+    "skip_cutscene_gc": {
+        "question": [
+            "How can you skip cutscenes",
+            "How to skip cutscenes",
+            "Command to skip cutscenes",
+            "How to skip cutscenes in Genshin Impact",
+            "How to skip cutscenes in Genshin Impact Private Server",
+            "How to skip cutscenes in GC",
+            "Tell me how to skip cutscenes"
+        ],
+        "answer": [
+            "You can't skip cutscene, you need to use Cheat Software to skip cutscene."
+        ]
+    },
+    "mute_ayaka_bot_gc": {
+        "question": [
+            "Is there a way to mute the ayaka chat",
+            "How to mute the ayaka chat",
+            "Please tell me how to mute the ayaka chat",
+            "Just tell me how to mute the ayaka chat",
+            "Show me how to mute the ayaka chat",
+            "Tell me how to mute the ayaka chat"
+        ],
+        "answer": [
+            "You can't mute Ayaka Bot, There is no way to mute Ayaka Bot."
+        ]
+    },
+    "change_banner_public_server_gc": {
+        "question": [
+            "How to change banner?",
+            "How to change banner in public server?",
+            "Can you tell me how to change banner in public server?",
+            "How to change banner in YuukiPS?",
+            "What is the process for changing the banner in a public server?",
+            "How can I change the banner in a public server?",
+            "Is there a specific command to change the banner in a public server?",
+            "Can you provide step-by-step instructions for changing the banner in a public server?",
+            "How do I customize the banner in a public server?",
+            "What are the requirements for changing the banner in a public server?",
+            "How to change the banner in a public server like YuukiPS?",
+            "Can I use a custom image as a banner in a public server?",
+            "Is it possible to change the banner in a public server without administrator privileges?",
+            "How frequently can I change the banner in a public server?",
+            "Can I change the banner in a public server using a mobile device?",
+            "Are there any restrictions on the size or format of the banner image in a public server?",
+            "Can you recommend any tools or software for creating custom banners for a public server?",
+            "What are some examples of customized banners used in public servers like YuukiPS?",
+            "How to change server banner?",
+            "Change banner in public server?",
+            "How to customize banner in public server?",
+            "Public server banner change process?",
+            "Banner customization in YuukiPS?",
+            "How to change banner in YuukiPS?",
+            "YuukiPS banner change steps?",
+            "Changing banner in a public server?",
+            "YuukiPS banner customization process?",
+            "Can I change banner in YuukiPS?",
+            "Public server banner customization?",
+            "YuukiPS banner update process?",
+            "How often can I change the banner in a public server?",
+            "What are the banner requirements for YuukiPS?",
+            "How to reset banner to default in public server like YuukiPS?"
+        ],
+        "answer": [
+            "You can't change banner in public server, you can try to change banner in localhost server. Just edit a `banners.json` or `banners.tsj` file"
+        ]
+    },
+    "change_banner_localhost_gc": {
+        "question": [
+            "How to change banner in localhost?",
+            "How to change banner in local server?",
+            "How to change banner in local host?",
+            "Is there a tutorial to change banner in localhost?",
+            "How to change banner in local server like localhost?",
+            "Change banner in localhost?",
+            "How to customize banner in localhost?",
+            "How to change banner in localhost by editing `banners.json`",
+            "How do I change the banner in my local server?",
+            "What is the process for customizing the banner in a local server?",
+            "Can I change the banner in my local server without using the `banners.json` file?",
+            "How do I access and modify the banner in my local server?",
+            "Are there any specific requirements for the banner in my local server?",
+            "How can I make sure my custom banner is properly displayed in my local server?",
+            "What are some best practices for changing the banner in my local server?",
+            "Is it possible to add multiple custom banner to my local server?",
+            "Can I use any file type or size when customizing the banner in my local server?",
+            "What are some common mistakes to avoid when customizing the banner in my local server?",
+            "How can I ensure my edited banner is saved properly in my local server?",
+            "Can you provide a step-by-step guide for changing the banner in my local server?",
+            "How to change local server banner?",
+            "Can I customize banner in my local server?",
+            "Steps to change banner in local server?",
+            "Is there a command to change banner in local server?",
+            "Local server banner change process?",
+            "How to edit banner in local server?",
+            "How often can I change banner in local server?",
+            "How to troubleshoot banner not displaying in local server?",
+            "How to add custom banner in local server?",
+            "What are the requirements for local server banner?",
+            "Can I use any file type or size for local server banner?",
+            "How to save edited banner in local server?",
+            "What are some tips for changing banner in local server?"
+        ],
+        "answer": [
+            "You can try to change the banner by editing the `banners.json` file. Here is an example:\n```json\n[\n{\n\n\"gachaType\": 301,\n\n\"scheduleId\": 903,\n\n\"bannerType\": \"EVENT\",\n\n\"prefabPath\": \"GachaShowPanel_A124\",\n\n\"previewPrefabPath\": \"\",\n\n\"titlePath\": \"UI_GACHA_SHOW_PANEL_A065_TITLE\",\n\n\"costItemId\": 223,\n\n\"beginTime\": 0,\n\n\"endTime\": 1924992000,\n\n\"sortId\": 1003,\n\n\"weights5\": [[1,80], [73,160], [74,730], [75, 1300], [76,1900], [77,2450], [78,3050], [79,3680], [80,4200], [81,4750], [82,5320], [83,5750], [84,6100], [85,5800], [86,4850], [87,3080], [88,2450], [89,3050], [90,10000]],\n\n\"eventChance5\": 150,\n\n\"rateUpItems5\": [1063],\n\n\"rateUpItems4\": [1039, 1043, 1080],\n\n\"fallbackItems5Pool1\": [1003, 1016, 1041, 1035, 1042, 1069],\n\n\"fallbackItems5Pool2\": [1003, 1016, 1041, 1035, 1042, 1069]\n}\n]```"
+        ]
+    }
+}
