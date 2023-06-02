@@ -6,7 +6,6 @@
 __pycache__
 /graph.html
 /node_modules
-/package.json
 /package-lock.json
 /log.txt
 /test.js
