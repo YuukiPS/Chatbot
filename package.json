@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx ts-node index.ts"
+    "start": "npx ts-node ./src/index.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fern-api/openai": "^0.0.32",
     "fs": "^0.0.1-security",
     "natural": "^6.5.0"
   },
