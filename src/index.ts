@@ -1,9 +1,8 @@
 import * as fs from 'fs';
-import { JaroWinklerDistance } from 'natural';
 import { client } from './config/openai'
 import { OPENAI } from '../config.json'
 import readline from 'readline'
-import { AxiosError } from 'axios'
+import { calculateLevenshteinDistance } from './Utils/stringSimilarity';
 
 interface Data {
     [key: string]: {
@@ -15,7 +14,7 @@ interface Data {
 function getClosestString(query: string, folderPath: string, similarityThreshold: number): string | undefined {
     const files = fs.readdirSync(folderPath);
 
-    let closestString = '';
+    let closestString: string | undefined = undefined;
     let closestDistance = 0;
 
     for (const file of files) {
@@ -27,14 +26,14 @@ function getClosestString(query: string, folderPath: string, similarityThreshold
             const questionArr = parsedData[key].question;
             const answerArr = parsedData[key].answer;
 
-            for (const i in questionArr) {
-                const question = questionArr[i];
-                const distance = JaroWinklerDistance(query, question, { ignoreCase: true });
+            for (const question of questionArr) {
+                const distance = calculateLevenshteinDistance(query, question);
+                const similarity = 1 - distance / Math.max(query.length, question.length);
 
-                if (distance > closestDistance && distance >= similarityThreshold) {
+                if (similarity > similarityThreshold && similarity > closestDistance) {
+                    closestDistance = similarity;
                     const randomAnswerIndex = Math.floor(Math.random() * answerArr.length);
                     closestString = answerArr[randomAnswerIndex];
-                    closestDistance = distance;
                 }
             }
         }
@@ -87,8 +86,8 @@ async function main() {
             onError(err) {
                 // Error "Unexpected end of JSON input" is so annoying. Trust me
                 if (!(err instanceof SyntaxError)) {
-                    if (err instanceof AxiosError) {
-                        console.error(`There was an error: ${err.response?.statusText} | ${err.response?.status}`)
+                    if (err instanceof Error) {
+                        console.error(err.message)
                     } else {
                         console.error(err)
                     }

@@ -11,8 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@fern-api/openai": "^0.0.32",
-    "fs": "^0.0.1-security",
-    "natural": "^6.5.0"
+    "fs": "^0.0.1-security"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
