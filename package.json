@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx ts-node ./src/index.ts"
+    "start": "npx ts-node ./src/index.ts",
+    "dup-check": "npx ts-node ./src/duplicate-check.ts"
   },
   "keywords": [],
   "author": "",

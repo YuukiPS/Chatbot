@@ -4,17 +4,24 @@ import { OPENAI } from '../config.json'
 import readline from 'readline'
 import { calculateLevenshteinDistance } from './Utils/stringSimilarity';
 
-interface Data {
+export interface Data {
     [key: string]: {
         question: string[];
         answer: string[];
     };
 }
 
-function getClosestString(query: string, folderPath: string, similarityThreshold: number): string | undefined {
+interface returnData {
+    closestString: string | undefined,
+    pattern: string | undefined,
+    score: number | 0
+}
+
+function getClosestString(query: string, folderPath: string, similarityThreshold: number): returnData {
     const files = fs.readdirSync(folderPath);
 
     let closestString: string | undefined = undefined;
+    let pattern: string | undefined = undefined
     let closestDistance = 0;
 
     for (const file of files) {
@@ -34,12 +41,17 @@ function getClosestString(query: string, folderPath: string, similarityThreshold
                     closestDistance = similarity;
                     const randomAnswerIndex = Math.floor(Math.random() * answerArr.length);
                     closestString = answerArr[randomAnswerIndex];
+                    pattern = key
                 }
             }
         }
     }
 
-    return closestString;
+    return {
+        closestString,
+        pattern,
+        score: closestDistance
+    }
 }
 
 const rl = readline.createInterface({
@@ -57,7 +69,7 @@ async function main() {
         const folderPath = './data';
         const similarityThreshold = 0.5;
         const context = getClosestString(question, folderPath, similarityThreshold)
-        const prompt = `I am Takina, a Discord Bot created by ElaXan using Typescript. I am a useful AI designed to assist people who are experiencing issues with Private Servers. I utilize context to provide more accurate answers to users, and I never alter the results derived from the context. Additionally, users do not have access to view the context. So I will give the result in context\nContext: ${context ? context : 'No context provided'}`;
+        const prompt = `I am Takina, a Discord Bot created by ElaXan using Typescript. I am a useful AI designed to assist people who are experiencing issues with Private Servers. I utilize context to provide more accurate answers to users, and I never alter the results derived from the context. Additionally, users do not have access to view the context. So I will give the result in context\nContext: ${context ? context.closestString : 'No context provided'}`;
         console.log('Context:', context, '\n')
         let resultAI = ''
         await client.chat.createCompletion({
