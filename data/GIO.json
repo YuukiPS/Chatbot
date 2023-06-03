@@ -39,20 +39,6 @@
             "To use `/cmd` command, first go to <#987879230585069609> and type `/cmd` and then type the command you want to use. For example, if you want to get a avatar, type `/cmd id: gio2 uid: <your uid> command: avatar add 10000002`. If you want to get an item, type `/cmd id: gio2 uid: <your uid> command: item add 202 1`."
         ]
     },
-    "gio_level_up_character_command": {
-        "question": [
-            "Instant level up command for characters in GIO, exists?",
-            "Is there a command to level up characters in GIO?",
-            "Can you send me a command to level up characters in GIO?",
-            "I want to level up my characters in GIO, is there a command for that?",
-            "One command to level up characters in GIO, exists?",
-            "Any command to level up characters in GIO?",
-            "Quick command to level up characters in GIO, exists?"
-        ],
-        "answer": [
-            "You can try to level up a character by materials. You can't get or add character with level 90 or higher with command in GIO, you need to manual level up them."
-        ]
-    },
     "command_list_gio": {
         "question": [
             "Can you tell me a command list for GIO?",
@@ -80,45 +66,6 @@
         "answer": [
             "Here is the list of command list GIO:\n```\nstamina infinite off|on\nenergy infinite off|on\nkill self\nkill monster all\nwudi global avatar on|off (your infinite hp)\nwudi global monster on|off (monster infinite hp)\ntalent unlock all\npoint 3 all (unlock all teleports)\nquest accept 30904 (Unlock Multiplayer)\nquest accept 35801 (Unlock Wish)\nquest accept 35603 (Unlock Fly)\nequip add 13501 90 6 (item_id=13501 level=90 protomte_level=6) (Add Weapons)\nitem add 102 555 (102=id_item) (555=Amount) (Add Item)\nitem add all (add all item + including all characters in level 1)\nitem clear 102 555 (Remove item)\navatar add 10000002 (Add character) (10000002=Ayaka :*)\nquest add|accept|finish 30302 (Add/Accept/Finish Quest)\nplayer level 60 (Level Player)\njump 1009 (Teleports to scene_id) (1009=AngelShare, not all id_scene work)\ngoto 1 1 1 (x,y,z in gc use /pos to see location)\ndungeon 30604 (30604=id_scene not work) (Teleports to dungeon)\nmonster 20010101 5 20 {20010101=id_monster,5=total,20=level} spwan monster\nmcoin 10000 (Genesis Crystal)\nscoin 10000 (?)\nhcoin 10000 (?)\nhome_coin 1000 (Realm currency)```",
             "For command list GIO:\n```\nstamina infinite off|on\nenergy infinite off|on\nkill self\nkill monster all\nwudi global avatar on|off (your infinite hp)\nwudi global monster on|off (monster infinite hp)\ntalent unlock all\npoint 3 all (unlock all teleports)\nquest accept 30904 (Unlock Multiplayer)\nquest accept 35801 (Unlock Wish)\nquest accept 35603 (Unlock Fly)\nequip add 13501 90 6 (item_id=13501 level=90 protomte_level=6) (Add Weapons)\nitem add 102 555 (102=id_item) (555=Amount) (Add Item)\nitem add all (add all item + including all characters in level 1)\nitem clear 102 555 (Remove item)\navatar add 10000002 (Add character) (10000002=Ayaka :*)\nquest add|accept|finish 30302 (Add/Accept/Finish Quest)\nplayer level 60 (Level Player)\njump 1009 (Teleports to scene_id) (1009=AngelShare, not all id_scene work)\ngoto 1 1 1 (x,y,z in gc use /pos to see location)\ndungeon 30604 (30604=id_scene not work) (Teleports to dungeon)\nmonster 20010101 5 20 {20010101=id_monster,5=total,20=level} spwan monster\nmcoin 10000 (Genesis Crystal)\nscoin 10000 (?)\nhcoin 10000 (?)\nhome_coin 1000 (Realm currency)```"
-        ]
-    },
-    "gio_command_example": {
-        "question": [
-            "Can you give me an example of command list for GIO?",
-            "What is the example of command list for GIO?",
-            "Tell me example of command for GIO",
-            "Example to use it",
-            "I want to know example of command for GIO",
-            "Tell me example",
-            "Example of GIO command list?",
-            "Can you provide an example of GIO commands?",
-            "What is a sample GIO command list?",
-            "Example usage of GIO commands?",
-            "Where can I find examples of GIO commands?",
-            "Can you show me a GIO command list example?",
-            "How do I use GIO commands? Example please.",
-            "What is the format for GIO commands? Example needed.",
-            "I need to see how GIO commands are used, can you provide an example?",
-            "Can you walk me through an example of a GIO command?",
-            "Is there a tutorial or guide with GIO command examples?",
-            "How can I learn GIO commands through examples?",
-            "Could you demonstrate a GIO command for me?",
-            "GIO command list example, please?",
-            "What are some common GIO commands and their examples?"
-        ],
-        "answer": [
-            "Sure, here is example to use it!\nThe command `/cmd id: <id> uid: <uid> command:<command>`\n\nExample:\n`/cmd id: gio2 uid: <your_uid_game_> command: avatar add 10000002`\n\nfor `10000002` id is Kamisato Ayaka. For find id you can try to use command `/gm` in <#987879230585069609>"
-        ]
-    },
-    "spawn_monster_gio": {
-        "question": [
-            "How to spawn monster in GIO?",
-            "Spawn monster in GIO?",
-            "Command to spawn monster in GIO?",
-            "Please tell me how to spawn monster in GIO."
-        ],
-        "answer": [
-            "You can use command `monster <monster id> to spawn monster in GIO server!. To get `<monster id>` please check on GM Handbook!"
         ]
     }
 }

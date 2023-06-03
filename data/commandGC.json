@@ -1,28 +1,39 @@
 {
     "spawn_monster_gc": {
         "question": [
-            "How to spawn monster in Grasscutter?",
-            "How to spawn monster in GC?",
-            "Command to spawn monster in Grasscutter",
-            "Command to spawn monster in GC",
-            "What is command to spawn monster in Grasscutter?",
-            "Spawn monster",
-            "Is there a command to spawn monster in Grasscutter?",
-            "Spawn monster in Grasscutter?"
+            "How can I spawn a monster in Grasscutter?",
+            "How to spawn monster?",
+            "Is there a way to spawn monsters in Grasscutter?",
+            "What should I do to spawn a monster in Grasscutter?",
+            "Are there any commands to spawn monsters in Grasscutter?",
+            "How do I summon a monster in Grasscutter?",
+            "What is the shortcut to spawn a monster in Grasscutter?",
+            "Is it possible to use a command to spawn monsters in Grasscutter?",
+            "Can you provide instructions on how to spawn monsters in Grasscutter?",
+            "Any tips on spawning monsters in Grasscutter?",
+            "How do I quickly create a monster in Grasscutter?",
+            "What command can I use to spawn a monster in Grasscutter?",
+            "Is there a specific format for the spawn command in Grasscutter?",
+            "How do I determine the ID of a monster in Grasscutter?",
+            "Can I spawn a specific type of monster in Grasscutter?"
         ],
         "answer": [
-            "You can use the command `/spawn <monster id> x<amount> lv<level> hp<health point>. To get ID, please check on GM Handbook!"
+            "To spawn a monster in Grasscutter, you can use the command `/spawn <monster id> x<amount> lv<level> hp<health point>`. To obtain the ID of a specific monster, please refer to the GM Handbook"
         ]
     },
     "remove_quest_gc": {
         "question": [
-            "How to remove quest?",
-            "can you tell me how to remove quest?",
-            "Please tell me how to remove quest?",
-            "Tell me how to remove quest?"
+            "How to remove a quest in Grasscutter?",
+            "How can I delete a quest in Grasscutter?",
+            "Command to remove a quest in Grasscutter",
+            "Command to delete a quest in Grasscutter",
+            "What is the command to remove a quest in Grasscutter?",
+            "Remove quest",
+            "Is there a command to delete a quest in Grasscutter?",
+            "Delete quest in Grasscutter?"
         ],
         "answer": [
-            "To remove quest, you can use this command `/q remove <quest id>`"
+            "To remove a quest in Grasscutter, you can use the command `/q remove <quest id>`."
         ]
     },
     "add_quest_gc": {
@@ -30,29 +41,47 @@
             "How to add quest?",
             "can you tell me how to add quest?",
             "Please tell me how to add quest?",
-            "Tell me how to add quest?"
+            "Tell me how to add quest?",
+            "What is the command to add a quest?",
+            "How do I add a new quest?",
+            "What is the process for adding a quest?",
+            "Can you explain how to add a quest?",
+            "What are the steps to add a quest?",
+            "How can I add a quest to the game?"
         ],
         "answer": [
             "To add quest, you can use this command `/q add <quest id>`"
         ]
-    },
+    },    
     "remove_artifact_gc": {
         "question": [
             "How to remove artifact?",
             "can you tell me how to remove artifact?",
             "Please tell me how to remove artifact?",
-            "Tell me how to remove artifact?"
+            "Tell me how to remove artifact?",
+            "What is the command to remove an artifact?",
+            "How do I remove an artifact?",
+            "What is the process for removing an artifact?",
+            "Can you explain how to remove an artifact?",
+            "What are the steps to remove an artifact?",
+            "How can I remove an artifact from the game?"
         ],
         "answer": [
             "You can follow this command to remove artifact `/clear artifact` if you want to remove only 5 star artifact you can use this command `/clear artifact *5`"
         ]
-    },
+    },    
     "add_artifact_gc": {
         "question": [
             "How to add artifact?",
             "can you tell me how to add artifact?",
             "Please tell me how to add artifact?",
-            "Tell me how to add artifact?"
+            "Tell me how to add artifact?",
+            "What is the command to add an artifact?",
+            "How do I add a new artifact?",
+            "What is the process for adding an artifact?",
+            "Can you explain how to add an artifact?",
+            "What are the steps to add an artifact?",
+            "How can I add an artifact to the game?"
         ],
         "answer": [
             "Add Artifact you can follow or use this command `/give <artifact id> x<amount> lv<level>`"
@@ -69,7 +98,17 @@
             "Tell me how to level up character?",
             "Tell me how to level up avatar?",
             "Can you tell me how to level up character?",
-            "Can you tell me how to level up avatar?"
+            "Can you tell me how to level up avatar?",
+            "What is the command to level up a character?",
+            "What is the command to level up an avatar?",
+            "How do I level up a character in the game?",
+            "How do I level up an avatar in the game?",
+            "What is the process for leveling up a character?",
+            "What is the process for leveling up an avatar?",
+            "Can you explain how to level up a character in the game?",
+            "Can you explain how to level up an avatar in the game?",
+            "What are the steps to level up a character in the game?",
+            "What are the steps to level up an avatar in the game?"
         ],
         "answer": [
             "If you already add a character to your account, you can't level up character unless you level up them with materials. However, if you haven't add a character to your account, you can use this command `/give <character id> lv<level> c<consideration>` to level up character and add them to your account."
@@ -137,6 +176,19 @@
         ],
         "answer": [
             "To finish all daily in Grasscutter, You can use the command `/daily finishall`"
+        ]
+    },
+    "skip_quest_gc": {
+        "question": [
+            "Command to skip quest in Grasscutter?",
+            "What is the command to skip the song?",
+            "Send command to skip quest",
+            "Skip quest",
+            "How to skip quest?",
+            "I want to skip quest. But I don't know the command"
+        ],
+        "answer": [
+            "To skip quest in Grasscutter. You can use the command `/q skip`."
         ]
     }
 }

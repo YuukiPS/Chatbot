@@ -55,7 +55,7 @@ async function main() {
             return rl.close()
         }
         const folderPath = './data';
-        const similarityThreshold = 0.7;
+        const similarityThreshold = 0.5;
         const context = getClosestString(question, folderPath, similarityThreshold)
         const prompt = `I am Takina, a Discord Bot created by ElaXan using Typescript. I am a useful AI designed to assist people who are experiencing issues with Private Servers. I utilize context to provide more accurate answers to users, and I never alter the results derived from the context. Additionally, users do not have access to view the context. So I will give the result in context\nContext: ${context ? context : 'No context provided'}`;
         console.log('Context:', context, '\n')

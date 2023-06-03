@@ -1,0 +1,191 @@
+{
+    "spawn_monster_gio": {
+        "question": [
+            "How to spawn monster in GIO?",
+            "Spawn monster in GIO?",
+            "Command to spawn monster in GIO?",
+            "Please tell me how to spawn monster in GIO."
+        ],
+        "answer": [
+            "You can use command `monster <monster id> to spawn monster in GIO server!. To get `<monster id>` please check on GM Handbook!"
+        ]
+    },
+    "gio_command_example": {
+        "question": [
+            "Can you give me an example of command list for GIO?",
+            "What is the example of command list for GIO?",
+            "Tell me example of command for GIO",
+            "Example to use it",
+            "I want to know example of command for GIO",
+            "Tell me example",
+            "Example of GIO command list?",
+            "Can you provide an example of GIO commands?",
+            "What is a sample GIO command list?",
+            "Example usage of GIO commands?",
+            "Where can I find examples of GIO commands?",
+            "Can you show me a GIO command list example?",
+            "How do I use GIO commands? Example please.",
+            "What is the format for GIO commands? Example needed.",
+            "I need to see how GIO commands are used, can you provide an example?",
+            "Can you walk me through an example of a GIO command?",
+            "Is there a tutorial or guide with GIO command examples?",
+            "How can I learn GIO commands through examples?",
+            "Could you demonstrate a GIO command for me?",
+            "GIO command list example, please?",
+            "What are some common GIO commands and their examples?"
+        ],
+        "answer": [
+            "Sure, here is example to use it!\nThe command `/cmd id: <id> uid: <uid> command:<command>`\n\nExample:\n`/cmd id: gio2 uid: <your_uid_game_> command: avatar add 10000002`\n\nfor `10000002` id is Kamisato Ayaka. For find id you can try to use command `/gm` in <#987879230585069609>"
+        ]
+    },
+    "gio_level_up_character_command": {
+        "question": [
+            "Instant level up command for characters in GIO, exists?",
+            "Is there a command to level up characters in GIO?",
+            "Can you send me a command to level up characters in GIO?",
+            "I want to level up my characters in GIO, is there a command for that?",
+            "One command to level up characters in GIO, exists?",
+            "Any command to level up characters in GIO?",
+            "Quick command to level up characters in GIO, exists?"
+        ],
+        "answer": [
+            "You can try to level up a character by materials. You can't get or add character with level 90 or higher with command in GIO, you need to manual level up them."
+        ]
+    },
+    "gio_kill_all_monster": {
+        "question": [
+            "How to kill all monsters in GIO?",
+            "Is there a command to kill all monster with the command?",
+            "Send command to kill all monsters in GIO",
+            "What the command to kill all monsters in GIO?",
+            "Too much monsters in my world. How to remove them in GIO?"
+        ],
+        "answer": [
+            "To remove or kill all monsters in GIO. You can use the command `kill monster all`."
+        ]
+    },
+    "gio_enable_no_stamina": {
+        "question": [
+            "How to enable unlimited stamina in GIO?",
+            "How to remove stamina in GIO?",
+            "Is there a command to remove stamina in GIO?",
+            "What's the command to remove stamina in GIO?",
+            "Send command to remove stamina in GIO."
+        ],
+        "answer": [
+            "To enable no stamina in GIO Server. You can use command `stamina infinite on`, to disable it you can use command `stamina infinite off`."
+        ]
+    },
+    "gio_disable_no_stamina": {
+        "question": [
+            "How to disable no stamina in GIO?",
+            "I have turn on unlimited stamina in GIO server. How to turn off it again?",
+            "Is there a command to disable no stamina in GIO server?",
+            "What's the command to disable no stamina in GIO server?",
+            "Command to disable no stamina in GIO"
+        ],
+        "answer": [
+            "To turn off unlimited stamina in GIO server. You can use the command `stamina infinite off`"
+        ]
+    },
+    "gio_add_quest": {
+        "question": [
+            "How to add quest in GIO?",
+            "Command to add quest in GIO.",
+            "Send command to add quest in GIO.",
+            "What is command to add quest in GIO",
+            "How to add quest in GIO server."
+        ],
+        "answer": [
+            "To add quest in GIO server, you can use the command `quest add <id>`. To find id, you can check on GM Handbook or you can use command bot in <#987879230585069609> and use command `/gm`."
+        ]
+    },
+    "gio_remove_quest": {
+        "question": [
+            "How to skip quest in GIO Server?",
+            "How to remove quest in GIO server?",
+            "What is command to remove quest in GIO Server?",
+            "Any idea what is command to remove quest in GIO?",
+            "I want to remove quest in GIO. Can you send me command for it?"
+        ],
+        "answer": [
+            "To remove quest in GIO Server. You can use the command `quest finish <id>`. To find id, you can check on the GM Handbook or you can use command bot in <#987879230585069609> and use command `/gm`"
+        ]
+    },
+    "gio_get_genesis_crystal": {
+        "question": [
+            "How to get Genesis Crystal in GIO?",
+            "How can I get Genesis Crystal in GIO?",
+            "What is command to get Genesis Crystal in GIO?",
+            "Please send command to get Genesis Crystal in GIO.",
+            "I got error RET_FAIL when want to get Genesis Crystal in GIO. How can I solve this?",
+            "Error RET_FAIL when add Genesis Crystal to my account in GIO",
+            "I got error RET_FAIL when trying to add Genesis Crystal",
+            " I got error RET_FAIL in GIO server when trying to add Genesis Crystal. How can I solve this?"
+        ],
+        "answer": [
+            "To add Genesis Crystal, you need to use command `mcoin <amount>` not `item add <item id>`. To avoid error RET_FAIL in GIO Server"
+        ]
+    },
+    "gio_add_avatar_character": {
+        "question": [
+            "How to add character in GIO Server with the command?",
+            "Is there a command to get avatars in GIO server with the command?",
+            "What is command to add avatars in GIO server?",
+            "Command to add characters in GIO",
+            "How to add avatars in GIO?",
+            "I want to add characters in GIO server. But I don't know how"
+        ],
+        "answer": [
+            "To add characters in GIO Server. You can use command `avatar add <id>`, to get `<id>` you can check on GM Handbook"
+        ]
+    },
+    "gio_enable_god_mode": {
+        "question": [
+            "How to enable god mode in GIO Server?.",
+            "How can I make my character is no damage from enemy in GIO?",
+            "Command to enable god mode in GIO Server.",
+            "Enable God Mode in GIO Server",
+            "What is command to enable God Mode in GIO Server?"
+        ],
+        "answer": [
+            "To enable god mode in GIO Server or not taking any damage from enemy. You can use the command `wudi global avatar on`, to turn off it. You can use the command `wudi global avatar off`"
+        ]
+    },
+    "gio_disable_god_mode": {
+        "question": [
+            "How to disable god mode in GIO Server?",
+            "I have turned on God Mode in GIO Server, How can I turn it off again?",
+            "Command to disable god mode in GIO Server.",
+            "send command to disable god mode in GIO Server.",
+            "What is command to disable god mode in GIO?"
+        ],
+        "answer": [
+            "To disable god mode in GIO Server, you can use the command `wudi global avatar off`"
+        ]
+    },
+    "gio_enable_no_damage_monster": {
+        "question": [
+            "How to enable god mode to monster in GIO server?",
+            "Command to enable god mode to monster in GIO Server?.",
+            "How can I make the monster is not die in GIO Server?",
+            "How can I make the monster infinite health in GIO server?",
+            "Command to make monster infinite health in GIO?"
+        ],
+        "answer": [
+            "To enable god mode or not damage to monster in GIO server, you can use the command `wudi global monster on`. To turn off it, you can use the command `wudi global monster off`"
+        ]
+    },
+    "gio_give_weapon": {
+        "question": [
+            "How can I get weapon in GIO?",
+            "Command to get weapon in GIO?",
+            "What is command to get weapon in GIO.",
+            "I want to get weapon with the command, What is the command?",
+            "How to get weapon in GIO?"
+        ],
+        "answer": [
+            "To get weapon in GIO Server, You can use the command `item add <id>`. Replace `<id>` with the weapon id. To get ID you can check on GM Handbook or use command in <#987879230585069609> with `/gm`"
+        ]
+    }
+}
