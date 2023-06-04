@@ -2,7 +2,44 @@
     "download_link_android": {
         "question": [
             "Download link for Android",
-            "Send download link for Genshin Impact Private Server"
+            "Send download link for Genshin Impact Private Server",
+            "What is the download link for Android?",
+            "Where can I find the download link for Android?",
+            "How can I download the Android version?",
+            "What is the URL for downloading on Android?",
+            "Where can I get the Android download link?",
+            "Could you provide me with the Android download link?",
+            "Can you share the link to download for Android?",
+            "What is the direct download link for Android?",
+            "How do I access the download link for Android?",
+            "Is there a specific website for downloading on Android?",
+            "What is the official website for Android downloads?",
+            "What is the URL to download the Android version?",
+            "Where should I go to download for Android?",
+            "Do you have the download link for the Android version?",
+            "Can you give me the Android download URL?",
+            "How can I obtain the download link for Android?",
+            "Could you direct me to the Android download page?",
+            "What is the link to download the Android app?",
+            "Where can I find the Android APK download link?",
+            "Is there a dedicated page for Android downloads?",
+            "What is the Android download link?",
+            "How to download for Android?",
+            "URL for Android download?",
+            "Where to find Android download link?",
+            "Can you share Android download link?",
+            "Direct download link for Android?",
+            "How to access Android download link?",
+            "Official website for Android downloads?",
+            "URL to download Android version?",
+            "Where to go to download for Android?",
+            "Android download link available?",
+            "Android download URL?",
+            "How to get download link for Android?",
+            "Android download page URL?",
+            "Link to download Android app?",
+            "Android APK download link?",
+            "Dedicated page for Android downloads?"
         ],
         "answer": [
             "You can find download link for Android in <https://doc.yuuki.me/docs/tutorial-connect/android/download>. Or check <#970380775264518244>"
@@ -11,7 +48,22 @@
     "3.7_android": {
         "question": [
             "3.7 Android",
-            "send 3.7 Android"
+            "send 3.7 Android",
+            "Where can I find the download link for version 3.7 of Android?",
+            "Is there a download link available for Android version 3.7?",
+            "How can I download Android version 3.7?",
+            "Can you provide me with the download link for Android 3.7?",
+            "What is the location of the download link for Android 3.7?",
+            "Where can I find the download link for Android 3.7?",
+            "Is there a specific website where I can download Android 3.7?",
+            "How do I access the download link for Android version 3.7?",
+            "Can you provide me with the URL to download Android 3.7?",
+            "What is the website that offers the download link for Android 3.7?",
+            "Download link for Android 3.7?",
+            "Where to get Android 3.7?",
+            "Android 3.7 download link?",
+            "URL to download Android 3.7?",
+            "Hello there how are you, MD:ALMSD:LMSAD:LSAMD:LSAMD:LSAMD:LSAMD:LSAMD:LAMS"
         ],
         "answer": [
             "I am sorry. Currently there is no download link for Android 3.7"
@@ -92,7 +144,17 @@
             "Android 3.6 download link",
             "Send link for Genshin Impact Private Server 3.6 in Android",
             "Can you send me link download Android 3.6?",
-            "Where is download link for Android 3.6?"
+            "Where is download link for Android 3.6?",
+            "Where can I find the download link for version 3.6 of Genshin Impact on Android?",
+            "What is the download link for Genshin Impact Private Server version 3.6 on Android?",
+            "Can you provide me with the download link for Android 3.6 of Genshin Impact?",
+            "Where can I download Genshin Impact version 3.6 for Android?",
+            "How can I get the download link for Android 3.6 of Genshin Impact?",
+            "Download link for Genshin Impact 3.6 on Android?",
+            "Genshin Impact Private Server 3.6 download link for Android?",
+            "Link to download Genshin Impact Android 3.6?",
+            "Where to find Genshin Impact version 3.6 for Android?",
+            "How to get Genshin Impact Android 3.6 download link?"
         ],
         "answer": [
             "You can find download link for Android 3.6 in <https://doc.yuuki.me/docs/tutorial-connect/android/install#install-mod-launcher-only-no-root-32-gio---36-gc>, or you can check in <#970380775264518244>"
@@ -105,7 +167,11 @@
             "How can I do localhost on Android?",
             "Is there a way to do localhost on Android?",
             "How to setup localhost on my Android phone?",
-            "Is there a way to do localhost on my Android phone?"
+            "Is there a way to do localhost on my Android phone?",
+            "How to setup localhost on Android?",
+            "How to localhost on Android?",
+            "How to do localhost on Android?",
+            "How to localhost on my Android phone?"
         ],
         "answer": [
             "If you want to localhost Grasscutter on Android. You can check Github: <https://github.com/Score-Inc/GCAndroid>, Or you can try to execute this command to install Localhost on you're Android phone, make sure you have install Termux on your phone. Here is the command:\n```bash\nbash <(curl -s \"https://api.elaxan.com/Termux/installJarGrasscutter.sh\")```. And wait until installation is complete!"
@@ -117,7 +183,15 @@
             "Send me download link for GIO Android",
             "Is there any download link for GIO Android?",
             "Where can i get GIO in Android?",
-            "Where can i download GIO in Android?"
+            "Where can i download GIO in Android?",
+            "Can you send me the download link for GIO Android?",
+            "Send me the download link for GIO Android",
+            "Is there any download link available for GIO on Android?",
+            "Where can I get GIO for Android?",
+            "Where can I download GIO to play on Android?",
+            "What's the download link for GIO Android?",
+            "Where can I download GIO for Android?",
+            "Can you provide the GIO Android download link?"
         ],
         "answer": [
             "To download or install, You can check our official documentation here: https://doc.yuuki.me/docs/tutorial-connect/android/install#copy-data-game-no-root-32-gio",
@@ -132,7 +206,8 @@
             "Send me tutorial for localhost GIO in Android",
             "Can you send me tutorial for localhost GIO in Android?",
             "Is there any tutorial for localhost GIO in Android?",
-            "Is it possible to localhost GIO in Android?"
+            "Is it possible to localhost GIO in Android?",
+            "Tutorial for localhost GIO in Android?"
         ],
         "answer": [
             "There is no way you can do localhost on Android. Please check on https://discord.com/channels/964119462188040202/1049101257933066322/1099495316924944484 to get more information about how to localhost in you're Android phone"

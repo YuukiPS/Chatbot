@@ -9,13 +9,16 @@
             "How do I summon a monster in Grasscutter?",
             "What is the shortcut to spawn a monster in Grasscutter?",
             "Is it possible to use a command to spawn monsters in Grasscutter?",
-            "Can you provide instructions on how to spawn monsters in Grasscutter?",
             "Any tips on spawning monsters in Grasscutter?",
             "How do I quickly create a monster in Grasscutter?",
             "What command can I use to spawn a monster in Grasscutter?",
             "Is there a specific format for the spawn command in Grasscutter?",
             "How do I determine the ID of a monster in Grasscutter?",
-            "Can I spawn a specific type of monster in Grasscutter?"
+            "Can I spawn a specific type of monster in Grasscutter?",
+            "How can I spawn a monster in GC?",
+            "Can you provide instructions on how to spawn monsters in Grasscutter?",
+            "What is command to spawn monster in Grasscutter?",
+            "What is command to spawn monster in GC?"
         ],
         "answer": [
             "To spawn a monster in Grasscutter, you can use the command `/spawn <monster id> x<amount> lv<level> hp<health point>`. To obtain the ID of a specific monster, please refer to the GM Handbook"
@@ -30,7 +33,19 @@
             "What is the command to remove a quest in Grasscutter?",
             "Remove quest",
             "Is there a command to delete a quest in Grasscutter?",
-            "Delete quest in Grasscutter?"
+            "Delete quest in Grasscutter?",
+            "How do I remove a quest from Grasscutter?",
+            "What steps are involved in deleting a quest in Grasscutter?",
+            "Can you provide instructions on removing a quest in Grasscutter?",
+            "In Grasscutter, how do I get rid of a quest?",
+            "Please explain the process of removing a quest in Grasscutter.",
+            "What are the necessary commands to delete a quest in Grasscutter?",
+            "Could you tell me how to remove a quest from Grasscutter using commands?",
+            "Is there a way to eliminate a quest from Grasscutter without completing it?",
+            "I'm looking for information on how to remove a quest in Grasscutter.",
+            "What should I do if I want to delete a quest in Grasscutter?",
+            "Are there any specific steps to follow in order to remove a quest in Grasscutter?",
+            "Is it possible to remove a quest from Grasscutter if I change my mind?"
         ],
         "answer": [
             "To remove a quest in Grasscutter, you can use the command `/q remove <quest id>`."
@@ -47,7 +62,26 @@
             "What is the process for adding a quest?",
             "Can you explain how to add a quest?",
             "What are the steps to add a quest?",
-            "How can I add a quest to the game?"
+            "How can I add a quest to the game?",
+            "How to add a quest in Grasscutter?",
+            "Can you explain the process of adding a quest in Grasscutter?",
+            "What are the steps to add a quest in Grasscutter?",
+            "How can I add a new quest to the game Grasscutter?",
+            "What is the command to add a quest in Grasscutter?",
+            "How do I add a new quest in Grasscutter?",
+            "Please guide me on how to add a quest in Grasscutter.",
+            "I'm looking for instructions on adding a quest in Grasscutter. Can you help?",
+            "Could you provide a tutorial on adding a quest in Grasscutter?",
+            "What is the procedure for adding a quest in Grasscutter?",
+            "Steps to add a quest in Grasscutter?",
+            "Command to add a quest in Grasscutter?",
+            "How to add a new quest in Grasscutter?",
+            "Process of adding a quest in Grasscutter?",
+            "Guide on adding a quest in Grasscutter?",
+            "Procedure for adding a quest in Grasscutter?",
+            "How can I add a quest to the game Grasscutter?",
+            "Tutorial for adding a quest in Grasscutter?",
+            "Instructions for adding a quest in Grasscutter?"
         ],
         "answer": [
             "To add quest, you can use this command `/q add <quest id>`"
@@ -122,8 +156,20 @@
             "Get character in GC",
             "Command to get avatars in GC",
             "How to add character?",
+            "How to get avatars in GC?",
             "Please send command to get avatars in GC.",
-            "Is there a command to get avatars in GC?"
+            "Is there a command to get avatars in GC?",
+            "How can I add characters in Grasscutter/GC?",
+            "What is the command for adding characters in GC?",
+            "Can you provide the command to add character in Grasscutter/GC?",
+            "Is there a way to get character avatars in GC?",
+            "How do I obtain character avatars in Grasscutter/GC?",
+            "What are the steps to add characters in GC?",
+            "What is the procedure to get character in Grasscutter/GC?",
+            "Are there any specific commands to get characters in GC?",
+            "How do I get character IDs in Grasscutter/GC?",
+            "Can you explain how to use the `/give` command to obtain characters in GC?",
+            "Is it possible to get character avatars by using commands in GC?"
         ],
         "answer": [
             "To get characters in GC. You can use the command `/give <character id> x<amount> lv<level> c<constellation>`. To get character ID. Please check on GM Handbook or use bot in <#987879230585069609> with command `/gm`"
@@ -144,51 +190,130 @@
     },
     "disable_god_mode_gc": {
         "question": [
-            "How to disable god mode",
-            "Disable god mode in Grasscutter",
-            "Command to disable god mode in Grasscutter",
-            "How to turn off god mode in Grasscutter?",
-            "How to turn off god mode?",
-            "What is command to turn off god mode in Grasscutter?"
+            "How to disable god mode in Grasscutter?",
+            "Disable god mode in Grasscutter.",
+            "What is the command to disable god mode in Grasscutter?",
+            "How can I turn off god mode in Grasscutter?",
+            "How do I disable god mode?",
+            "What steps should I take to turn off god mode in Grasscutter?",
+            "Is there a way to disable god mode in Grasscutter?",
+            "How do I deactivate god mode in Grasscutter?",
+            "Which command should I use to disable god mode in Grasscutter?",
+            "Can you provide instructions to turn off god mode in Grasscutter?",
+            "What do I need to do to disable god mode in Grasscutter?",
+            "Could you explain how to turn off god mode in Grasscutter?",
+            "What is the process to disable god mode in Grasscutter?",
+            "How can I exit god mode in Grasscutter?",
+            "Are there any specific commands to disable god mode in Grasscutter?",
+            "Can you help me disable god mode in Grasscutter?",
+            "What is the toggle command for god mode in Grasscutter?",
+            "How do I switch off god mode in Grasscutter?",
+            "What are the instructions to disable god mode in Grasscutter?",
+            "How can I remove god mode in Grasscutter?"
         ],
         "answer": [
-            "To turn off God Mode in Grasscutter. You can try with the following command, and use it in Ayaka bot (in game): `/prop godmode 0`"
+            "To disable God Mode in Grasscutter, you can use the following command: `/prop godmode 0` This command should be entered in the Ayaka bot within the game."
         ]
     },
     "kill_character_gc": {
         "question": [
-            "How to kill my character",
-            "Is there a command to kill my character?",
-            "Kill character",
-            "Command to kill my character"
+            "How to kill my character in Grasscutter?",
+            "How can I kill my character in Grasscutter?",
+            "Is there a specific command to kill my character in Grasscutter?",
+            "What steps should I take to kill my character in Grasscutter?",
+            "How do I get rid of my character in Grasscutter?",
+            "What is the process to kill my character in Grasscutter?",
+            "Can you help me with killing my character in Grasscutter?",
+            "What command should I use to eliminate my character in Grasscutter?",
+            "How do I remove my character from Grasscutter?",
+            "How can I terminate my character in Grasscutter?",
+            "What is the command to delete my character in Grasscutter?",
+            "How do I end my character's life in Grasscutter?",
+            "Are there any specific commands to kill my character in Grasscutter?",
+            "Can you provide instructions on how to kill my character in Grasscutter?",
+            "What are the steps to remove my character from Grasscutter?",
+            "How can I eliminate my character permanently in Grasscutter?",
+            "What command should I enter to kill my character in Grasscutter?",
+            "Is it possible to kill my character in Grasscutter?",
+            "Can you guide me on killing my character in Grasscutter?",
+            "How can I get rid of my current character in Grasscutter?"
         ],
         "answer": [
-            "To kill you're current character. You can use command `/kill`. This will kill you're current character"
+            "To kill your character in Grasscutter, you can use the command `/kill`. This command will effectively eliminate your current character. Please note that this action is irreversible, so use it carefully."
         ]
     },
     "finish_all_daily": {
         "question": [
-            "Command to finish all daily",
-            "Is there a command to finish all daily?",
-            "Finish all daily",
-            "Send command to finish all daily",
-            "What command to finish all daily?"
+            "How can I finish all daily tasks in Grasscutter?",
+            "What is the command to complete all daily tasks in Grasscutter?",
+            "Is there a way to finish all daily tasks using a command in Grasscutter?",
+            "What command should I use to finish all daily tasks in Grasscutter?",
+            "Can you provide instructions on how to finish all daily tasks in Grasscutter?",
+            "How do I quickly complete all daily tasks in Grasscutter?",
+            "What is the process to finish all daily tasks in Grasscutter?",
+            "Are there any specific commands to finish all daily tasks in Grasscutter?",
+            "Can you help me with finishing all daily tasks in Grasscutter?",
+            "What steps should I take to finish all daily tasks in Grasscutter?",
+            "How do I efficiently complete all daily tasks in Grasscutter?",
+            "What are the instructions to finish all daily tasks in Grasscutter?",
+            "How can I complete all daily tasks in Grasscutter as quickly as possible?",
+            "What is the shortcut to finish all daily tasks in Grasscutter?",
+            "Are there any tips or tricks to finish all daily tasks in Grasscutter?",
+            "Can you guide me on how to finish all daily tasks in Grasscutter?",
+            "What is the fastest way to finish all daily tasks in Grasscutter?",
+            "Is it possible to finish all daily tasks at once in Grasscutter?",
+            "How can I efficiently complete all daily tasks in Grasscutter?",
+            "What command should I enter to finish all daily tasks in Grasscutter?"
         ],
         "answer": [
-            "To finish all daily in Grasscutter, You can use the command `/daily finishall`"
+            "To finish all daily tasks in Grasscutter, you can use the command `/daily finishall`."
         ]
     },
     "skip_quest_gc": {
         "question": [
+            "What is the command to skip the quest in Grasscutter?",
+            "How can I skip a quest in Grasscutter?",
+            "Is there a way to skip a quest in Grasscutter?",
+            "What command should I use to skip a quest in Grasscutter?",
+            "Can you tell me how to skip a quest in Grasscutter?",
+            "I'm stuck on a quest in Grasscutter. How do I skip it?",
+            "Is it possible to bypass a quest in Grasscutter?",
+            "How do I proceed if I want to skip a quest in Grasscutter?",
+            "Are there any shortcuts to skip a quest in Grasscutter?",
+            "What options do I have if I want to skip a quest in Grasscutter?",
+            "I need to skip a quest in Grasscutter. What should I do?",
+            "Are there any cheat codes to skip quests in Grasscutter?",
+            "Is there a skip quest feature in Grasscutter?",
+            "I'm not interested in a particular quest in Grasscutter. Can I skip it?",
+            "What are the steps to skip a quest in Grasscutter?",
+            "I'm finding a quest in Grasscutter too difficult. Can I skip it somehow?",
+            "How do I skip a quest if I don't want to complete it in Grasscutter?",
+            "Can I use a command to bypass a quest in Grasscutter?",
+            "What are the alternatives to completing a quest in Grasscutter?",
+            "How can I skip quests quickly in Grasscutter?",
+            "What's the command to skip a quest in Grasscutter?",
+            "How do I skip quests in Grasscutter?",
+            "Can I skip a quest in Grasscutter?",
+            "Is there a way to bypass quests in Grasscutter?",
+            "How to skip a quest in Grasscutter?",
+            "How to skip quests in Grasscutter?",
             "Command to skip quest in Grasscutter?",
-            "What is the command to skip the song?",
-            "Send command to skip quest",
-            "Skip quest",
-            "How to skip quest?",
-            "I want to skip quest. But I don't know the command"
+            "How can I bypass a quest in Grasscutter?",
+            "Shortcut to skip quests in Grasscutter?",
+            "How to proceed if I want to skip a quest in Grasscutter?",
+            "How to bypass a difficult quest in Grasscutter?",
+            "Skip quest in Grasscutter?",
+            "Skip quest command in Grasscutter?",
+            "Quest skipping in Grasscutter?",
+            "Skip quest feature in Grasscutter?",
+            "Bypassing quests in Grasscutter?",
+            "Skipping unwanted quests in Grasscutter?",
+            "Skip Grasscutter quest?",
+            "Skip song in Grasscutter?",
+            "Skip command for Grasscutter quest?"
         ],
         "answer": [
-            "To skip quest in Grasscutter. You can use the command `/q skip`."
+            "To skip a quest in Grasscutter, you can use the command `/q skip`."
         ]
     }
 }

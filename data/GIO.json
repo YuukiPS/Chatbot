@@ -18,7 +18,6 @@
         "answer": [
             "If you playing in GIO server, its normal. use <#987879230585069609> with `/cmd` to get a avatar or item, and use `/gm` to get a ID of Avatars",
             "If you talking about Ayaka's bot, its normal. Ayaka's bot is not available in GIO server.",
-            "Ayaka's bot is not available in the GIO server, but you can still get an avatar or item by using `/cmd` in <#987879230585069609>, or get an avatar ID by using `/gm`.",
             "Unfortunately, Ayaka's bot is not supported in the GIO server. However, you can use `/cmd` in <#987879230585069609> to get an avatar or item, or use `/gm` to get an ID of Avatars.",
             "Ayaka's bot is not currently available in the GIO server, but you can still use `/cmd` in <#987879230585069609> to get an avatar or item, or use `/gm` to get an ID of Avatars.",
             "You won't find Ayaka's bot in the GIO server, but don't worry! You can still use `/cmd` in <#987879230585069609> to get an avatar or item, or use `/gm` to get an ID of Avatars.",
@@ -33,7 +32,18 @@
     "how_to_use_command_gio": {
         "question": [
             "how to use /cmd command?",
-            "Can you send me a example of /cmd command?"
+            "Can you send me a example of /cmd command?",
+            "Example to use command /cmd",
+            "How can i use command in GIO?",
+            "How do I use the /cmd command in GIO?",
+            "Can you provide an example of how to use the /cmd command?",
+            "Do you have an example of using the /cmd command?",
+            "What is the syntax for using the /cmd command in GIO?",
+            "Is there a specific command in GIO for executing actions?",
+            "How to use /cmd command?",
+            "Example of /cmd command?",
+            "How can I use command in GIO?",
+            "Is there a command in GIO?"
         ],
         "answer": [
             "To use `/cmd` command, first go to <#987879230585069609> and type `/cmd` and then type the command you want to use. For example, if you want to get a avatar, type `/cmd id: gio2 uid: <your uid> command: avatar add 10000002`. If you want to get an item, type `/cmd id: gio2 uid: <your uid> command: item add 202 1`."

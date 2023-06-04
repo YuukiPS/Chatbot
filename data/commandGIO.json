@@ -130,9 +130,12 @@
     "gio_add_avatar_character": {
         "question": [
             "How to add character in GIO Server with the command?",
+            "How to add character in GIO?",
             "Is there a command to get avatars in GIO server with the command?",
             "What is command to add avatars in GIO server?",
+            "Command to get avatars in GIO",
             "Command to add characters in GIO",
+            "What is command to get avatars in GIO?",
             "How to add avatars in GIO?",
             "I want to add characters in GIO server. But I don't know how"
         ],
