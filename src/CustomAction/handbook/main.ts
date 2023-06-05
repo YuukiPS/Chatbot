@@ -17,7 +17,7 @@ export default async function CustomAction(actionName: string, entity: string | 
         const getId = result ? result.result.id : 'Error API'
     
         if (!getId || getId === 'Not Found') {
-            answer = `We could't find the id for "${entity}" in the GM Handbook, Can you tell me what you trying to the ID?`
+            answer = `We could't find the id for "${entity}" in the GM Handbook, Can you tell me what you trying to find the ID?`
         } else if (getId === 'Error API') {
             answer = `There was an error with the API`
         } else {
