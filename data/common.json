@@ -217,5 +217,35 @@
         "answer": [
             "The available methods for the `/account` command are create, forget, and login.\nTo create an account, use the following syntax: `/account method: create username: <your_username>`\nTo recover a forgotten account, use: `/account method: forget username: <your_username>`\nTo log in to an existing account, use: `/account method: login username: <your_username>`"
         ]
+    },
+    "id_of_item": {
+        "question": [
+            "What is id for {value}",
+            "Send me Id for {value}",
+            "Id for {value}",
+            "What is the ID for {value}?",
+            "Can you provide me with the ID of {value}?",
+            "What is the specific ID assigned to {value}?",
+            "I need to know the ID for {value}. Can you help?",
+            "Could you tell me the ID associated with {value}?",
+            "Please send me the ID for {value}.",
+            "I'm looking for the ID of {value}.",
+            "Do you have the ID for {value}?",
+            "What's the ID of {value}?",
+            "I'm trying to find the ID for {value}.",
+            "Is there an ID assigned to {value}?",
+            "What ID should I use for {value}?",
+            "Can you inform me about the ID of {value}?",
+            "I need to retrieve the ID for {value}.",
+            "Is there a specific ID for {value}?",
+            "Please let me know the ID for {value}.",
+            "Where can I find the ID of {value}?",
+            "What's the ID code for {value}?",
+            "Could you share the ID assigned to {value}?"
+        ],
+        "answer": "get_id_item",
+        "regex": [
+            "for\\s+(.+)$|ID \\s+(.+)$"
+        ]
     }
 }

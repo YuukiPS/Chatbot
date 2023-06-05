@@ -159,5 +159,26 @@
         "answer": [
             "You can try to change the banner by editing the `banners.json` file. Here is an example:\n```json\n[\n{\n\n\"gachaType\": 301,\n\n\"scheduleId\": 903,\n\n\"bannerType\": \"EVENT\",\n\n\"prefabPath\": \"GachaShowPanel_A124\",\n\n\"previewPrefabPath\": \"\",\n\n\"titlePath\": \"UI_GACHA_SHOW_PANEL_A065_TITLE\",\n\n\"costItemId\": 223,\n\n\"beginTime\": 0,\n\n\"endTime\": 1924992000,\n\n\"sortId\": 1003,\n\n\"weights5\": [[1,80], [73,160], [74,730], [75, 1300], [76,1900], [77,2450], [78,3050], [79,3680], [80,4200], [81,4750], [82,5320], [83,5750], [84,6100], [85,5800], [86,4850], [87,3080], [88,2450], [89,3050], [90,10000]],\n\n\"eventChance5\": 150,\n\n\"rateUpItems5\": [1063],\n\n\"rateUpItems4\": [1039, 1043, 1080],\n\n\"fallbackItems5Pool1\": [1003, 1016, 1041, 1035, 1042, 1069],\n\n\"fallbackItems5Pool2\": [1003, 1016, 1041, 1035, 1042, 1069]\n}\n]```"
         ]
+    },
+    "command_list_gc": {
+        "question": [
+            "Can you send me command list for Grasscutter?",
+            "Can you send me command list for GC?",
+            "All command for Grasscutter",
+            "All command for GC",
+            "Tell me all command for Grasscutter",
+            "Tell me all command for GC",
+            "Can you send me the command list for Grasscutter?",
+            "Can you send me the command list for GC?",
+            "What are all the commands for Grasscutter?",
+            "What are all the commands for GC?",
+            "Please provide me with the complete command list for Grasscutter.",
+            "Please provide me with the complete command list for GC.",
+            "Complete command list for Grasscutter?",
+            "Complete command list for GC?"
+        ],
+        "answer": [
+            "To get all command list in Grasscutter, you can simply use the command `/help` in the game."
+        ]
     }
 }

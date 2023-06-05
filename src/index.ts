@@ -3,26 +3,32 @@ import { client } from './config/openai'
 import { OPENAI } from '../config.json'
 import readline from 'readline'
 import { calculateLevenshteinDistance } from './Utils/stringSimilarity';
+import { executeCustomAction, getEntityFromInput } from './customAction'
 
 export interface Data {
     [key: string]: {
         question: string[];
-        answer: string[];
+        answer: string | string[];
+        regex: string[] | string | undefined
     };
 }
 
-interface returnData {
-    closestString: string | undefined,
-    pattern: string | undefined,
-    score: number | 0
+interface ReturnData {
+    closestStrings: string[];
+    relatedPatterns: string[];
+    relatedQuestions: string[];
+    scores: number[];
 }
 
-function getClosestString(query: string, folderPath: string, similarityThreshold: number): returnData {
+async function getClosestStrings(query: string, folderPath: string, similarityThreshold: number, numResults: number): Promise<ReturnData> {
     const files = fs.readdirSync(folderPath);
 
-    let closestString: string | undefined = undefined;
-    let pattern: string | undefined = undefined
-    let closestDistance = 0;
+    const resultData: {
+        string: string;
+        pattern: string;
+        question: string;
+        score: number;
+    }[] = [];
 
     for (const file of files) {
         const filePath = `${folderPath}/${file}`;
@@ -31,28 +37,71 @@ function getClosestString(query: string, folderPath: string, similarityThreshold
 
         for (const key in parsedData) {
             const questionArr = parsedData[key].question;
-            const answerArr = parsedData[key].answer;
+            const answerData = parsedData[key].answer;
+            const regex = parsedData[key].regex;
+            const answerArr = Array.isArray(answerData) ? answerData : [answerData];
 
             for (const question of questionArr) {
-                const distance = calculateLevenshteinDistance(query, question);
+                let inputValue: string | undefined;
+                let distance: number = 0;
+                if (regex) {
+                    inputValue = await getEntityFromInput(query, regex);
+                    distance = calculateLevenshteinDistance(query, question.replace('{value}', `${inputValue ? inputValue : ''}`));
+                } else {
+                    distance = calculateLevenshteinDistance(query, question);
+                }
                 const similarity = 1 - distance / Math.max(query.length, question.length);
 
-                if (similarity > similarityThreshold && similarity > closestDistance) {
-                    closestDistance = similarity;
+                if (
+                    similarity > similarityThreshold &&
+                    (resultData.length < numResults || similarity > resultData[resultData.length - 1].score)
+                ) {
                     const randomAnswerIndex = Math.floor(Math.random() * answerArr.length);
-                    closestString = answerArr[randomAnswerIndex];
-                    pattern = key
+                    const answer = answerArr[randomAnswerIndex];
+
+                    if (typeof answerData === 'string') {
+                        const customAction = await executeCustomAction(answer, inputValue);
+                        if (customAction && customAction.answer !== '' && typeof customAction.answer === 'string') {
+                            resultData.push({
+                                string: customAction.answer,
+                                pattern: key,
+                                question,
+                                score: similarity,
+                            });
+                        }
+                    } else {
+                        resultData.push({
+                            string: answer,
+                            pattern: key,
+                            question,
+                            score: similarity,
+                        });
+                    }
+
+                    resultData.sort((a, b) => b.score - a.score);
+
+                    if (resultData.length > numResults) {
+                        resultData.pop();
+                    }
                 }
             }
         }
     }
 
+    // Extract the required data from resultData
+    const closestStrings = resultData.map((result) => result.string);
+    const relatedPatterns = resultData.map((result) => result.pattern);
+    const relatedQuestions = resultData.map((result) => result.question);
+    const scores = resultData.map((result) => result.score);
+
     return {
-        closestString,
-        pattern,
-        score: closestDistance
-    }
+        closestStrings,
+        relatedPatterns,
+        relatedQuestions,
+        scores,
+    };
 }
+
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -66,10 +115,16 @@ async function main() {
         if (question.toLowerCase() === 'stop' || question.toLowerCase() === 'exit') {
             return rl.close()
         }
+        if (question.toLowerCase() === 'clear') {
+            // clear terminal
+            console.clear()
+            main()
+            return
+        }
         const folderPath = './data';
         const similarityThreshold = 0.5;
-        const context = getClosestString(question, folderPath, similarityThreshold)
-        const prompt = `I am Takina, a Discord Bot created by ElaXan using Typescript. I am a useful AI designed to assist people who are experiencing issues with Private Servers. I utilize context to provide more accurate answers to users, and I never alter the results derived from the context. Additionally, users do not have access to view the context. So I will give the result in context\nContext: ${context ? context.closestString : 'No context provided'}`;
+        const context = await getClosestStrings(question, folderPath, similarityThreshold, 1)
+        const prompt = `I am Takina, a Discord Bot created by ElaXan using Typescript. I am a useful AI designed to assist people who are experiencing issues with Private Servers. I utilize context to provide more accurate answers to users, and I never alter the results derived from the context. Additionally, users do not have access to view the context. So I will give the result in context\nContext: ${context ? context.closestStrings.join('\n') : 'No context provided'}`;
         console.log('Context:', context, '\n')
         let resultAI = ''
         await client.chat.createCompletion({
