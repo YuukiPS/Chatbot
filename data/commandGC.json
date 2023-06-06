@@ -454,7 +454,6 @@
             "How to add achievement.",
             "Please send a command to grant achievement or add achievement",
             "Help me, send a command to grant or add achievement",
-            "Is there a command to grant achievement in Grasscutter?",
             "How can I add an achievement in Grasscutter?",
             "What command should I use to grant an achievement in Grasscutter?",
             "Can you provide me with a command to add an achievement in Grasscutter?",
@@ -491,6 +490,74 @@
         ],
         "answer": [
             "To get artifact in Grasscutter server, You can use the command `/give <artifact id> x<amount> lv<level>`. To get artifact id, You can check on GM Handbook or use the bot command `/gm` in <#987879230585069609> channel"
+        ]
+    },
+    "main_quest_gc": {
+        "question": [
+            "How can I start main quest in GC?",
+            "How can I start main quest in Grasscutter?",
+            "How can I start main quest?",
+            "Can you send me a command to start main quest",
+            "What's the command to start main quest?",
+            "Command main quest",
+            "Is there a command to start main quest in Grasscutter?",
+            "Please tell me start main quest in Grasscutter or GC",
+            "I have create new account, How can I start main quest?",
+            "How can I start the main quest in Grasscutter?",
+            "How do I initiate the main quest in GC?",
+            "What is the process to begin the main quest in Grasscutter?",
+            "Could you please guide me on how to start the main quest?",
+            "Is there a specific command to initiate the main quest in GC?",
+            "What steps should I follow to start the main quest?",
+            "Are there any prerequisites to starting the main quest in Grasscutter?",
+            "Can you provide instructions on starting the main quest in GC?",
+            "I'm a new player. How can I start the main quest?",
+            "Where can I find the main quest in Grasscutter?"
+        ],
+        "answer": [
+            "To start main quest in Grasscutter, you can try this command to start main quest: `/q main`"
+        ]
+    },
+    "change_element_gc": {
+        "question": [
+            "Hello I m sorry to bother you but I need a command with which you can change the element of the traveler",
+            "Is there a command to change element of the traveler?",
+            "Command change element for traveler",
+            "How can I change the element of the traveler in the game?",
+            "What is the command to change the element of the traveler?",
+            "Is there a way to switch the element of the traveler character?",
+            "Can you tell me how to modify the element of the traveler?",
+            "What steps should I follow to change the element of the traveler?",
+            "Is it possible to alter the element of the traveler in the middle of the game?",
+            "Are there any restrictions or limitations when changing the element of the traveler?",
+            "What are the consequences of changing the element of the traveler?",
+            "Can I change the element of the traveler multiple times?",
+            "Is there a specific level requirement to change the element of the traveler?",
+            "What is the default element of the traveler character?",
+            "Is changing the element of the traveler reversible?",
+            "Are there any quests or missions associated with changing the traveler's element?",
+            "Does changing the element of the traveler affect their abilities and skills?",
+            "Can I choose any element for the traveler or are there limitations?",
+            "What happens to the traveler's constellation and ascension level when changing their element?",
+            "Is there a cost or resource requirement for changing the element of the traveler?",
+            "What should I consider before deciding to change the element of the traveler?",
+            "Is there a way to switch the traveler's element?",
+            "How to modify the traveler's element?",
+            "Steps to change the traveler's element?"
+        ],
+        "answer": [
+            "To change the element of the traveler, you can use the command `/prop se <element_name>`. However, be sure to read the GM Handbook and `/help` for more information and to avoid asking for every command."
+        ]
+    },
+    "custom_artifact_gc": {
+        "question": [
+            "How to custom artifact",
+            "Can you send me link for Custom Artifact?",
+            "How can I do custom stats to artifact?",
+            "Tell me how can I do to custom artifact like stats"
+        ],
+        "answer": [
+            "To custom artifact in Grasscutter, you can try this site: https://null-grasscutter-tools.vercel.app/#/artifact/index"
         ]
     }
 }

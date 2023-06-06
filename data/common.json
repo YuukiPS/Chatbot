@@ -247,5 +247,79 @@
         "regex": [
             "for\\s+(.+)$|ID \\s+(.+)$"
         ]
+    },
+    "hide_uid": {
+        "question": [
+            "How to hide UID?",
+            "Is there a way to hide UID?",
+            "Step by step to hide my UID",
+            "Tell me, how to hide UID",
+            "How can I hide my UID?",
+            "What methods can be used to hide UID?",
+            "Is it possible to conceal my UID?",
+            "Are there any software tools to hide UID?",
+            "What are the steps to hide my UID?",
+            "Can you explain the process of hiding UID?",
+            "Is there a way to prevent my UID from being visible?",
+            "Are there any privacy settings to hide my UID?",
+            "How do I protect my UID from being disclosed?",
+            "Are there any best practices for hiding my UID?",
+            "Are there software tools to hide UID?",
+            "Steps to hide my UID?",
+            "Explain the process of hiding UID.",
+            "Can I prevent my UID from being visible?",
+            "How to protect my UID from disclosure?",
+            "Can I change my UID to protect my identity?"
+        ],
+        "answer": [
+            "Hiding your UID is not a built-in feature in most systems. However, there are cheat software tools available that can help you hide your UID, such as Akebi, which is commonly used by many users."
+        ]
+    },
+    "white_screen": {
+        "question": [
+            "My game is just showing white screen",
+            "What causes a white screen when connecting to server YuukiPS?",
+            "How can I fix a white screen issue when connecting to server YuukiPS?",
+            "Why does my game only display a white screen when connecting to server YuukiPS?",
+            "Is a white screen on server YuukiPS indicative of a connection problem?",
+            "Are there any known issues with server YuukiPS causing a white screen?",
+            "Does server YuukiPS have any maintenance schedules that could cause a white screen?",
+            "Is there a way to check the status of server YuukiPS to verify if it's causing a white screen?",
+            "Are there any error messages or logs that can provide more information about the white screen problem on server YuukiPS?",
+            "Has there been any recent updates or changes to server YuukiPS that could be causing the white screen?",
+            "How to fix a white screen issue on server YuukiPS?",
+            "Why does my game only display a white screen on server YuukiPS?",
+            "Is a white screen on server YuukiPS a connection problem?",
+            "Does server YuukiPS have maintenance schedules causing white screens?",
+            "Other factors contributing to a white screen issue on server YuukiPS?",
+            "How to check the status of server YuukiPS for white screen problems?",
+            "Recent updates or changes to server YuukiPS causing white screen?"
+        ],
+        "answer": [
+            "White screen when trying to connect to a specific region usually means it is down, you can refer to <#1051149545779777586>"
+        ]
+    },
+    "wrong_channel": {
+        "question": [
+            "/account create",
+            "create account",
+            "/account metode:create username:goblok password:goblok",
+            "username: goblok\npassword: goblok",
+            "\"account metode: create username: goblok"
+        ],
+        "answer": [
+            "I am sorry, I can't create account for you, please move to <#987879230585069609> channel and don't forgot to check pins. Don't waste time here trying to create a account"
+        ]
+    },
+    "error_create_account": {
+        "question": [
+            "Why I got error when creating account",
+            "Why I got error \"The application is not responding\" when I create the account",
+            "How can I fix error \"The application is not responding\" trying to create account",
+            "Error \"The application is not responding\" create account"
+        ],
+        "answer": [
+            "If you got error \"The application is not responding\" when trying to create account. Make sure the bot from <@1023479009335582830> is online. Alternative to create account you can visit this site: https://login.yuuki.me/account/login"
+        ]
     }
 }

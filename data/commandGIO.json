@@ -190,5 +190,32 @@
         "answer": [
             "To get weapon in GIO Server, You can use the command `item add <id>`. Replace `<id>` with the weapon id. To get ID you can check on GM Handbook or use command in <#987879230585069609> with `/gm`"
         ]
+    },
+    "gio_get_all_avatars": {
+        "question": [
+            "How to obtain all characters in GIO?",
+            "Is there a command to get all characters in GIO?",
+            "Obtain all characters in GIO",
+            "What is command to get all characters in GIO?",
+            "Command to get all characters in GIO",
+            "What is the command to get all characters in GIO?",
+            "How can I retrieve all avatars in GIO?",
+            "Is there a way to list all characters in GIO?",
+            "What steps do I need to take to get all avatars in GIO?",
+            "Can you explain the process of obtaining all characters in GIO?",
+            "Are there any shortcuts to get all characters in GIO?",
+            "Where can I find a list of all avatars in GIO?",
+            "Is it possible to obtain a complete roster of characters in GIO?",
+            "How do I access the full collection of avatars in GIO?",
+            "What is the recommended approach to retrieve all characters in GIO?",
+            "Can I use a command to fetch all avatars in GIO?",
+            "Is there a specific function to get all characters in GIO?",
+            "What resources should I consult to find all avatars in GIO?",
+            "Are there any third-party tools available to get all characters in GIO?",
+            "Can you provide a step-by-step guide to obtaining all characters in GIO?"
+        ],
+        "answer": [
+            "There is no command to get all avatars or characters in GIO, you need to add them all one by one. You can check in the GM Handbook to find id Characters"
+        ]
     }
 }
