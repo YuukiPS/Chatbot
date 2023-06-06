@@ -30,7 +30,7 @@ export async function executeCustomAction(actionName: string, value: string | un
     const filePath = path.join(customActionFolderPath, randomFolder, 'main.ts');
 
     try {
-        const customAction = require(filePath);
+        const customAction = await import(filePath);
         if (typeof customAction.default === 'function') {
             return await customAction.default(actionName, value);
         }
