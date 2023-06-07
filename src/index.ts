@@ -46,11 +46,11 @@ async function getClosestStrings(query: string, folderPath: string, similarityTh
                 let distance: number = 0;
                 if (regex) {
                     inputValue = await getEntityFromInput(query, regex);
-                    distance = calculateLevenshteinDistance(query, question.replace('{value}', `${inputValue ? inputValue : ''}`));
+                    distance = calculateLevenshteinDistance(query.toLowerCase(), question.replace('{value}', `${inputValue ? inputValue : ''}`).toLowerCase());
                 } else {
-                    distance = calculateLevenshteinDistance(query, question);
+                    distance = calculateLevenshteinDistance(query.toLowerCase(), question.toLowerCase());
                 }
-                const similarity = 1 - distance / Math.max(query.length, question.length);
+                const similarity = 1 - (distance / Math.max(query.length, question.length));
 
                 if (
                     similarity > similarityThreshold &&
@@ -62,6 +62,10 @@ async function getClosestStrings(query: string, folderPath: string, similarityTh
                     if (typeof answerData === 'string') {
                         const customAction = await executeCustomAction(answer, inputValue);
                         if (customAction && customAction.answer !== '' && typeof customAction.answer === 'string') {
+                            const hasPattern = resultData.find((result) => result.pattern === key);
+                            if (hasPattern) {
+                                continue;
+                            }
                             resultData.push({
                                 string: customAction.answer,
                                 pattern: key,

@@ -321,5 +321,44 @@
         "answer": [
             "If you got error \"The application is not responding\" when trying to create account. Make sure the bot from <@1023479009335582830> is online. Alternative to create account you can visit this site: https://login.yuuki.me/account/login"
         ]
+    },
+    "yuukips_not_opening": {
+        "question": [
+            "I have issue with YuukiPS Launcher that doesn't open it, How can I fix this issue",
+            "YuukiPS Launcher is not open",
+            "I can't open YuukiPS Launcher",
+            "Why I can't open YuukiPS Launcher",
+            "How can I fix YuukiPS Launcher not opening?",
+            "YuukiPS Launcher not opening.",
+            "Can't open YuukiPS Launcher.",
+            "Why won't YuukiPS Launcher open?"
+        ],
+        "answer": [
+            "If you have issue with YuukiPS Launcher that not open when you run .exe\nMake sure you have download and install DotNet (.NET) from this link: <https://dotnet.microsoft.com/en-us/download/dotnet/6.0/runtime>\nAnd please check documents for how to setup YuukiPS Launcher here: <https://doc.yuuki.me/docs/tutorial-connect/pc/yuukips-launcher>"
+        ]
+    },
+    "how_to_get_items": {
+        "question": [
+            "How to get {value}?",
+            "Is there a command to get {value}?",
+            "Please provide the command to get {value}.",
+            "Can you send me the command for obtaining {value}?",
+            "What is the command for acquiring {value}?",
+            "What steps should I follow to get {value}?",
+            "What is the process to obtain {value}?",
+            "Which command should I use to get {value}?",
+            "What command can be used to get {value}?",
+            "What is the recommended way to get {value}?",
+            "Are there any specific commands for getting {value}?",
+            "Could you provide me with the command to get {value}?",
+            "What is the best way to get {value}?",
+            "What command should I run to get {value}?",
+            "Is there a specific command to get {value}?",
+            "How to obtain {value}?"
+        ],
+        "answer": "command_item",
+        "regex": [
+            "(?:get|command|give me|getting|obtain|acquiring|obtaining)\\s+(.*)"
+        ]
     }
 }
