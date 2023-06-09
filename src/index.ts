@@ -4,6 +4,10 @@ import { OPENAI } from '../config.json'
 import readline from 'readline'
 import { calculateLevenshteinDistance } from './Utils/stringSimilarity';
 import { autoGetEntity, executeCustomAction, getEntityFromInput } from './customAction'
+import languageDetect from 'languagedetect'
+import translate, { languages } from 'fanyi-google'
+
+const lngDetector = new languageDetect();
 
 export interface Data {
     [key: string]: {
@@ -30,12 +34,16 @@ async function getClosestStrings(query: string, folderPath: string, similarityTh
         score: number;
     }[] = [];
 
+    const languageDetector = lngDetector.detect(query)[0][0];
+    if (languageDetector !== 'english') {
+        const getLanguage = languages.getCode(languageDetector).toString();
+        query = (await translate(query, { autoCorrect: true, from: getLanguage, to: languages.en })).text
+    }
     for (const file of files) {
         const filePath = `${folderPath}/${file}`;
         const jsonData = fs.readFileSync(filePath, 'utf-8');
         if (!filePath.endsWith('.json')) continue
         const parsedData: Data = JSON.parse(jsonData);
-
         for (const key in parsedData) {
             const questionArr = parsedData[key].question;
             const answerData = parsedData[key].answer;
