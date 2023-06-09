@@ -354,11 +354,9 @@
             "What is the best way to get {value}?",
             "What command should I run to get {value}?",
             "Is there a specific command to get {value}?",
-            "How to obtain {value}?"
+            "How to obtain {value}?",
+            "Tell me to get {value} with command"
         ],
-        "answer": "command_item",
-        "regex": [
-            "(?:get|command|give me|getting|obtain|acquiring|obtaining)\\s+(.*)"
-        ]
+        "answer": "command_item"
     }
 }

@@ -24,6 +24,35 @@ export async function getEntityFromInput(input: string, regex: string | string[]
     return match;
 }
 
+export function autoGetEntity(question: string, context: string): string | undefined {
+    question = question?.replace(/[^\w\s]/gi, '');
+    context = context.replace(/[^{}\w\s](?!{.*})/gi, '');
+
+    const objectContext = context.toLowerCase().split(' ');
+    const objectQuestion = question.toLowerCase().split(' ');
+    let questionLength = question.length
+    const result = [];
+    for (const contextWord of objectContext) {
+        if (contextWord === "{value}") {
+            result.push("(.+)");
+        } else {
+            for (const questionWord of objectQuestion) {
+                if (contextWord === questionWord) {
+                    result.push(contextWord);
+                    break;
+                }
+            }
+        }
+    }
+    const pattern2 = result.join(' ');
+    const regex = new RegExp(pattern2, 'i');
+    const results = question.match(regex)?.[1]
+    if (questionLength - pattern2.length > 3) {
+        return undefined
+    }
+    return results
+}
+
 export async function executeCustomAction(actionName: string, value: string | undefined): Promise<{ answer: string }> {
     const customActionFolderPath = path.join(__dirname, 'CustomAction');
     const randomFolder = getRandomFolder(customActionFolderPath);

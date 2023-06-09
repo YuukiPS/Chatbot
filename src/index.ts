@@ -3,7 +3,7 @@ import { client } from './config/openai'
 import { OPENAI } from '../config.json'
 import readline from 'readline'
 import { calculateLevenshteinDistance } from './Utils/stringSimilarity';
-import { executeCustomAction, getEntityFromInput } from './customAction'
+import { autoGetEntity, executeCustomAction, getEntityFromInput } from './customAction'
 
 export interface Data {
     [key: string]: {
@@ -33,6 +33,7 @@ async function getClosestStrings(query: string, folderPath: string, similarityTh
     for (const file of files) {
         const filePath = `${folderPath}/${file}`;
         const jsonData = fs.readFileSync(filePath, 'utf-8');
+        if (!filePath.endsWith('.json')) continue
         const parsedData: Data = JSON.parse(jsonData);
 
         for (const key in parsedData) {
@@ -44,8 +45,12 @@ async function getClosestStrings(query: string, folderPath: string, similarityTh
             for (const question of questionArr) {
                 let inputValue: string | undefined;
                 let distance: number = 0;
-                if (regex) {
-                    inputValue = await getEntityFromInput(query, regex);
+                if (typeof answerData === 'string' && question.includes('{value}')) {
+                    if (regex) {
+                        inputValue = await getEntityFromInput(query, regex);
+                    } else {
+                        inputValue = autoGetEntity(query, question)
+                    }
                     distance = calculateLevenshteinDistance(query.toLowerCase(), question.replace('{value}', `${inputValue ? inputValue : ''}`).toLowerCase());
                 } else {
                     distance = calculateLevenshteinDistance(query.toLowerCase(), question.toLowerCase());
@@ -127,9 +132,9 @@ async function main() {
         }
         const folderPath = './data';
         // Similarity threshold for the result. The lower the number, the more inaccurate the result. The higher the number, the more accurate the result.
-        const similarityThreshold = 0.5;
+        const similarityThreshold = 0.2;
         // How many the result should be returned
-        const numResult = 1
+        const numResult = 5
         const context = await getClosestStrings(question, folderPath, similarityThreshold, numResult)
         const prompt = `I am Takina, a Discord Bot created by ElaXan using Typescript. I am a useful AI designed to assist people who are experiencing issues with Private Servers. I utilize context to provide more accurate answers to users, and I never alter the results derived from the context. Additionally, users do not have access to view the context. So I will give the result in context\nContext: ${context ? context.closestStrings.join('\n') : 'No context provided'}`;
         console.log('Context:', context, '\n')
