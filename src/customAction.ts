@@ -30,7 +30,7 @@ export function autoGetEntity(question: string, context: string): string | undef
 
     const objectContext = context.toLowerCase().split(' ');
     const objectQuestion = question.toLowerCase().split(' ');
-    let questionLength = question.length
+    const questionLength = question.length
     const result = [];
     for (const contextWord of objectContext) {
         if (contextWord === "{value}") {

@@ -12,7 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "@fern-api/openai": "^0.0.32",
-    "fs": "^0.0.1-security"
+    "fanyi-google": "^1.1.1",
+    "fs": "^0.0.1-security",
+    "languagedetect": "^2.0.0"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
