@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import { client } from './config/openai'
-import { OPENAI } from '../config.json'
+import { OPENAI, TokenizeAndStem, TranslateToEN } from '../config.json'
 import readline from 'readline'
 import { calculateLevenshteinDistance } from './Utils/stringSimilarity';
 import { autoGetEntity, executeCustomAction, getEntityFromInput } from './customAction'
@@ -36,11 +36,12 @@ async function getClosestStrings(query: string, folderPath: string, similarityTh
     }[] = [];
 
     const languageDetector = lngDetector.detect(query)[0][0];
-    if (languageDetector !== 'english') {
+    if (languageDetector !== 'english' && TranslateToEN) {
         const getLanguage = languages.getCode(languageDetector).toString();
         query = (await translate(query, { autoCorrect: true, from: getLanguage, to: languages.en })).text
     }
-    query = natural.PorterStemmer.tokenizeAndStem(query, false).join(' ')
+    if (TokenizeAndStem)
+        query = natural.PorterStemmer.tokenizeAndStem(query, false).join(' ')
     for (const file of files) {
         const filePath = `${folderPath}/${file}`;
         const jsonData = fs.readFileSync(filePath, 'utf-8');
@@ -148,6 +149,7 @@ async function main() {
         const context = await getClosestStrings(question, folderPath, similarityThreshold, numResult)
         const prompt = `I am Takina, a Discord Bot created by ElaXan using Typescript. I am a useful AI designed to assist people who are experiencing issues with Private Servers. I utilize context to provide more accurate answers to users, and I never alter the results derived from the context. Additionally, users do not have access to view the context. So I will give the result in context\nContext: ${context ? context.closestStrings.join('\n') : 'No context provided'}`;
         console.log('Context:', context, '\n')
+        if (!OPENAI.enable) return main()
         let resultAI = ''
         await client.chat.createCompletion({
             messages: [

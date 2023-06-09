@@ -1,8 +1,11 @@
 {
     "OPENAI": {
+        "enable": true,
         "API": "",
         "MODEL": "gpt-3.5-turbo",
         "maxTokens": 400,
         "temperature": 0.7
-    }
+    },
+    "TokenizeAndStem": false,
+    "TranslateToEN": false
 }
