@@ -6,6 +6,7 @@ import { calculateLevenshteinDistance } from './Utils/stringSimilarity';
 import { autoGetEntity, executeCustomAction, getEntityFromInput } from './customAction'
 import languageDetect from 'languagedetect'
 import translate, { languages } from 'fanyi-google'
+import natural from 'natural'
 
 const lngDetector = new languageDetect();
 
@@ -39,6 +40,7 @@ async function getClosestStrings(query: string, folderPath: string, similarityTh
         const getLanguage = languages.getCode(languageDetector).toString();
         query = (await translate(query, { autoCorrect: true, from: getLanguage, to: languages.en })).text
     }
+    query = natural.PorterStemmer.tokenizeAndStem(query, false).join(' ')
     for (const file of files) {
         const filePath = `${folderPath}/${file}`;
         const jsonData = fs.readFileSync(filePath, 'utf-8');
