@@ -35,7 +35,7 @@ async function getClosestStrings(query: string, folderPath: string, similarityTh
         score: number;
     }[] = [];
 
-    const languageDetector = lngDetector.detect(query)[0][0];
+    const languageDetector = lngDetector.detect(query)[0]?.[0];
     if (languageDetector !== 'english' && TranslateToEN) {
         const getLanguage = languages.getCode(languageDetector).toString();
         query = (await translate(query, { autoCorrect: true, from: getLanguage, to: languages.en })).text
@@ -140,6 +140,9 @@ async function main() {
             console.clear()
             main()
             return
+        }
+        if (question === '') {
+            return main()
         }
         const folderPath = './data';
         // Similarity threshold for the result. The lower the number, the more inaccurate the result. The higher the number, the more accurate the result.
