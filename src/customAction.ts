@@ -25,32 +25,44 @@ export async function getEntityFromInput(input: string, regex: string | string[]
 }
 
 export function autoGetEntity(question: string, context: string): string | undefined {
-    question = question?.replace(/[^\w\s]/gi, '');
-    context = context.replace(/[^{}\w\s](?!{.*})/gi, '');
+    const cleanedQuestion = question.replace(/[^\w\s]/gi, '');
+    const cleanedContext = context.replace(/[^{}\w\s](?!{.*})/gi, '');
 
-    const objectContext = context.toLowerCase().split(' ');
-    const objectQuestion = question.toLowerCase().split(' ');
-    const questionLength = question.length
+    const objectContext = cleanedContext.toLowerCase().split(' ');
+    const objectQuestion = cleanedQuestion.toLowerCase().split(' ');
+
     const result = [];
+
     for (const contextWord of objectContext) {
         if (contextWord === "{value}") {
             result.push("(.+)");
         } else {
-            for (const questionWord of objectQuestion) {
-                if (contextWord === questionWord) {
-                    result.push(contextWord);
-                    break;
-                }
+            if (objectQuestion.includes(contextWord)) {
+                result.push(contextWord);
             }
         }
     }
-    const pattern2 = result.join(' ');
-    const regex = new RegExp(pattern2, 'i');
-    const results = question.match(regex)?.[1]
-    if (questionLength - pattern2.length > 3) {
-        return undefined
+
+    if (result.length === 0) {
+        return undefined;
     }
-    return results
+
+    const pattern = result.join(' ');
+    const regex = new RegExp(pattern, 'i');
+    const match = question.match(regex);
+
+    if (!match) {
+        return undefined;
+    }
+
+    const results = match[1];
+    const questionLength = cleanedQuestion.length;
+
+    if (questionLength - pattern.length > 3) {
+        return undefined;
+    }
+
+    return results;
 }
 
 export async function executeCustomAction(actionName: string, value: string | undefined): Promise<{ answer: string }> {
