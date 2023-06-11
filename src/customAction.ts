@@ -37,8 +37,9 @@ export function autoGetEntity(question: string, context: string): string | undef
         if (contextWord === "{value}") {
             result.push("(.+)");
         } else {
-            if (objectQuestion.includes(contextWord)) {
-                result.push(contextWord);
+            const cleanedContextWord = contextWord.replace(/[^\w\s]/gi, '');
+            if (objectQuestion.includes(cleanedContextWord)) {
+                result.push(cleanedContextWord);
             }
         }
     }
@@ -56,11 +57,6 @@ export function autoGetEntity(question: string, context: string): string | undef
     }
 
     const results = match[1];
-    const questionLength = cleanedQuestion.length;
-
-    if (questionLength - pattern.length > 3) {
-        return undefined;
-    }
 
     return results;
 }
