@@ -241,12 +241,10 @@
             "Please let me know the ID for {value}.",
             "Where can I find the ID of {value}?",
             "What's the ID code for {value}?",
-            "Could you share the ID assigned to {value}?"
+            "Could you share the ID assigned to {value}?",
+            "ID from {value}"
         ],
-        "answer": "get_id_item",
-        "regex": [
-            "for\\s+(.+)$|ID \\s+(.+)$"
-        ]
+        "answer": "get_id_item"
     },
     "hide_uid": {
         "question": [
@@ -355,8 +353,101 @@
             "What command should I run to get {value}?",
             "Is there a specific command to get {value}?",
             "How to obtain {value}?",
-            "Tell me to get {value} with command"
+            "Tell me to get {value} with command",
+            "Command for {value}?",
+            "Get {value} command"
         ],
         "answer": "command_item"
+    },
+    "how_to_login": {
+        "question": [
+            "How to login?",
+            "Is there a command to login?",
+            "Please provide the command to login.",
+            "Can you send me the command for login?",
+            "What is the command for login?",
+            "What steps should I follow to login?",
+            "What is the process to login?",
+            "Which command should I use to login?",
+            "What command can be used to login?",
+            "What is the recommended way to login?",
+            "Are there any specific commands for login?",
+            "Could you provide me with the command to login?",
+            "What is the best way to login?",
+            "What command should I run to login?",
+            "Is there a specific command to login?",
+            "Tell me to login with command",
+            "Command for login?",
+            "Login command"
+        ],
+        "answer": [
+            "You can just login in game by entering your username and password in the login screen.\nBut before you do that, make sure you have created an account first. If you haven't created an account, you can create it by using the command `/account metode: create username: <your username> password: <your password>`"
+        ]
+    },
+    "how_to_register": {
+        "question": [
+            "How to register?",
+            "Is there a command to register?",
+            "Please provide the command to register.",
+            "Can you send me the command for register?",
+            "What is the command for register?",
+            "It says I need to register, what should I do?",
+            "What steps should I follow to register?",
+            "What is the process to register?",
+            "Which command should I use to register?",
+            "What command can be used to register?",
+            "What is the recommended way to register?",
+            "Are there any specific commands for register?",
+            "Could you provide me with the command to register?",
+            "What is the best way to register?",
+            "What command should I run to register?",
+            "Is there a specific command to register?",
+            "Tell me to register with command",
+            "Command for register?",
+            "Register command"
+        ],
+        "answer": [
+            "You can register by using the command `/account metode: create username: <your username> password: <your password>`"
+        ]
+    },
+    "current_date": {
+        "question": [
+            "What is the current {value}?",
+            "What is the {value} today?",
+            "What is the {value}?",
+            "What is the {value} right now?",
+            "What is current {value}?",
+            "What is {value} today?",
+            "What is {value}?",
+            "Current {value}?"
+        ],
+        "answer": "current_date"
+    },
+    "will_get_ban_play_ps": {
+        "question": [
+            "Will I get banned if I play on YuukiPS?",
+            "Will I get banned if I play Private Server?",
+            "Is there a chance I will get banned if I play on YuukiPS?",
+            "Is there a chance I will get banned if I play Private Server?",
+            "Explain to me about the ban risk if I play on YuukiPS.",
+            "Explain to me about the ban risk if I play Private Server.",
+            "What is the ban risk if I play on YuukiPS?",
+            "What is the ban risk if I play Private Server?",
+            "What is the chance I will get banned if I play on YuukiPS?",
+            "What is the chance I will get banned if I play Private Server?",
+            "What is the risk of getting banned if I play on YuukiPS?",
+            "What is the risk of getting banned if I play Private Server?",
+            "What is the possibility of getting banned if I play on YuukiPS?",
+            "What is the possibility of getting banned if I play Private Server?",
+            "Risk of getting banned if I play on YuukiPS?",
+            "Risk of getting banned if I play Private Server?",
+            "Possibility of getting banned if I play on YuukiPS?",
+            "Possibility of getting banned if I play Private Server?",
+            "Chance of getting banned if I play on YuukiPS?",
+            "Chance of getting banned if I play Private Server?"
+        ],
+        "answer": [
+            "There is no report that someone got banned by playing on YuukiPS or Private Server. But if you still worried about it, then don't play Private Server."
+        ]
     }
 }

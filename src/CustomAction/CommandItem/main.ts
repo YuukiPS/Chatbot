@@ -15,7 +15,7 @@ export default async function CustomAction(actionName: string, entity: string | 
     const commandGC = getResult.commands.gc.commands_2?.value
     const commandGIO = getResult.commands.gio.commands_2?.value
 
-    if (!commandGC|| !commandGIO) {
+    if (!commandGC || !commandGIO) {
         answer = 'I am not sure what the command you needed'
     } else {
         answer = `To get ${entity} you can use the command ${commandGC} in the Ayaka bots.\n\nOr if you playing on GIO server, you can use the command ${commandGIO}`

@@ -4,7 +4,16 @@
             "Can you send me fiddler script for Honkai: Star Rail?",
             "Fiddler script SR",
             "Send fiddler script for SR",
-            "Can you please send fiddler script for SR?"
+            "Can you please send fiddler script for SR?",
+            "Please send fiddler script for Star Rail",
+            "I want you to send fiddler script for SR",
+            "Send fiddler script for Star Rail",
+            "Fiddler script for Star Rail",
+            "Fiddler script for SR",
+            "Send fiddler script for Honkai: Star Rail",
+            "Can you send me fiddler script for Star Rail?",
+            "Fiddler script for Honkai: Star Rail",
+            "Can you send me fiddler script for SR?"
         ],
         "answer": [
             "Sure, here is Fiddler Script for Honkai: Star Rail:\n```c\nimport System;\nimport System.Windows.Forms;\nimport Fiddler;\nimport System.Text.RegularExpressions;\nclass Handlers\n{\n\tstatic function OnBeforeRequest(oS: Session) {\n\t\tif(oS.host.EndsWith(\".yuanshen.com\")  \n\t\t\t\t|| oS.host.EndsWith(\".yuanshen.com:12401\") \n\t\t\t\t|| oS.host.EndsWith(\".hoyoverse.com\") \n\t\t\t\t|| oS.host.EndsWith(\".mihoyo.com\")\n\t\t\t\t|| oS.host.EndsWith(\".starrails.com\")\n\t\t\t\t|| oS.uriContains(\"http://overseauspider.yuanshen.com:8888/log\")) {\n\t\t\t\t//This can also be replaced with another ip/domain server.\n\t\t\t\toS.host = \"ps.yuuki.me\";\n\t\t}\n\t}\n};```"
@@ -17,7 +26,12 @@
             "Send command list for SR",
             "Please send command list for Star Rail",
             "I want you to send command list for SR",
-            "Send command list for Star Rail"
+            "Send command list for Star Rail",
+            "Command list for SR",
+            "Send command list for Honkai: Star Rail",
+            "Can you send me command list for Star Rail?",
+            "Command list for Honkai: Star Rail",
+            "Can you send me command list for SR?"
         ],
         "answer": [
             "Sure, here is command list for Honkai: Star Rail:\n```\navatar giveall\ngiveall items\nscene 20101\nbattle 1004010 1004010 1004010 1004010 (to fight, you have to go to scene 20101 using monster id vaild with max 4 monster?)```"
@@ -27,7 +41,16 @@
         "question": [
             "Send monster ID for Star Rail",
             "Can you send me list monster id for Star Rail Private Server?",
-            "Please send me monster id for Star Rail"
+            "Please send me monster id for Star Rail",
+            "I want you to send me monster id for Star Rail",
+            "Send monster id for Star Rail",
+            "Monster id for Star Rail",
+            "Can you send me monster id for Star Rail?",
+            "Monster id for Star Rail Private Server",
+            "Can you send me monster id for Star Rail Private Server?",
+            "Please send me monster id for Star Rail Private Server",
+            "I want you to send me monster id for Star Rail Private Server",
+            "Send monster id for Star Rail Private Server"
         ],
         "answer": [
             "Here is monster ID for Star Rail:\nhttps://docs.google.com/document/d/18kMbHMvBv99sYUHsi9HK1g3zrDP3awLo/edit\n```\nDoomsday Beast - 8015010\nCocolia: Fabricated Mother - 1005010\nCocolia - 1004011\nGepard - 1004021\nSvarog - 1014011\nBronya - 100403001\nFrigid Prowler - 1023020\nStormbringer - 8003050\nVoidranger: Trampler - 8013012\nSilvermane: Officer Dunn - 100301002\nGreyback Whale - 101301005\n??? - 101302003 \nSearing Prowler - 102301001\nIce Out of Space - 800301001\nBlaze Out of Space - 800302001\nGuardian Shadow - 800303002```"

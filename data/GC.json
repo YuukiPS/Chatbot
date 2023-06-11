@@ -175,7 +175,14 @@
             "Please provide me with the complete command list for Grasscutter.",
             "Please provide me with the complete command list for GC.",
             "Complete command list for Grasscutter?",
-            "Complete command list for GC?"
+            "Complete command list for GC?",
+            "commands in yuuki private server",
+            "commands in yuuki ps",
+            "Send me all commands in yuuki ps",
+            "Send me all commands in yuuki private server",
+            "Is there a command list for Yuuki PS?",
+            "Is there a command list for Yuuki Private Server?",
+            "Is there a command list for YuukiPS?"
         ],
         "answer": [
             "To get all command list in Grasscutter, you can simply use the command `/help` in the game."

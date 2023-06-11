@@ -8,7 +8,7 @@ export default async function CustomAction(actionName: string, entity: string | 
     entity = entity?.replace(/[^\w\s]/gi, '');
 
     if (!entity) {
-        answer = `I don't understand what you looking for.`
+        return
     } else {
         const result = await GMHandbook.find({
             search: entity
