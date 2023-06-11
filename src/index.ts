@@ -25,7 +25,12 @@ interface ReturnData {
     scores: number[];
 }
 
-async function getClosestStrings(query: string, folderPath: string, similarityThreshold: number, numResults: number): Promise<ReturnData> {
+async function getClosestStrings(
+    query: string,
+    folderPath: string,
+    similarityThreshold: number,
+    numResults: number
+): Promise<ReturnData> {
     const files = fs.readdirSync(folderPath);
 
     const resultData: {
@@ -38,15 +43,19 @@ async function getClosestStrings(query: string, folderPath: string, similarityTh
     const languageDetector = lngDetector.detect(query)[0]?.[0];
     if (languageDetector !== 'english' && TranslateToEN) {
         const getLanguage = languages.getCode(languageDetector).toString();
-        query = (await translate(query, { autoCorrect: true, from: getLanguage, to: languages.en })).text
+        query = (await translate(query, {
+            autoCorrect: true,
+            from: getLanguage,
+            to: languages.en
+        })).text;
     }
-    if (TokenizeAndStem)
-        query = natural.PorterStemmer.tokenizeAndStem(query, false).join(' ')
+    let tokenizeAndStemEnable: boolean = false;
     for (const file of files) {
         const filePath = `${folderPath}/${file}`;
         const jsonData = fs.readFileSync(filePath, 'utf-8');
-        if (!filePath.endsWith('.json')) continue
+        if (!filePath.endsWith('.json')) continue;
         const parsedData: Data = JSON.parse(jsonData);
+        let originalQuery = query;
         for (const key in parsedData) {
             const questionArr = parsedData[key].question;
             const answerData = parsedData[key].answer;
@@ -60,13 +69,23 @@ async function getClosestStrings(query: string, folderPath: string, similarityTh
                     if (regex) {
                         inputValue = await getEntityFromInput(query, regex);
                     } else {
-                        inputValue = autoGetEntity(query, question)
+                        inputValue = autoGetEntity(query, question);
                     }
-                    distance = calculateLevenshteinDistance(query.toLowerCase(), question.replace('{value}', `${inputValue ? inputValue : ''}`).toLowerCase());
-                } else {
+                    tokenizeAndStemEnable = false;
+                    distance = calculateLevenshteinDistance(
+                        query.toLowerCase(),
+                        question.replace('{value}', `${inputValue ? inputValue : ''}`).toLowerCase()
+                    );
+                    } else {
+                        if (tokenizeAndStemEnable && TokenizeAndStem) {
+                        query = natural.PorterStemmer.tokenizeAndStem(query, false).join(' ');
+                    }
                     distance = calculateLevenshteinDistance(query.toLowerCase(), question.toLowerCase());
+                    if (tokenizeAndStemEnable && TokenizeAndStem) {
+                        query = originalQuery;
+                    }
                 }
-                const similarity = 1 - (distance / Math.max(query.length, question.length));
+                const similarity = 1 - distance / Math.max(query.length, question.length);
 
                 if (
                     similarity > similarityThreshold &&
@@ -77,7 +96,11 @@ async function getClosestStrings(query: string, folderPath: string, similarityTh
 
                     if (typeof answerData === 'string') {
                         const customAction = await executeCustomAction(answer, inputValue);
-                        if (customAction && customAction.answer !== '' && typeof customAction.answer === 'string') {
+                        if (
+                            customAction &&
+                            customAction.answer !== '' &&
+                            typeof customAction.answer === 'string'
+                        ) {
                             const hasPattern = resultData.find((result) => result.pattern === key);
                             if (hasPattern) {
                                 continue;
@@ -86,15 +109,19 @@ async function getClosestStrings(query: string, folderPath: string, similarityTh
                                 string: customAction.answer,
                                 pattern: key,
                                 question,
-                                score: similarity,
+                                score: similarity
                             });
                         }
                     } else {
+                        const hasPattern = resultData.find((result) => result.pattern === key);
+                        if (hasPattern) {
+                            continue;
+                        }
                         resultData.push({
                             string: answer,
                             pattern: key,
                             question,
-                            score: similarity,
+                            score: similarity
                         });
                     }
 
@@ -118,10 +145,9 @@ async function getClosestStrings(query: string, folderPath: string, similarityTh
         closestStrings,
         relatedPatterns,
         relatedQuestions,
-        scores,
+        scores
     };
 }
-
 
 const rl = readline.createInterface({
     input: process.stdin,
