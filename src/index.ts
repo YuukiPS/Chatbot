@@ -49,13 +49,13 @@ async function getClosestStrings(
             to: languages.en
         })).text;
     }
-    let tokenizeAndStemEnable: boolean = false;
+    let tokenizeAndStemEnable = false;
     for (const file of files) {
         const filePath = `${folderPath}/${file}`;
         const jsonData = fs.readFileSync(filePath, 'utf-8');
         if (!filePath.endsWith('.json')) continue;
         const parsedData: Data = JSON.parse(jsonData);
-        let originalQuery = query;
+        const originalQuery = query;
         for (const key in parsedData) {
             const questionArr = parsedData[key].question;
             const answerData = parsedData[key].answer;
@@ -64,7 +64,7 @@ async function getClosestStrings(
 
             for (const question of questionArr) {
                 let inputValue: string | undefined;
-                let distance: number = 0;
+                let distance = 0;
                 if (typeof answerData === 'string' && question.includes('{value}')) {
                     if (regex) {
                         inputValue = await getEntityFromInput(query, regex);
@@ -76,8 +76,8 @@ async function getClosestStrings(
                         query.toLowerCase(),
                         question.replace('{value}', `${inputValue ? inputValue : ''}`).toLowerCase()
                     );
-                    } else {
-                        if (tokenizeAndStemEnable && TokenizeAndStem) {
+                } else {
+                    if (tokenizeAndStemEnable && TokenizeAndStem) {
                         query = natural.PorterStemmer.tokenizeAndStem(query, false).join(' ');
                     }
                     distance = calculateLevenshteinDistance(query.toLowerCase(), question.toLowerCase());
@@ -196,7 +196,7 @@ async function main() {
             if (content !== undefined && content !== '') {
                 process.stdout.write(content)
                 resultAI += content
-            };
+            }
         }, {
             onFinish() {
                 console.log('\n')

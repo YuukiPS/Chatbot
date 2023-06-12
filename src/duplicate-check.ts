@@ -25,7 +25,7 @@ function checkForDuplicates(data: Data, filePath: string): boolean {
             if (encounteredQuestions.has(question)) {
                 duplicatePatternQuestions.add(question);
                 if (duplicateQuestionFiles.has(question)) {
-                    duplicateQuestionFiles.get(question)!.push(filePath);
+                    duplicateQuestionFiles.get(question)?.push(filePath);
                 } else {
                     duplicateQuestionFiles.set(question, [filePath]);
                 }
@@ -39,6 +39,7 @@ function checkForDuplicates(data: Data, filePath: string): boolean {
                 console.log(`Pattern: ${pattern}`);
                 console.log(`Duplicate Question: ${question}`);
                 console.log(`File Paths:`);
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                 for (const file of duplicateQuestionFiles.get(question)!) {
                     const fileContent = fs.readFileSync(file, 'utf-8');
                     const lines = fileContent.split('\n');
