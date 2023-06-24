@@ -7,6 +7,7 @@ import { autoGetEntity, executeCustomAction, getEntityFromInput } from './custom
 import languageDetect from 'languagedetect'
 import translate, { languages } from 'fanyi-google'
 import natural from 'natural'
+import { OpenAI } from '@fern-api/openai'
 
 const lngDetector = new languageDetect();
 
@@ -154,7 +155,7 @@ const rl = readline.createInterface({
     output: process.stdout
 })
 
-const conversation: string[] = []
+const conversation: OpenAI.ChatCompletionRequestMessage[] = []
 
 async function main() {
     rl.question('Question (stop/exit to quit): ', async (question) => {
@@ -176,16 +177,32 @@ async function main() {
         // How many the result should be returned
         const numResult = 5
         const context = await getClosestStrings(question, folderPath, similarityThreshold, numResult)
-        const prompt = `I am Takina, a Discord Bot created by ElaXan using Typescript. I am a useful AI designed to assist people who are experiencing issues with Private Servers. I utilize context to provide more accurate answers to users, and I never alter the results derived from the context. Additionally, users do not have access to view the context. So I will give the result in context\nContext: ${context ? context.closestStrings.join('\n') : 'No context provided'}`;
         console.log('Context:', context, '\n')
         if (!OPENAI.enable) return main()
+        const prompt = `I am Takina, a Discord Bot created by ElaXan using Typescript. I am a useful AI designed to assist people who are experiencing issues with Private Servers. I utilize context to provide more accurate answers to users, and I never alter the results derived from the context. Additionally, users do not have access to view the context. So I will give the result in context`;
+        if (conversation.length === 0) {
+            conversation.push({
+                content: prompt,
+                role: 'system'
+            })
+        }
+
+        if (context.closestStrings.length > 0) {
+            conversation.push({
+                content: `Context:\n====================\n${context.closestStrings.join('\n')}\n====================\n`,
+                role: 'system'
+            })
+        }
+
+        // Push question
+        conversation.push({
+            content: question,
+            role: 'user'
+        })
+
         let resultAI = ''
         await client.chat.createCompletion({
-            messages: [
-                { content: prompt, role: 'system' },
-                { content: `Conversation:\n${conversation.join('\n')}`, role: 'system'},
-                { content: question, role: 'user' }
-            ],
+            messages: conversation,
             model: OPENAI.MODEL,
             maxTokens: OPENAI.maxTokens,
             n: 1,
@@ -201,7 +218,15 @@ async function main() {
             onFinish() {
                 console.log('\n')
                 main()
-                conversation.push(`User: ${question}\nTakina: ${resultAI}`)
+                conversation.push({
+                    content: resultAI,
+                    role: 'assistant'
+                })
+                conversation.filter((item, index) => {
+                    if (item.role === 'system' && item.content.startsWith('Context:')) {
+                        conversation.splice(index, 1)
+                    }
+                })
             },
             onError(err) {
                 // Error "Unexpected end of JSON input" is so annoying. Trust me
