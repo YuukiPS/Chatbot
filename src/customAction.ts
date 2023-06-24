@@ -58,6 +58,10 @@ export function autoGetEntity(question: string, context: string): string | undef
 
     const results = match[1];
 
+    if (results === question) {
+        return undefined;
+    }
+
     return results;
 }
 
