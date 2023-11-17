@@ -67,7 +67,6 @@ export async function embeddingDatasetQA() {
         embedding: embedding[index]
     }))
     fs.writeFileSync('./src/data/embeddingQA.json', JSON.stringify(structure, null, 2))
-    
 }
 
 (async () => {
