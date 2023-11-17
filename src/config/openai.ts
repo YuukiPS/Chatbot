@@ -1,6 +1,6 @@
-import { OpenAIClient } from '@fern-api/openai'
+import { OpenAI } from 'openai'
 import { OPENAI } from '../../config.json'
 
-export const client = new OpenAIClient({
-    token: OPENAI.API
+export const client = new OpenAI({
+    apiKey: OPENAI.API
 })
