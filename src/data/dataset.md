@@ -60,7 +60,7 @@ This dataset is designed to improve AI responses about Private Servers. It also 
 | `talent unlock` | Unlocks a specified talent for the player | `talent unlock [1-6] or talent unlock all` | GIO |
 | `point 3 all` | Unlocks all teleport points | `point 3 all` | GIO |
 | `item clear` | Removes a specified item from the player's inventory | `item clear <id> <amount>` | GIO |
-| `level` | Sets the player's level to a specified level | `level <level>` | GIO |
+| `level` | Set active/current character to a specified level | `level <level>` | GIO |
 | `jump` | Teleports the player to a specified scene | `jump <scene id>` | GIO |
 | `goto` | Teleports the player to specific coordinates in the game world | `goto <x> <y> <z>` | GIO |
 | `dungeon` | Teleports the player to a specific dungeon using its ID | `dungeon <dungeon id>` | GIO |
@@ -248,3 +248,6 @@ A: There is no report that someone got banned by playing on YuukiPS or Private S
 
 Q: Can you send me a fiddler script for Honkai: Star Rail?\
 A: You can check [here](https://doc.yuuki.me/docs/tutorial-connect/pc/fiddler) to get fiddler script for Honkai: Star Rail
+
+Q: I got error `cant find gm` when trying to use command\
+A: If you get this error, mean the command is not found or not available for `GC` or `GIO`. You can check command list for `GC` [here](https://doc.yuuki.me/docs/commands/gc) and for `GIO` [here](https://doc.yuuki.me/docs/commands/gio)
