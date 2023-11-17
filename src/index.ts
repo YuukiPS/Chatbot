@@ -5,12 +5,21 @@ import { OPENAI } from '../config.json'
 import GMHandbookUtility from "./Utils/GMHandbook";
 import readline from 'readline';
 
-const findCommand = async (command: string) => {
+const findCommand = async (command: string, type?: 'gc' | 'gio') => {
     const commandAndUsage = await FindDocument.embedding(command, 'command')
     if (commandAndUsage.length === 0) {
         return 'Command not found'
     }
-    return commandAndUsage.map((data) => ({
+    let getCommand;
+    console.log(commandAndUsage)
+    if (type === 'gc') {
+        getCommand = commandAndUsage.filter((data) => data.data.type.toLowerCase() === 'gc')
+    } else if (type === 'gio') {
+        getCommand = commandAndUsage.filter((data) => data.data.type.toLowerCase() === 'gio')
+    } else {
+        getCommand = commandAndUsage
+    }
+    return getCommand.map((data) => ({
         command: data.data.command,
         description: data.data.description,
         usage: data.data.usage,
@@ -51,6 +60,10 @@ async function responseAI(question: string) {
                                 command: {
                                     type: 'string',
                                     description: 'The name of the command to search for.'
+                                },
+                                type: {
+                                    type: 'string',
+                                    description: 'The type of command to search for. This is optional. Example: gc or gio'
                                 }
                             },
                             required: ['command']
@@ -115,8 +128,10 @@ async function responseAI(question: string) {
             await Promise.all(tool_calls.map(async (tool_call) => {
                 const { name } = tool_call.function;
                 const args = JSON.parse(tool_call.function.arguments)
+                console.log(args)
                 if (name === 'find_command') {
-                    const command = await findCommand(args.command)
+                    const command = await findCommand(args.command, args.type)
+                    console.log(command)
                     conversation.push(
                         {
                             role: 'function',

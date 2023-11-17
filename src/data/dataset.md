@@ -38,7 +38,7 @@ This dataset is designed to improve AI responses about Private Servers. It also 
 | `/resetconst` | Resets the player's constellation | `/resetconst or /resetconst all` | GC |
 | `monster` | Spawns a specified monster in the game | `monster <id>` | GIO |
 | `kill monster all` | Kills all monsters currently in the game | `kill monster all` | GIO |
-| `stamina infinite on` | Sets the player's stamina to unlimited | `stamina infinite on` | GIO |
+| `stamina infinite on` | Sets the player's stamina to unlimited or no stamina | `stamina infinite on` | GIO |
 | `stamina infinite off` | Disables the unlimited stamina setting | `stamina infinite off` | GIO |
 | `energy infinite on` | Sets the player's energy to unlimited | `energy infinite on` | GIO |
 | `energy infinite off` | Disables the unlimited energy setting | `energy infinite off` | GIO |
