@@ -1,246 +1,192 @@
-import * as fs from 'fs';
-import { client } from './config/openai'
-import { OPENAI, TokenizeAndStem, TranslateToEN } from '../config.json'
-import readline from 'readline'
-import { calculateLevenshteinDistance } from './Utils/stringSimilarity';
-import { autoGetEntity, executeCustomAction, getEntityFromInput } from './customAction'
-import languageDetect from 'languagedetect'
-import translate, { languages } from 'fanyi-google'
-import natural from 'natural'
-import { OpenAI } from '@fern-api/openai'
+import OpenAI from "openai";
+import { client } from "./config/openai";
+import FindDocument from './Utils/findDocument'
+import { OPENAI } from '../config.json'
+import GMHandbookUtility from "./Utils/GMHandbook";
+import readline from 'readline';
 
-const lngDetector = new languageDetect();
-
-export interface Data {
-    [key: string]: {
-        question: string[];
-        answer: string | string[];
-        regex: string[] | string | undefined
-    };
-}
-
-interface ReturnData {
-    closestStrings: string[];
-    relatedPatterns: string[];
-    relatedQuestions: string[];
-    scores: number[];
-}
-
-async function getClosestStrings(
-    query: string,
-    folderPath: string,
-    similarityThreshold: number,
-    numResults: number
-): Promise<ReturnData> {
-    const files = fs.readdirSync(folderPath);
-
-    const resultData: {
-        string: string;
-        pattern: string;
-        question: string;
-        score: number;
-    }[] = [];
-
-    const languageDetector = lngDetector.detect(query)[0]?.[0];
-    if (languageDetector !== 'english' && TranslateToEN) {
-        const getLanguage = languages.getCode(languageDetector).toString();
-        query = (await translate(query, {
-            autoCorrect: true,
-            from: getLanguage,
-            to: languages.en
-        })).text;
+const findCommand = async (command: string) => {
+    const commandAndUsage = await FindDocument.embedding(command, 'command')
+    if (commandAndUsage.length === 0) {
+        return 'Command not found'
     }
-    let tokenizeAndStemEnable = false;
-    for (const file of files) {
-        const filePath = `${folderPath}/${file}`;
-        const jsonData = fs.readFileSync(filePath, 'utf-8');
-        if (!filePath.endsWith('.json')) continue;
-        const parsedData: Data = JSON.parse(jsonData);
-        const originalQuery = query;
-        for (const key in parsedData) {
-            const questionArr = parsedData[key].question;
-            const answerData = parsedData[key].answer;
-            const regex = parsedData[key].regex;
-            const answerArr = Array.isArray(answerData) ? answerData : [answerData];
+    return commandAndUsage.map((data) => ({
+        command: data.data.command,
+        description: data.data.description,
+        usage: data.data.usage,
+        type: data.data.type,
+        similarity: data.score
+    }))
+}
 
-            for (const question of questionArr) {
-                let inputValue: string | undefined;
-                let distance = 0;
-                if (typeof answerData === 'string' && question.includes('{value}')) {
-                    if (regex) {
-                        inputValue = await getEntityFromInput(query, regex);
-                    } else {
-                        inputValue = autoGetEntity(query, question);
-                    }
-                    tokenizeAndStemEnable = false;
-                    distance = calculateLevenshteinDistance(
-                        query.toLowerCase(),
-                        question.replace('{value}', `${inputValue ? inputValue : ''}`).toLowerCase()
-                    );
-                } else {
-                    if (tokenizeAndStemEnable && TokenizeAndStem) {
-                        query = natural.PorterStemmer.tokenizeAndStem(query, false).join(' ');
-                    }
-                    distance = calculateLevenshteinDistance(query.toLowerCase(), question.toLowerCase());
-                    if (tokenizeAndStemEnable && TokenizeAndStem) {
-                        query = originalQuery;
-                    }
-                }
-                const similarity = 1 - distance / Math.max(query.length, question.length);
+const conversation: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = []
 
-                if (
-                    similarity > similarityThreshold &&
-                    (resultData.length < numResults || similarity > resultData[resultData.length - 1].score)
-                ) {
-                    const randomAnswerIndex = Math.floor(Math.random() * answerArr.length);
-                    const answer = answerArr[randomAnswerIndex];
-
-                    if (typeof answerData === 'string') {
-                        const customAction = await executeCustomAction(answer, inputValue);
-                        if (
-                            customAction &&
-                            customAction.answer !== '' &&
-                            typeof customAction.answer === 'string'
-                        ) {
-                            const hasPattern = resultData.find((result) => result.pattern === key);
-                            if (hasPattern) {
-                                continue;
-                            }
-                            resultData.push({
-                                string: customAction.answer,
-                                pattern: key,
-                                question,
-                                score: similarity
-                            });
+async function responseAI(question: string) {
+    let stop = false
+    conversation.push({
+        content: question,
+        role: 'user'
+    })
+    while (!stop) {
+        const response = await client.chat.completions.create({
+            messages: [
+                {
+                    content: 'You are a helpful AI designed to assist users with issues related to the YuukiPS Private Server. To provide the most accurate and helpful responses, you should retrieve information directly from the document using function calls.',
+                    role: 'system'
+                },
+                ...conversation
+            ],
+            model: OPENAI.MODEL,
+            temperature: OPENAI.temperature,
+            max_tokens: OPENAI.maxTokens,
+            tools: [
+                {
+                    type: 'function',
+                    function: {
+                        name: 'find_command',
+                        description: 'Searches for a specific command in the dataset. This function does not search for IDs, only command names.',
+                        parameters: {
+                            type: 'object',
+                            properties: {
+                                command: {
+                                    type: 'string',
+                                    description: 'The name of the command to search for.'
+                                }
+                            },
+                            required: ['command']
                         }
-                    } else {
-                        const hasPattern = resultData.find((result) => result.pattern === key);
-                        if (hasPattern) {
-                            continue;
+                    },
+                },
+                {
+                    type: 'function',
+                    function: {
+                        name: 'find_id',
+                        description: 'Searches for the ID of items such as avatars, weapons, quests, etc.',
+                        parameters: {
+                            type: 'object',
+                            properties: {
+                                find_id: {
+                                    type: 'string',
+                                    description: 'The name of the item to search for its ID. This is optional if the result of the command contains the item ID or avatar ID, etc. Example: Kamisato Ayaka or Genesis Crystal'
+                                }
+                            },
+                            required: ['find_id']
                         }
-                        resultData.push({
-                            string: answer,
-                            pattern: key,
-                            question,
-                            score: similarity
-                        });
+                    },
+                },
+                {
+                    type: 'function',
+                    function: {
+                        name: 'find_document',
+                        description: 'Searches for answers in the dataset for questions related to the Private Server YuukiPS only.',
+                        parameters: {
+                            type: 'object',
+                            properties: {
+                                question: {
+                                    type: 'string',
+                                    description: 'The question to search for in the dataset.'
+                                }
+                            },
+                            required: ['question']
+                        }
                     }
+                },
+            ]
+        }, {
+            timeout: 30000
+        })
 
-                    resultData.sort((a, b) => b.score - a.score);
+        const { finish_reason, message } = response.choices[0]
+        const { tool_calls, content } = message
 
-                    if (resultData.length > numResults) {
-                        resultData.pop();
-                    }
+        if (content) {
+            console.log(content)
+            conversation.push({
+                content,
+                role: 'assistant'
+            })
+        }
+
+        if (finish_reason === 'stop' || finish_reason === 'length') {
+            stop = true;
+        }
+
+        if (tool_calls) {
+            await Promise.all(tool_calls.map(async (tool_call) => {
+                const { name } = tool_call.function;
+                const args = JSON.parse(tool_call.function.arguments)
+                if (name === 'find_command') {
+                    const command = await findCommand(args.command)
+                    conversation.push(
+                        {
+                            role: 'function',
+                            name,
+                            content: JSON.stringify(args, null, 2)
+                        },
+                        {
+                            content: JSON.stringify(command, null, 2),
+                            role: 'assistant'
+                        }
+                    )
+                } else if (name === 'find_id') {
+                    const findId = GMHandbookUtility.find(args.find_id)
+                    conversation.push(
+                        {
+                            role: 'function',
+                            name,
+                            content: JSON.stringify(args, null, 2)
+                        },
+                        {
+                            content: JSON.stringify(findId, null, 2),
+                            role: 'assistant'
+                        }
+                    )
+                } else if (name === 'find_document') {
+                    const findDocument = await FindDocument.embedding(args.question, 'qa')
+                    const removeEmbeddingData = findDocument.map((data) => ({
+                        question: data.data.question,
+                        answer: data.data.answer,
+                        similarity: data.score
+                    }))
+                    conversation.push(
+                        {
+                            role: 'function',
+                            name,
+                            content: JSON.stringify(args, null, 2)
+                        },
+                        {
+                            content: JSON.stringify(removeEmbeddingData, null, 2),
+                            role: 'assistant'
+                        }
+                    )
                 }
-            }
+            }))
         }
     }
-
-    // Extract the required data from resultData
-    const closestStrings = resultData.map((result) => result.string);
-    const relatedPatterns = resultData.map((result) => result.pattern);
-    const relatedQuestions = resultData.map((result) => result.question);
-    const scores = resultData.map((result) => result.score);
-
-    return {
-        closestStrings,
-        relatedPatterns,
-        relatedQuestions,
-        scores
-    };
 }
 
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
-})
-
-const conversation: OpenAI.ChatCompletionRequestMessage[] = []
+});
 
 async function main() {
-    rl.question('Question (stop/exit to quit): ', async (question) => {
-        if (question.toLowerCase() === 'stop' || question.toLowerCase() === 'exit') {
-            return rl.close()
+    rl.question('Question: ', async (question) => {
+        const exit = [
+            'stop',
+            'exit',
+            'quit',
+            'bye',
+        ]
+        if (exit.includes(question.toLowerCase())) {
+            rl.close()
+            process.exit(0)
         }
-        if (question.toLowerCase() === 'clear') {
-            // clear terminal
-            console.clear()
-            main()
-            return
-        }
-        if (question === '') {
-            return main()
-        }
-        const folderPath = './data';
-        // Similarity threshold for the result. The lower the number, the more inaccurate the result. The higher the number, the more accurate the result.
-        const similarityThreshold = 0.2;
-        // How many the result should be returned
-        const numResult = 5
-        const context = await getClosestStrings(question, folderPath, similarityThreshold, numResult)
-        console.log('Context:', context, '\n')
-        if (!OPENAI.enable) return main()
-        const prompt = `I am Takina, a Discord Bot created by ElaXan using Typescript. I am a useful AI designed to assist people who are experiencing issues with Private Servers. I utilize context to provide more accurate answers to users, and I never alter the results derived from the context. Additionally, users do not have access to view the context. So I will give the result in context`;
-        if (conversation.length === 0) {
-            conversation.push({
-                content: prompt,
-                role: 'system'
-            })
-        }
-
-        if (context.closestStrings.length > 0) {
-            conversation.push({
-                content: `Context:\n====================\n${context.closestStrings.join('\n')}\n====================\n`,
-                role: 'system'
-            })
-        }
-
-        // Push question
-        conversation.push({
-            content: question,
-            role: 'user'
-        })
-
-        let resultAI = ''
-        await client.chat.createCompletion({
-            messages: conversation,
-            model: OPENAI.MODEL,
-            maxTokens: OPENAI.maxTokens,
-            n: 1,
-            stream: true,
-            temperature: OPENAI.temperature
-        }, (data) => {
-            const content = data.choices[0].delta.content
-            if (content !== undefined && content !== '') {
-                process.stdout.write(content)
-                resultAI += content
-            }
-        }, {
-            onFinish() {
-                console.log('\n')
-                main()
-                conversation.push({
-                    content: resultAI,
-                    role: 'assistant'
-                })
-                conversation.filter((item, index) => {
-                    if (item.role === 'system' && item.content.startsWith('Context:')) {
-                        conversation.splice(index, 1)
-                    }
-                })
-            },
-            onError(err) {
-                // Error "Unexpected end of JSON input" is so annoying. Trust me
-                if (!(err instanceof SyntaxError)) {
-                    if (err instanceof Error) {
-                        console.error(err.message)
-                    } else {
-                        console.error(err)
-                    }
-                    main()
-                }
-            },
-        })
-    });
+        await responseAI(question)
+        main()
+    })
 }
 
-main()
+(async () => {
+    await main()
+})()
