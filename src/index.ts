@@ -11,7 +11,6 @@ const findCommand = async (command: string, type?: 'gc' | 'gio') => {
         return 'Command not found'
     }
     let getCommand;
-    console.log(commandAndUsage)
     if (type === 'gc') {
         getCommand = commandAndUsage.filter((data) => data.data.type.toLowerCase() === 'gc')
     } else if (type === 'gio') {
