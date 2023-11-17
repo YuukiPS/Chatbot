@@ -13,6 +13,8 @@ This dataset is designed to improve AI responses about Private Servers. It also 
 | `/give av` | Gives all avatars to the player | `/give av lv<level> c<constellation> sl<skill level>` | GC |
 | `/give af` | Gives all artifacts to the player | `/give af lv<level> x<amount>` | GC |
 | `/give mats` | Gives all materials to the player | `/give mats x<amount>` | GC |
+| `/give wp` | Gives all weapons to the player | `/give wp lv<level> r<refinement> x<amount>` | GC |
+| `/give hs` | Gives all teapot items to the player | `/give hs` | GC |
 | `/spawn` | Spawns a specified monster in the game | `/spawn <monster id> lv<level monster> hp<health point/0=unlimited health> x<amount of monster>` | GC |
 | `/heal` | Heals the player's active character | `/heal` | GC |
 | `/q add` | Adds a specified quest to the player's quest log | `/q add <quest id>` | GC |
@@ -26,6 +28,8 @@ This dataset is designed to improve AI responses about Private Servers. It also 
 | `/prop ue 1` | Sets the player's energy to unlimited | `/prop ue 1 or /prop ue 0 (disable)` | GC |
 | `/prop god 1` | Sets the player's character to god mode (no damage taken) | `/prop god 1 or /prop god 0 (disable)` | GC |
 | `/prop player_level` | Sets the player's level to a specified level | `/prop player_level <level>` | GC |
+| `/prop unlockhome on` | Unlock the teapot | `/prop unlockhome on` | GC |
+| `/prop abyss` | Change or level up the spiral abyss | `/prop abyss <level>` | GC |
 | `/setconst` | Sets the player's constellation to a specified constellation | `/setconst <constellation>` | GC |
 | `/weather` | Sets the game's weather to a specified weather type | `/weather <sunny/rain/cloudy/thunderstorm/snow/mist>` | GC |
 | `/talent` | Changes the player's talent to a specified talent | `/talent <n/q/e/all> <talent>` | GC |
@@ -229,3 +233,18 @@ A: You can use command `/player remove` to remove your player data
 
 Q: How to use command `/command`?\
 A: Before using command `/command`, make sure that you already enter command `/player set` to set your player data. After that, you can use command `/command` to access command list
+
+Q: How to localhost GIO in Android?\
+A: There is no way you can do localhost on Android. Please check on https://discord.com/channels/964119462188040202/1049101257933066322/1099495316924944484 to get more information about how to localhost in you're Android phone
+
+Q: Is the server down?\
+A: Please check on channel <#1051149545779777586>. To get information if the server is down
+
+Q: I have issue with YuukiPS Launcher that doesn't open it, How can I fix this issue\
+A: If you have issue with YuukiPS Launcher that not open when you run .exe\nMake sure you have download and install DotNet (.NET) from this link: <https://dotnet.microsoft.com/en-us/download/dotnet/6.0/runtime>\nAnd please check documents for how to setup YuukiPS Launcher here: <https://doc.yuuki.me/docs/tutorial-connect/pc/yuukips-launcher>
+
+Q: Will I get banned if I play on YuukiPS?\
+A: There is no report that someone got banned by playing on YuukiPS or Private Server. But if you still worried about it, then don't play Private Server.
+
+Q: Can you send me a fiddler script for Honkai: Star Rail?\
+A: You can check [here](https://doc.yuuki.me/docs/tutorial-connect/pc/fiddler) to get fiddler script for Honkai: Star Rail
