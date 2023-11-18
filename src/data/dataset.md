@@ -31,6 +31,14 @@ This dataset is designed to improve AI responses about Private Servers. It also 
 | `/prop player_level` | Sets the player's level to a specified level | `/prop player_level <level>` | GC |
 | `/prop unlockhome on` | Unlock the teapot | `/prop unlockhome on` | GC |
 | `/prop abyss` | Change or level up the spiral abyss | `/prop abyss <level>` | GC |
+| `/prop lv` | Change current or active character level | `/prop lv <level>` | GC |
+| `/prop stlv` | Change all character level on the team or party | `/prop stlv <level>` | GC |
+| `/prop salv` | Change all character level you have | `/prop salv <level>` | GC |
+| `/prop se hydro` | Change or switch traveler element to hydro | `/prop se hydro` | GC |
+| `/prop se grass` | Change or switch traveler element to grass | `/prop se grass` | GC |
+| `/prop se electro` | Change or switch traveler element to electro | `/prop se electro` | GC |
+| `/prop se wind` | Change or switch traveler element to wind | `/prop se wind` | GC |
+| `/prop se white` | Change or switch traveler element to no element | `/prop se white` | GC |
 | `/setconst` | Sets the player's constellation to a specified constellation | `/setconst <constellation>` | GC |
 | `/weather sunny` | Sets the game's weather to sunny | `/weather sunny` | GC |
 | `/weather rain` | Sets the game's weather to rain | `/weather rain` | GC |
