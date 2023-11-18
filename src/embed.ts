@@ -23,11 +23,17 @@ function readAndParseMarkdown(filename: string, section: string, startsWith: str
             isCorrectSection = lines[i].substring(3).trim() === section;
         }
         if (isCorrectSection && lines[i].startsWith(startsWith)) {
-            const parts = lines[i].split('|').map((part) => part.trim());
             const pair: any = {};
-            fields.forEach((field, index) => {
-                pair[field] = parts[index + 1];
-            });
+            if (fields.length === 2 && startsWith === 'Q:') {
+                pair[fields[0]] = lines[i].substring(2).trim();
+                pair[fields[1]] = lines[i + 1].substring(2).trim();
+                i++;
+            } else {
+                const parts = lines[i].split('|').map((part) => part.trim());
+                fields.forEach((field, index) => {
+                    pair[field] = parts[index + 1];
+                });
+            }
             pairs.push(pair);
         }
     }
