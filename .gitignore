@@ -25,3 +25,4 @@ __pycache__
 /.vscode
 /.idea
 embedding*.json
+/*.ts
