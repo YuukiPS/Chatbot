@@ -6,7 +6,7 @@ This dataset is designed to improve AI responses about Private Servers. It also 
 
 | Command | Description | Usage | Server |
 | --- | --- | --- | --- |
-| `/give` | Gives a specified avatars to the player | `/give <item id> lv<level character> sl<skill level character> c<constellation>` | GC |
+| `/give` | Gives a specified avatars to the player | `/give <avatars id> lv<level character> sl<skill level character> c<constellation>` | GC |
 | `/give` | Gives a weapon to the player | `/give <weapon id> lv<level weapon> r<refinement> x<amount>` | GC |
 | `/give` | Gives a specified item to the player | `/give <item id> x<amount>` | GC |
 | `/give` | Gives a specified artifact to the player | `/give <artifact id> lv<level artifact> x<amount>` | GC |
@@ -16,6 +16,7 @@ This dataset is designed to improve AI responses about Private Servers. It also 
 | `/give wp` | Gives all weapons to the player | `/give wp lv<level> r<refinement> x<amount>` | GC |
 | `/give hs` | Gives all teapot items to the player | `/give hs` | GC |
 | `/spawn` | Spawns a specified monster in the game | `/spawn <monster id> lv<level monster> hp<health point/0=unlimited health> x<amount of monster>` | GC |
+| `/spawn` | Spawns a specified weapon | `/spawn <weapon id> lv<level weapon> r<refinement> x<amount>` | GC |
 | `/heal` | Heals the player's active character | `/heal` | GC |
 | `/q add` | Adds a specified quest to the player's quest log | `/q add <quest id>` | GC |
 | `/q remove` | Removes a specified quest from the player's quest log | `/q remove <quest id>` | GC |
@@ -31,11 +32,20 @@ This dataset is designed to improve AI responses about Private Servers. It also 
 | `/prop unlockhome on` | Unlock the teapot | `/prop unlockhome on` | GC |
 | `/prop abyss` | Change or level up the spiral abyss | `/prop abyss <level>` | GC |
 | `/setconst` | Sets the player's constellation to a specified constellation | `/setconst <constellation>` | GC |
-| `/weather` | Sets the game's weather to a specified weather type | `/weather <sunny/rain/cloudy/thunderstorm/snow/mist>` | GC |
-| `/talent` | Changes the player's talent to a specified talent | `/talent <n/q/e/all> <talent>` | GC |
+| `/weather sunny` | Sets the game's weather to sunny | `/weather sunny` | GC |
+| `/weather rain` | Sets the game's weather to rain | `/weather rain` | GC |
+| `/weather cloudy` | Sets the game's weather to cloudy | `/weather cloudy` | GC |
+| `/weather thunderstorm` | Sets the game's weather to thunderstorm | `/weather thunderstorm` | GC |
+| `/weather snow` | Sets the game's weather to snow | `/weather snow` | GC |
+| `/weather mist` | Sets the game's weather to mist | `/weather mist` | GC |
+| `/talent n` | Change normal attack talent | `/talent n <level>` | GC |
+| `/talent q` | Change element burst talent | `/talent q <level>` | GC |
+| `/talent e` | Change element skill talent | `/talent e <level>` | GC |
+| `/talent all` | Change all talent | `/talent all <level>` | GC |
 | `/team add` | Adds a specified character to the player's team | `/team add <character id>` | GC |
 | `/team remove` | Removes a specified character from the player's team | `/team remove <character id>` | GC |
-| `/resetconst` | Resets the player's constellation | `/resetconst or /resetconst all` | GC |
+| `/resetconst` | Resets active character constellation | `/resetconst` | GC |
+| `/resetconst all` | Resets all character constellations | `/resetconst all` | GC |
 | `monster` | Spawns a specified monster in the game | `monster <id>` | GIO |
 | `kill monster all` | Kills all monsters currently in the game | `kill monster all` | GIO |
 | `stamina infinite on` | Sets the player's stamina to unlimited or no stamina | `stamina infinite on` | GIO |
