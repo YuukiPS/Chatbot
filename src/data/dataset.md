@@ -67,7 +67,8 @@ This dataset is designed to improve AI responses about Private Servers. It also 
 | `wudi global monster on` | Sets all monsters to god mode (no damage taken) | `wudi global monster on` | GIO |
 | `wudi global monster off` | Disables god mode for all monsters | `wudi global monster off` | GIO |
 | `item add` | Adds a specified item to the player's inventory | `item add <item id> <amount>` | GIO |
-| `talent unlock` | Unlocks a specified talent for the player | `talent unlock [1-6] or talent unlock all` | GIO |
+| `talent unlock` | Unlocks a specified talent for the player | `talent unlock [1-6]` | GIO |
+| `talent unlock all` | Unlocks all talents for the player | `talent unlock all` | GIO |
 | `point 3 all` | Unlocks all teleport points | `point 3 all` | GIO |
 | `item clear` | Removes a specified item from the player's inventory | `item clear <id> <amount>` | GIO |
 | `level` | Set active/current character to a specified level | `level <level>` | GIO |
@@ -75,7 +76,10 @@ This dataset is designed to improve AI responses about Private Servers. It also 
 | `goto` | Teleports the player to specific coordinates in the game world | `goto <x> <y> <z>` | GIO |
 | `dungeon` | Teleports the player to a specific dungeon using its ID | `dungeon <dungeon id>` | GIO |
 | `equip add` | Equips a specific weapon to the active character, with specified level, ascension level, and refinement level | `equip add <weapon id> <level> <ascension level> [1-6] <refinement level> [1-5]` | GIO |
-| `skill` | Changes the level of a specific talent or all talents of the active character | `skill <1/2/3/all> <level [1-10]>` | GIO |
+| `skill 1` | Changes the level normal attack talent of the active character | `skill 1 <level [1-10]>` | GIO |
+| `skill 2` | Changes the level element skill talent of the active character | `skill 2 <level [1-10]>` | GIO |
+| `skill 3` | Changes the level element burst talent of the active character | `skill 3 <level [1-10]>` | GIO |
+| `skill all` | Changes the level of all talents of the active character | `skill all <level [1-10]>` | GIO |
 | `weapon level` | Changes the level of the active character's equipped weapon | `weapon level <level>` | GIO |
 | `weapon break` | Changes the ascension level of the active character's equipped weapon | `weapon break <level>` | GIO |
 | `weapon refine` | Changes the refinement level of the active character's equipped weapon | `weapon refine <level>` | GIO |
