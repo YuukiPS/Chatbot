@@ -79,7 +79,11 @@ async function responseAI(question: string) {
                             properties: {
                                 find_id: {
                                     type: 'string',
-                                    description: 'The name of the item to search for its ID. This is optional if the result of the command contains the item ID or avatar ID, etc. Example: Kamisato Ayaka or Genesis Crystal'
+                                    description: 'The name of the item to search for. Example: Kamisato Ayaka'
+                                },
+                                category: {
+                                    type: 'string',
+                                    description: 'Filters the search by category. This is optional. Example List of Category: Avatars or Artifacts or Monsters or Materials or Achievements or Quests or Scenes or Dungeons'
                                 }
                             },
                             required: ['find_id']
@@ -143,7 +147,7 @@ async function responseAI(question: string) {
                         }
                     )
                 } else if (name === 'find_id') {
-                    const findId = GMHandbookUtility.find(args.find_id)
+                    const findId = GMHandbookUtility.find(args.find_id, args.category)
                     conversation.push(
                         {
                             role: 'function',
@@ -151,7 +155,7 @@ async function responseAI(question: string) {
                             content: JSON.stringify(args, null, 2)
                         },
                         {
-                            content: JSON.stringify(findId, null, 2),
+                            content: JSON.stringify(findId.slice(0,5), null, 2),
                             role: 'assistant'
                         }
                     )

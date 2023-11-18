@@ -86,9 +86,9 @@ class GMHandbookUtility {
      * @param name - The name to search for in the GMData array.
      * @returns An array of GMHandbookData objects that match the search criteria.
      */
-    public static find(name: string): GMHandbookData[] {
+    public static find(name: string, category?: string): GMHandbookData[] {
         const search = name.toLowerCase();
-        return this.data.data.filter(data => data.name?.toLowerCase().includes(search));
+        return this.data.data.filter((data) => data.name?.toLowerCase().includes(search)).filter((data) => category ? data.category === category : true);
     }
 }
 
