@@ -134,7 +134,6 @@ async function responseAI(question: string) {
                 console.log(args)
                 if (name === 'find_command') {
                     const command = await findCommand(args.command, args.type)
-                    console.log(command)
                     conversation.push(
                         {
                             role: 'function',

@@ -24,7 +24,7 @@ export async function embeddingDatasetCommand() {
             })
         }
     }
-    console.log(commandUsagePairs)
+    console.log(`Total command: ${commandUsagePairs.length}`)
     const embedding = await client.embeddings.create({
         input: commandUsagePairs.map((commandUsagePair) => `${commandUsagePair.command} ${commandUsagePair.description} ${commandUsagePair.usage} ${commandUsagePair.type}`),
         model: 'text-embedding-ada-002'
@@ -57,6 +57,7 @@ export async function embeddingDatasetQA() {
             })
         }
     }
+    console.log(`Total QA: ${questionAnswerPairs.length}`)
     const embedding = await client.embeddings.create({
         input: questionAnswerPairs.map((questionAnswerPair) => `${questionAnswerPair.question} ${questionAnswerPair.answer}`),
         model: 'text-embedding-ada-002'
