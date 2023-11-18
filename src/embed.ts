@@ -1,76 +1,70 @@
 import fs from 'fs';
 import { client } from './config/openai';
+import Logger from './Utils/log';
 
-export async function embeddingDatasetCommand() {
-    const markdown = fs.readFileSync('./src/data/dataset.md', 'utf-8')
-    const lines = markdown.split('\n')
+async function createEmbeddings(input: string[], model: string) {
+    return await client.embeddings.create({
+        input,
+        model
+    }).then((response) => response.data.map((data) => data.embedding));
+}
+
+function writeToFile(filename: string, data: any) {
+    fs.writeFileSync(filename, JSON.stringify(data, null, 2));
+}
+
+function readAndParseMarkdown(filename: string, section: string, startsWith: string, fields: string[]) {
+    const markdown = fs.readFileSync(filename, 'utf-8');
+    const lines = markdown.split('\n');
     let isCorrectSection = false;
-    const commandUsagePairs: { command: string, description: string, usage: string, type: string }[] = [];
+    const pairs: any[] = [];
     for (let i = 0; i < lines.length; i++) {
         if (lines[i].startsWith('##')) {
-            isCorrectSection = lines[i].substring(3).trim() === 'Command';
+            isCorrectSection = lines[i].substring(3).trim() === section;
         }
-        if (isCorrectSection && lines[i].startsWith('| `')) {
+        if (isCorrectSection && lines[i].startsWith(startsWith)) {
             const parts = lines[i].split('|').map((part) => part.trim());
-            const command = parts[1]
-            const description = parts[2]
-            const usage = parts[3]
-            const type = parts[4]
-            commandUsagePairs.push({
-                command,
-                description,
-                usage,
-                type
-            })
+            const pair: any = {};
+            fields.forEach((field, index) => {
+                pair[field] = parts[index + 1];
+            });
+            pairs.push(pair);
         }
     }
-    console.log(`Total command: ${commandUsagePairs.length}`)
-    const embedding = await client.embeddings.create({
-        input: commandUsagePairs.map((commandUsagePair) => `${commandUsagePair.command} ${commandUsagePair.description} ${commandUsagePair.usage} ${commandUsagePair.type}`),
-        model: 'text-embedding-ada-002'
-    }).then((response) => response.data.map((data) => data.embedding))
+    return pairs;
+}
+
+export async function embeddingDatasetCommand() {
+    const commandUsagePairs = readAndParseMarkdown('./src/data/dataset.md', 'Command', '| `', ['command', 'description', 'usage', 'type']);
+    const log = Logger.log(`Total command: ${commandUsagePairs.length}`);
+    const now = Date.now();
+    const embedding = await createEmbeddings(commandUsagePairs.map((commandUsagePair) => `${commandUsagePair.command} ${commandUsagePair.description} ${commandUsagePair.usage} ${commandUsagePair.type}`), 'text-embedding-ada-002');
     const structure = commandUsagePairs.map((commandUsagePair, index) => ({
-        command: commandUsagePair.command,
-        description: commandUsagePair.description,
-        usage: commandUsagePair.usage,
-        type: commandUsagePair.type,
+        ...commandUsagePair,
         embedding: embedding[index]
-    }))
-    fs.writeFileSync('./src/data/embeddingCommand.json', JSON.stringify(structure, null, 2))
+    }));
+    const time = Date.now() - now;
+    writeToFile('./src/data/embeddingCommand.json', structure);
+    log.continue(` in ${time}ms`);
+    log.end();
 }
 
 export async function embeddingDatasetQA() {
-    const markdown = fs.readFileSync('./src/data/dataset.md', 'utf-8')
-    const lines = markdown.split('\n')
-    let isCorrectSection = false;
-    const questionAnswerPairs: { question: string, answer: string }[] = [];
-    for (let i = 0; i < lines.length; i++) {
-        if (lines[i].startsWith('##')) {
-            isCorrectSection = lines[i].substring(3).trim() === 'Knowledge';
-        }
-        if (isCorrectSection && lines[i].startsWith('Q:')) {
-            const question = lines[i].substring(3).trim()
-            const answer = lines[i + 1].substring(3).trim()
-            questionAnswerPairs.push({
-                question,
-                answer
-            })
-        }
-    }
-    console.log(`Total QA: ${questionAnswerPairs.length}`)
-    const embedding = await client.embeddings.create({
-        input: questionAnswerPairs.map((questionAnswerPair) => `${questionAnswerPair.question} ${questionAnswerPair.answer}`),
-        model: 'text-embedding-ada-002'
-    }).then((response) => response.data.map((data) => data.embedding))
+    const questionAnswerPairs = readAndParseMarkdown('./src/data/dataset.md', 'Knowledge', 'Q:', ['question', 'answer']);
+    const log = Logger.log(`Total QA: ${questionAnswerPairs.length}`);
+    const now = Date.now();
+    const embedding = await createEmbeddings(questionAnswerPairs.map((questionAnswerPair) => `${questionAnswerPair.question} ${questionAnswerPair.answer}`), 'text-embedding-ada-002');
     const structure = questionAnswerPairs.map((questionAnswerPair, index) => ({
-        question: questionAnswerPair.question,
-        answer: questionAnswerPair.answer,
+        ...questionAnswerPair,
         embedding: embedding[index]
-    }))
-    fs.writeFileSync('./src/data/embeddingQA.json', JSON.stringify(structure, null, 2))
+    }));
+    const time = Date.now() - now;
+    writeToFile('./src/data/embeddingQA.json', structure);
+    log.continue(` in ${time}ms`);
+    log.end();
 }
 
 (async () => {
-    await embeddingDatasetCommand()
-    await embeddingDatasetQA()
-})()
+    await embeddingDatasetCommand();
+    await embeddingDatasetQA();
+})();
