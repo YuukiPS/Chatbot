@@ -4,7 +4,7 @@ import FindDocument from './Utils/findDocument'
 import { OPENAI } from '../config.json'
 import GMHandbookUtility from "./Utils/GMHandbook";
 import readline from 'readline';
-import Logger from "./Utils/log";
+import Logger, { Colors } from "./Utils/log";
 
 const findCommand = async (command: string, type?: 'gc' | 'gio') => {
     const commandAndUsage = await FindDocument.embedding(command, 'command')
@@ -12,10 +12,8 @@ const findCommand = async (command: string, type?: 'gc' | 'gio') => {
         return 'Command not found'
     }
     let getCommand;
-    if (type === 'gc') {
-        getCommand = commandAndUsage.filter((data) => data.data.type.toLowerCase() === 'gc')
-    } else if (type === 'gio') {
-        getCommand = commandAndUsage.filter((data) => data.data.type.toLowerCase() === 'gio')
+    if (type === 'gc' || type === 'gio') {
+        getCommand = commandAndUsage.filter((data) => data.data.type.toLowerCase() === type)
     } else {
         getCommand = commandAndUsage
     }
@@ -127,6 +125,7 @@ async function responseAI(question: string) {
         }
 
         if (finish_reason === 'stop' || finish_reason === 'length') {
+            new Logger().title('Conversation').log('Total:', conversation.length).start().end()
             stop = true;
         }
 
@@ -134,12 +133,12 @@ async function responseAI(question: string) {
             await Promise.all(tool_calls.map(async (tool_call) => {
                 const { name } = tool_call.function;
                 const args = JSON.parse(tool_call.function.arguments)
-                new Logger().title('Function Calling').log(args).end()
+                new Logger().title('Function Calling').log(args).start().end()
                 if (name === 'find_command') {
-                    const log = new Logger().title('Command').log('Finding Command. ').start()
+                    const log = new Logger().title('Command').color(Colors.Yellow).log('Finding Command.').start()
                     const now = Date.now()
                     const command = await findCommand(args.command, args.type)
-                    log.continue(`Done in ${Date.now() - now}ms\n`, command).end()
+                    log.continue(` Done in ${Date.now() - now}ms\n`, command).end()
                     conversation.push(
                         {
                             role: 'function',
@@ -152,10 +151,10 @@ async function responseAI(question: string) {
                         }
                     )
                 } else if (name === 'find_id') {
-                    const log = new Logger().title('ID').log('Finding ID. ').start()
+                    const log = new Logger().title('ID').color(Colors.Yellow).log('Finding ID.').start()
                     const now = Date.now()
                     const findId = GMHandbookUtility.find(args.find_id, args.category)
-                    log.continue(`Done in ${Date.now() - now}ms\n`, findId).end()
+                    log.continue(` Done in ${Date.now() - now}ms\n`, findId).end()
                     conversation.push(
                         {
                             role: 'function',
@@ -168,7 +167,7 @@ async function responseAI(question: string) {
                         }
                     )
                 } else if (name === 'find_document') {
-                    const log = new Logger().title('Document').log('Finding Document. ').start()
+                    const log = new Logger().title('Document').color(Colors.Yellow).log('Finding Document.').start()
                     const now = Date.now()
                     const findDocument = await FindDocument.embedding(args.question, 'qa')
                     const removeEmbeddingData = findDocument.map((data) => ({
@@ -176,7 +175,7 @@ async function responseAI(question: string) {
                         answer: data.data.answer,
                         similarity: data.score
                     }))
-                    log.continue(`Done in ${Date.now() - now}ms\n`, removeEmbeddingData).end()
+                    log.continue(` Done in ${Date.now() - now}ms\n`, removeEmbeddingData).end()
                     conversation.push(
                         {
                             role: 'function',
