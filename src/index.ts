@@ -4,6 +4,7 @@ import FindDocument from './Utils/findDocument'
 import { OPENAI } from '../config.json'
 import GMHandbookUtility from "./Utils/GMHandbook";
 import readline from 'readline';
+import Logger from "./Utils/log";
 
 const findCommand = async (command: string, type?: 'gc' | 'gio') => {
     const commandAndUsage = await FindDocument.embedding(command, 'command')
@@ -39,7 +40,7 @@ async function responseAI(question: string) {
         const response = await client.chat.completions.create({
             messages: [
                 {
-                    content: 'You are a helpful AI designed to assist users with issues related to the YuukiPS Private Server. To provide the most accurate and helpful responses, you should retrieve information directly from the document using function calls.',
+                    content: 'You are a helpful AI designed to assist users with issues related to the YuukiPS Private Server GC (Grasscutter) and GIO (Genshin Impact Offline/Official). To provide the most accurate and helpful responses, you should retrieve information directly from the document using function calls.',
                     role: 'system'
                 },
                 ...conversation
@@ -112,11 +113,13 @@ async function responseAI(question: string) {
             timeout: 30000
         })
 
+        new Logger().title('Output').log(response).start().end()
+
         const { finish_reason, message } = response.choices[0]
         const { tool_calls, content } = message
 
         if (content) {
-            console.log(content)
+            new Logger().title('AI Answer').log(content).start().end()
             conversation.push({
                 content,
                 role: 'assistant'
@@ -131,9 +134,12 @@ async function responseAI(question: string) {
             await Promise.all(tool_calls.map(async (tool_call) => {
                 const { name } = tool_call.function;
                 const args = JSON.parse(tool_call.function.arguments)
-                console.log(args)
+                new Logger().title('Function Calling').log(args).end()
                 if (name === 'find_command') {
+                    const log = new Logger().title('Command').log('Finding Command. ').start()
+                    const now = Date.now()
                     const command = await findCommand(args.command, args.type)
+                    log.continue(`Done in ${Date.now() - now}ms\n`, command).end()
                     conversation.push(
                         {
                             role: 'function',
@@ -146,7 +152,10 @@ async function responseAI(question: string) {
                         }
                     )
                 } else if (name === 'find_id') {
+                    const log = new Logger().title('ID').log('Finding ID. ').start()
+                    const now = Date.now()
                     const findId = GMHandbookUtility.find(args.find_id, args.category)
+                    log.continue(`Done in ${Date.now() - now}ms\n`, findId).end()
                     conversation.push(
                         {
                             role: 'function',
@@ -159,12 +168,15 @@ async function responseAI(question: string) {
                         }
                     )
                 } else if (name === 'find_document') {
+                    const log = new Logger().title('Document').log('Finding Document. ').start()
+                    const now = Date.now()
                     const findDocument = await FindDocument.embedding(args.question, 'qa')
                     const removeEmbeddingData = findDocument.map((data) => ({
                         question: data.data.question,
                         answer: data.data.answer,
                         similarity: data.score
                     }))
+                    log.continue(`Done in ${Date.now() - now}ms\n`, removeEmbeddingData).end()
                     conversation.push(
                         {
                             role: 'function',

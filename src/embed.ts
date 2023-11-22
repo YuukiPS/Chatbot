@@ -42,7 +42,7 @@ function readAndParseMarkdown(filename: string, section: string, startsWith: str
 
 export async function embeddingDatasetCommand() {
     const commandUsagePairs = readAndParseMarkdown('./src/data/dataset.md', 'Command', '| `', ['command', 'description', 'usage', 'type']);
-    const log = Logger.log(`Total command: ${commandUsagePairs.length}`);
+    const log = new Logger().title('Command').log(`Total data: ${commandUsagePairs.length}`).start();
     const now = Date.now();
     const embedding = await createEmbeddings(commandUsagePairs.map((commandUsagePair) => `${commandUsagePair.command} ${commandUsagePair.description} ${commandUsagePair.usage} ${commandUsagePair.type}`), 'text-embedding-ada-002');
     const structure = commandUsagePairs.map((commandUsagePair, index) => ({
@@ -51,13 +51,12 @@ export async function embeddingDatasetCommand() {
     }));
     const time = Date.now() - now;
     writeToFile('./src/data/embeddingCommand.json', structure);
-    log.continue(` in ${time}ms`);
-    log.end();
+    log.continue(` in ${time}ms`).end();
 }
 
 export async function embeddingDatasetQA() {
     const questionAnswerPairs = readAndParseMarkdown('./src/data/dataset.md', 'Knowledge', 'Q:', ['question', 'answer']);
-    const log = Logger.log(`Total QA: ${questionAnswerPairs.length}`);
+    const log = new Logger().title('Question Answering').log(`Total data: ${questionAnswerPairs.length}`).start();
     const now = Date.now();
     const embedding = await createEmbeddings(questionAnswerPairs.map((questionAnswerPair) => `${questionAnswerPair.question} ${questionAnswerPair.answer}`), 'text-embedding-ada-002');
     const structure = questionAnswerPairs.map((questionAnswerPair, index) => ({
@@ -66,8 +65,7 @@ export async function embeddingDatasetQA() {
     }));
     const time = Date.now() - now;
     writeToFile('./src/data/embeddingQA.json', structure);
-    log.continue(` in ${time}ms`);
-    log.end();
+    log.continue(` in ${time}ms`).end();
 }
 
 (async () => {
