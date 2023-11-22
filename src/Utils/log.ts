@@ -1,10 +1,23 @@
 import util from 'util'
 
+/**
+ * A list of colors.
+ */
 export enum Colors {
     Red = '\x1b[31m',
     Green = '\x1b[32m',
     Yellow = '\x1b[33m',
     Blue = '\x1b[34m',
+    Magenta = '\x1b[35m',
+    Cyan = '\x1b[36m',
+    White = '\x1b[37m',
+    BgRed = '\x1b[41m',
+    BgGreen = '\x1b[42m',
+    BgYellow = '\x1b[43m',
+    BgBlue = '\x1b[44m',
+    BgMagenta = '\x1b[45m',
+    BgCyan = '\x1b[46m',
+    BgWhite = '\x1b[47m',
     Reset = '\x1b[0m'
 }
 
@@ -16,11 +29,11 @@ export enum Colors {
  * ```typescript
  * const logger = new Logger()
  * logger.log('Hello World!').start()
- * > [Chatbot -> ]: Hello World!
+ * > [Chatbot -> Log]: Hello World!
  * logger.continue('. This is a test.')
- * > [Chatbot -> ]: Hello World!. This is a test.
+ * > [Chatbot -> Log]: Hello World!. This is a test.
  * logger.end(4)
- * > [Chatbot -> ]: Hello World!. This is a test.
+ * > [Chatbot -> Log]: Hello World!. This is a test.
  * >
  * >
  * >
@@ -30,6 +43,7 @@ export enum Colors {
 class Logger {
     private logHistory: any[] = [];
     private titleName: string = '';
+    private colors: Colors | undefined = undefined;
 
     public constructor() { }
 
@@ -38,7 +52,7 @@ class Logger {
     }
 
     private chatbotFormat(...message: any[]): string {
-        return `\r[${Colors.Blue}Chatbot${Colors.Reset} -> ${Colors.Green}${this.titleName}${Colors.Reset}]: ${this.print(...message)}`
+        return `\r[${Colors.Blue}Chatbot${Colors.Reset} -> ${this.colors || Colors.Green}${this.titleName || 'Log'}${Colors.Reset}]: ${this.print(...message)}`
     }
 
     /**
@@ -78,6 +92,17 @@ class Logger {
      */
     title(titleName: string): Logger {
         this.titleName = titleName;
+        return this;
+    }
+
+    /**
+     * Set the color of the title. This will be used in chatbot format.
+     * 
+     * @param {Colors} color The color.
+     * @returns {Logger} The logger instance.
+     */
+    color(color: Colors): Logger {
+        this.colors = color;
         return this;
     }
 
