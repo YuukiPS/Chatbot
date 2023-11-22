@@ -10,7 +10,17 @@
     "watch": "tsc -p . --watch"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "ElaXan",
+    "email": "zero@elaxan.com",
+    "url": "https://elaxan.com"
+  },
+  "contributors": [],
+  "homepage": "https://github.com/YuukiPS/Chatbot#readme",
+  "bugs": {
+    "url": "https://github.com/YuukiPS/Chatbot/issues",
+    "email": "zero@elaxan.com"
+  },
   "license": "MIT",
   "dependencies": {
     "openai": "^4.19.1"
