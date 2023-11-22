@@ -273,3 +273,90 @@ A: You can check [here](https://doc.yuuki.me/docs/tutorial-connect/pc/fiddler) t
 
 Q: I got error `cant find gm` when trying to use command\
 A: If you get this error, mean the command is not found or not available for `GC` or `GIO`. You can check command list for `GC` [here](https://doc.yuuki.me/docs/commands/gc) and for `GIO` [here](https://doc.yuuki.me/docs/commands/gio)
+
+Q: How to get ID for character, weapon, artifact, and item?\
+A: You can check [here](https://doc.yuuki.me/GMHandbook) to get ID for character, weapon, artifact, and item
+
+Q: I have issue downloading data game.\
+A: It may your internet issue or the server itself too busy. You can try with VPN to download the data game, if it's still not working, you can try to download it again later
+
+Q: How to enter command in GC?\
+A: You can enter command in GC (Grasscutter) in game chat (Ayaka). Simply open chat section and add Ayaka then enter command that you want to use
+
+Q: How to enter command in GIO?\
+A: You can enter command in GIO (Genshin Impact Official) go to [ps.yuuki.me](https://ps.yuuki.me/command) and fill the form to access command list, or you can also using `/command` Discord Bot in <#987879230585069609> channel and make sure that you have enter command `/player set` to set your player data. And another method using `/cmd` and make sure that you have linked your Discord account to your YuukiPS account. And please note that you can't use command in game chat like in GC (Grasscutter)
+
+Q: how y'all remove the artifact cause so annoying\
+A: /clear af {rarity}*
+
+Q: How can I execute commands on my PC?\
+A: You can execute commands on your PC through the web command at https://ps.yuuki.me/command
+
+Q: how do I use the private server when there's no 4.2 update\
+A: You can get your private server to work by downloading version 4.0 of Genshin Impact. Remember to search for version 4.0 and you can refer to this link for more information: https://discord.com/channels/964119462188040202/1175262038562439168/1175262862558638110
+
+Q: Is it possible to play SR 1.3.0 on IOS?Is it possible to play SR 1.3.0 on IOS?\
+A: No, it is not possible to play SR 1.3.0 on IOS.
+
+Q: If I update from version 1.3 to 1.5, private server work?\
+A: No.
+
+Q: how can I set the game to use the Japanese audio?\
+A: You can download the Japanese audio, go to in-game settings, delete the English voice, and change to the Japanese voice. Alternatively, you can avoid downloading the English voice by tweaking your game folder. However, it is important to note that the English audio is the default and must be installed for global OS users.
+
+Q: How to level up characters with a command?\
+A: You can use the command `/prop lv <level>` to level up individual characters or use `/prop salv <level>` to change the level for all characters at once.
+
+Q: I filled my artifact inventrory how can i delete thoose artifacts? I cant add or create a new one\
+A: Try to `/clear af all` or `/clear all`
+
+Q: How should I change 3.2 server to 3.0 so that I can access the ps?\
+A: You need to download the full game again on the 3.0 version. You can do it from <#970380775264518244> or from Yuuki's website. GIO is only available up to 3.2, but GC is available for version 4.0. You can find it at https://ps.yuuki.me/ and select the third option.
+
+Q: How i change version from 4.2 to 4.0?\
+A: You must download the full 4.0 or 3.2 game on its own
+
+Q: how do i get 4.0.1?\
+A: You can download version 4.0 from https://ps.yuuki.me/game/genshin-impact. It is also recommended to download version 3.2. Make sure to download all parts and unzip them.
+
+Q: How to skip to the event of entering the inazuma in gio\
+A: If you are stuck on a certain mission, use the command https://doc.yuuki.me/docs/commands/gio#quest. But be careful when using it, make sure you are stuck in this mission. You can also use GM Handbook to search for the name of the current quest you are asking for.
+
+Q: Error copy pathfile\
+A: Go ahead and first confirm you actually got the full game, since your folder name is custom. Include the size of the folder if need be. Yes it is, but I need to confirm that you actually have the full game. Since if you downloaded the update file instead, and put it into a folder with a random name, then there is no way to tell you have the wrong thing.
+
+Q: can't enter my teapot\
+A: Probably an issue with your account, either avoid teapot or make a new account and only do normal things in the teapot. You can try again first and see if it is still happening, or even directly tp to the teapot scene and see if it works.
+
+Q: how do i dump protos?\
+A: Dumping protos requires a deep understanding of reverse engineering and the right tools. It is not something to attempt without the necessary knowledge and skills. Even if you decide to try, it's important to understand that it's a complex process and may not be achievable without the appropriate expertise, tools, and experience.
+
+Q: Is it possible to play on patch 2.8?\
+A: Not on Yuuki
+
+Q: is 4.1 going to come out for Android in a few months\
+A: If by \"a few months\" you mean never, then yes.
+
+Q: I get damage during elemental burst, is that normal?\
+A: Long time bug in GC that I believe was fixed at some point but as with all things, breaks again.
+
+Q: When will 4.2 for Android come?\
+A: Maybe in 2027, maybe sooner, but not now.
+
+Q: What happened to raiden?\
+A: It was one of the plugin in the server called Attack Infused with Gadget IIRC. It affect Raiden attacks, binding it with the bosses gadget. You can turn it off using `/at off` and turn it on with `/at on`.
+
+Q: Can i still play the ps on ios if i have shadowrocket?\
+A: Sure can, but not on YuukiPS. You will have to host the server yourself. Not to forget you also need a patched game and its full game resource.
+
+Q: unable to delete artifacts and items idk why\
+A: You can either use it to upgrade other artifact or use `/clear af 5*`.
+
+Q: Is there a 3.4 GIO server available?\
+A: No, there will be no 3.4 GIO here, only 3.2.
+
+Q: how can I fix the error on /player set?\
+A: Activate command access in your account settings on the Yuuki website. Generate a code, input your account password, save, and then go to the command access section to input your account uid and the generated code. After doing this, you can use commands on the Yuuki website or on Discord if your account is linked.
+
+Q: ive seen some videos where people used korepi or akebi and looted chests autometically and automatically teleported or runned to them how do i do this with akebi?\
+A: Simply open akebi and use it. All the features are right there in it.
