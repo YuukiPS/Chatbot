@@ -7,29 +7,24 @@ import readline from 'readline';
 import Logger, { Colors } from "./Utils/log";
 
 const findCommand = async (command: string, type?: 'gc' | 'gio') => {
-    const commandAndUsage = await FindDocument.embedding(command, 'command')
-    if (commandAndUsage.length === 0) {
+    const commandList = await FindDocument.embedding(command, 'command')
+    if (commandList.length === 0) {
         return 'Command not found'
     }
-    let getCommand;
-    if (type === 'gc' || type === 'gio') {
-        getCommand = commandAndUsage.filter((data) => data.data.type.toLowerCase() === type)
-    } else {
-        getCommand = commandAndUsage
-    }
-    return getCommand.map((data) => ({
+    const filteredCommands = type ? commandList.filter((data) =>data.data.type.toLowerCase() === type) : commandList
+    return filteredCommands.map((data) => ({
         command: data.data.command,
         description: data.data.description,
         usage: data.data.usage,
         type: data.data.type,
         similarity: data.score
-    }))
+    }));
 }
 
 const conversation: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = []
 
 async function responseAI(question: string) {
-    let stop = false
+    let stop = false;
     conversation.push({
         content: question,
         role: 'user'
@@ -211,7 +206,7 @@ async function main() {
             process.exit(0)
         }
         await responseAI(question)
-        main()
+        await main()
     })
 }
 
