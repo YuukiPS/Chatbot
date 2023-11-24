@@ -4,93 +4,93 @@ This dataset is designed to improve AI responses about Private Servers. It also 
 
 ## Command
 
-| Command | Description | Usage | Server |
-| --- | --- | --- | --- |
-| `/give` | Gives a specified avatars to the player | `/give <avatars id> lv<level character> sl<skill level character> c<constellation>` | GC |
-| `/give` | Gives a weapon to the player | `/give <weapon id> lv<level weapon> r<refinement> x<amount>` | GC |
-| `/give` | Gives a specified item to the player | `/give <item id> x<amount>` | GC |
-| `/give` | Gives a specified artifact to the player | `/give <artifact id> lv<level artifact> x<amount>` | GC |
-| `/give av` | Gives all avatars to the player | `/give av lv<level> c<constellation> sl<skill level>` | GC |
-| `/give af` | Gives all artifacts to the player | `/give af lv<level> x<amount>` | GC |
-| `/give mats` | Gives all materials to the player | `/give mats x<amount>` | GC |
-| `/give wp` | Gives all weapons to the player | `/give wp lv<level> r<refinement> x<amount>` | GC |
-| `/give hs` | Gives all teapot items to the player | `/give hs` | GC |
-| `/spawn` | Spawns a specified monster in the game | `/spawn <monster id> lv<level monster> hp<health point/0=unlimited health> x<amount of monster>` | GC |
-| `/spawn` | Spawns a specified weapon | `/spawn <weapon id> lv<level weapon> r<refinement> x<amount>` | GC |
-| `/heal` | Heals the player's active character | `/heal` | GC |
-| `/q add` | Adds a specified quest to the player's quest log | `/q add <quest id>` | GC |
-| `/q remove` | Removes a specified quest from the player's quest log | `/q remove <quest id>` | GC |
-| `/q skip` | Skips a specified quest in the player's quest log | `/q skip` | GC |
-| `/q removeall` | Removes all quests from the player's quest log | `/q removeall` | GC |
-| `/killall` | Kills all monsters currently in the game | `/killall` | GC |
-| `/kill` | Kills the player's active character | `/kill` | GC |
-| `/stats freeze cdr 0` | Freezes the cooldown timer for the player's abilities | `/stats freeze cdr 0` | GC |
-| `/prop ns 1` | Sets the player's stamina to unlimited | `/prop ns 1 or /prop ns 0 (disable)` | GC |
-| `/prop ue 1` | Sets the player's energy to unlimited | `/prop ue 1 or /prop ue 0 (disable)` | GC |
-| `/prop god 1` | Sets the player's character to god mode (no damage taken) | `/prop god 1 or /prop god 0 (disable)` | GC |
-| `/prop player_level` | Sets the player's level to a specified level | `/prop player_level <level>` | GC |
-| `/prop unlockhome on` | Unlock the teapot | `/prop unlockhome on` | GC |
-| `/prop abyss` | Change or level up the spiral abyss | `/prop abyss <level>` | GC |
-| `/prop lv` | Change current or active character level | `/prop lv <level>` | GC |
-| `/prop stlv` | Change all character level on the team or party | `/prop stlv <level>` | GC |
-| `/prop salv` | Change all character level you have | `/prop salv <level>` | GC |
-| `/prop se hydro` | Change or switch traveler element to hydro | `/prop se hydro` | GC |
-| `/prop se grass` | Change or switch traveler element to grass | `/prop se grass` | GC |
-| `/prop se electro` | Change or switch traveler element to electro | `/prop se electro` | GC |
-| `/prop se wind` | Change or switch traveler element to wind | `/prop se wind` | GC |
-| `/prop se white` | Change or switch traveler element to no element | `/prop se white` | GC |
-| `/setconst` | Sets the player's constellation to a specified constellation | `/setconst <constellation>` | GC |
-| `/weather sunny` | Sets the game's weather to sunny | `/weather sunny` | GC |
-| `/weather rain` | Sets the game's weather to rain | `/weather rain` | GC |
-| `/weather cloudy` | Sets the game's weather to cloudy | `/weather cloudy` | GC |
-| `/weather thunderstorm` | Sets the game's weather to thunderstorm | `/weather thunderstorm` | GC |
-| `/weather snow` | Sets the game's weather to snow | `/weather snow` | GC |
-| `/weather mist` | Sets the game's weather to mist | `/weather mist` | GC |
-| `/talent n` | Change normal attack talent | `/talent n <level>` | GC |
-| `/talent q` | Change element burst talent | `/talent q <level>` | GC |
-| `/talent e` | Change element skill talent | `/talent e <level>` | GC |
-| `/talent all` | Change all talent | `/talent all <level>` | GC |
-| `/team add` | Adds a specified character to the player's team | `/team add <character id>` | GC |
-| `/team remove` | Removes a specified character from the player's team | `/team remove <character id>` | GC |
-| `/resetconst` | Resets active character constellation | `/resetconst` | GC |
-| `/resetconst all` | Resets all character constellations | `/resetconst all` | GC |
-| `monster` | Spawns a specified monster in the game | `monster <id>` | GIO |
-| `kill monster all` | Kills all monsters currently in the game | `kill monster all` | GIO |
-| `stamina infinite on` | Sets the player's stamina to unlimited or no stamina | `stamina infinite on` | GIO |
-| `stamina infinite off` | Disables the unlimited stamina setting | `stamina infinite off` | GIO |
-| `energy infinite on` | Sets the player's energy to unlimited | `energy infinite on` | GIO |
-| `energy infinite off` | Disables the unlimited energy setting | `energy infinite off` | GIO |
-| `quest accept` | Adds a specified quest to the player's quest log | `quest accept <quest id>` | GIO |
-| `quest remove` | Removes a specified quest from the player's quest log | `quest remove <quest id>` | GIO |
-| `quest add` | Adds a specified quest to the player's quest log | `quest add <quest id>` | GIO |
-| `quest finish` | Completes a specified quest in the player's quest log | `quest finish <quest id>` | GIO |
-| `mcoin` | Gives the player a specified amount of Genesis Crystals | `mcoin <amount>` | GIO |
-| `scoin` | Gives the player a specified amount of Mora | `scoin <amount>` | GIO |
-| `hcoin` | Gives the player a specified amount of Primogems | `hcoin <amount>` | GIO |
-| `home_coin` | Gives the player a specified amount of Real Currency | `home_coin <amount>` | GIO |
-| `player level` | Sets the player's level to a specified level | `player level <level>` | GIO |
-| `avatar add` | Adds a specified avatar to the player's collection | `avatar add <character id>` | GIO |
-| `wudi global avatar on` | Sets the player's avatar to god mode (no damage taken) | `wudi global avatar on` | GIO |
-| `wudi global avatar off` | Disables god mode for the player's avatar | `wudi global avatar off` | GIO |
-| `wudi global monster on` | Sets all monsters to god mode (no damage taken) | `wudi global monster on` | GIO |
-| `wudi global monster off` | Disables god mode for all monsters | `wudi global monster off` | GIO |
-| `item add` | Adds a specified item to the player's inventory | `item add <item id> <amount>` | GIO |
-| `talent unlock` | Unlocks a specified talent for the player | `talent unlock [1-6]` | GIO |
-| `talent unlock all` | Unlocks all talents for the player | `talent unlock all` | GIO |
-| `point 3 all` | Unlocks all teleport points | `point 3 all` | GIO |
-| `item clear` | Removes a specified item from the player's inventory | `item clear <id> <amount>` | GIO |
-| `level` | Set active/current character to a specified level | `level <level>` | GIO |
-| `jump` | Teleports the player to a specified scene | `jump <scene id>` | GIO |
-| `goto` | Teleports the player to specific coordinates in the game world | `goto <x> <y> <z>` | GIO |
-| `dungeon` | Teleports the player to a specific dungeon using its ID | `dungeon <dungeon id>` | GIO |
-| `equip add` | Equips a specific weapon to the active character, with specified level, ascension level, and refinement level | `equip add <weapon id> <level> <ascension level> [1-6] <refinement level> [1-5]` | GIO |
-| `skill 1` | Changes the level normal attack talent of the active character | `skill 1 <level [1-10]>` | GIO |
-| `skill 2` | Changes the level element skill talent of the active character | `skill 2 <level [1-10]>` | GIO |
-| `skill 3` | Changes the level element burst talent of the active character | `skill 3 <level [1-10]>` | GIO |
-| `skill all` | Changes the level of all talents of the active character | `skill all <level [1-10]>` | GIO |
-| `weapon level` | Changes the level of the active character's equipped weapon | `weapon level <level>` | GIO |
-| `weapon break` | Changes the ascension level of the active character's equipped weapon | `weapon break <level>` | GIO |
-| `weapon refine` | Changes the refinement level of the active character's equipped weapon | `weapon refine <level>` | GIO |
+| Command                   | Description                                                                                                   | Usage                                                                                            | Server |
+|---------------------------|---------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|--------|
+| `/give`                   | Gives a specified avatars to the player                                                                       | `/give <avatars id> lv<level character> sl<skill level character> c<constellation>`              | GC     |
+| `/give`                   | Gives a weapon to the player                                                                                  | `/give <weapon id> lv<level weapon> r<refinement> x<amount>`                                     | GC     |
+| `/give`                   | Gives a specified item to the player                                                                          | `/give <item id> x<amount>`                                                                      | GC     |
+| `/give`                   | Gives a specified artifact to the player                                                                      | `/give <artifact id> lv<level artifact> x<amount>`                                               | GC     |
+| `/give av`                | Gives all avatars to the player                                                                               | `/give av lv<level> c<constellation> sl<skill level>`                                            | GC     |
+| `/give af`                | Gives all artifacts to the player                                                                             | `/give af lv<level> x<amount>`                                                                   | GC     |
+| `/give mats`              | Gives all materials to the player                                                                             | `/give mats x<amount>`                                                                           | GC     |
+| `/give wp`                | Gives all weapons to the player                                                                               | `/give wp lv<level> r<refinement> x<amount>`                                                     | GC     |
+| `/give hs`                | Gives all teapot items to the player                                                                          | `/give hs`                                                                                       | GC     |
+| `/spawn`                  | Spawns a specified monster in the game                                                                        | `/spawn <monster id> lv<level monster> hp<health point/0=unlimited health> x<amount of monster>` | GC     |
+| `/spawn`                  | Spawns a specified weapon                                                                                     | `/spawn <weapon id> lv<level weapon> r<refinement> x<amount>`                                    | GC     |
+| `/heal`                   | Heals the player's active character                                                                           | `/heal`                                                                                          | GC     |
+| `/q add`                  | Adds a specified quest to the player's quest log                                                              | `/q add <quest id>`                                                                              | GC     |
+| `/q remove`               | Removes a specified quest from the player's quest log                                                         | `/q remove <quest id>`                                                                           | GC     |
+| `/q skip`                 | Skips a specified quest in the player's quest log                                                             | `/q skip`                                                                                        | GC     |
+| `/q removeall`            | Removes all quests from the player's quest log                                                                | `/q removeall`                                                                                   | GC     |
+| `/killall`                | Kills all monsters currently in the game                                                                      | `/killall`                                                                                       | GC     |
+| `/kill`                   | Kills the player's active character                                                                           | `/kill`                                                                                          | GC     |
+| `/stats freeze cdr 0`     | Freezes the cooldown timer for the player's abilities                                                         | `/stats freeze cdr 0`                                                                            | GC     |
+| `/prop ns 1`              | Sets the player's stamina to unlimited                                                                        | `/prop ns 1 or /prop ns 0 (disable)`                                                             | GC     |
+| `/prop ue 1`              | Sets the player's energy to unlimited                                                                         | `/prop ue 1 or /prop ue 0 (disable)`                                                             | GC     |
+| `/prop god 1`             | Sets the player's character to god mode (no damage taken)                                                     | `/prop god 1 or /prop god 0 (disable)`                                                           | GC     |
+| `/prop player_level`      | Sets the player's level to a specified level                                                                  | `/prop player_level <level>`                                                                     | GC     |
+| `/prop unlockhome on`     | Unlock the teapot                                                                                             | `/prop unlockhome on`                                                                            | GC     |
+| `/prop abyss`             | Change or level up the spiral abyss                                                                           | `/prop abyss <level>`                                                                            | GC     |
+| `/prop lv`                | Change current or active character level                                                                      | `/prop lv <level>`                                                                               | GC     |
+| `/prop stlv`              | Change all character level on the team or party                                                               | `/prop stlv <level>`                                                                             | GC     |
+| `/prop salv`              | Change all character level you have                                                                           | `/prop salv <level>`                                                                             | GC     |
+| `/prop se hydro`          | Change or switch traveler element to hydro                                                                    | `/prop se hydro`                                                                                 | GC     |
+| `/prop se grass`          | Change or switch traveler element to grass                                                                    | `/prop se grass`                                                                                 | GC     |
+| `/prop se electro`        | Change or switch traveler element to electro                                                                  | `/prop se electro`                                                                               | GC     |
+| `/prop se wind`           | Change or switch traveler element to wind                                                                     | `/prop se wind`                                                                                  | GC     |
+| `/prop se white`          | Change or switch traveler element to no element                                                               | `/prop se white`                                                                                 | GC     |
+| `/setconst`               | Sets the player's constellation to a specified constellation                                                  | `/setconst <constellation>`                                                                      | GC     |
+| `/weather sunny`          | Sets the game's weather to sunny                                                                              | `/weather sunny`                                                                                 | GC     |
+| `/weather rain`           | Sets the game's weather to rain                                                                               | `/weather rain`                                                                                  | GC     |
+| `/weather cloudy`         | Sets the game's weather to cloudy                                                                             | `/weather cloudy`                                                                                | GC     |
+| `/weather thunderstorm`   | Sets the game's weather to thunderstorm                                                                       | `/weather thunderstorm`                                                                          | GC     |
+| `/weather snow`           | Sets the game's weather to snow                                                                               | `/weather snow`                                                                                  | GC     |
+| `/weather mist`           | Sets the game's weather to mist                                                                               | `/weather mist`                                                                                  | GC     |
+| `/talent n`               | Change normal attack talent                                                                                   | `/talent n <level>`                                                                              | GC     |
+| `/talent q`               | Change element burst talent                                                                                   | `/talent q <level>`                                                                              | GC     |
+| `/talent e`               | Change element skill talent                                                                                   | `/talent e <level>`                                                                              | GC     |
+| `/talent all`             | Change all talent                                                                                             | `/talent all <level>`                                                                            | GC     |
+| `/team add`               | Adds a specified character to the player's team                                                               | `/team add <character id>`                                                                       | GC     |
+| `/team remove`            | Removes a specified character from the player's team                                                          | `/team remove <character id>`                                                                    | GC     |
+| `/resetconst`             | Resets active character constellation                                                                         | `/resetconst`                                                                                    | GC     |
+| `/resetconst all`         | Resets all character constellations                                                                           | `/resetconst all`                                                                                | GC     |
+| `monster`                 | Spawns a specified monster in the game                                                                        | `monster <id>`                                                                                   | GIO    |
+| `kill monster all`        | Kills all monsters currently in the game                                                                      | `kill monster all`                                                                               | GIO    |
+| `stamina infinite on`     | Sets the player's stamina to unlimited or no stamina                                                          | `stamina infinite on`                                                                            | GIO    |
+| `stamina infinite off`    | Disables the unlimited stamina setting                                                                        | `stamina infinite off`                                                                           | GIO    |
+| `energy infinite on`      | Sets the player's energy to unlimited                                                                         | `energy infinite on`                                                                             | GIO    |
+| `energy infinite off`     | Disables the unlimited energy setting                                                                         | `energy infinite off`                                                                            | GIO    |
+| `quest accept`            | Adds a specified quest to the player's quest log                                                              | `quest accept <quest id>`                                                                        | GIO    |
+| `quest remove`            | Removes a specified quest from the player's quest log                                                         | `quest remove <quest id>`                                                                        | GIO    |
+| `quest add`               | Adds a specified quest to the player's quest log                                                              | `quest add <quest id>`                                                                           | GIO    |
+| `quest finish`            | Completes a specified quest in the player's quest log                                                         | `quest finish <quest id>`                                                                        | GIO    |
+| `mcoin`                   | Gives the player a specified amount of Genesis Crystals                                                       | `mcoin <amount>`                                                                                 | GIO    |
+| `scoin`                   | Gives the player a specified amount of Mora                                                                   | `scoin <amount>`                                                                                 | GIO    |
+| `hcoin`                   | Gives the player a specified amount of Primogems                                                              | `hcoin <amount>`                                                                                 | GIO    |
+| `home_coin`               | Gives the player a specified amount of Real Currency                                                          | `home_coin <amount>`                                                                             | GIO    |
+| `player level`            | Sets the player's level to a specified level                                                                  | `player level <level>`                                                                           | GIO    |
+| `avatar add`              | Adds a specified avatar to the player's collection                                                            | `avatar add <character id>`                                                                      | GIO    |
+| `wudi global avatar on`   | Sets the player's avatar to god mode (no damage taken)                                                        | `wudi global avatar on`                                                                          | GIO    |
+| `wudi global avatar off`  | Disables god mode for the player's avatar                                                                     | `wudi global avatar off`                                                                         | GIO    |
+| `wudi global monster on`  | Sets all monsters to god mode (no damage taken)                                                               | `wudi global monster on`                                                                         | GIO    |
+| `wudi global monster off` | Disables god mode for all monsters                                                                            | `wudi global monster off`                                                                        | GIO    |
+| `item add`                | Adds a specified item to the player's inventory                                                               | `item add <item id> <amount>`                                                                    | GIO    |
+| `talent unlock`           | Unlocks a specified talent for the player                                                                     | `talent unlock [1-6]`                                                                            | GIO    |
+| `talent unlock all`       | Unlocks all talents for the player                                                                            | `talent unlock all`                                                                              | GIO    |
+| `point 3 all`             | Unlocks all teleport points                                                                                   | `point 3 all`                                                                                    | GIO    |
+| `item clear`              | Removes a specified item from the player's inventory                                                          | `item clear <id> <amount>`                                                                       | GIO    |
+| `level`                   | Set active/current character to a specified level                                                             | `level <level>`                                                                                  | GIO    |
+| `jump`                    | Teleports the player to a specified scene                                                                     | `jump <scene id>`                                                                                | GIO    |
+| `goto`                    | Teleports the player to specific coordinates in the game world                                                | `goto <x> <y> <z>`                                                                               | GIO    |
+| `dungeon`                 | Teleports the player to a specific dungeon using its ID                                                       | `dungeon <dungeon id>`                                                                           | GIO    |
+| `equip add`               | Equips a specific weapon to the active character, with specified level, ascension level, and refinement level | `equip add <weapon id> <level> <ascension level> [1-6] <refinement level> [1-5]`                 | GIO    |
+| `skill 1`                 | Changes the level normal attack talent of the active character                                                | `skill 1 <level [1-10]>`                                                                         | GIO    |
+| `skill 2`                 | Changes the level element skill talent of the active character                                                | `skill 2 <level [1-10]>`                                                                         | GIO    |
+| `skill 3`                 | Changes the level element burst talent of the active character                                                | `skill 3 <level [1-10]>`                                                                         | GIO    |
+| `skill all`               | Changes the level of all talents of the active character                                                      | `skill all <level [1-10]>`                                                                       | GIO    |
+| `weapon level`            | Changes the level of the active character's equipped weapon                                                   | `weapon level <level>`                                                                           | GIO    |
+| `weapon break`            | Changes the ascension level of the active character's equipped weapon                                         | `weapon break <level>`                                                                           | GIO    |
+| `weapon refine`           | Changes the refinement level of the active character's equipped weapon                                        | `weapon refine <level>`                                                                          | GIO    |
 
 ## Knowledge
 
