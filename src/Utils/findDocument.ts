@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { client } from '../config/openai';
+import {client} from '../config/openai';
 
 interface EmbeddingCommand {
     command: string
@@ -30,22 +30,23 @@ class FindDocument {
         const pathDataset = () => {
             switch (type) {
                 case 'qa':
-                    return './src/data/embeddingQA.json'
+                    return './src/data/embeddingQA.json';
                 case 'command':
-                    return './src/data/embeddingCommand.json'
+                    return './src/data/embeddingCommand.json';
             }
-        }
+        };
 
-        const jsonParse: EmbeddingCommand[] | EmbeddingQA[] = JSON.parse(fs.readFileSync(pathDataset(), 'utf-8'))
+        const jsonParse: (EmbeddingCommand | EmbeddingQA)[] = JSON.parse(fs.readFileSync(pathDataset(), 'utf-8'));
 
-        const similarityScores = jsonParse.map((data) => ({
+        const similarityScores = jsonParse.map(data => ({
             data,
             score: this.cosineSimilarity(embedding, data.embedding)
         }));
 
-        const sortedData = similarityScores.sort((a, b) => b.score - a.score).filter((data) => data.score > 0.7).slice(0, 5)
-
-        return sortedData;
+        return similarityScores
+            .sort((a, b) => b.score - a.score)
+            .filter((data) => data.score > 0.7)
+            .slice(0, 5);
     }
 
     private static cosineSimilarity = (a: number[], b: number[]): number => {
