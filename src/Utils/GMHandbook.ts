@@ -82,8 +82,9 @@ class GMHandbookUtility {
 
     /**
      * Searches for data in the GMData array based on a given name.
-     * 
+     *
      * @param name - The name to search for in the GMData array.
+     * @param category - Filter the data by category. If not provided, all data will be returned.
      * @returns An array of GMHandbookData objects that match the search criteria.
      */
     public static find(name: string, category?: string): GMHandbookData[] {
