@@ -360,3 +360,90 @@ A: Activate command access in your account settings on the Yuuki website. Genera
 
 Q: ive seen some videos where people used korepi or akebi and looted chests autometically and automatically teleported or runned to them how do i do this with akebi?\
 A: Simply open akebi and use it. All the features are right there in it.
+
+Q: keeps telling me "NoUser Assembly file"\
+A: It seems like some files may have been separated and scattered outside of the main game folder, which is causing the issue. The game folder size and contents need to be verified to ensure that all necessary files are in place.
+
+Q: When I use a command I got error `api_cmd_player_offline`\
+A: The error message 'You are not in the game' is likely indicating that the user is not logged in on the same account both in-game and on the site. It's important to ensure that the UID is correct and that the user is logged in on the correct account with the right version (3.2 or 4.0) to access the specific command.
+
+Q: I got stuck at beginning quest, any solution?\
+A: If you want the quests to work more effectively in version 4.0, consider playing on localhost. You can also try continuing to move, and the quests should progress, or use commands. For the complete story experience, consider playing on GIO.
+
+Q: Is there an Command to delete all of your 3 Star weapons in GIO?\
+A: Please read the command list so you don't have to ask. You can find the list of commands at https://doc.yuuki.me/docs/commands/gio
+
+Q: Which one is better and what is the difference between GC and GIO?\
+A: 3.2 (GIO) is like the normal game up to 3.2 but with some changes like more primos etc but clean story 4.0.1 (GC) is in Version 4.0 but just for character testing most features are broken. so depends on what you wanna do
+
+Q: where do i get akebi at? would it be from their discord?\
+A: You would purchase Akebi on a license (1 day, 7 day, or 1 month) from the official Akebi or official Akebi resellers (in their Discord) to avoid scams.
+
+Q: I tried to download the 4.0 Android one and it logs me in but for some reason I cannot access the characters to unlock them or to get anything.\
+A: Please for your own sake read the common information channels first. Here are the links to the channels: [discord.com/channels/964119462188040202/1049101257933066322/1082622560937713744](https://discord.com/channels/964119462188040202/1049101257933066322/1082622560937713744) and [discord.com/channels/964119462188040202/970380775264518244/1144073951002251296](https://discord.com/channels/964119462188040202/970380775264518244/1144073951002251296)
+
+Q: How do you get weapons Artifacts in GIO?\
+A: You can obtain weapons and artifacts by using the WebCommand with your account UID and password, entering custom commands in the 'Raw Command' field, and following the guide provided at https://doc.yuuki.me/docs/commands/gio. You can find the item/character IDs at https://doc.yuuki.me/GMHandbook. It's important to note that some commands may return errors, and adding characters before Amber's initial quest is not advised in order to avoid potential account issues.
+
+Q: Does anyone have a mod for Free Camera Genshin Impact 4.0 in Android?\
+A: Mods are unsupported in the mobile version of Genshin Impact, only in the PC Desktop/Windows version. You can explore the use of MelonLoader for mods and find potential resources on platforms like GameBanana and GitHub.
+
+Q: How did my map disappear in GC?\
+A: It seems like there are some bugs with the Genshin Impact game, as multiple users are experiencing issues such as missing maps and bugged character screens. Some suggestions from other users include trying to log in again, checking the account, switching versions, and using a specific command like `/setprop um -111``.
+
+Q: I can't download the game file version 4.0.1\
+A: To resolve the issue with the download, ensure that all ad blockers are disabled. Additionally, rather than using redirects, try using the actual download link. You can also find more information by searching in the designated channel.
+
+Q: Can GIO 3.2 be upgraded to 4.0 at a later date?\
+A: No, totally different things
+
+Q: like i enter but as soon as the door opens the screen becomes white and like after 3 minutes or so tells me connection lost but like the wifi is kinda good rn, so is it me or like a problem?\
+A: Then the server is down, wait for it to come back up.
+
+Q: I need help with the friendship command\
+A: The command usage depends on the specific game version. For GIO 3.2, you can use 'item add 105 99999', while for GC 4.0, you should use '/give 105 x99999'. Make sure to consult the GM Handbook for more items.
+
+Q: Is there anything that is simple to install GIO?\
+A: For PC, you can download it from the following link and extract all the files: https://file2.yuuki.me/OD1/Project/GenshinImpact/Data/PC/3.2.0/Global/OneClick. If necessary, you can also download the Launcher from this link: https://github.com/YuukiPS/Launcher-PC/releases/download/2023.11.10.0714/YuukiPS.zip. For Android, you can download the YuukiPS apk from this link: https://file2.yuuki.me/Local_EU/Project/GenshinImpact/Data/Android/3.2.0/Global/YuukiPS.apk
+
+Q: What code should I enter?\
+A: To access web commands or the bot, enter the code, it can be found at https://ps.yuuki.me/account/home.
+
+Q: Everytime I try to save it says 'the current code in web are not the same' please help\
+A: That's why it is necessary to fill in the password at the bottom. Also, as the message suggests, you need to put in your current password. If it didn't match then it won't work.
+
+Q: Is there a 4.2 private server?\
+A: Yes, there is a 4.2 private server called Furina Impact, but it doesn't fully work. Players can only walk around with Furina as there is practically nothing else to do on the 4.2 private server.
+
+Q: Will I have new characters in old version?\
+A: No, new characters are not available in the old version.
+
+Q: Network Error 4214\
+A: Network Error 4214 is related to Genshin Impact. The conversation involves troubleshooting the error by providing specific information about the game version, proxy, and settings in the Cultivation app. Additionally, the correct download source for the 4.0 version is shared with the user.
+
+Q: Can I ask which version does the story of GC and GIO stop?\
+A: GC story stops at version 3.0, while GIO has the full Sumeru Story in version 3.2.
+
+Q: My question is:there is  a command that give you unlimited mora or unlimited xp?\
+A: No, just give yourself the amount you want.
+
+Q: how to unlock wish and rest\
+A: You can find the information in the channels <#970380775264518244> and <#1049101257933066322>. Also, you can search for the exact question in <#1048860849495875594>.
+
+Q: To get the hsr private server i have to do the same way as genshin impact?\
+A: Yes
+
+Q: how to disable skill recharge (E key) in 4.0.1 or GC?\
+A: You can disable skill recharge (E key) in 4.0.1 by using the command `/stat lock cdr 1`. It's important to note that using both 0 and 1 will result in opposite meanings, as 0 represents off while 1 represents on.
+
+Q: Hello I did not understand how to have a private server could you explain to me how to do it thank you\
+A: To have a private server, you can download version 4.0 or 3.2 and use Yuukips launcher or Cultivation. Then, you can launch it, login, and play. You can also visit https://ps.yuuki.me for more information.
+
+Q: cant login\
+A: Make sure you're using the proper proxy/settings and try again. If the server is up, keep trying until it works.
+
+Q: can you give me where to find the commands on genshin\
+A: <#1049101257933066322> <#970380775264518244> <https://doc.yuuki.me>
+
+Q: i tried to connect in germany and i can't enter on this server\
+A: Go try another account or another region
