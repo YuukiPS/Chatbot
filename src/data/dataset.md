@@ -447,3 +447,33 @@ A: <#1049101257933066322> <#970380775264518244> <https://doc.yuuki.me>
 
 Q: i tried to connect in germany and i can't enter on this server\
 A: Go try another account or another region
+
+Q: I lost my progress in the game after updating to version 3.2 (GIO) and receiving error 4214. How can I resolve this issue?\
+A: It seems like the issue was due to being logged in with a different account or experiencing a server issue. Additionally, the user was able to resolve the problem by installing version 3.2 and restoring account data, which restored their progress in the game and enabled the use of commands.
+
+Q: Can I play Swarm Disaster?\
+A: If you tried and it didn't work then probably no
+
+Q: Im getting the error coder 4214\
+A: Make sure to set the game in your launcher of choice and then click launch. If the issue persists, ensure the game you just downloaded is the only version in use, and forget the existence of any other versions.
+
+Q: I wanna know if its possible to play the story of star rail. I wanna have a full game playthrough like official server. I already joined the game and know how to use commands, I checked the handbook but I still dont know how to use that to play the story. Maybe its /scene ? But I dont know the format of this command, [scene id] [floor id]? what is that?\
+A: Scene is for moving to the specified scene. It is not a quest command. If you want the full game playthrough like the official server, you need to go to the official server. The available features and command list can be found at: https://github.com/Melledy/LunarCore#notable-features
+
+Q: I keep getting this everytime😭 ive already entered a code\
+A: This says you don't have a code set on your account. You need to go to the account page, log in, and set a code. Please remember that reading is required, especially right under the code box where it says your current password is required for changes to save.
+
+Q: Why am I getting 'do not have the permission' message for commands like give all in the game?\
+A: If it says you don't have permission for a specific command, then as it says, you don't have permission. Try using other commands that you do have permission to use.
+
+Q: Hi Ive noticed zhongli c6 const dosent seem to be working. When hit, his sheild does not regen health. Could I check if anyone is facing the same issues? Thanks!\
+A: It's not implemented. Has been an issue in every version and will continue to be until it is properly handled/implemented
+
+Q: Is Swarm Disaster not available? Will it be available in the future?\
+A: If it is made available in the future, then it will be available. If not, then it won't.
+
+Q: Why do I get a success message when I use the /give 81114 command but the relic is not in the inventory?\
+A: Probably because you looked up the set name which isn't the item. Remember that each piece is an individual item. Individual items have their own names. If you've ever played on official you should understand you get one of four different pieces from any given set when you play the game or do dungeons. Those are items. The set is not an item. If you're not sure what that means, you can either play the official game first, or you can look it up on the wiki.
+
+Q: How can i turn off raiden puppet effects?\
+A: Try using command `/at off`
