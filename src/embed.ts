@@ -3,45 +3,53 @@ import { client } from './config/openai';
 import Logger from './Utils/log';
 
 async function createEmbeddings(input: string[], model: string) {
-    return await client.embeddings.create({
+    const response = await client.embeddings.create({
         input,
         model
-    }).then((response) => response.data.map((data) => data.embedding));
+    });
+    return response.data.map((data) => data.embedding);
 }
 
 function writeToFile(filename: string, data: any) {
-    fs.writeFileSync(filename, JSON.stringify(data, null, 2));
+    const jsonData = JSON.stringify(data, null, 2);
+    fs.writeFileSync(filename, jsonData);
 }
 
-function readAndParseMarkdown(filename: string, section: string, startsWith: string, fields: string[]) {
+function parseMarkdown(filename: string, section: string, startsWith: string, fields: string[]) {
     const markdown = fs.readFileSync(filename, 'utf-8');
     const lines = markdown.split('\n');
     let isCorrectSection = false;
     const pairs: any[] = [];
-    for (let i = 0; i < lines.length; i++) {
-        if (lines[i].startsWith('##')) {
-            isCorrectSection = lines[i].substring(3).trim() === section;
+
+    lines.forEach((line, i) => {
+        if (line.startsWith('##')) {
+            isCorrectSection = line.substring(3).trim() === section;
         }
-        if (isCorrectSection && lines[i].startsWith(startsWith)) {
-            const pair: any = {};
-            if (fields.length === 2 && startsWith === 'Q:') {
-                pair[fields[0]] = lines[i].substring(2).trim();
-                pair[fields[1]] = lines[i + 1].substring(2).trim();
-                i++;
-            } else {
-                const parts = lines[i].split('|').map((part) => part.trim());
-                fields.forEach((field, index) => {
-                    pair[field] = parts[index + 1];
-                });
-            }
+        if (isCorrectSection && line.startsWith(startsWith)) {
+            const pair = parseLine(line, lines[i + 1], fields, startsWith);
             pairs.push(pair);
         }
-    }
+    });
+
     return pairs;
 }
 
+function parseLine(line: string, nextLine: string, fields: string[], startsWith: string) {
+    const pair: any = {};
+    if (fields.length === 2 && startsWith === 'Q:') {
+        pair[fields[0]] = line.substring(2).trim();
+        pair[fields[1]] = nextLine.substring(2).trim();
+    } else {
+        const parts = line.split('|').map((part) => part.trim());
+        fields.forEach((field, index) => {
+            pair[field] = parts[index + 1];
+        });
+    }
+    return pair;
+}
+
 export async function embeddingDatasetCommand() {
-    const commandUsagePairs = readAndParseMarkdown('./src/data/dataset.md', 'Command', '| `', ['command', 'description', 'usage', 'type']);
+    const commandUsagePairs = parseMarkdown('./src/data/dataset.md', 'Command', '| `', ['command', 'description', 'usage', 'type']);
     const log = new Logger().title('Command').log(`Total data: ${commandUsagePairs.length}`)
     const now = Date.now();
     const embedding = await createEmbeddings(commandUsagePairs.map((commandUsagePair) => `${commandUsagePair.command} ${commandUsagePair.description} ${commandUsagePair.usage} ${commandUsagePair.type}`), 'text-embedding-ada-002');
@@ -55,7 +63,7 @@ export async function embeddingDatasetCommand() {
 }
 
 export async function embeddingDatasetQA() {
-    const questionAnswerPairs = readAndParseMarkdown('./src/data/dataset.md', 'Knowledge', 'Q:', ['question', 'answer']);
+    const questionAnswerPairs = parseMarkdown('./src/data/dataset.md', 'Knowledge', 'Q:', ['question', 'answer']);
     const log = new Logger().title('Question Answering').log(`Total data: ${questionAnswerPairs.length}`)
     const now = Date.now();
     const embedding = await createEmbeddings(questionAnswerPairs.map((questionAnswerPair) => `${questionAnswerPair.question} ${questionAnswerPair.answer}`), 'text-embedding-ada-002');
