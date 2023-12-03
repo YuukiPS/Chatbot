@@ -41,7 +41,6 @@ export enum Colors {
  * ```
  */
 class Logger {
-    private logHistory: any[] = [];
     private titleName: string = '';
     private colors: Colors | undefined = undefined;
 
@@ -61,7 +60,7 @@ class Logger {
      * @returns {Logger} The logger instance.
      */
     log(...message: any[]): Logger {
-        this.logHistory.push(...message);
+        process.stdout.write(this.chatbotFormat(...message));
         return this;
     }
 
@@ -73,7 +72,6 @@ class Logger {
      * @returns {Logger} The logger instance.
      */
     new(chatbotFormat?: boolean, ...message: any[]): Logger {
-        this.logHistory.push(...message);
         let log;
         if (chatbotFormat) {
             log = this.chatbotFormat(...message);
@@ -113,7 +111,6 @@ class Logger {
      * @returns {Logger} The logger instance.
      */
     continue(...message: any[]): Logger {
-        this.logHistory.push(...message);
         process.stdout.write(this.print(...message))
         return this;
     }
@@ -124,21 +121,9 @@ class Logger {
      * @param {number} newline The number of newlines to print.
      */
     end(newline?: number): void {
-        this.logHistory = [];
         process.stdout.write('\n'.repeat(newline || 1));
     }
 
-    /**
-     * Start the logger.
-     * 
-     * @returns {Logger} The logger instance.
-     */
-    start(): Logger {
-        const getLog = this.logHistory;
-        this.logHistory = [];
-        process.stdout.write(this.chatbotFormat(...getLog));
-        return this;
-    }
 }
 
 export default Logger;

@@ -106,13 +106,13 @@ async function responseAI(question: string) {
             timeout: 30000
         })
 
-        new Logger().title('Output').log(response).start().end()
+        new Logger().title('Output').log(response).end()
 
         const { finish_reason, message } = response.choices[0]
         const { tool_calls, content } = message
 
         if (content) {
-            new Logger().title('AI Answer').log(content).start().end()
+            new Logger().title('AI Answer').log(content).end()
             conversation.push({
                 content,
                 role: 'assistant'
@@ -120,7 +120,7 @@ async function responseAI(question: string) {
         }
 
         if (finish_reason === 'stop' || finish_reason === 'length') {
-            new Logger().title('Conversation').log('Total:', conversation.length).start().end()
+            new Logger().title('Conversation').log('Total:', conversation.length).end()
             stop = true;
         }
 
@@ -128,9 +128,9 @@ async function responseAI(question: string) {
             await Promise.all(tool_calls.map(async (tool_call) => {
                 const { name } = tool_call.function;
                 const args = JSON.parse(tool_call.function.arguments)
-                new Logger().title('Function Calling').log(args).start().end()
+                new Logger().title('Function Calling').log(args).end()
                 if (name === 'find_command') {
-                    const log = new Logger().title('Command').color(Colors.Yellow).log('Finding Command.').start()
+                    const log = new Logger().title('Command').color(Colors.Yellow).log('Finding Command.')
                     const now = Date.now()
                     const command = await findCommand(args.command, args.type)
                     log.continue(` Done in ${Date.now() - now}ms\n`, command).end()
@@ -146,7 +146,7 @@ async function responseAI(question: string) {
                         }
                     )
                 } else if (name === 'find_id') {
-                    const log = new Logger().title('ID').color(Colors.Yellow).log('Finding ID.').start()
+                    const log = new Logger().title('ID').color(Colors.Yellow).log('Finding ID.')
                     const now = Date.now()
                     const findId = GMHandbookUtility.find(args.find_id, args.category)
                     log.continue(` Done in ${Date.now() - now}ms\n`, findId).end()
@@ -162,7 +162,7 @@ async function responseAI(question: string) {
                         }
                     )
                 } else if (name === 'find_document') {
-                    const log = new Logger().title('Document').color(Colors.Yellow).log('Finding Document.').start()
+                    const log = new Logger().title('Document').color(Colors.Yellow).log('Finding Document.')
                     const now = Date.now()
                     const findDocument = await FindDocument.embedding(args.question, 'qa')
                     const removeEmbeddingData = findDocument.map((data) => ({
