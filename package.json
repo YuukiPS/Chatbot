@@ -5,8 +5,9 @@
   "main": "dist/src/index.js",
   "scripts": {
     "start": "node .",
+    "dev": "node -r sucrase/register src",
     "embed": "node dist/src/embed.js",
-    "build": "tsc && cp config.json dist/config.json",
+    "build": "tsc",
     "watch": "tsc -p . --watch"
   },
   "keywords": [],
@@ -23,16 +24,17 @@
   },
   "license": "MIT",
   "dependencies": {
-    "openai": "^4.20.1"
+    "openai": "^4.20.1",
+    "sucrase": "^3.34.0"
   },
   "devDependencies": {
-    "@types/node": "^20.10.2",
-    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@types/node": "^20.10.4",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
     "eslint": "^8.55.0",
-    "eslint-config-standard-with-typescript": "^40.0.0",
+    "eslint-config-standard-with-typescript": "^42.0.0",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-n": "^16.3.1",
     "eslint-plugin-promise": "^6.1.1",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.3"
   }
 }
