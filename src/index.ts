@@ -33,7 +33,7 @@ async function responseAI(question: string) {
         const response = await client.chat.completions.create({
             messages: [
                 {
-                    content: 'You are a helpful AI designed to assist users with issues related to the YuukiPS Private Server GC (Grasscutter) and GIO (Genshin Impact Offline/Official). To provide the most accurate and helpful responses, you should retrieve information directly from the document using function calls.',
+                    content: 'You are a helpful AI designed to assist users with issues related to the YuukiPS Private Server GC (Grasscutter), GIO (Genshin Impact Offline/Official), and LC (LunarCore or Honkai: Star Rail/HSR). To provide the most accurate and helpful responses, you should retrieve information directly from the document using function calls.',
                     role: 'system'
                 },
                 ...conversation
@@ -56,7 +56,7 @@ async function responseAI(question: string) {
                                 },
                                 type: {
                                     type: 'string',
-                                    description: 'The type of command to search for. This is optional. Example: gc or gio'
+                                    description: 'The type of command to search for. This is optional. Example: gc, gio, or lc'
                                 }
                             },
                             required: ['command']
