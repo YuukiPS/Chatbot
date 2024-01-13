@@ -201,9 +201,11 @@ async function main() {
             'quit',
             'bye',
         ]
-        if (exit.includes(question.toLowerCase())) {
-            rl.close()
-            process.exit(0)
+        for (const e of exit) {
+            if (question.toLowerCase() === e) {
+                rl.close()
+                process.exit(0)
+            }
         }
         await responseAI(question)
         await main()
