@@ -115,7 +115,7 @@ Q: Can you send me list of command GIO?\
 A: You can see list of command in [doc.yuuki.me](https://doc.yuuki.me/docs/commands/gio)
 
 Q: How can I custom artifact in GIO?\
-A: You can't to custom artifact in GIO. You can only custom artifact in GC.
+You can customize artifact stats in GIO using the same command as in GC (Grasscutter).
 
 Q: How can I change banner?\
 A: There is no way to change banner in Public server, but you can change banner in Localhost.
@@ -175,13 +175,13 @@ Q: I have a full team, but it's asking me to equip Amber and I can't do anything
 A: Create a new account and don't add any characters before starting the Amber quest.
 
 Q: Should I play on GC instead of GIO? Which one is better?\
-A: It depends on your preferences. If you want to play quests and access other functionalities, you can play on `GIO`. If you want to customize artifacts, stats, and more, you should play on `GC`.
+A: It depends on your preferences. If you want to play quests and access other functionalities, you can play on `GIO`. If you want to sandbox, test weapons, explore, or use 4.0 characters, you should play on `GC`.
 
 Q: How to automatically build all characters?\
 A: There is no single command to build all characters. You will have to send a list of commands with the items you want from [ps.yuuki.me](https://ps.yuuki.me/command) for easiest method. On GC, you can use `/enka <uid>` to copy a public showcase.
 
 Q: Where are Genshin ids?\
-A: All ids can be found in the [GM Handbook](https://doc.yuuki.me/GMHandbook).
+A: All ids can be found in the [GM Handbook](https://gm.elaxan.com).
 
 Q: What do I download to play Genshin private server?\
 A: You first need the full game data (PC) or mod launcher (Android) for either version 3.2 or 4.0 from [ps.yuuki.me](https://ps.yuuki.me/game/genshin-impact). For PC, you then need to download a proxy such as [YuukiPS Launcher](https://doc.yuuki.me/docs/tutorial-connect/pc/yuukips-launcher) or [Cultivation](https://doc.yuuki.me/docs/tutorial-connect/pc/cultivation). These links and other options are available on the same page as the download links.
@@ -286,7 +286,7 @@ Q: I got error `cant find gm` when trying to use command\
 A: If you get this error, mean the command is not found or not available for `GC` or `GIO`. You can check command list for `GC` [here](https://doc.yuuki.me/docs/commands/gc) and for `GIO` [here](https://doc.yuuki.me/docs/commands/gio)
 
 Q: How to get ID for character, weapon, artifact, and item?\
-A: You can check [here](https://doc.yuuki.me/GMHandbook) to get ID for character, weapon, artifact, and item
+A: You can check [here](https://gm.elaxan.com) to get ID for character, weapon, artifact, and item
 
 Q: I have issue downloading data game.\
 A: It may your internet issue or the server itself too busy. You can try with VPN to download the data game, if it's still not working, you can try to download it again later
@@ -394,7 +394,7 @@ Q: I tried to download the 4.0 Android one and it logs me in but for some reason
 A: Please for your own sake read the common information channels first. Here are the links to the channels: [discord.com/channels/964119462188040202/1049101257933066322/1082622560937713744](https://discord.com/channels/964119462188040202/1049101257933066322/1082622560937713744) and [discord.com/channels/964119462188040202/970380775264518244/1144073951002251296](https://discord.com/channels/964119462188040202/970380775264518244/1144073951002251296)
 
 Q: How do you get weapons Artifacts in GIO?\
-A: You can obtain weapons and artifacts by using the WebCommand with your account UID and password, entering custom commands in the 'Raw Command' field, and following the guide provided at https://doc.yuuki.me/docs/commands/gio. You can find the item/character IDs at https://doc.yuuki.me/GMHandbook. It's important to note that some commands may return errors, and adding characters before Amber's initial quest is not advised in order to avoid potential account issues.
+A: You can obtain weapons and artifacts by using the WebCommand with your account UID and password, entering custom commands in the 'Raw Command' field, and following the guide provided at https://doc.yuuki.me/docs/commands/gio. You can find the item/character IDs at https://gm.elaxan.com. It's important to note that some commands may return errors, and adding characters before Amber's initial quest is not advised in order to avoid potential account issues.
 
 Q: Does anyone have a mod for Free Camera Genshin Impact 4.0 in Android?\
 A: Mods are unsupported in the mobile version of Genshin Impact, only in the PC Desktop/Windows version. You can explore the use of MelonLoader for mods and find potential resources on platforms like GameBanana and GitHub.
@@ -488,3 +488,12 @@ A: Probably because you looked up the set name which isn't the item. Remember th
 
 Q: How can i turn off raiden puppet effects?\
 A: Try using command `/at off`
+
+Q: How to play story in HSR?\
+A: Currently you can't play story in HSR
+
+Q: Where I can find HSR or LC (LunarCore) command list?\
+A: You can check on this [website](https://doc.yuuki.me/docs/commands/lc)
+
+Q: Why I can't play simulated universe in HSR?\
+A: As of January 13, 2024, you can't play the simulated universe in HSR due to the 1.6 update. It will be fixed when it is fixed and not a single moment sooner. If you decide to put in some work, you can go fix it in the source and make a PR. If you're not willing to do so, you can visit [LunarCore](https://github.com/Melledy/LunarCore).
