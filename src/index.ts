@@ -95,8 +95,8 @@ Here are examples of 'response' for 'docs', 'command', and 'id':
             }
         ],
         generationConfig: {
-            maxOutputTokens: 1000,
-            temperature: 0.5
+            maxOutputTokens: parseInt(process.env.maxTokens as string),
+            temperature: parseInt(process.env.temperature as string)
         }
     });
     const send = await start.sendMessage(question)
@@ -307,7 +307,6 @@ async function main() {
             }
             let stop = false
             while (!stop) {
-                console.log(questions)
                 try {
                     const text = await responseGoogle(questions.parts as string);
                     console.log(text)
