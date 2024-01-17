@@ -9,6 +9,8 @@ import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory, InputContent } fr
 
 dotenv.config()
 
+export const typeOfAI = (process.env.API as string).startsWith('sk-') ? 'OpenAI' : 'Gemini'
+
 interface Response {
     type: 'command' | 'text' | 'docs' | 'id';
     response: string;

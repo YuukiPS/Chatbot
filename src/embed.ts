@@ -8,6 +8,8 @@ dotenv.config()
 
 const gemini = new GoogleGenerativeAI(process.env.API as string);
 
+const typeOfAI = (process.env.API as string).startsWith('sk-') ? 'OpenAI' : 'Gemini'
+
 async function createEmbeddings(input: string[], model: string): Promise<number[][]> {
     if (process.env.MODEL_EMBEDDING !== 'embedding-001') {
         const response = await client.embeddings.create({
@@ -91,7 +93,7 @@ export async function embeddingDatasetCommand() {
         embedding: embedding[index]
     }));
     const time = Date.now() - now;
-    writeToFile('./src/data/embeddingCommand.json', structure);
+    writeToFile(`./src/data/embeddingCommand-${typeOfAI}.json`, structure);
     log.continue(` in ${time}ms`).end();
 }
 
@@ -105,7 +107,7 @@ export async function embeddingDatasetQA() {
         embedding: embedding[index]
     }));
     const time = Date.now() - now;
-    writeToFile('./src/data/embeddingQA.json', structure);
+    writeToFile(`./src/data/embeddingQA-${typeOfAI}.json`, structure);
     log.continue(` in ${time}ms`).end();
 }
 

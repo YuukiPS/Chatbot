@@ -2,6 +2,7 @@ import fs from 'fs';
 import {client} from '../config/openai';
 import dotenv from 'dotenv';
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { typeOfAI } from '..';
 
 dotenv.config();
 
@@ -44,9 +45,9 @@ class FindDocument {
         const pathDataset = () => {
             switch (type) {
                 case 'qa':
-                    return './src/data/embeddingQA.json';
+                    return `./src/data/embeddingQA-${typeOfAI}.json`;
                 case 'command':
-                    return './src/data/embeddingCommand.json';
+                    return `./src/data/embeddingCommand-${typeOfAI}.json`;
             }
         };
 
