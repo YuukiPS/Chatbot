@@ -10,7 +10,7 @@ import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory, InputContent } fr
 dotenv.config()
 
 interface Response {
-    type: 'command' | 'text' | 'docs';
+    type: 'command' | 'text' | 'docs' | 'id';
     response: string;
 }
 
@@ -38,18 +38,19 @@ async function responseGoogle(question: string) {
         model: 'gemini-pro'
     });
 
-    const prompt = `Your job is to assist users with issues related to YuukiPS Private Server for GIO (Genshin Impact Offline), GC (Grasscutter), and LC/HSR (LunarCore/Honkai: Star Rail).
+    const prompt = `You are a helpful AI designed to assist users with issues related to the YuukiPS Private Server GC (Grasscutter), GIO (Genshin Impact Offline/Official), and LC (LunarCore or Honkai: Star Rail/HSR). To provide the most accurate and helpful responses, you should retrieve information directly from the document using JSON Body
 Always respond with a JSON body in the following format: { "type": "text", "response": "your response here" }.
 Use the following types: text, docs, command, id.
 For user responses, use type 'text'. For searching answers about YuukiPS, use 'docs', 'command', and 'id'.
 Never provide an answer about YuukiPS without first searching from docs, command, or id type.
 The 'response' for 'text' is your answer, 'docs' is for searching answers from documents, 'command' is for searching a command related to YuukiPS, and 'id' is for searching ID for avatars, monsters, quests, or other, and it should be for name only.
-Here are examples of 'response' for 'docs', 'command', and 'id':
-'docs': 'Spawn monster'
-'command': 'Heal GC'
-'id': 'Avatar name'`;
+Here are examples of 'response' for 'docs', 'command', 'text', and 'id':
+'docs': 'Get answer related question to YuukiPS not for searching ID nor command'
+'command': 'Query to find the command for YuukiPS not for searching ID nor docs'
+'id': 'Avatar name not ID, example: Kamisato Ayaka'
+'text': '<your answer>'`;
 
-    const log = new Logger().title('Gemini').color(Colors.Green);
+    const log = new Logger().title('Gemini-token').color(Colors.Green);
 
     log.log('Prompt token:', (await model.countTokens(prompt)).totalTokens).end();
 
@@ -223,7 +224,7 @@ async function responseOpenAI(question: string) {
                 if (name === 'find_command') {
                     const log = new Logger().title('Command').color(Colors.Yellow).log('Finding Command.')
                     const now = Date.now()
-                    const command = await findCommand(args.command, args.type)
+                    const command = await findCommand(args.command)
                     log.continue(` Done in ${Date.now() - now}ms\n`, command).end();
                     (conversation as ChatCompletionMessageParam[]).push(
                         {
@@ -305,26 +306,40 @@ async function main() {
                 parts: question,
                 role: 'user'
             }
+            const log = new Logger().title('Gemini').color(Colors.Green);
             let stop = false
             while (!stop) {
                 try {
                     const text = await responseGoogle(questions.parts as string);
-                    console.log(text)
+                    log.title('Gemini-response').log(text).end()
                     const response: Response = JSON.parse(text)
         
                     if (response.type === 'text') {
-                        console.log(response.response);
+                        log.title('Gemini-answer').log(response.response).end();
                         stop = true
                     } else if (response.type === 'docs') {
-                        const searchDocs = await FindDocument.embedding(response.response, 'qa');
+                        const searchDocs = await FindDocument.embedding(response.response, 'qa').then((data) => data.map((embedQa) => ({
+                            question: embedQa.data.question,
+                            answer: embedQa.data.answer,
+                            similarity: embedQa.score
+                        })));
+                        log.title('Gemini-docs').log(searchDocs).end()
                         questions = {
                             parts: `${JSON.stringify(searchDocs)}`,
                             role: 'user'
                         }
                     } else if (response.type === 'command') {
                         const searchCommand = await findCommand(response.response);
+                        log.title('Gemini-command').log(searchCommand).end()
                         questions = {
                             parts: `${JSON.stringify(searchCommand)}`,
+                            role: 'user'
+                        }
+                    } else if (response.type === 'id') {
+                        const searchID = GMHandbookUtility.find(response.response);
+                        log.title('Gemini-id').log(searchID).end()
+                        questions = {
+                            parts: `${JSON.stringify(searchID.slice(0,5))}`,
                             role: 'user'
                         }
                     }
