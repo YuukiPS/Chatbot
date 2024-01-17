@@ -1,13 +1,46 @@
 import fs from 'fs';
 import { client } from './config/openai';
+import { EmbedContentRequest, GoogleGenerativeAI } from '@google/generative-ai'
 import Logger from './Utils/log';
+import dotenv from 'dotenv';
 
-async function createEmbeddings(input: string[], model: string) {
-    const response = await client.embeddings.create({
-        input,
-        model
-    });
-    return response.data.map((data) => data.embedding);
+dotenv.config()
+
+const gemini = new GoogleGenerativeAI(process.env.API as string);
+
+async function createEmbeddings(input: string[], model: string): Promise<number[][]> {
+    if (process.env.MODEL_EMBEDDING !== 'embedding-001') {
+        const response = await client.embeddings.create({
+            input,
+            model
+        });
+        return response.data.map((data) => data.embedding);
+    } else {
+        const gem = gemini.getGenerativeModel({ model });
+        const batchSize = 100;
+        const batches: string[][] = [];
+        for (let i = 0; i < input.length; i += batchSize) {
+            batches.push(input.slice(i, i + batchSize));
+        }
+        const embeddings: number[][] = [];
+        for (const batch of batches) {
+            const requests: EmbedContentRequest[] = batch.map((content) => {
+                return {
+                    content: {
+                        parts: [
+                            {
+                                text: content
+                            }
+                        ],
+                        role: 'user'
+                    }
+                }
+            });
+            const response = await gem.batchEmbedContents({ requests });
+            embeddings.push(...response.embeddings.map((data) => data.values));
+        }
+        return embeddings;
+    }
 }
 
 function writeToFile(filename: string, data: any) {
@@ -52,10 +85,10 @@ export async function embeddingDatasetCommand() {
     const commandUsagePairs = parseMarkdown('./src/data/dataset.md', 'Command', '| `', ['command', 'description', 'usage', 'type']);
     const log = new Logger().title('Command').log(`Total data: ${commandUsagePairs.length}`)
     const now = Date.now();
-    const embedding = await createEmbeddings(commandUsagePairs.map((commandUsagePair) => `${commandUsagePair.command} ${commandUsagePair.description} ${commandUsagePair.usage} ${commandUsagePair.type}`), 'text-embedding-ada-002');
+    const embedding = await createEmbeddings(commandUsagePairs.map((commandUsagePair) => `${commandUsagePair.command} ${commandUsagePair.description} ${commandUsagePair.usage} ${commandUsagePair.type}`), process.env.MODEL_EMBEDDING as string);
     const structure = commandUsagePairs.map((commandUsagePair, index) => ({
         ...commandUsagePair,
-        embedding: embedding[index]
+        embedding: [embedding[index]]
     }));
     const time = Date.now() - now;
     writeToFile('./src/data/embeddingCommand.json', structure);
@@ -66,10 +99,10 @@ export async function embeddingDatasetQA() {
     const questionAnswerPairs = parseMarkdown('./src/data/dataset.md', 'Knowledge', 'Q:', ['question', 'answer']);
     const log = new Logger().title('Question Answering').log(`Total data: ${questionAnswerPairs.length}`)
     const now = Date.now();
-    const embedding = await createEmbeddings(questionAnswerPairs.map((questionAnswerPair) => `${questionAnswerPair.question} ${questionAnswerPair.answer}`), 'text-embedding-ada-002');
+    const embedding = await createEmbeddings(questionAnswerPairs.map((questionAnswerPair) => `${questionAnswerPair.question} ${questionAnswerPair.answer}`), process.env.MODEL_EMBEDDING as string)
     const structure = questionAnswerPairs.map((questionAnswerPair, index) => ({
         ...questionAnswerPair,
-        embedding: embedding[index]
+        embedding: [embedding[index]]
     }));
     const time = Date.now() - now;
     writeToFile('./src/data/embeddingQA.json', structure);

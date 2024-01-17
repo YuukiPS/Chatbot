@@ -1,10 +1,18 @@
-import OpenAI from "openai";
 import { client } from "./config/openai";
 import FindDocument from './Utils/findDocument'
-import { OPENAI } from '../config.json'
 import GMHandbookUtility from "./Utils/GMHandbook";
 import readline from 'readline';
 import Logger, { Colors } from "./Utils/log";
+import dotenv from 'dotenv';
+import { ChatCompletionCreateParamsBase, ChatCompletionMessageParam } from "openai/resources/chat/completions";
+import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory, InputContent } from "@google/generative-ai";
+
+dotenv.config()
+
+interface Response {
+    type: 'command' | 'text' | 'docs';
+    response: string;
+}
 
 const findCommand = async (command: string, type?: 'gc' | 'gio') => {
     const commandList = await FindDocument.embedding(command, 'command')
@@ -21,11 +29,94 @@ const findCommand = async (command: string, type?: 'gc' | 'gio') => {
     }));
 }
 
-const conversation: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = []
+const genAI = new GoogleGenerativeAI(process.env.API as string);
 
-async function responseAI(question: string) {
+const conversation: (ChatCompletionMessageParam | InputContent)[] = []
+
+async function responseGoogle(question: string) {
+    const model = genAI.getGenerativeModel({
+        model: 'gemini-pro'
+    });
+
+    const prompt = `Your job is to assist users with issues related to YuukiPS Private Server for GIO (Genshin Impact Offline), GC (Grasscutter), and LC/HSR (LunarCore/Honkai: Star Rail).
+Always respond with a JSON body in the following format: { "type": "text", "response": "your response here" }.
+Use the following types: text, docs, command, id.
+For user responses, use type 'text'. For searching answers about YuukiPS, use 'docs', 'command', and 'id'.
+Never provide an answer about YuukiPS without first searching from docs, command, or id type.
+The 'response' for 'text' is your answer, 'docs' is for searching answers from documents, 'command' is for searching a command related to YuukiPS, and 'id' is for searching ID for avatars, monsters, quests, or other, and it should be for name only.
+Here are examples of 'response' for 'docs', 'command', and 'id':
+'docs': 'Spawn monster'
+'command': 'Heal GC'
+'id': 'Avatar name'`;
+
+    const log = new Logger().title('Gemini').color(Colors.Green);
+
+    log.log('Prompt token:', (await model.countTokens(prompt)).totalTokens).end();
+
+    // to avoid error
+    if (conversation[conversation.length - 1]?.role === 'user') {
+        (conversation as InputContent[]).push({
+            role: 'model',
+            parts: 'Now start your response.'
+        })
+    }
+    const start = model.startChat({
+        history: [
+            {
+                role: 'user',
+                parts: prompt.trim()
+            },
+            {
+                role: 'model',
+                parts: 'Now start your response.'
+            },
+            ...conversation as InputContent[]
+        ],
+        safetySettings: [
+            {
+                category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+                threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH
+            },
+            {
+                category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+                threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH
+            },
+            {
+                category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+                threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH
+            },
+            {
+                category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+                threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH
+            },
+            {
+                category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+                threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH
+            }
+        ],
+        generationConfig: {
+            maxOutputTokens: 1000,
+            temperature: 0.5
+        }
+    });
+    const send = await start.sendMessage(question)
+    const response = send.response.text();
+    (conversation as InputContent[]).push(
+        {
+            parts: question,
+            role: 'user'
+        },
+        {
+            parts: response,
+            role: 'model'
+        }
+    )
+    return response
+}
+
+async function responseOpenAI(question: string) {
     let stop = false;
-    conversation.push({
+    (conversation as ChatCompletionMessageParam[]).push({
         content: question,
         role: 'user'
     })
@@ -36,11 +127,11 @@ async function responseAI(question: string) {
                     content: 'You are a helpful AI designed to assist users with issues related to the YuukiPS Private Server GC (Grasscutter), GIO (Genshin Impact Offline/Official), and LC (LunarCore or Honkai: Star Rail/HSR). To provide the most accurate and helpful responses, you should retrieve information directly from the document using function calls.',
                     role: 'system'
                 },
-                ...conversation
+                ...conversation as ChatCompletionMessageParam[]
             ],
-            model: OPENAI.MODEL,
-            temperature: OPENAI.temperature,
-            max_tokens: OPENAI.maxTokens,
+            model: process.env.MODEL as ChatCompletionCreateParamsBase['model'],
+            temperature: parseInt(process.env.temperature as string),
+            max_tokens: parseInt(process.env.maxTokens as string),
             tools: [
                 {
                     type: 'function',
@@ -112,8 +203,8 @@ async function responseAI(question: string) {
         const { tool_calls, content } = message
 
         if (content) {
-            new Logger().title('AI Answer').log(content).end()
-            conversation.push({
+            new Logger().title('AI Answer').log(content).end();
+            (conversation as ChatCompletionMessageParam[]).push({
                 content,
                 role: 'assistant'
             })
@@ -133,8 +224,8 @@ async function responseAI(question: string) {
                     const log = new Logger().title('Command').color(Colors.Yellow).log('Finding Command.')
                     const now = Date.now()
                     const command = await findCommand(args.command, args.type)
-                    log.continue(` Done in ${Date.now() - now}ms\n`, command).end()
-                    conversation.push(
+                    log.continue(` Done in ${Date.now() - now}ms\n`, command).end();
+                    (conversation as ChatCompletionMessageParam[]).push(
                         {
                             role: 'function',
                             name,
@@ -149,8 +240,8 @@ async function responseAI(question: string) {
                     const log = new Logger().title('ID').color(Colors.Yellow).log('Finding ID.')
                     const now = Date.now()
                     const findId = GMHandbookUtility.find(args.find_id, args.category)
-                    log.continue(` Done in ${Date.now() - now}ms\n`, findId).end()
-                    conversation.push(
+                    log.continue(` Done in ${Date.now() - now}ms\n`, findId).end();
+                    (conversation as ChatCompletionMessageParam[]).push(
                         {
                             role: 'function',
                             name,
@@ -170,8 +261,8 @@ async function responseAI(question: string) {
                         answer: data.data.answer,
                         similarity: data.score
                     }))
-                    log.continue(` Done in ${Date.now() - now}ms\n`, removeEmbeddingData).end()
-                    conversation.push(
+                    log.continue(` Done in ${Date.now() - now}ms\n`, removeEmbeddingData).end();
+                    (conversation as ChatCompletionMessageParam[]).push(
                         {
                             role: 'function',
                             name,
@@ -207,7 +298,49 @@ async function main() {
                 process.exit(0)
             }
         }
-        await responseAI(question)
+        if (!process.env.MODEL?.startsWith('gemini')) {
+            await responseOpenAI(question)
+        } else {
+            let questions: InputContent = {
+                parts: question,
+                role: 'user'
+            }
+            let stop = false
+            while (!stop) {
+                console.log(questions)
+                try {
+                    const text = await responseGoogle(questions.parts as string);
+                    console.log(text)
+                    const response: Response = JSON.parse(text)
+        
+                    if (response.type === 'text') {
+                        console.log(response.response);
+                        stop = true
+                    } else if (response.type === 'docs') {
+                        const searchDocs = await FindDocument.embedding(response.response, 'qa');
+                        questions = {
+                            parts: `${JSON.stringify(searchDocs)}`,
+                            role: 'user'
+                        }
+                    } else if (response.type === 'command') {
+                        const searchCommand = await findCommand(response.response);
+                        questions = {
+                            parts: `${JSON.stringify(searchCommand)}`,
+                            role: 'user'
+                        }
+                    }
+                } catch (error) {
+                    if (error instanceof SyntaxError) {
+                        questions = {
+                            parts: 'Please provide a valid JSON response.',
+                            role: 'user'
+                        }
+                    } else {
+                        throw error
+                    }
+                }
+            }
+        }
         await main()
     })
 }

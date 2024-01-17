@@ -1,5 +1,9 @@
 import fs from 'fs';
 import {client} from '../config/openai';
+import dotenv from 'dotenv';
+import { GoogleGenerativeAI } from '@google/generative-ai';
+
+dotenv.config();
 
 interface EmbeddingCommand {
     command: string
@@ -22,10 +26,20 @@ class FindDocument {
     public static async embedding(query: string | string[], type: 'qa'): Promise<{ data: EmbeddingQA, score: number }[]>;
     public static async embedding(query: string | string[], type: 'command'): Promise<{ data: EmbeddingCommand, score: number }[]>;
     public static async embedding(query: string | string[], type: 'qa' | 'command'): Promise<{ data: EmbeddingQA | EmbeddingCommand, score: number }[]> {
-        const embedding = await client.embeddings.create({
-            input: query,
-            model: 'text-embedding-ada-002'
-        }).then((response) => response.data[0].embedding);
+        let embedding: number[];
+
+        if (process.env.MODEL_EMBEDDING !== 'embedding-001') {
+            embedding = await client.embeddings.create({
+                input: query,
+                model: process.env.MODEL_EMBEDDING as string
+            }).then((response) => response.data[0].embedding);
+        } else {
+            const gemini = new GoogleGenerativeAI(process.env.API as string);
+            const gem = gemini.getGenerativeModel({
+                model: process.env.MODEL_EMBEDDING
+            });
+            embedding = await gem.embedContent(query).then((response) => response.embedding.values);
+        }
 
         const pathDataset = () => {
             switch (type) {
