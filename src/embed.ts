@@ -88,7 +88,7 @@ export async function embeddingDatasetCommand() {
     const embedding = await createEmbeddings(commandUsagePairs.map((commandUsagePair) => `${commandUsagePair.command} ${commandUsagePair.description} ${commandUsagePair.usage} ${commandUsagePair.type}`), process.env.MODEL_EMBEDDING as string);
     const structure = commandUsagePairs.map((commandUsagePair, index) => ({
         ...commandUsagePair,
-        embedding: [embedding[index]]
+        embedding: embedding[index]
     }));
     const time = Date.now() - now;
     writeToFile('./src/data/embeddingCommand.json', structure);
@@ -102,7 +102,7 @@ export async function embeddingDatasetQA() {
     const embedding = await createEmbeddings(questionAnswerPairs.map((questionAnswerPair) => `${questionAnswerPair.question} ${questionAnswerPair.answer}`), process.env.MODEL_EMBEDDING as string)
     const structure = questionAnswerPairs.map((questionAnswerPair, index) => ({
         ...questionAnswerPair,
-        embedding: [embedding[index]]
+        embedding: embedding[index]
     }));
     const time = Date.now() - now;
     writeToFile('./src/data/embeddingQA.json', structure);
