@@ -224,7 +224,7 @@ async function responseOpenAI(question: string) {
                 if (name === 'find_command') {
                     const log = new Logger().title('Command').color(Colors.Yellow).log('Finding Command.')
                     const now = Date.now()
-                    const command = await findCommand(args.command)
+                    const command = await findCommand(args.command, args.type)
                     log.continue(` Done in ${Date.now() - now}ms\n`, command).end();
                     (conversation as ChatCompletionMessageParam[]).push(
                         {
