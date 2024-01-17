@@ -12,7 +12,7 @@ First compile TypeScript to JavaScript:
 npm run build
 ```
 
-Before you run the chatbot, you need to set the OpenAI or Gemini API key in `.env` file. You can get the API key from [here](https://platform.openai.com/account/api-keys) or [here](https://ai.google.dev/models/gemini).
+Before you run the chatbot, you need to set the OpenAI or Gemini API key in `.env` file. You can get the API key from [here](https://platform.openai.com/account/api-keys) or [here](https://makersuite.google.com/app/apikey).
 
 And embed the dataset using command:
 
