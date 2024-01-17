@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist",
     "dev": "node -r sucrase/register src",
-    "embed": "node dist/src/embed.js",
+    "embed": "node dist/embed.js",
     "dev:embed": "node -r sucrase/register src/embed.ts",
     "build": "tsc",
     "watch": "tsc -p . --watch"
