@@ -1,27 +1,20 @@
 # Chatbot
 
-A chatbot that can be used to answer questions about the YuukiPS Private Server. It is built using the [OpenAI API](https://openai.com/blog/openai-api) or [Gemini](https://ai.google.dev/).
+## Description
 
-Dataset can be found in [here](./src/data/dataset.md).
+This project is a chatbot powered by AI models such as OpenAI and Google Generative AI. It is designed to assist users with issues related to the YuukiPS Private Server GC, GIO, and LC.
 
-## Run
+## Installation
 
-First compile TypeScript to JavaScript:
+1. Clone the repository.
+2. Install dependencies using `yarn`.
+3. Create a `.env` file by copying from `.env.example` and fill in the necessary environment variables.
 
-```bash
-npm run build
-```
+## Usage
 
-Before you run the chatbot, you need to set the OpenAI or Gemini API key in `.env` file. You can get the API key from [here](https://platform.openai.com/account/api-keys) or [here](https://makersuite.google.com/app/apikey).
+- Build the project by using `yarn build` command.
+- Run the project using `yarn start`.
 
-And embed the dataset using command:
+## License
 
-```bash
-npm run embed
-```
-
-Then you can run the chatbot using command:
-
-```bash
-npm run start
-```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
