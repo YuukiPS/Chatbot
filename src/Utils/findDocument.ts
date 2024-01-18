@@ -29,7 +29,7 @@ class FindDocument {
     public static async embedding(query: string | string[], type: 'qa' | 'command'): Promise<{ data: EmbeddingQA | EmbeddingCommand, score: number }[]> {
         let embedding: number[];
 
-        if (process.env.MODEL_EMBEDDING !== 'embedding-001') {
+        if (typeOfAI === 'OpenAI') {
             embedding = await client.embeddings.create({
                 input: query,
                 model: process.env.MODEL_EMBEDDING as string
@@ -37,7 +37,7 @@ class FindDocument {
         } else {
             const gemini = new GoogleGenerativeAI(process.env.API as string);
             const gem = gemini.getGenerativeModel({
-                model: process.env.MODEL_EMBEDDING
+                model: process.env.MODEL_EMBEDDING as string
             });
             embedding = await gem.embedContent(query).then((response) => response.embedding.values);
         }

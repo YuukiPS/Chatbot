@@ -113,7 +113,7 @@ Here are examples of 'response' for 'docs', 'command', 'text', and 'id':
             parts: response,
             role: 'model'
         }
-    )
+    );
     return response
 }
 
@@ -301,9 +301,9 @@ async function main() {
                 process.exit(0)
             }
         }
-        if (!process.env.MODEL?.startsWith('gemini')) {
+        if (typeOfAI === 'OpenAI') {
             await responseOpenAI(question)
-        } else {
+        } else if (typeOfAI === 'Gemini') {
             let questions: InputContent = {
                 parts: question,
                 role: 'user'

@@ -11,7 +11,7 @@ const gemini = new GoogleGenerativeAI(process.env.API as string);
 const typeOfAI = (process.env.API as string).startsWith('sk-') ? 'OpenAI' : 'Gemini'
 
 async function createEmbeddings(input: string[], model: string): Promise<number[][]> {
-    if (process.env.MODEL_EMBEDDING !== 'embedding-001') {
+    if (typeOfAI === 'OpenAI') {
         const response = await client.embeddings.create({
             input,
             model
