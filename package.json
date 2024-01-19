@@ -1,44 +1,45 @@
 {
-  "name": "chatbot",
-  "version": "2.0.0",
-  "description": "",
-  "main": "dist/src/index.js",
-  "scripts": {
-    "start": "node dist",
-    "dev": "node -r sucrase/register src",
-    "embed": "node dist/embed.js",
-    "dev:embed": "node -r sucrase/register src/embed.ts",
-    "build": "tsc",
-    "watch": "tsc -p . --watch"
-  },
-  "keywords": [],
-  "author": {
-    "name": "ElaXan",
-    "email": "zero@elaxan.com",
-    "url": "https://elaxan.com"
-  },
-  "contributors": [],
-  "homepage": "https://github.com/YuukiPS/Chatbot#readme",
-  "bugs": {
-    "url": "https://github.com/YuukiPS/Chatbot/issues",
-    "email": "zero@elaxan.com"
-  },
-  "license": "MIT",
-  "dependencies": {
-    "axios": "^1.6.5",
-    "dotenv": "^16.3.1",
-    "openai": "^4.24.7"
-  },
-  "devDependencies": {
-    "@types/node": "^20.11.0",
-    "@typescript-eslint/eslint-plugin": "^6.19.0",
-    "eslint": "^8.56.0",
-    "eslint-config-standard-with-typescript": "^43.0.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-n": "^16.6.2",
-    "eslint-plugin-promise": "^6.1.1",
-    "prettier": "^3.2.4",
-    "sucrase": "^3.35.0",
-    "typescript": "^5.3.3"
-  }
+    "name": "chatbot",
+    "version": "2.0.0",
+    "description": "",
+    "main": "dist/src/index.js",
+    "scripts": {
+        "start": "node dist",
+        "dev": "node -r sucrase/register src",
+        "embed": "node dist/embed.js",
+        "dev:embed": "node -r sucrase/register src/embed.ts",
+        "build": "tsc",
+        "watch": "tsc -p . --watch"
+    },
+    "keywords": [],
+    "author": {
+        "name": "ElaXan",
+        "email": "zero@elaxan.com",
+        "url": "https://elaxan.com"
+    },
+    "contributors": [],
+    "homepage": "https://github.com/YuukiPS/Chatbot#readme",
+    "bugs": {
+        "url": "https://github.com/YuukiPS/Chatbot/issues",
+        "email": "zero@elaxan.com"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "@google/generative-ai": "^0.1.3",
+        "axios": "^1.6.5",
+        "dotenv": "^16.3.1",
+        "openai": "^4.24.7"
+    },
+    "devDependencies": {
+        "@types/node": "^20.11.0",
+        "@typescript-eslint/eslint-plugin": "^6.19.0",
+        "eslint": "^8.56.0",
+        "eslint-config-standard-with-typescript": "^43.0.0",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-n": "^16.6.2",
+        "eslint-plugin-promise": "^6.1.1",
+        "prettier": "^3.2.4",
+        "sucrase": "^3.35.0",
+        "typescript": "^5.3.3"
+    }
 }
