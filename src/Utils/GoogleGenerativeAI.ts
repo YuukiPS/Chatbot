@@ -150,8 +150,7 @@ export default class GoogleGenerativeAI {
             return sendRequest.data as GeminiResponse;
         } catch (error) {
             if (error instanceof AxiosError) {
-                console.error(`${error.response ? error.response.data.error.message : 'Unknown error'}`);
-                return undefined;
+                throw new Error(`${error.response ? error.response.data.error.message : 'Unknown error'}`);
             } else {
                 throw error;
             }
