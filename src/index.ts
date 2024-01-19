@@ -72,6 +72,22 @@ async function responseGoogle(question: string) {
                 category: HarmCategory.SexuallyExplicit,
                 threshold: HarmBlockThreshold.OnlyHigh,
             },
+            {
+                category: HarmCategory.Degoratory,
+                threshold: HarmBlockThreshold.OnlyHigh,
+            },
+            {
+                category: HarmCategory.Sexual,
+                threshold: HarmBlockThreshold.OnlyHigh
+            },
+            {
+                category: HarmCategory.Toxicity,
+                threshold: HarmBlockThreshold.OnlyHigh
+            },
+            {
+                category: HarmCategory.Violence,
+                threshold: HarmBlockThreshold.OnlyHigh
+            }
         ],
         tools: [
             {
