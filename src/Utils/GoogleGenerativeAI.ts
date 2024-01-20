@@ -58,20 +58,6 @@ export interface Content {
 export interface SafetySetting { }
 
 export enum HarmCategory {
-    /** Category is unspecified. */
-    'Unspecified' = 'HARM_CATEGORY_UNSPECIFIED',
-    /** Negative or harmful comments targeting identity and/or protected attribute. */
-    'Degoratory' = 'HARM_CATEGORY_DEROGATORY',
-    /** Content that is rude, disrespectful, or profane. */
-    'Toxicity' = 'HARM_CATEGORY_TOXICITY',
-    /** Describes scenarios depicting violence against an individual or group, or general descriptions of gore. */
-    'Violence' = 'HARM_CATEGORY_VIOLENCE',
-    /** Contains references to sexual acts or other lewd content. */
-    'Sexual' = 'HARM_CATEGORY_SEXUAL',
-    /** Promotes unchecked medical advice. */
-    'Medical' = 'HARM_CATEGORY_MEDICAL',
-    /** Dangerous content that promotes, facilitates, or encourages harmful acts. */
-    'Dangerous' = 'HARM_CATEGORY_DANGEROUS',
     /** Harassment content. */
     'Harassment' = 'HARM_CATEGORY_HARASSMENT',
     /** Hate speech and content. */
