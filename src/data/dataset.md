@@ -192,7 +192,7 @@ A: Wishing is unlocked through normal story progression, if you are skipping que
 Q: What is currently version support for YuukiPS\
 A: As of November 8 2023, YuukiPS support for version 4.0 and 3.2
 
-Q: How to downgrade version from 4.2 to 4.0?\
+Q: How to downgrade version from 4.2 or 4.3 to 4.0?\
 A: In PC, you can try to re-download the game for version 4.0. You can check [here](https://doc.yuuki.me/docs/tutorial-connect/pc/download-genshin-impact)<br />In Android, you can try to re-download the game for version 4.0. You can check [here](https://doc.yuuki.me/docs/tutorial-connect/android/download-genshin-impact)
 
 Q: I got error 4214 in PC. My version is <version>\
@@ -243,8 +243,8 @@ A: First, go to [ps.yuuki.me](https://ps.yuuki.me/account/home) and scroll down,
 Q: When I use command, I got output `api_cmd_blockadmin`. How can I fix this?
 A: You enter command that means the command has been turned off by Admin to avoid heavy resources on Server
 
-Q: Is Private Server 4.2 available?\
-A: As of November 12, 2023, YuukiPS does not support for version 4.2, you need to download for version `4.0` or `3.2`. You can find in [ps.yuuki.me](https://ps.yuuki.me/game/genshin-impact)
+Q: Is Private Server 4.2 or 4.3 available?\
+A: As of November 12, 2023, YuukiPS does not support for version 4.2 or 4.3, you need to download for version `4.0` or `3.2`. You can find in [ps.yuuki.me](https://ps.yuuki.me/game/genshin-impact)
 
 Q: I got error `Account is not registered`.
 A: If you first time playing Private Server. Make sure that you already registered on [ps.yuuki.me](https://ps.yuuki.me/account/register), enter `username`, `email`, and `password`. After that click `Register button`. Go back to the game, and login with `username` that you register before
@@ -303,7 +303,7 @@ A: /clear af {rarity}\*
 Q: How can I execute commands on my PC?\
 A: You can execute commands on your PC through the web command at https://ps.yuuki.me/command
 
-Q: how do I use the private server when there's no 4.2 update\
+Q: how do I use the private server when there's no 4.2 or 4.3 update\
 A: You can get your private server to work by downloading version 4.0 of Genshin Impact. Remember to search for version 4.0 and you can refer to this link for more information: https://discord.com/channels/964119462188040202/1175262038562439168/1175262862558638110
 
 Q: Is it possible to play SR 1.3.0 on IOS?Is it possible to play SR 1.3.0 on IOS?\
@@ -324,7 +324,7 @@ A: Try to `/clear af all` or `/clear all`
 Q: How should I change 3.2 server to 3.0 so that I can access the ps?\
 A: You need to download the full game again on the 3.0 version. You can do it from <#970380775264518244> or from Yuuki's website. GIO is only available up to 3.2, but GC is available for version 4.0. You can find it at https://ps.yuuki.me/ and select the third option.
 
-Q: How i change version from 4.2 to 4.0?\
+Q: How do I change version from 4.2 or 4.3 to 4.0?\
 A: You must download the full 4.0 or 3.2 game on its own
 
 Q: how do i get 4.0.1?\
@@ -351,8 +351,8 @@ A: If by \"a few months\" you mean never, then yes.
 Q: I get damage during elemental burst, is that normal?\
 A: Long time bug in GC that I believe was fixed at some point but as with all things, breaks again.
 
-Q: When will 4.2 for Android come?\
-A: Maybe in 2027, maybe sooner, but not now.
+Q: When will 4.2 or 4.3 for Android come?\
+A: Maybe in 2027, maybe sooner, but not now. There's no ETA when it will be released.
 
 Q: What happened to raiden?\
 A: It was one of the plugin in the server called Attack Infused with Gadget IIRC. It affect Raiden attacks, binding it with the bosses gadget. You can turn it off using `/at off` and turn it on with `/at on`.
