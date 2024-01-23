@@ -39,6 +39,8 @@ async function responseGoogle(question: string) {
             text: question,
         },
     });
+    const tokens = process.env.maxTokens;
+    const temperature = process.env.temperature;
     const response = await genAI.generateContent(process.env.MODEL as string, {
         contents: [
             {
@@ -134,8 +136,8 @@ async function responseGoogle(question: string) {
             },
         ],
         generationConfig: {
-            maxOutputTokens: parseInt(process.env.maxTokens as string),
-            temperature: parseInt(process.env.temperature as string),
+            maxOutputTokens: tokens ? parseInt(tokens) : undefined,
+            temperature: temperature ? parseInt(temperature) : undefined,
         },
     });
     if (!response) {
