@@ -5,8 +5,6 @@ import dotenv from 'dotenv';
 
 dotenv.config()
 
-const typeOfAI = (process.env.API as string).startsWith('sk-') ? 'OpenAI' : 'Gemini'
-
 async function createEmbeddings(input: string[], model: string): Promise<number[][]> {
     const response = await client.embeddings.create({
         input,
@@ -88,7 +86,7 @@ export async function embeddingDatasetCommand() {
         embedding: embedding[index]
     }));
     const time = Date.now() - now;
-    writeToFile(`./src/data/embeddingCommand-${typeOfAI}.json`, structure);
+    writeToFile(`./src/data/embeddingCommand.json`, structure);
     log.continue(` in ${time}ms`).end();
 }
 
@@ -102,7 +100,7 @@ export async function embeddingDatasetQA() {
         embedding: embedding[index]
     }));
     const time = Date.now() - now;
-    writeToFile(`./src/data/embeddingQA-${typeOfAI}.json`, structure);
+    writeToFile(`./src/data/embeddingQA.json`, structure);
     log.continue(` in ${time}ms`).end();
 }
 
