@@ -4,8 +4,8 @@ declare global {
             API: string | undefined;
             MODEL: string | undefined;
             MODEL_EMBEDDING: string | undefined;
-            maxTokens: number | undefined;
-            temperature: number | undefined;
+            maxTokens: string | undefined;
+            temperature: string | undefined;
             LMSTUDIO_BASE_URL: string | undefined;
         }
     }
