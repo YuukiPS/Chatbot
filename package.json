@@ -2,26 +2,22 @@
     "name": "chatbot",
     "version": "2.0.0",
     "description": "",
-    "main": "dist/src/index.js",
+    "main": "src/index.ts",
     "scripts": {
-        "start": "node dist",
-        "dev": "node -r sucrase/register src",
-        "embed": "node dist/embed.js",
-        "dev:embed": "node -r sucrase/register src/embed.ts",
-        "build": "tsc",
-        "watch": "tsc -p . --watch"
+        "start": "tsx src",
+        "dev": "tsx --watch src",
+        "embed": "tsx src/embed.js"
     },
     "keywords": [],
     "author": {
         "name": "ElaXan",
-        "email": "zero@elaxan.com",
-        "url": "https://elaxan.com"
+        "email": "elaxan.dev@proton.me"
     },
     "contributors": [],
     "homepage": "https://github.com/YuukiPS/Chatbot#readme",
     "bugs": {
         "url": "https://github.com/YuukiPS/Chatbot/issues",
-        "email": "zero@elaxan.com"
+        "email": "elaxan.dev@proton.me"
     },
     "license": "MIT",
     "dependencies": {
@@ -39,7 +35,8 @@
         "eslint-plugin-n": "^16.6.2",
         "eslint-plugin-promise": "^6.1.1",
         "prettier": "^3.2.4",
-        "sucrase": "^3.35.0",
+        "tsx": "^4.19.3",
         "typescript": "^5.3.3"
-    }
+    },
+    "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
