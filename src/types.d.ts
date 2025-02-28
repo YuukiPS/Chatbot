@@ -6,7 +6,7 @@ declare global {
             MODEL_EMBEDDING: string | undefined;
             maxTokens: string | undefined;
             temperature: string | undefined;
-            LMSTUDIO_BASE_URL: string | undefined;
+            BASE_URL: string | undefined;
         }
     }
 }
