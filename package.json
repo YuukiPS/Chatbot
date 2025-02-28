@@ -6,7 +6,7 @@
     "scripts": {
         "start": "tsx src",
         "dev": "tsx --watch src",
-        "embed": "tsx src/embed.js"
+        "embed": "tsx src/embed.ts"
     },
     "keywords": [],
     "author": {
