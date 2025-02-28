@@ -1,30 +1,9 @@
 import fs from 'fs';
 import dotenv from 'dotenv';
-import OpenAI from 'openai';
+import { client } from '../embed';
 
 // Load environment variables
 dotenv.config();
-
-/**
- * Configure OpenAI client based on environment variables
- */
-const configureOpenAIClient = () => {
-    const apiKey = process.env.EMBEDDING_API_KEY === 'false'
-        ? undefined
-        : process.env.EMBEDDING_API_KEY || process.env.API;
-
-    const baseURL = process.env.EMBEDDING_BASE_URL === 'false'
-        ? undefined
-        : process.env.EMBEDDING_BASE_URL || process.env.BASE_URL;
-
-    return new OpenAI({
-        apiKey,
-        baseURL
-    });
-};
-
-// Initialize OpenAI client
-const client = configureOpenAIClient();
 
 /**
  * Interface for command embeddings
