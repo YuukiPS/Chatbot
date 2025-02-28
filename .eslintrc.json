@@ -13,7 +13,6 @@
                 "args": "none"
             }
         ],
-        "indent": ["warn", 4, { "SwitchCase": 1 }],
-        "@typescript-eslint/no-explicit-any": "off"
+        "indent": ["warn", 4, { "SwitchCase": 1 }]
     }
 }
