@@ -7,6 +7,8 @@ declare global {
             maxTokens: string | undefined;
             temperature: string | undefined;
             BASE_URL: string | undefined;
+            EMBEDDING_BASE_URL: string | undefined;
+            EMBEDDING_API_KEY: string | undefined;
         }
     }
 }
