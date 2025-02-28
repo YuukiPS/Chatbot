@@ -1,12 +1,9 @@
-import { client } from './config/openai';
+import { client } from './config/openai'
 import FindDocument from './Utils/findDocument';
 import GMHandbookUtility from './Utils/GMHandbook';
 import readline from 'readline';
 import Logger, { Colors } from './Utils/log';
-import dotenv from 'dotenv';
 import { ChatCompletionCreateParamsBase, ChatCompletionMessageParam } from 'openai/resources/chat/completions';
-
-dotenv.config();
 
 const findCommand = async (command: string, type?: 'gc' | 'gio') => {
     const commandList = await FindDocument.embedding(command, 'command');
@@ -38,14 +35,14 @@ async function responseOpenAI(question: string) {
                 messages: [
                     {
                         content:
-                            'You are a helpful AI designed to assist users with issues related to the YuukiPS Private Server GC (Grasscutter), GIO (Genshin Impact Offline/Official), and LC (LunarCore or Honkai: Star Rail/HSR). To provide the most accurate and helpful responses, you should retrieve information directly from the document using function calls.',
+                            'You are a helpful AI designed to assist users with issues related to the YuukiPS Private Server GC (Grasscutter), GIO (Genshin Impact Offline/Official), and LC (LunarCore or Honkai: Star Rail/HSR). To provide the most accurate and helpful responses, you should ALWAYS retrieve information directly from the document using function calls before providing your own answer.\n\nWhen a user asks a question:\n1. FIRST determine which function would provide the most relevant information.\n2. Call that function BEFORE attempting to respond yourself.\n3. Wait for the function call results.\n4. ONLY THEN formulate your response based on the retrieved information.\n\nDo not attempt to answer questions about commands, IDs, or YuukiPS documentation from memory - always use the appropriate function calls to get accurate information.',
                         role: 'system',
                     },
                     ...(conversation as ChatCompletionMessageParam[]),
                 ],
                 model: process.env.MODEL as ChatCompletionCreateParamsBase['model'],
-                temperature: process.env.temperature,
-                max_tokens: process.env.maxTokens,
+                temperature: process.env.temperature && parseFloat(process.env.temperature) || undefined,
+                max_tokens: process.env.maxTokens && parseInt(process.env.maxTokens) || undefined,
                 tools: [
                     {
                         type: 'function',
