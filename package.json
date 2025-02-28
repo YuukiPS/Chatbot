@@ -21,7 +21,6 @@
     },
     "license": "MIT",
     "dependencies": {
-        "@lmstudio/sdk": "^0.4.7",
         "axios": "^1.8.1",
         "dotenv": "^16.4.7",
         "openai": "^4.86.1"
