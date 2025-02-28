@@ -46,20 +46,30 @@ class Logger {
 
     public constructor() { }
 
-    private print(...message: any[]): string {
+    /**
+     * Format messages with util.formatWithOptions
+     * @param message - The messages to format
+     * @returns Formatted string
+     */
+    private print(...message: unknown[]): string {
         return util.formatWithOptions({ colors: true, depth: null, showHidden: false}, ...message)
     }
 
-    private chatbotFormat(...message: any[]): string {
+    /**
+     * Format a message in the Chatbot format
+     * @param message - The messages to format
+     * @returns Formatted string with chatbot styling
+     */
+    private chatbotFormat(...message: unknown[]): string {
         return `\r[${Colors.Blue}Chatbot${Colors.Reset} -> ${this.colors || Colors.Green}${this.titleName || 'Log'}${Colors.Reset}]: ${this.print(...message)}`
     }
 
     /**
      * Add a log to the log history.
-     * @param {any[]} message The message to log.
-     * @returns {Logger} The logger instance.
+     * @param message - The message parts to log
+     * @returns The logger instance for method chaining
      */
-    log(...message: any[]): Logger {
+    log(...message: unknown[]): Logger {
         process.stdout.write(this.chatbotFormat(...message));
         return this;
     }
@@ -67,11 +77,11 @@ class Logger {
     /**
      * Print and replace the last log.
      * 
-     * @param {boolean} chatbotFormat Whether to print in chatbot format.
-     * @param {any[]} message The message to log.
-     * @returns {Logger} The logger instance.
+     * @param chatbotFormat - Whether to print in chatbot format
+     * @param message - The message parts to log
+     * @returns The logger instance for method chaining
      */
-    new(chatbotFormat?: boolean, ...message: any[]): Logger {
+    new(chatbotFormat?: boolean, ...message: unknown[]): Logger {
         let log;
         if (chatbotFormat) {
             log = this.chatbotFormat(...message);
@@ -85,8 +95,8 @@ class Logger {
     /**
      * Set the title of the logger. This will be used in chatbot format.
      * 
-     * @param {string} titleName The title name.
-     * @returns {Logger} The logger instance.
+     * @param titleName - The title name
+     * @returns The logger instance for method chaining
      */
     title(titleName: string): Logger {
         this.titleName = titleName;
@@ -96,8 +106,8 @@ class Logger {
     /**
      * Set the color of the title. This will be used in chatbot format.
      * 
-     * @param {Colors} color The color.
-     * @returns {Logger} The logger instance.
+     * @param color - The color
+     * @returns The logger instance for method chaining
      */
     color(color: Colors): Logger {
         this.colors = color;
@@ -107,10 +117,10 @@ class Logger {
     /**
      * Continue the last log.
      * 
-     * @param {any[]} message The message to log.
-     * @returns {Logger} The logger instance.
+     * @param message - The message parts to append
+     * @returns The logger instance for method chaining
      */
-    continue(...message: any[]): Logger {
+    continue(...message: unknown[]): Logger {
         process.stdout.write(this.print(...message))
         return this;
     }
@@ -118,7 +128,7 @@ class Logger {
     /**
      * End the last log.
      * 
-     * @param {number} newline The number of newlines to print.
+     * @param newline - The number of newlines to print
      */
     end(newline?: number): void {
         process.stdout.write('\n'.repeat(newline || 1));
