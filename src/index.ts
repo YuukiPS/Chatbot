@@ -5,12 +5,8 @@ import readline from 'readline';
 import Logger, { Colors } from './Utils/log';
 import dotenv from 'dotenv';
 import { ChatCompletionCreateParamsBase, ChatCompletionMessageParam } from 'openai/resources/chat/completions';
-// import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory, InputContent } from "@google/generative-ai";
-import GoogleGenerativeAI, { ContentRequest, HarmBlockThreshold, HarmCategory } from './Utils/GoogleGenerativeAI';
 
 dotenv.config();
-
-export const typeOfAI = (process.env.API as string).startsWith('sk-') ? 'OpenAI' : 'Gemini';
 
 const findCommand = async (command: string, type?: 'gc' | 'gio') => {
     const commandList = await FindDocument.embedding(command, 'command');
@@ -27,125 +23,8 @@ const findCommand = async (command: string, type?: 'gc' | 'gio') => {
     }));
 };
 
-const genAI = new GoogleGenerativeAI(process.env.API as string);
 
-const conversation: (ChatCompletionMessageParam | ContentRequest)[] = [];
-
-async function responseGoogle(question: string) {
-    const prompt = `You are a helpful AI designed to assist users with issues related to the YuukiPS Private Server GC (Grasscutter), GIO (Genshin Impact Offline/Official), and LC (LunarCore or Honkai: Star Rail/HSR). To provide the most accurate and helpful responses, you should retrieve information directly from the document using function calls.`;
-    (conversation as ContentRequest[]).push({
-        role: 'user',
-        parts: {
-            text: question,
-        },
-    });
-    const tokens = process.env.maxTokens;
-    const temperature = process.env.temperature;
-    const response = await genAI.generateContent(process.env.MODEL as string, {
-        contents: [
-            {
-                role: 'user',
-                parts: {
-                    text: prompt,
-                },
-            },
-            {
-                role: 'model',
-                parts: {
-                    text: 'Please provide the most accurate and helpful responses.',
-                },
-            },
-            ...(conversation as ContentRequest[]),
-        ],
-        safetySettings: [
-            {
-                category: HarmCategory.HateSpeech,
-                threshold: HarmBlockThreshold.OnlyHigh,
-            },
-            {
-                category: HarmCategory.DangerousContent,
-                threshold: HarmBlockThreshold.OnlyHigh,
-            },
-            {
-                category: HarmCategory.Harassment,
-                threshold: HarmBlockThreshold.OnlyHigh,
-            },
-            {
-                category: HarmCategory.SexuallyExplicit,
-                threshold: HarmBlockThreshold.OnlyHigh,
-            },
-        ],
-        tools: [
-            {
-                function_declarations: [
-                    {
-                        name: 'find_command',
-                        description:
-                            'Searches for a specific command in the dataset. This function does not search for IDs, only command names.',
-                        parameters: {
-                            type: 'OBJECT',
-                            properties: {
-                                command: {
-                                    type: 'STRING',
-                                    description: 'The name of the command to search for.',
-                                },
-                                type: {
-                                    type: 'STRING',
-                                    description:
-                                        'The type of command to search for. This is optional. Example: gc, gio, or lc',
-                                },
-                            },
-                            required: ['command'],
-                        },
-                    },
-                    {
-                        name: 'find_id',
-                        description: 'Searches for the ID of items such as avatars, weapons, quests, etc.',
-                        parameters: {
-                            type: 'OBJECT',
-                            properties: {
-                                find_id: {
-                                    type: 'STRING',
-                                    description: 'The name of the item to search for. Example: Kamisato Ayaka',
-                                },
-                                category: {
-                                    type: 'STRING',
-                                    description:
-                                        'Filters the search by category. This is optional. Example List of Category: Avatars or Artifacts or Monsters or Materials or Achievements or Quests or Scenes or Dungeons',
-                                },
-                            },
-                            required: ['find_id'],
-                        },
-                    },
-                    {
-                        name: 'find_document',
-                        description:
-                            'Searches for answers in the dataset for questions related to the Private Server YuukiPS only.',
-                        parameters: {
-                            type: 'OBJECT',
-                            properties: {
-                                question: {
-                                    type: 'STRING',
-                                    description: 'The question to search for in the dataset.',
-                                },
-                            },
-                            required: ['question'],
-                        },
-                    },
-                ],
-            },
-        ],
-        generationConfig: {
-            maxOutputTokens: tokens ? parseInt(tokens) : undefined,
-            temperature: temperature ? parseInt(temperature) : undefined,
-        },
-    });
-    if (!response) {
-        return undefined;
-    }
-    conversation.push(response.candidates[0].content as ContentRequest);
-    return response;
-}
+const conversation: ChatCompletionMessageParam[] = [];
 
 async function responseOpenAI(question: string) {
     let stop = false;
@@ -165,8 +44,8 @@ async function responseOpenAI(question: string) {
                     ...(conversation as ChatCompletionMessageParam[]),
                 ],
                 model: process.env.MODEL as ChatCompletionCreateParamsBase['model'],
-                temperature: parseInt(process.env.temperature as string),
-                max_tokens: parseInt(process.env.maxTokens as string),
+                temperature: process.env.temperature,
+                max_tokens: process.env.maxTokens,
                 tools: [
                     {
                         type: 'function',
@@ -336,49 +215,7 @@ async function main() {
                 process.exit(0);
             }
         }
-        if (typeOfAI === 'OpenAI') {
-            await responseOpenAI(question);
-        } else if (typeOfAI === 'Gemini') {
-            let questions: string = question;
-            const log = new Logger().title('Gemini').color(Colors.Green);
-            let stop = false;
-            while (!stop) {
-                try {
-                    const response = await responseGoogle(questions);
-                    if (!response) {
-                        throw new Error('No response received');
-                    }
-                    const { functionCall, text } = response.candidates[0].content.parts[0];
-                    log.title('Gemini-response').log(response).end();
-
-                    if (text) {
-                        log.title('Gemini-answer').log(text).end();
-                        stop = true;
-                    } else if (functionCall) {
-                        const { args, name } = functionCall;
-                        if (name === 'find_command') {
-                            const searchCommand = await findCommand(args.command, args.type);
-                            log.title('Gemini-command').log(searchCommand).end();
-                            questions = `${JSON.stringify(searchCommand)}`;
-                        } else if (name === 'find_id') {
-                            const searchId = GMHandbookUtility.find(args.find_id, args.category);
-                            log.title('Gemini-id').log(searchId).end();
-                            questions = `${JSON.stringify(searchId)}`;
-                        } else if (name === 'find_document') {
-                            const searchDocument = await FindDocument.embedding(args.question, 'qa');
-                            log.title('Gemini-document').log(searchDocument).end();
-                            questions = `${JSON.stringify(searchDocument)}`;
-                        }
-                    }
-                } catch (error) {
-                    if (error instanceof Error) {
-                        throw error;
-                    } else {
-                        throw error;
-                    }
-                }
-            }
-        }
+        await responseOpenAI(question);
         await main();
     });
 }
