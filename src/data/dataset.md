@@ -115,7 +115,7 @@ Q: Can you send me list of command GIO?\
 A: You can see list of command in [doc.yuuki.me](https://doc.yuuki.me/docs/commands/gio)
 
 Q: How can I custom artifact in GIO?\
-You can customize artifact stats in GIO using the same command as in GC (Grasscutter).
+A: You can customize artifact stats in GIO using the same command as in GC (Grasscutter).
 
 Q: How can I change banner?\
 A: There is no way to change banner in Public server, but you can change banner in Localhost.

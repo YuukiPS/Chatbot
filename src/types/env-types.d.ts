@@ -9,6 +9,9 @@ declare global {
             BASE_URL: string | undefined;
             EMBEDDING_BASE_URL: string | undefined;
             EMBEDDING_API_KEY: string | undefined;
+            DISCORD_TOKEN: string | undefined;
+            DISCORD_CLIENT_ID: string | undefined;
+            DISCORD_GUILD_ID: string | undefined;
         }
     }
 }
