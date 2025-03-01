@@ -63,12 +63,65 @@ class FindDocument {
         query: string | string[],
         type: 'qa' | 'command'
     ): Promise<SimilarityResult<EmbeddingQA | EmbeddingCommand>[]> {
-        const embedding = await this.generateEmbedding(query);
+        const normalizedQuery = this.normalizeInput(query);
+        
+        const embedding = await this.generateEmbedding(normalizedQuery);
 
         const datasetPath = this.getDatasetPath(type);
         const documents = this.loadDataset(datasetPath);
+        
+        if (type === 'command' && typeof normalizedQuery === 'string') {
+            const exactMatches = this.findExactMatches(normalizedQuery, documents as EmbeddingCommand[]);
+            if (exactMatches.length > 0) {
+                return exactMatches;
+            }
+        }
 
         return this.findSimilarDocuments(embedding, documents);
+    }
+
+    /**
+     * Normalize input query for better matching
+     * @param query - Input query to normalize
+     * @returns Normalized query
+     */
+    private static normalizeInput(query: string | string[]): string | string[] {
+        if (typeof query === 'string') {
+            return query.toLowerCase().trim();
+        } else {
+            return query.map(q => q.toLowerCase().trim());
+        }
+    }
+
+    /**
+     * Find exact or partial command matches before using embeddings
+     * @param query - Normalized query string
+     * @param documents - Command documents
+     * @returns Exact or partial matches if found
+     */
+    private static findExactMatches(query: string, documents: EmbeddingCommand[]): SimilarityResult<EmbeddingCommand>[] {
+        const exactMatches = documents.filter(doc => 
+            doc.command.toLowerCase().includes(query) || 
+            query.includes(doc.command.replace(/[`]/g, '').toLowerCase()));
+            
+        if (exactMatches.length > 0) {
+            return exactMatches.map(data => ({
+                data,
+                score: 0.99
+            }));
+        }
+        
+        const descriptionMatches = documents.filter(doc => 
+            doc.description.toLowerCase().includes(query));
+            
+        if (descriptionMatches.length > 0) {
+            return descriptionMatches.map(data => ({
+                data,
+                score: 0.9
+            }));
+        }
+        
+        return [];
     }
 
     /**
@@ -120,9 +173,10 @@ class FindDocument {
             score: this.cosineSimilarity(embedding, data.embedding)
         }));
 
+        // Lower the threshold to 0.6 to catch more potential matches
         return similarityScores
             .sort((a, b) => b.score - a.score)
-            .filter((data) => data.score > 0.7)
+            .filter((data) => data.score > 0.6)
             .slice(0, 5);
     }
 
