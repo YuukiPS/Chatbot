@@ -127,11 +127,21 @@ export async function embeddingDatasetQA() {
     const questionAnswerPairs = parseMarkdown('./src/data/dataset.md', 'Knowledge', 'Q:', ['question', 'answer']) as QAData[];
     const log = new Logger().title('Question Answering').log(`Total data: ${questionAnswerPairs.length}`)
     const now = Date.now();
-    const embedding = await createEmbeddings(questionAnswerPairs.map((questionAnswerPair) => `${questionAnswerPair.question} ${questionAnswerPair.answer}`), process.env.MODEL_EMBEDDING as string)
-    const structure = questionAnswerPairs.map((questionAnswerPair, index) => ({
-        ...questionAnswerPair,
+
+    const cleanedPairs = questionAnswerPairs.map(pair => ({
+        ...pair,
+        question: pair.question.endsWith('\\') ? pair.question.slice(0, -1) : pair.question
+    }));
+
+    const embedding = await createEmbeddings(cleanedPairs.map((pair) =>
+        `${pair.question} ${pair.answer}`
+    ), process.env.MODEL_EMBEDDING as string)
+
+    const structure = cleanedPairs.map((pair, index) => ({
+        ...pair,
         embedding: embedding[index]
     }));
+
     const time = Date.now() - now;
     writeToFile(`./src/data/embeddingQA.json`, structure);
     log.continue(` in ${time}ms`).end();
