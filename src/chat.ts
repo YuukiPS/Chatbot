@@ -231,7 +231,10 @@ async function processFunctionCall(
  * Create properly typed chat completion parameters object
  * @returns OpenAI chat completion parameters
  */
-function createChatCompletionParams(userId: string): ChatCompletionCreateParamsNonStreaming {
+function createChatCompletionParams(
+    userId: string,
+    customPrompt?: string | null,
+): ChatCompletionCreateParamsNonStreaming {
     if (!conversation.has(userId)) {
         conversation.set(userId, []);
     }
@@ -241,7 +244,7 @@ function createChatCompletionParams(userId: string): ChatCompletionCreateParamsN
     return {
         messages: [
             {
-                content: openaiConfig.systemPrompt,
+                content: customPrompt || openaiConfig.systemPrompt,
                 role: 'system',
             },
             ...userConversation,
@@ -320,7 +323,11 @@ async function processResponse(response: ChatCompletion, userId: string): Promis
  * Handle user question and get AI response
  * @param question - User's question
  */
-export async function responseOpenAI(question: string, userId: string): Promise<ChatCompletionMessageParam[]> {
+export async function responseOpenAI(
+    question: string,
+    userId: string,
+    customPrompt?: string | null,
+): Promise<ChatCompletionMessageParam[]> {
     if (!conversation.has(userId)) {
         conversation.set(userId, []);
     }
@@ -336,7 +343,7 @@ export async function responseOpenAI(question: string, userId: string): Promise<
 
     while (continueConversation) {
         try {
-            const completionParams = createChatCompletionParams(userId);
+            const completionParams = createChatCompletionParams(userId, customPrompt);
             const response = await client.chat.completions.create(completionParams, { timeout: 30000 });
             continueConversation = await processResponse(response, userId);
         } catch (error) {

@@ -12,8 +12,11 @@ declare global {
             DISCORD_TOKEN: string | undefined;
             DISCORD_CLIENT_ID: string | undefined;
             DISCORD_GUILD_ID: string | undefined;
+            MONGO_URI: string | undefined;
+            MONGO_DB_NAME: string | undefined;
         }
     }
 }
 
 export {};
+
