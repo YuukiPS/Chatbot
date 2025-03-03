@@ -27,6 +27,8 @@ export default {
         const enabled = options.getBoolean('enabled', true);
         const prompt = options.getString('prompt', false);
 
+        await interaction.deferReply({ ephemeral: true });
+
         const mongodb = MongoDB.getInstance();
 
         await mongodb.updateOne(
@@ -63,6 +65,6 @@ export default {
             });
         }
 
-        await interaction.reply({ embeds: [embed], ephemeral: true });
+        await interaction.editReply({ embeds: [embed] });
     },
 };
