@@ -7,13 +7,14 @@ import {
     ChatCompletionCreateParamsNonStreaming,
     ChatCompletionMessageParam,
     ChatCompletion,
-    ChatCompletionTool
+    ChatCompletionTool,
 } from 'openai/resources/chat/completions';
 
 /**
  * Conversation history storage
  */
-const conversation: ChatCompletionMessageParam[] = [];
+// const conversation: ChatCompletionMessageParam[] = [];
+const conversation: Map<string, ChatCompletionMessageParam[]> = new Map();
 
 /**
  * Interface for the command data structure
@@ -48,9 +49,7 @@ const findCommand = async (command: string, type?: 'gc' | 'gio' | 'lc'): Promise
         return 'Command not found';
     }
 
-    const filteredCommands = type
-        ? commandList.filter((data) => data.data.type.toLowerCase() === type)
-        : commandList;
+    const filteredCommands = type ? commandList.filter((data) => data.data.type.toLowerCase() === type) : commandList;
 
     return filteredCommands.map((data) => ({
         command: data.data.command,
@@ -113,7 +112,8 @@ const openaiConfig = {
                     properties: {
                         command: {
                             type: 'string',
-                            description: 'The exact name or part of the command to search for (e.g., "give", "spawn", "weather").',
+                            description:
+                                'The exact name or part of the command to search for (e.g., "give", "spawn", "weather").',
                         },
                         type: {
                             type: 'string',
@@ -138,12 +138,23 @@ const openaiConfig = {
                     properties: {
                         find_id: {
                             type: 'string',
-                            description: 'The exact name or part of the name of the game item to search for. Example: Kamisato Ayaka, Jade Spear, etc.',
+                            description:
+                                'The exact name or part of the name of the game item to search for. Example: Kamisato Ayaka, Jade Spear, etc.',
                         },
                         category: {
                             type: 'string',
                             description: 'Filters the search by category.',
-                            enum: ['Avatars', 'Artifacts', 'Monsters', 'Materials', 'Achievements', 'Quests', 'Scenes', 'Dungeons', 'Weapons']
+                            enum: [
+                                'Avatars',
+                                'Artifacts',
+                                'Monsters',
+                                'Materials',
+                                'Achievements',
+                                'Quests',
+                                'Scenes',
+                                'Dungeons',
+                                'Weapons',
+                            ],
                         },
                     },
                     required: ['find_id'],
@@ -180,7 +191,10 @@ const openaiConfig = {
  * @param args - Tool arguments
  * @returns Tool execution result
  */
-async function processFunctionCall(name: string, args: FindCommandArgs | FindIdArgs | FindDocumentArgs): Promise<ToolResponse> {
+async function processFunctionCall(
+    name: string,
+    args: FindCommandArgs | FindIdArgs | FindDocumentArgs,
+): Promise<ToolResponse> {
     const logger = new Logger();
     let toolResponse: ToolResponse;
 
@@ -189,15 +203,13 @@ async function processFunctionCall(name: string, args: FindCommandArgs | FindIdA
         const now = Date.now();
         toolResponse = await findCommand(args.command, (args as FindCommandArgs).type);
         log.continue(` Done in ${Date.now() - now}ms\n`, toolResponse).end();
-    }
-    else if (name === 'find_id' && 'find_id' in args) {
+    } else if (name === 'find_id' && 'find_id' in args) {
         const log = logger.title('ID').color(Colors.Yellow).log('Finding ID.');
         const now = Date.now();
         const findId = GMHandbookUtility.find((args as FindIdArgs).find_id, (args as FindIdArgs).category);
         toolResponse = findId.slice(0, 5);
         log.continue(` Done in ${Date.now() - now}ms\n`, toolResponse).end();
-    }
-    else if (name === 'find_document' && 'question' in args) {
+    } else if (name === 'find_document' && 'question' in args) {
         const log = logger.title('Document').color(Colors.Yellow).log('Finding Document.');
         const now = Date.now();
         const findDocument = await FindDocument.embedding((args as FindDocumentArgs).question, 'qa');
@@ -207,8 +219,7 @@ async function processFunctionCall(name: string, args: FindCommandArgs | FindIdA
             similarity: data.score,
         }));
         log.continue(` Done in ${Date.now() - now}ms\n`, toolResponse).end();
-    }
-    else {
+    } else {
         toolResponse = 'Function not found';
         logger.title('Function').log('Function not found').end();
     }
@@ -220,14 +231,20 @@ async function processFunctionCall(name: string, args: FindCommandArgs | FindIdA
  * Create properly typed chat completion parameters object
  * @returns OpenAI chat completion parameters
  */
-function createChatCompletionParams(): ChatCompletionCreateParamsNonStreaming {
+function createChatCompletionParams(userId: string): ChatCompletionCreateParamsNonStreaming {
+    if (!conversation.has(userId)) {
+        conversation.set(userId, []);
+    }
+
+    const userConversation = conversation.get(userId)!;
+
     return {
         messages: [
             {
                 content: openaiConfig.systemPrompt,
                 role: 'system',
             },
-            ...conversation,
+            ...userConversation,
         ],
         model: process.env.MODEL || 'gpt-3.5-turbo',
         temperature: (process.env.temperature && parseFloat(process.env.temperature)) || undefined,
@@ -241,28 +258,29 @@ function createChatCompletionParams(): ChatCompletionCreateParamsNonStreaming {
  * @param response - OpenAI API response
  * @returns Whether to continue the conversation
  */
-async function processResponse(response: ChatCompletion): Promise<boolean> {
+async function processResponse(response: ChatCompletion, userId: string): Promise<boolean> {
     const logger = new Logger();
     logger.title('Output').log(response).end();
 
     const { finish_reason, message } = response.choices[0];
     const { tool_calls, content } = message;
+    const userConversation = conversation.get(userId)!;
 
     if (content) {
         logger.title('AI Answer').log(content).end();
-        conversation.push({
+        userConversation.push({
             content,
             role: 'assistant',
         });
     }
 
     if ((finish_reason === 'stop' || finish_reason === 'length') && !tool_calls) {
-        logger.title('Conversation').log('Total:', conversation.length).end();
+        logger.title('Conversation').log('Total:', userConversation.length).end();
         return false;
     }
 
     if (tool_calls && tool_calls.length > 0) {
-        conversation.push({
+        userConversation.push({
             role: 'assistant',
             content: content || null,
             tool_calls: tool_calls,
@@ -285,7 +303,7 @@ async function processResponse(response: ChatCompletion): Promise<boolean> {
                 toolResponse = 'Invalid function arguments';
             }
 
-            conversation.push({
+            userConversation.push({
                 role: 'tool',
                 tool_call_id: tool_call.id,
                 content: JSON.stringify(toolResponse, null, 2),
@@ -302,8 +320,14 @@ async function processResponse(response: ChatCompletion): Promise<boolean> {
  * Handle user question and get AI response
  * @param question - User's question
  */
-async function responseOpenAI(question: string): Promise<void> {
-    conversation.push({
+export async function responseOpenAI(question: string, userId: string): Promise<ChatCompletionMessageParam[]> {
+    if (!conversation.has(userId)) {
+        conversation.set(userId, []);
+    }
+
+    const userConversation = conversation.get(userId)!;
+
+    userConversation.push({
         content: question,
         role: 'user',
     });
@@ -312,18 +336,20 @@ async function responseOpenAI(question: string): Promise<void> {
 
     while (continueConversation) {
         try {
-            const completionParams = createChatCompletionParams();
+            const completionParams = createChatCompletionParams(userId);
             const response = await client.chat.completions.create(completionParams, { timeout: 30000 });
-            continueConversation = await processResponse(response);
+            continueConversation = await processResponse(response, userId);
         } catch (error) {
             new Logger().title('Error').log(error).end();
-            conversation.push({
+            userConversation.push({
                 role: 'assistant',
                 content: "I'm sorry, but I encountered an error while processing your request. Please try again.",
             });
             continueConversation = false;
         }
     }
+
+    return userConversation;
 }
 
 /**
@@ -352,7 +378,7 @@ async function main(): Promise<void> {
                 process.exit(0);
             }
 
-            await responseOpenAI(question);
+            await responseOpenAI(question, '1');
             promptQuestion();
         });
     };

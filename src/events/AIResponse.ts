@@ -1,4 +1,5 @@
-import { ChannelType, Events, Message } from "discord.js";
+import { ChannelType, Events, Message } from 'discord.js';
+import { responseOpenAI } from '../chat';
 
 export default {
     name: 'AIResponse',
@@ -8,6 +9,21 @@ export default {
         if (message.author.bot) return;
         if (message.channel.type === ChannelType.DM) return;
 
-        message.reply(`You said: ${message.content}`);
-    }
-}
+        if (!message.content) return;
+
+        const response = await responseOpenAI(message.content, message.author.id);
+
+        const assistantMessage = response.find((msg) => msg.role === 'assistant' && msg.content);
+
+        let assistantResponse = 'Sorry, I could not understand that.';
+
+        if (assistantMessage && assistantMessage.content) {
+            assistantResponse =
+                typeof assistantMessage.content === 'string'
+                    ? assistantMessage.content
+                    : JSON.stringify(assistantMessage.content);
+        }
+
+        await message.reply(assistantResponse);
+    },
+};
